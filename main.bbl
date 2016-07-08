@@ -1,5 +1,16 @@
 \begin{thebibliography}{1}
 
+\bibitem{id:NetflixPrize}
+{N}etflix {P}rize ({I} tried to resist, but...).
+\newblock
+  \url{https://www.snellman.net/blog/archive/2006-10-15-netflix-prize.html}.
+\newblock Data dostępu: 2016-06-08.
+
+\bibitem{id:NetflixPrizeRankings}
+{N}etflix {P}rize {R}ankings.
+\newblock \url{http://www.hackingnetflix.com/2006/10/netflix_prize_r.html}.
+\newblock Data dostępu: 2016-06-08.
+
 \bibitem{id:RecommenderSystemsHandbook}
 Francesco~Ricci, Lior~Rokach B. S. P. B.~K.
 \newblock {\em {R}ecommender {S}ystems {H}andbook}.
