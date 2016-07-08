@@ -1,0 +1,22 @@
+\begin{thebibliography}{1}
+
+\bibitem{id:RecommenderSystemsHandbook}
+Francesco~Ricci, Lior~Rokach B. S. P. B.~K.
+\newblock {\em {R}ecommender {S}ystems {H}andbook}.
+\newblock Springer, New York Dordrecht Heidelberg London, 2010.
+
+\bibitem{id:FromTapestryToSVD}
+Huttner J.
+\newblock {F}rom {T}apestry to {SVD}: {A} survey of the algorithms that power
+  recommender system.
+\newblock Master's thesis, Haverford College Department of Computer Science, 05
+  2009.
+
+\bibitem{id:EvolutionOfRecommenderSystems}
+Richa~Sharma R.~S.
+\newblock {E}volution of {R}ecommender {S}ystems from {A}ncient {T}imes to
+  {M}odern {E}ra: A {S}urvey.
+\newblock {\em Indian Journal of Science and Technology, Vol 9(20)}, (DOI:
+  10.17485/ijst/2016/v9i20/88005), 05 2016.
+
+\end{thebibliography}
