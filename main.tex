@@ -171,13 +171,14 @@ ABSTRACT EN
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
 
  \chapter{Cel pracy}
- 
+ \shortTitle{Cel pracy}
 	Celem pracy jest zaproponowanie i zbudowanie hybrydowego algorytmu rekomendacji. Składowymi docelowego algorytmu są metody kolaboratywnego filtrowania oraz metody filtrowania z analizą treści.  
  
  \chapter{Wstęp}
+ \shortTitle{Wstęp}
 	 Wraz z rozwojem Internetu zmienił się sposób dostępu do informacji. Kiedyś to użytkownik musiał walczyć pozyskanie wiedzy; dzisiaj to informacje walczą u uwagę użytkowników. W świecie zalanym wiadomościami koniecznym wydaje się być zastosowanie filtra, który odsieje interesującą  i wartościową zawartość od tej niechcianej. Tak też z pomocą przychodzą zautomatyzowane mechanizmy rekomendacji.
 	 
-	 Jednakże sam koncept rekomendacji nie jest niczym nowym. Co więcej, zjawisko to możemy zaobserwować w naturze -- na przykład wśród mrówek, które podążają wyznaczoną (rekomendowaną) ścieżką feromonową w poszukiwaniu pożywienia.
+	 Jednakże sama idea rekomendacji nie jest niczym nowym. Co więcej, zjawisko to możemy zaobserwować w naturze -- na przykład wśród mrówek, które podążają wyznaczoną (rekomendowaną) ścieżką feromonową w poszukiwaniu pożywienia.
 	 
 	 Ludzie od niepamiętnych czasów posiłkowali się opiniami innych aby ułatwić sobie dokonanie wyboru, od najbliższego grona znajomych do ekspertów i autorytetów.
 	 
@@ -185,19 +186,120 @@ ABSTRACT EN
 	 
 	 Wkrótce później idea ta została rozszerzona przez takich graczy jak Amazon, Google, Pandora, Netflix, Youtube, Yahoo etc. aż do formy, jaką znamy dzisiaj: systemu, który sugeruje użytkownikom produkty, filmy, muzykę, strony internetowe na podstawie ich aktywności w sieci \cite{id:EvolutionOfRecommenderSystems}. 
 	 
-	 Wielkie koncerny internetowe stale poprawiają jakość swoich algorytmów rekomendacji. Najlepszym przykładem jest tutaj Netflix, który w październiku 2006 zorganizował ogólnodostępny konkurs na najlepszy algorytm. Zadaniem uczestników było ulepszenie algorytmu Cinematch. Już po siedmiu dniach od ogłoszenia konkursu trzy zespoły zdołały przebić Cinematch o 1.06\% \cite{id:NetflixPrize}\cite{id:NetflixPrizeRankings}.
+	 Wielkie koncerny internetowe stale poprawiają jakość swoich algorytmów rekomendacji. Najlepszym przykładem jest tutaj Netflix, który w październiku 2006 zorganizował ogólnodostępny konkurs na najlepszy algorytm. Zadaniem uczestników było ulepszenie algorytmu Cinematch. Już po siedmiu dniach od ogłoszenia konkursu trzy zespoły zdołały przebić Cinematch o 1.06\% \cite{id:NetflixPrize}\cite{id:NetflixPrizeRankings}. 18 września 2009 Netflix ogłosił, że zespół BellKor's Pragmatic Chaos poprawił Cinematch o 10,06\% osiągając wynik $RMSE = 0.8567$. Tym samym wygrał nagrodę w wysokości \$1,000,000 i zakończył konkurs \cite{id:NetflixPrize2}\cite{id:NetflixPrizeRules}.
 	 
 	 Systemy rekomendacji ulepszane są nieustannie, o czym świadczy chociażby organizowana rokrocznie konferencja\textit{ ACM International Conference on Recommender Systems}. Tematyka ta poruszana jest także na konferencjach \textit{European Conference on Information Retrieval}, \textit{European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases} i wielu innych. Mimo dużego stopnia zaawansowania wciąż istnieje pole manewru do ulepszania algorytmów rekomendacji i co za tym idzie zwiększanie zadowolenia użytkowników, które z kolei prowadzi do osiągania korzyści biznesowych.
 	 
  
  \chapter{Przegląd istniejących rozwiązań}
-	 \section{Problem rekomendacji}
-	 \section{Podejście w oparciu o aktywność użytkownika}
-	 \section{Podejście z wykorzystaniem bazy użytkowników}
+ \shortTitle{Przegląd istniejących rozwiązań}
+	 Tradycyjnie wyróżniamy następujące techniki rekomendacji: \cite{id:IntroductionToRecommenderSystemsHandbook}
+	 
+	 \begin{itemize}
+	 	\item \textbf{filtrowanie w oparciu o aktywność użytkownika} (eng. content-based), technika koncentrująca się na danych historycznych. Użytkownikowi rekomendowane są elementy, które podobne są do tych wybieranych przez niego w przeszłości;
+	 	\item \textbf{filtrowanie kolaboratywne} (eng. collaborative filtering), technika polegająca na odnajdywaniu użytkowników o podobnych gustach i sugerowaniu lubianych przez nich elementów aktualnie aktywnemu użytkownikowi;
+	 	\item \textbf{filtrowanie demograficzne} (eng. demographic), technika koncentrująca się na sugerowaniu aktywnemu użytkownikowi elementów popularnych pośród użytkowników z tej samej okolicy bądź w podobnym przedziale wiekowym;
+	 	\item \textbf{filtrowanie z analizą domeny wiedzy} (eng. knowledge-based), technika dobierająca kolejne elementy na podstawie określonej domeny wiedzy na temat tego, jak dany element spełnia potrzeby i preferencje użytkownika;	
+	 	\item \textbf{filtrowanie z analizą społecznościową} (eng. community-based), technika dobierająca rekomendacje dla użytkownika w zależności od preferencji innych użytkowników z jego sieci społecznościowej. W myśl zasady "powiedz mi kim są twoi przyjaciele a powiem ci kim jesteś";
+	 	\item \textbf{hybrydowe systemy rekomendacji}, to kombinacja dowolnych powyższych technik.
+	 \end{itemize}
+	 
+	 Każda z tych technik ma swoje wady i zalety w zależności od kontekstu, w którym ma być stosowana. 
+	 
+	 \section{Filtrowanie w oparciu o aktywność użytkownika}
+	 
+	 @TODO
+	 
+	 \subsection{Explicit/implicit feedback}
+	 
+	 Informacje na temat preferencji użytkownika mogą być zbierane na różne sposoby. Jeżeli użytkownik jawnie pozostawia informacje można mówić o bezpośredniej informacji zwrotnej (explicit feedback). Do takich informacji należą: ocena konkretnych elementów, tzw. łapka w górę lub w dół, komentarz itp. 
+	 
+	 Jednakże nawet jeżeli użytkownik nie jest skory do zostawiania tego typu śladów, to i tak można wiele na jego temat wywnioskować korzystając z informacji zwrotnych niejawnych (implicit feedback). System bierze wówczas pod uwagę aktywność użytkownika taką jak: historia zakupów, historia przeglądarki a nawet ruchy myszką. W przypadku serwisu z muzyką czy filmem cenną informacją będzie fakt, czy użytkownik wysłuchał lub obejrzał dany materiał do końca czy też wyłączył go po paru sekundach. \cite{id:ContentBasedRecommenderSystemsState}\cite{id:AdvancesInCollaborativeFiltering}
+	 
+	 \subsection{Najczęściej spotykane problemy}
+	 Aby rekomendacja była skuteczna użytkownik powinien ocenić jak najwięcej elementów. Problematyczni są zatem użytkownicy, którzy dopiero co dołączyli do serwisu oraz tacy, którzy nie są aktywni i rzadko zostawiają po sobie ślad 	 \cite{id:MaleszkaMianowskaNguyenmethod}.
+	 
+	 \section{Filtrowanie kolaboratywne}
+	 
+	 Tradycyjnym i zarazem najprostszym podejściem do metody filtrowania kolaboratywnego jest rekomendowanie aktywnemu użytkownikowi elementów, które inni użytkownicy o podobnym guście uznali za atrakcyjne\cite{id:IntroductionToRecommenderSystemsHandbook}\cite{id:CollaborativeFilteringRecommenderSystems}. Użytkownicy o podobnym guście to osoby, które oceniły konkretne elementy podobnie jak aktywny użytkownik. 
+	 
+	 W przypadku filtrowania kolaboratywnego można wyróżnić dwa główne podejścia: oparte o regułę sąsiedztwa (ang. \textit{neighborhood methods}) oraz oparte o modele ukrytych czynników (ang. \textit{latent factor models})\cite{id:MatrixFactorizationTechniquesForRecommenderSystems}. 
+	 
+	 \begin{figure}[!ht] 
+	 	\centering
+	 	\includegraphics[width=0.7\textwidth]{cf}
+	 	\caption{Filtrowanie kolaboratywne metodą sąsiedztwa zorientowanego na użytkownika\protect\cite{id:MatrixFactorizationTechniquesForRecommenderSystems}.}
+	 	\label{fig:cf}
+	 \end{figure}
+	 
+	 Rysunek \ref{fig:cf} pokazuje filtrowanie kolaboratywne oparte o regułę sąsiedztwa, zorientowane na użytkownika. Joe ocenił pozytywnie trzy filmy. System odnajduje innych użytkowników, którzy także ocenili te trzy filmy i dodatkowo kilka innych. Każdy z tych użytkowników pozytywnie ocenił film ,,Saving Private Ryan", zatem jest to pierwsza rekomendacja dla Joe. 
+	 
+	  \begin{figure}[!ht] 
+	  	\centering
+	  	\includegraphics[width=0.7\textwidth]{cf2}
+	  	\caption{Filtrowanie kolaboratywne z wykorzystaniem modeli ukrytych czynników\protect\cite{id:MatrixFactorizationTechniquesForRecommenderSystems}.}
+	  	\label{fig:cf2}
+	  \end{figure}
+	 
+	 Rysunek \ref{fig:cf2} pokazuje w sposób uproszczony podejście z wykorzystaniem ukrytych czynników. W układzie współrzędnym oznaczeni są użytkownicy wedle swoich preferencji oraz konkretnych cech (np. płeć) a także filmy, które stanowią odpowiedź na dany zestaw preferencji/cech \cite{id:MatrixFactorizationTechniquesForRecommenderSystems}. 
+	 	 
+	 \subsection{Najczęściej spotykane problemy}
+	 
+	 Jednym z problemów klasycznego podejścia do kolaboratywnego filtrowania jest brak uwzględnienia dynamiki zmian w gustach użytkowników. Ten sam użytkownik na przestrzeni kilku lat lub miesięcy może zupełnie inaczej ocenić ten sam film bądź piosenkę. Rozwiązaniem jest dodanie czynnika czasu podczas obliczania wag kolejnych ocen. \cite{id:NewRecommentationAlgoritmBasedOnSocialNetwork}\cite{id:NextSongRecommendationWithTemporalDynamics}\cite{id:MatrixFactorizationTechniquesForRecommenderSystems}.
+	 
+	 Innym problemem jest tzw. zimny start (eng. cold start). Polega on na tym, że użytkownicy nowi w systemie ocenili zbyt mało elementów, aby można było zbudować dla nich dobre rekomendacje\cite{id:zhang2015hybrid}\cite{id:RubensRecSysHB2010}.
+	 
+	 Powszechnym zjawiskiem jest tzw. efekt długiego ogona. Rysunek \ref{fig:longtail} przedstawia jak rozkłada się procentowa ilość ocen danych elementów w zależności od ich popularności. Jeżeli algorytm rekomendacji nie wspiera mniej popularnych elementów, to istnieje ryzyko, że użytkownicy nie otrzymają możliwości eksplorowania nowych, niszowych materiałów\cite{id:RubensRecSysHB2010}\cite{id:celma2010music}.
+	 
+  \begin{figure}[!ht] 
+ 	  	\centering
+ 	  	\includegraphics[width=0.7\textwidth]{longtail}
+ 	  	\caption{Problem długiego ogona: 50\% ocen dotyczy 10-12\% najpopularniejszych elementów w systemie\protect\cite{id:RubensRecSysHB2010}.}
+ 	  	\label{fig:longtail}
+  \end{figure}
+	 
+	 Systemy rekomendacji wykorzystujące filtrowanie kolaboratywne nie są skalowalne. Złożoność rośnie proporcjonalnie do ilości użytkowników i elementów. Wielkie koncerny internetowe takie jak Twitter wykorzystają klastry i maszyny z bardzo dużą ilością pamięci aby zachować płynność działania serwisu \cite{id:gupta2013wtf}.
+	 
+	 \section{Popularne serwisy wykorzystujące algorytmy rekomendacji}
+	 
+	 @TODO - dokończyć 
+	 
+	 Algorytmy rekomendacji napotkać można praktycznie w większości dużych serwisów internetowych.
+	 
+		 \subsection{Rekomendacja muzyki}
+	 
+		 \begin{itemize}
+		 	\item \textbf{YouTube} -- serwis powstały w 2005 roku, pozwalający na bezpłatne umieszczanie, odtwarzanie, ocenianie i komentowanie filmów. Od 2006 roku przejęty przez Google \cite{website:googleTakesYT}. YouTube buduje profil użytkownika w oparciu o jego aktywność w serwisie. Brane pod uwagę są polubienia (łapka w górę), subskrypcje, udostępnianie a także informacje czy użytkownik obejrzał film do końca czy tylko pewien jego procent \cite{id:TheYouTubeVideoRecommendationSystem}. Techniki rekomendacji stosowane przez serwis to przede wszystkim asocjacyjna eksploracja danych i licznik wspólnych odwiedzin danego wideo w czasie trwania pojedynczej sesji \cite{id:TheYouTubeVideoRecommendationSystem}. 
+		 	\item \textbf{LastFM } -- internetowa radiostacja oferująca rozbudowany mechanizm rekomendacji piosenek ''Audioscrobbler''.   
+		 	\item \textbf{Pandora}	
+		 \end{itemize}
+	 
+		 \subsection{Rekomendacja filmów}
+		 \begin{itemize}
+			 \item \textbf{Netflix}
+			 \item \textbf{Filmweb}
+			 \item \textbf{IMDB}
+		 \end{itemize}
+		 
+		 \subsection{Platformy typu e-commerce}
+	
+		\begin{itemize}
+			 \item \textbf{Allegro}
+			 \item \textbf{Amazon}
+		 \end{itemize}	 
+	 
+		 \subsection{Inne serwisy}
+		 
+		 \begin{itemize}		 	
+		 	\item \textbf{Google search}
+		 \end{itemize}
+ 
  
  \chapter{Model systemu}
+ \shortTitle{Model systemu}
  
  \chapter{Algorytmy}
+ \shortTitle{Algorytmy}
 	 \section{Filtrowanie kolaboratywne}
 		 \subsection{Matrix Factorization}
 		 \subsection{Biased Matrix Factorization}
@@ -209,12 +311,14 @@ ABSTRACT EN
 	 \section{Analiza złożoności i poprawności}
  
 \chapter{Ocena eksperymentalna}
+\shortTitle{Ocena eksperymentalna}
 	\section{Opis metody badawczej}
 	\section{Środowisko symulacyjne}
 	\section{Metodologia}
 	\section{Przeprowadzone eksperymenty}
 	
 \chapter{Wnioski}
+\shortTitle{Wnioski}
 
 \chapter{CHAPTER 1}
 \section{SECTION}

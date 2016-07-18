@@ -1,4 +1,9 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{id:NetflixPrize2}
+{N}etflix {P}rize: {F}orum.
+\newblock \url{http://www.netflixprize.com/community/viewtopic.php?id=1537}.
+\newblock Data dostępu: 2016-06-08.
 
 \bibitem{id:NetflixPrize}
 {N}etflix {P}rize ({I} tried to resist, but...).
@@ -11,10 +16,30 @@
 \newblock \url{http://www.hackingnetflix.com/2006/10/netflix_prize_r.html}.
 \newblock Data dostępu: 2016-06-08.
 
-\bibitem{id:RecommenderSystemsHandbook}
-Francesco~Ricci, Lior~Rokach B. S. P. B.~K.
-\newblock {\em {R}ecommender {S}ystems {H}andbook}.
-\newblock Springer, New York Dordrecht Heidelberg London, 2010.
+\bibitem{id:NetflixPrizeRules}
+{N}etflix {P}rize {R}ules.
+\newblock \url{http://www.netflixprize.com//rules}.
+\newblock Data dostępu: 2016-06-08.
+
+\bibitem{id:celma2010music}
+Celma O.
+\newblock {\em The Long Tail in Recommender Systems}, pages 87--107.
+\newblock Springer-Verlag Berlin Heidelberg, 2010.
+
+\bibitem{id:ComprehensiveSurveyOfNeighborhoodBasedRecommendationMethods}
+Christian~Desrosiers G.~K.
+\newblock chapter {A} {C}omprehensive {S}urvey of {N}eighborhood-based
+  {R}ecommendation {M}ethods.
+
+\bibitem{id:IntroductionToRecommenderSystemsHandbook}
+Francesco~Ricci, Lior~Rokach B.~S.
+\newblock chapter {I}ntroduction to {R}ecommender {S}ystems {H}andbook.
+
+\bibitem{id:gupta2013wtf}
+Gupta P., Goel A., Lin J., Sharma A., Wang D., Zadeh R.
+\newblock Wtf: The who to follow service at twitter.
+\newblock In {\em Proceedings of the 22nd international conference on World
+  Wide Web}, pages 505--514. ACM, 2013.
 
 \bibitem{id:FromTapestryToSVD}
 Huttner J.
@@ -23,11 +48,57 @@ Huttner J.
 \newblock Master's thesis, Haverford College Department of Computer Science, 05
   2009.
 
+\bibitem{id:CollaborativeFilteringRecommenderSystems}
+J.B.~Schafer, D.~Frankowski J. H.~S.
+\newblock chapter {C}ollaborative filtering recommender systems, page
+  291–324.
+
+\bibitem{id:NewRecommentationAlgoritmBasedOnSocialNetwork}
+Jiujun~Cheng, Yingbo~Liu H. Z. X.~W., Chen F.
+\newblock {A} {N}ew {R}ecommendation {A}lgorithm {B}ased on {U}ser’s
+  {D}ynamic {I}nformation in {C}omplex {S}ocial {N}etwork.
+\newblock {\em Mathematical Problems in Engineering}, 2015(ID 281629), 2015.
+
+\bibitem{id:NextSongRecommendationWithTemporalDynamics}
+Ke~Ji, Runyuan~Sun W. S. X.~L.
+\newblock {N}ext-song recommendation with temporal dynamics.
+\newblock {\em Knowledge-Based Systems}, 88 (2015) 134–143(0950-7051), 2015.
+
+\bibitem{id:MaleszkaMianowskaNguyenmethod}
+Maleszka M., Mianowska B., Nguyen N.~T.
+\newblock A method for collaborative recommendation using knowledge integration
+  tools and hierarchical structure of user profiles.
+\newblock {\em Knowledge-Based Systems}, 47:1--13, 2013.
+
+\bibitem{id:ContentBasedRecommenderSystemsState}
+Pasquale~Lops M. d.~G., Semeraro G.
+\newblock chapter {C}ontent-based {R}ecommender {S}ystems: {S}tate of the {A}rt
+  and {T}rends.
+
+\bibitem{id:RubensRecSysHB2010}
+Rubens N., Kaplan D., Sugiyama M.
+\newblock Active learning in recommender systems.
+\newblock In Kantor P., Ricci F., Rokach L., Shapira B., editors, {\em
+  Recommender Systems Handbook}, pages 735--767. Springer, 2011.
+
 \bibitem{id:EvolutionOfRecommenderSystems}
-Richa~Sharma R.~S.
+Sharma R., Singh R.
 \newblock {E}volution of {R}ecommender {S}ystems from {A}ncient {T}imes to
   {M}odern {E}ra: A {S}urvey.
-\newblock {\em Indian Journal of Science and Technology, Vol 9(20)}, (DOI:
-  10.17485/ijst/2016/v9i20/88005), 05 2016.
+\newblock {\em Indian Journal of Science and Technology}, 9(20), 2016.
+
+\bibitem{id:MatrixFactorizationTechniquesForRecommenderSystems}
+Yehuda~Koren, Robert~Bell C.~V.
+\newblock Matrix factorization techniques for recommender systems.
+\newblock {\em Computer}, 42(8):30--37, 2009.
+
+\bibitem{id:AdvancesInCollaborativeFiltering}
+Yehuda~Koren R.~B.
+\newblock chapter {A}dvances in {C}ollaborative {F}iltering.
+
+\bibitem{id:zhang2015hybrid}
+Zhang H.-R., Min F., He X., Xu Y.-Y.
+\newblock A hybrid recommender system based on user-recommender interaction.
+\newblock {\em Mathematical Problems in Engineering}, 2015, 2015.
 
 \end{thebibliography}

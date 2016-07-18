@@ -1,11 +1,66 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
 The style file: iisthesis.bst
 Database file #1: bibliography.bib
-Too many commas in name 1 of "Francesco Ricci, Lior Rokach, Bracha Shapira, Paul B. Kantorn" for entry id:RecommenderSystemsHandbook
+I was expecting a `,' or a `}'---line 5 of file bibliography.bib
+ :  
+ :  booktitle   = {{R}ecommender {S}ystems {H}andbook},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 16 of file bibliography.bib
+ :  
+ :  booktitle   = {{R}ecommender {S}ystems {H}andbook},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 27 of file bibliography.bib
+ :  
+ :  booktitle   = {{R}ecommender {S}ystems {H}andbook},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 37 of file bibliography.bib
+ :  
+ :  booktitle   = {{R}ecommender {S}ystems {H}andbook},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 49 of file bibliography.bib
+ :  
+ :  year       = {2007},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "website:googleTakesYT"
+Warning--I didn't find a database entry for "id:TheYouTubeVideoRecommendationSystem"
+Too many commas in name 1 of "J.B. Schafer, D. Frankowski, J. Herlocker, S.Sen" for entry id:CollaborativeFilteringRecommenderSystems
+while executing---line 1077 of file iisthesis.bst
+Name 1 in "Jiujun Cheng, Yingbo Liu, Huiting Zhang, Xiao Wu, and Fuzhen Chen" has a comma at the end for entry id:NewRecommentationAlgoritmBasedOnSocialNetwork
+while executing---line 1077 of file iisthesis.bst
+Too many commas in name 1 of "Jiujun Cheng, Yingbo Liu, Huiting Zhang, Xiao Wu, and Fuzhen Chen" for entry id:NewRecommentationAlgoritmBasedOnSocialNetwork
+while executing---line 1077 of file iisthesis.bst
+Too many commas in name 1 of "Ke Ji, Runyuan Sun, Wenhao Shu, Xiang Li" for entry id:NextSongRecommendationWithTemporalDynamics
 while executing---line 1077 of file iisthesis.bst
 Warning--to sort, need author or key in id:NetflixPrizeRankings
 Warning--to sort, need author or key in id:NetflixPrize
-Too many commas in name 1 of "Francesco Ricci, Lior Rokach, Bracha Shapira, Paul B. Kantorn" for entry id:RecommenderSystemsHandbook
+Warning--to sort, need author or key in id:NetflixPrize2
+Warning--to sort, need author or key in id:NetflixPrizeRules
+Warning--empty title in id:ComprehensiveSurveyOfNeighborhoodBasedRecommendationMethods
+Warning--empty publisher in id:ComprehensiveSurveyOfNeighborhoodBasedRecommendationMethods
+Warning--empty year in id:ComprehensiveSurveyOfNeighborhoodBasedRecommendationMethods
+Warning--empty title in id:IntroductionToRecommenderSystemsHandbook
+Warning--empty publisher in id:IntroductionToRecommenderSystemsHandbook
+Warning--empty year in id:IntroductionToRecommenderSystemsHandbook
+Too many commas in name 1 of "J.B. Schafer, D. Frankowski, J. Herlocker, S.Sen" for entry id:CollaborativeFilteringRecommenderSystems
 while executing---line 1118 of file iisthesis.bst
-Warning--there's a number but no volume in id:EvolutionOfRecommenderSystems
-(There were 2 error messages)
+Warning--empty title in id:CollaborativeFilteringRecommenderSystems
+Warning--empty publisher in id:CollaborativeFilteringRecommenderSystems
+Warning--empty year in id:CollaborativeFilteringRecommenderSystems
+Name 1 in "Jiujun Cheng, Yingbo Liu, Huiting Zhang, Xiao Wu, and Fuzhen Chen" has a comma at the end for entry id:NewRecommentationAlgoritmBasedOnSocialNetwork
+while executing---line 1118 of file iisthesis.bst
+Too many commas in name 1 of "Jiujun Cheng, Yingbo Liu, Huiting Zhang, Xiao Wu, and Fuzhen Chen" for entry id:NewRecommentationAlgoritmBasedOnSocialNetwork
+while executing---line 1118 of file iisthesis.bst
+Too many commas in name 1 of "Ke Ji, Runyuan Sun, Wenhao Shu, Xiang Li" for entry id:NextSongRecommendationWithTemporalDynamics
+while executing---line 1118 of file iisthesis.bst
+Warning--empty title in id:ContentBasedRecommenderSystemsState
+Warning--empty publisher in id:ContentBasedRecommenderSystemsState
+Warning--empty year in id:ContentBasedRecommenderSystemsState
+Warning--empty title in id:AdvancesInCollaborativeFiltering
+Warning--empty publisher in id:AdvancesInCollaborativeFiltering
+Warning--empty year in id:AdvancesInCollaborativeFiltering
+(There were 13 error messages)
