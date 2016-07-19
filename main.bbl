@@ -1,39 +1,44 @@
 \begin{thebibliography}{10}
 
-\bibitem{id:NetflixPrize2}
-{N}etflix {P}rize: {F}orum.
-\newblock \url{http://www.netflixprize.com/community/viewtopic.php?id=1537}.
-\newblock Data dostępu: 2016-06-08.
+\bibitem{id:mgp}
+About the {M}usic {G}enome {P}roject.
+\newblock \url{http://www.pandora.com/about/mgp}.
+\newblock Data dostępu: 2016-06-19.
 
-\bibitem{id:NetflixPrize}
-{N}etflix {P}rize ({I} tried to resist, but...).
-\newblock
-  \url{https://www.snellman.net/blog/archive/2006-10-15-netflix-prize.html}.
-\newblock Data dostępu: 2016-06-08.
-
-\bibitem{id:NetflixPrizeRankings}
-{N}etflix {P}rize {R}ankings.
-\newblock \url{http://www.hackingnetflix.com/2006/10/netflix_prize_r.html}.
-\newblock Data dostępu: 2016-06-08.
-
-\bibitem{id:NetflixPrizeRules}
-{N}etflix {P}rize {R}ules.
-\newblock \url{http://www.netflixprize.com//rules}.
-\newblock Data dostępu: 2016-06-08.
+\bibitem{id:allegrofaq}
+Allegro -- korzystanie z systemu rekomendacji.
+\newblock \url{
+  http://faq.allegro.pl/artykul/27613/korzystanie-z-systemu-rekomendacji}.
+\newblock Data dostępu: 2016-06-19.
 
 \bibitem{id:celma2010music}
 Celma O.
 \newblock {\em The Long Tail in Recommender Systems}, pages 87--107.
 \newblock Springer-Verlag Berlin Heidelberg, 2010.
 
-\bibitem{id:ComprehensiveSurveyOfNeighborhoodBasedRecommendationMethods}
-Christian~Desrosiers G.~K.
-\newblock chapter {A} {C}omprehensive {S}urvey of {N}eighborhood-based
-  {R}ecommendation {M}ethods.
+\bibitem{id:NewRecommentationAlgoritmBasedOnSocialNetwork}
+Cheng J., Liu Y., Zhang H., Wu X., Chen F.
+\newblock A new recommendation algorithm based on user’s dynamic information
+  in complex social network.
+\newblock {\em Mathematical Problems in Engineering}, 2015, 2015.
 
-\bibitem{id:IntroductionToRecommenderSystemsHandbook}
-Francesco~Ricci, Lior~Rokach B.~S.
-\newblock chapter {I}ntroduction to {R}ecommender {S}ystems {H}andbook.
+\bibitem{id:TheYouTubeVideoRecommendationSystem}
+Davidson J., Liebald B., Liu J., Nandy P., Van~Vleet T., Gargi U., Gupta S., He
+  Y., Lambert M., Livingston B. et~al.
+\newblock The youtube video recommendation system.
+\newblock In {\em Proceedings of the fourth ACM conference on Recommender
+  systems}, pages 293--296. ACM, 2010.
+
+\bibitem{id:ComprehensiveSurveyOfNeighborhoodBasedRecommendationMethods}
+Desrosiers C., Karypis G.
+\newblock {\em {R}ecommender {S}ystems {H}andbook}, chapter {A} {C}omprehensive
+  {S}urvey of {N}eighborhood-based {R}ecommendation {M}ethods, pages 107--144.
+\newblock Springer, New York Dordrecht Heidelberg London, 2010.
+
+\bibitem{id:filmwebfaq}
+Filmweb -- najczęściej zadawane pytania.
+\newblock \url{http://www.filmweb.pl/help}.
+\newblock Data dostępu: 2016-06-19.
 
 \bibitem{id:gupta2013wtf}
 Gupta P., Goel A., Lin J., Sharma A., Wang D., Zadeh R.
@@ -48,21 +53,37 @@ Huttner J.
 \newblock Master's thesis, Haverford College Department of Computer Science, 05
   2009.
 
-\bibitem{id:CollaborativeFilteringRecommenderSystems}
-J.B.~Schafer, D.~Frankowski J. H.~S.
-\newblock chapter {C}ollaborative filtering recommender systems, page
-  291–324.
-
-\bibitem{id:NewRecommentationAlgoritmBasedOnSocialNetwork}
-Jiujun~Cheng, Yingbo~Liu H. Z. X.~W., Chen F.
-\newblock {A} {N}ew {R}ecommendation {A}lgorithm {B}ased on {U}ser’s
-  {D}ynamic {I}nformation in {C}omplex {S}ocial {N}etwork.
-\newblock {\em Mathematical Problems in Engineering}, 2015(ID 281629), 2015.
+\bibitem{id:imdbstats}
+{IMDb} database statistics.
+\newblock \url{http://www.imdb.com/stats}.
+\newblock Data dostępu: 2016-06-19.
 
 \bibitem{id:NextSongRecommendationWithTemporalDynamics}
-Ke~Ji, Runyuan~Sun W. S. X.~L.
-\newblock {N}ext-song recommendation with temporal dynamics.
-\newblock {\em Knowledge-Based Systems}, 88 (2015) 134–143(0950-7051), 2015.
+Ji K., Sun R., Shu W., Li X.
+\newblock Next-song recommendation with temporal dynamics.
+\newblock {\em Knowledge-Based Systems}, 88:134--143, 2015.
+
+\bibitem{id:AdvancesInCollaborativeFiltering}
+Koren Y., Bell R.
+\newblock {\em {R}ecommender {S}ystems {H}andbook}, chapter {A}dvances in
+  {C}ollaborative {F}iltering, pages 145--186.
+\newblock Springer, New York Dordrecht Heidelberg London, 2010.
+
+\bibitem{id:MatrixFactorizationTechniquesForRecommenderSystems}
+Koren Y., Bell R., Volinsky C.
+\newblock Matrix factorization techniques for recommender systems.
+\newblock {\em Computer}, 42(8):30--37, 2009.
+
+\bibitem{id:linden2003amazon}
+Linden G., Smith B., York J.
+\newblock Amazon. com recommendations: Item-to-item collaborative filtering.
+\newblock {\em IEEE Internet computing}, 7(1):76--80, 2003.
+
+\bibitem{id:ContentBasedRecommenderSystemsState}
+Lops P., de~Gemmis M., Semeraro G.
+\newblock {\em {R}ecommender {S}ystems {H}andbook}, chapter {C}ontent-based
+  {R}ecommender {S}ystems: {S}tate of the {A}rt and {T}rends, pages 73--100.
+\newblock Springer, New York Dordrecht Heidelberg London, 2010.
 
 \bibitem{id:MaleszkaMianowskaNguyenmethod}
 Maleszka M., Mianowska B., Nguyen N.~T.
@@ -70,10 +91,37 @@ Maleszka M., Mianowska B., Nguyen N.~T.
   tools and hierarchical structure of user profiles.
 \newblock {\em Knowledge-Based Systems}, 47:1--13, 2013.
 
-\bibitem{id:ContentBasedRecommenderSystemsState}
-Pasquale~Lops M. d.~G., Semeraro G.
-\newblock chapter {C}ontent-based {R}ecommender {S}ystems: {S}tate of the {A}rt
-  and {T}rends.
+\bibitem{id:NetflixPrize}
+{N}etflix {P}rize ({I} tried to resist, but...).
+\newblock
+  \url{https://www.snellman.net/blog/archive/2006-10-15-netflix-prize.html}.
+\newblock Data dostępu: 2016-06-08.
+
+\bibitem{id:NetflixPrize2}
+{N}etflix {P}rize: forum.
+\newblock \url{http://www.netflixprize.com/community/viewtopic.php?id=1537}.
+\newblock Data dostępu: 2016-06-08.
+
+\bibitem{id:NetflixPrizeRankings}
+{N}etflix {P}rize {R}ankings.
+\newblock \url{http://www.hackingnetflix.com/2006/10/netflix_prize_r.html}.
+\newblock Data dostępu: 2016-06-08.
+
+\bibitem{id:NetflixPrizeRules}
+{N}etflix {P}rize {R}ules.
+\newblock \url{http://www.netflixprize.com//rules}.
+\newblock Data dostępu: 2016-06-08.
+
+\bibitem{id:aStreamOfMovies}
+Pogue D.
+\newblock A {S}tream of {M}ovies, {S}ort of {F}ree.
+\newblock {\em The New York Times}, 2007.
+
+\bibitem{id:IntroductionToRecommenderSystemsHandbook}
+Ricci F., Rokach L., Shapira B.
+\newblock {\em {R}ecommender {S}ystems {H}andbook}, chapter {I}ntroduction to
+  {R}ecommender {S}ystems {H}andbook, pages 1--35.
+\newblock Springer, New York Dordrecht Heidelberg London, 2010.
 
 \bibitem{id:RubensRecSysHB2010}
 Rubens N., Kaplan D., Sugiyama M.
@@ -81,20 +129,17 @@ Rubens N., Kaplan D., Sugiyama M.
 \newblock In Kantor P., Ricci F., Rokach L., Shapira B., editors, {\em
   Recommender Systems Handbook}, pages 735--767. Springer, 2011.
 
+\bibitem{id:CollaborativeFilteringRecommenderSystems}
+Schafer J., Frankowski D., Herlocker J., Sen S.
+\newblock {\em {T}he {A}daptive {W}eb}, chapter {C}ollaborative filtering
+  recommender systems, page 291–324.
+\newblock Springer Berlin / Heidelberg, 2007.
+
 \bibitem{id:EvolutionOfRecommenderSystems}
 Sharma R., Singh R.
 \newblock {E}volution of {R}ecommender {S}ystems from {A}ncient {T}imes to
   {M}odern {E}ra: A {S}urvey.
 \newblock {\em Indian Journal of Science and Technology}, 9(20), 2016.
-
-\bibitem{id:MatrixFactorizationTechniquesForRecommenderSystems}
-Yehuda~Koren, Robert~Bell C.~V.
-\newblock Matrix factorization techniques for recommender systems.
-\newblock {\em Computer}, 42(8):30--37, 2009.
-
-\bibitem{id:AdvancesInCollaborativeFiltering}
-Yehuda~Koren R.~B.
-\newblock chapter {A}dvances in {C}ollaborative {F}iltering.
 
 \bibitem{id:zhang2015hybrid}
 Zhang H.-R., Min F., He X., Xu Y.-Y.

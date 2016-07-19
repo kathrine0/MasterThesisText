@@ -15,9 +15,8 @@
 \contentsline {subsection}{\numberline {3.2.1\relax .\kern .5em }Najcz\IeC {\k e}\IeC {\'s}ciej spotykane problemy}{6}{subsection.3.2.1}
 \contentsline {section}{\numberline {3.3\relax .\kern .5em }Popularne serwisy wykorzystuj\IeC {\k a}ce algorytmy rekomendacji}{8}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1\relax .\kern .5em }Rekomendacja muzyki}{8}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2\relax .\kern .5em }Rekomendacja film\IeC {\'o}w}{8}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.2\relax .\kern .5em }Rekomendacja film\IeC {\'o}w}{9}{subsection.3.3.2}
 \contentsline {subsection}{\numberline {3.3.3\relax .\kern .5em }Platformy typu e-commerce}{9}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4\relax .\kern .5em }Inne serwisy}{9}{subsection.3.3.4}
 \contentsline {chapter}{Rozdzia\l \ 4\relax .\kern .5em Model systemu}{11}{section*.7}
 \contentsline {chapter}{Rozdzia\l \ 5\relax .\kern .5em Algorytmy}{13}{section*.8}
 \contentsline {section}{\numberline {5.1\relax .\kern .5em }Filtrowanie kolaboratywne}{13}{section.5.1}
