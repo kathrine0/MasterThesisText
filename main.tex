@@ -11,7 +11,7 @@
 \usepackage{subcaption}
 \usepackage{mathtools}
 \usepackage{graphicx}
-\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
 \usepackage{url}
 \usepackage{pgfplots, pgfplotstable}
 \selectlanguage{polish}
@@ -19,6 +19,7 @@
 \usepackage{fancyvrb} % dla srodowiska Verbatim
 \usepackage{color}
 \usepackage{lscape}
+
 \hypersetup{
     colorlinks,
     linkcolor={black!50!black},
@@ -168,7 +169,9 @@ ABSTRACT EN
 
 
 \graphicspath{ {img/} }
-\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg,.svg}
+
+  \listoftodos
 
  \chapter{Cel pracy}
  \shortTitle{Cel pracy}
@@ -210,11 +213,11 @@ ABSTRACT EN
 	 
 	 Filtrowanie content-based opiera się na cechach elementów w systemie. Rekomendowane są obiekty, które podobne są do tych pozytywnie ocenionych wcześniej przez użytkownika\cite{id:huynh2012modeling}. W zależności od domeny pod uwagę mogą być brane słowa kluczowe, cechy takie jak rok wydania, reżyser, autor, kompozytor, gatunek itp.
 	 
-	 \subsection{Explicit/implicit feedback}
+	 \subsection{Metody tworzenia profilu użytkownika}
 	 
-	 Informacje na temat preferencji użytkownika mogą być zbierane na różne sposoby. Jeżeli użytkownik jawnie pozostawia informacje można mówić o bezpośredniej informacji zwrotnej (explicit feedback). Do takich informacji należą: ocena konkretnych elementów, tzw. łapka w górę lub w dół, komentarz itp. 
+	 Profil użytkownika może być tworzony na dwa sposoby. Jeżeli użytkownik jawnie pozostawia informacje można mówić o podejściu aktywnym (explicit feedback). Do takich informacji należą: ocena konkretnych elementów, tzw. łapka w górę lub w dół, komentarz itp. 
 	 
-	 Jednakże nawet jeżeli użytkownik nie jest skory do zostawiania tego typu śladów, to i tak można wiele na jego temat wywnioskować korzystając z informacji zwrotnych niejawnych (implicit feedback). System bierze wówczas pod uwagę aktywność użytkownika taką jak: historia zakupów, historia przeglądarki a nawet ruchy myszką. W przypadku serwisu z muzyką czy filmem cenną informacją będzie fakt, czy użytkownik wysłuchał lub obejrzał dany materiał do końca czy też wyłączył go po paru sekundach. \cite{id:ContentBasedRecommenderSystemsState}\cite{id:AdvancesInCollaborativeFiltering}
+	 Jednakże nawet jeżeli użytkownik nie jest skory do zostawiania tego typu śladów, to i tak można wiele na jego temat wywnioskować korzystając z podejścia pasywnego (implicit feedback). System bierze wówczas pod uwagę aktywność użytkownika taką jak: historia zakupów, historia przeglądarki a nawet ruchy myszką. W przypadku serwisu z muzyką czy filmem cenną informacją będzie fakt, czy użytkownik wysłuchał lub obejrzał dany materiał do końca czy też wyłączył go po paru sekundach. \cite{id:ContentBasedRecommenderSystemsState}\cite{id:AdvancesInCollaborativeFiltering}
 	 
 	 \subsection{Zalety podejścia content-based}
 	 
@@ -229,7 +232,7 @@ ABSTRACT EN
 	 
 	 Filtrowanie kolaboratywne opiera się o założenie, że ludzie o zbliżonym guście dokonują podobnych wyborów. Użytkownicy o zbliżonym guście to osoby, które oceniły konkretne elementy w podobny sposób\cite{id:IntroductionToRecommenderSystemsHandbook}\cite{id:CollaborativeFilteringRecommenderSystems}\cite{id:huynh2012modeling}. 
 	 
-	 W przypadku filtrowania kolaboratywnego można wyróżnić dwa główne podejścia: oparte o regułę sąsiedztwa (ang. \textit{neighborhood methods}) oraz oparte o modele ukrytych czynników (ang. \textit{latent factor models})\cite{id:MatrixFactorizationTechniquesForRecommenderSystems}. 
+	 W przypadku filtrowania kolaboratywnego można wyróżnić dwa główne podejścia: oparte o regułę sąsiedztwa (ang. \textit{neighborhood}) oraz oparte o model (ang. \textit{model-based}), wykorzystujące modele ukrytych parametrów\cite{id:MatrixFactorizationTechniquesForRecommenderSystems}\cite{id:AdvancesInCollaborativeFiltering}. 
 	 
 	 \begin{figure}[!ht] 
 	 	\centering
@@ -238,16 +241,19 @@ ABSTRACT EN
 	 	\label{fig:cf}
 	 \end{figure}
 	 
-	 Rysunek \ref{fig:cf} pokazuje filtrowanie kolaboratywne oparte o regułę sąsiedztwa, zorientowane na użytkownika. Joe ocenił pozytywnie trzy filmy. System odnajduje innych użytkowników, którzy także ocenili te trzy filmy i dodatkowo kilka innych. Każdy z tych użytkowników pozytywnie ocenił film ,,Saving Private Ryan", zatem jest to pierwsza rekomendacja dla Joe. 
+	 Filtrowanie w oparciu o regułę sąsiedztwa koncentruje się na związkach element-element bądź użytkownik-użytkownik\cite{id:AdvancesInCollaborativeFiltering}.
+	 Rysunek \ref{fig:cf} pokazuje regułę sąsiedztwa skoncentrowaną na relacji użytkownik-użytkownik. Joe ocenił trzy filmy. System odnajduje innych użytkowników, którzy ocenili te trzy pozycje podobnie jak Joe. Każdy z nich pozytywnie ocenił film ,,Saving Private Ryan", zatem jest to pierwsza rekomendacja dla Joe. 
 	 
 	  \begin{figure}[!ht] 
 	  	\centering
 	  	\includegraphics[width=0.7\textwidth]{cf2}
-	  	\caption{Filtrowanie kolaboratywne z wykorzystaniem modeli ukrytych czynników\protect\cite{id:MatrixFactorizationTechniquesForRecommenderSystems}.}
+	  	\caption{Filtrowanie kolaboratywne z wykorzystaniem modelu ukrytych parametrów\protect\cite{id:MatrixFactorizationTechniquesForRecommenderSystems}.}
 	  	\label{fig:cf2}
 	  \end{figure}
 	 
-	 Rysunek \ref{fig:cf2} pokazuje w sposób uproszczony podejście z wykorzystaniem ukrytych czynników. W układzie współrzędnym oznaczeni są użytkownicy wedle swoich preferencji oraz konkretnych cech (np. płeć) a także filmy, które stanowią odpowiedź na dany zestaw preferencji/cech \cite{id:MatrixFactorizationTechniquesForRecommenderSystems}. 
+	 Ideą podejścia model-based jest zbadanie i modelowanie zależności element-użytkownik wraz z czynnikami reprezentującymi ukryte własności elementów i użytkowników. Taki model jest następnie uczony przy użyciu dostępnych danych. W rezultacie można z niego odczytać przewidywaną ocenę elementu dla konkretnego użytkownika\cite{id:ComprehensiveSurveyOfNeighborhoodBasedRecommendationMethods}\cite{id:AdvancesInCollaborativeFiltering}.
+	 
+	 Rysunek \ref{fig:cf2} pokazuje w sposób uproszczony podejście oparte o model. W układzie współrzędnym oznaczeni są użytkownicy wedle swoich preferencji oraz konkretnych cech (np. płeć) a także filmy, które stanowią odpowiedź na dany zestaw preferencji/cech \cite{id:MatrixFactorizationTechniquesForRecommenderSystems}. 
 	 	 
 	 \subsection{Najczęściej spotykane problemy}
 	 
@@ -297,9 +303,55 @@ ABSTRACT EN
  \chapter{Model systemu}
  \shortTitle{Model systemu}
  
+ Głównym założeniem systemu zaproponowanego przez autorkę jest połączenie zalet kolaboratywnego filtrowania i filtrowania w oparciu zawartość minimalizując jednocześnie wady obu podejść. 
+ 
+ Rys. \ref{fig:blackbox} przedstawia czarnoskrzynkowy model systemu. Danymi wejściowymi są numery identyfikacyjne użytkownika dla którego ma być zbudowana rekomendacja oraz elementu, dla którego ma być przewidziana ocena. System pobiera model elementu a także modele wszystkich innych elementów, które użytkownik ocenił w przyszłości. Jednocześnie pobierane są informacje o tym jak użytkownicy systemu ocenili inne elementy. Wynikiem wyjściowym jest predykcja -- jak aktywny użytkownik oceni element.
+ 
+ \begin{figure}[!ht] 
+   	\centering
+   	\includegraphics[width=0.7\textwidth]{blackbox}
+   	\caption{Model czarnoskrzynkowy}
+   	\label{fig:blackbox}
+ \end{figure}
+ 
+ Założeniem systemu jest uniwersalność, zatem model elementu jest uogólniony i dostosowuje się w zależności do domeny, w której system jest wykorzystywany. Rys. \ref{fig:modelElementu} przedstawia reprezentację elementu w systemie. W zbiorze wartości mogą znaleźć się takie pozycje jak lista aktorów, reżyser (w przypadku filmów), gatunek, wykonawca (w przypadku muzyki), typ produktu lub cena (w przypadku systemów typu e-commerce).
+ 
+ \begin{figure}[!ht] 
+ 	\centering
+ 	\includegraphics[width=0.7\textwidth]{modelElementu}
+ 	\caption{Uogólniony model elementu}
+ 	\label{fig:modelElementu}
+ \end{figure}
+ 
+ Każdy użytkownik systemu jest anonimowy. Nie jest znana jego płeć, wiek, pochodzenie itp. System nie przechowuje także informacji właściwych mediom społecznościowym takich jak relacje między użytkownikami (przyjaźnie, śledzenie). Wiadomym jest jedynie jakie elementy zostały ocenione i jak zostały ocenione. Rys. \ref{fig:modelUsera} przedstawia reprezentację użytkownika w systemie.
+ 
+ \begin{figure}[!ht] 
+  	\centering
+  	\includegraphics[width=0.7\textwidth]{modelUsera}
+  	\caption{Uogólniony model elementu}
+  	\label{fig:modelUsera}
+  \end{figure}
+
+
  \chapter{Algorytmy}
  \shortTitle{Algorytmy}
-	 \section{Filtrowanie kolaboratywne}
+
+\todo{napisać dlaczego wybrałam matrix factorization a nie inne sposoby}
+
+	 \section{Filtrowanie kolaboratywne -- faktoryzacja macierzy}
+	 
+		 Jednym ze sposobów na przeprowadzenie filtrowania kolaboratywnego jest rozkład macierzy na czynniki (eng. matrix factorization). 
+	 
+	 
+		  
+		  \begin{figure}[!ht] 
+		  	\centering
+		  	\includegraphics[width=1\textwidth]{factorization}
+		  	\caption{Faktoryzacja macierzy \protect\cite{id:ComputingRecommendationsExtremeScaleApacheFlink}}
+		  	\label{fig:factorization}
+		  \end{figure}
+	 
+	 
 		 \subsection{Matrix Factorization}
 		 \subsection{Biased Matrix Factorization}
 		 \subsection{SVD++}
@@ -313,6 +365,9 @@ ABSTRACT EN
 \shortTitle{Ocena eksperymentalna}
 	\section{Opis metody badawczej}
 	\section{Środowisko symulacyjne}
+	
+	
+	
 	\section{Metodologia}
 	\section{Przeprowadzone eksperymenty}
 	

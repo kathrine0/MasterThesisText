@@ -130,6 +130,13 @@ Ricci F., Rokach L., Shapira B.
   {R}ecommender {S}ystems {H}andbook, pages 1--35.
 \newblock Springer, New York Dordrecht Heidelberg London, 2010.
 
+\bibitem{id:ComputingRecommendationsExtremeScaleApacheFlink}
+Rohrmann T.
+\newblock Computing recommendations at extreme scale with apache flink.
+\newblock {\em
+  \url{http://data-artisans.com/computing-recommendations-at-extreme-scale-with-apache-flink}},
+  2015.
+
 \bibitem{id:RubensRecSysHB2010}
 Rubens N., Kaplan D., Sugiyama M.
 \newblock Active learning in recommender systems.

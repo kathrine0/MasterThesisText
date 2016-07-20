@@ -44,12 +44,14 @@
 \PassOptionsToClass{12pt}{mwbk}
 \PassOptionsToClass{a4paper}{mwbk}
 \PassOptionsToClass{openright}{mwbk}
+\PassOptionsToClass{withmarginpar}{mwbk}
 \ProcessOptions
 \LoadClass{mwbk}
 
 %% miejsce na szycie
 \if@twoside
 	\usepackage[a4paper, left=2.5cm, right=2.5cm, top=3.5cm, bottom=2.5cm, headsep=0.6cm, bindingoffset=0.5cm]{geometry}
+	%\usepackage[marginpar=2cm]{geometry}
 %	\usepackage[a4paper, left=3cm, right=3cm, top=3cm, bottom=3cm, headsep=0.6cm, bindingoffset=0.5cm]{geometry}
 \else
 	\usepackage[a4paper, left=3.0cm, right=2.5cm, top=3.5cm, bottom=2.5cm, headsep=0.6cm, ]{geometry}
@@ -79,10 +81,10 @@
 % obrazki
 \ifpdf
   \usepackage[pdftex]{graphicx}
-  \DeclareGraphicsExtensions{.pdf,.png}
+  \DeclareGraphicsExtensions{.pdf,.png,.svg}
 \else
   \usepackage[dvips]{graphicx}
-  \DeclareGraphicsExtensions{.eps,.ps, .png}
+  \DeclareGraphicsExtensions{.eps,.ps,.png,.svg}
 \fi
 
 %\linespread{1.5} 
