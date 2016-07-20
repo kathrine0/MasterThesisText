@@ -193,10 +193,10 @@ ABSTRACT EN
  
  \chapter{Przegląd istniejących rozwiązań}
  \shortTitle{Przegląd istniejących rozwiązań}
-	 Tradycyjnie wyróżniamy następujące techniki rekomendacji: \cite{id:IntroductionToRecommenderSystemsHandbook}
+	 Tradycyjnie wyróżniamy następujące techniki rekomendacji: 
 	 
 	 \begin{itemize}
-	 	\item \textbf{filtrowanie w oparciu o aktywność użytkownika} (eng. content-based), technika koncentrująca się na danych historycznych. Użytkownikowi rekomendowane są elementy, które podobne są do tych wybieranych przez niego w przeszłości;
+	 	\item \textbf{filtrowanie w oparciu o zawartość} (eng. content-based), technika koncentrująca się na atrybutach elementów. Użytkownikowi rekomendowane są elementy, które podobne są do tych wybieranych przez niego w przeszłości;
 	 	\item \textbf{filtrowanie kolaboratywne} (eng. collaborative filtering), technika polegająca na odnajdywaniu użytkowników o podobnych gustach i sugerowaniu lubianych przez nich elementów aktualnie aktywnemu użytkownikowi;
 	 	\item \textbf{filtrowanie demograficzne} (eng. demographic), technika koncentrująca się na sugerowaniu aktywnemu użytkownikowi elementów popularnych pośród użytkowników z tej samej okolicy bądź w podobnym przedziale wiekowym;
 	 	\item \textbf{filtrowanie z analizą domeny wiedzy} (eng. knowledge-based), technika dobierająca kolejne elementy na podstawie określonej domeny wiedzy na temat tego, jak dany element spełnia potrzeby i preferencje użytkownika;	
@@ -204,11 +204,11 @@ ABSTRACT EN
 	 	\item \textbf{hybrydowe systemy rekomendacji}, to kombinacja dowolnych powyższych technik.
 	 \end{itemize}
 	 
-	 Każda z tych technik ma swoje wady i zalety w zależności od kontekstu, w którym ma być stosowana. 
+	 Każda z tych technik ma swoje wady i zalety w zależności od kontekstu, w którym ma być stosowana\cite{id:IntroductionToRecommenderSystemsHandbook}. 
 	 
-	 \section{Filtrowanie w oparciu o aktywność użytkownika}
+	 \section{Filtrowanie w oparciu o zawartość}
 	 
-	 @TODO
+	 Filtrowanie content-based opiera się na cechach elementów w systemie. Rekomendowane są obiekty, które podobne są do tych pozytywnie ocenionych wcześniej przez użytkownika\cite{id:huynh2012modeling}. W zależności od domeny pod uwagę mogą być brane słowa kluczowe, cechy takie jak rok wydania, reżyser, autor, kompozytor, gatunek itp.
 	 
 	 \subsection{Explicit/implicit feedback}
 	 
@@ -216,19 +216,25 @@ ABSTRACT EN
 	 
 	 Jednakże nawet jeżeli użytkownik nie jest skory do zostawiania tego typu śladów, to i tak można wiele na jego temat wywnioskować korzystając z informacji zwrotnych niejawnych (implicit feedback). System bierze wówczas pod uwagę aktywność użytkownika taką jak: historia zakupów, historia przeglądarki a nawet ruchy myszką. W przypadku serwisu z muzyką czy filmem cenną informacją będzie fakt, czy użytkownik wysłuchał lub obejrzał dany materiał do końca czy też wyłączył go po paru sekundach. \cite{id:ContentBasedRecommenderSystemsState}\cite{id:AdvancesInCollaborativeFiltering}
 	 
+	 \subsection{Zalety podejścia content-based}
+	 
+	 Do zalet filtrowania w oparciu o zawartość należy niezależność użytkownika. Podczas budowania rekomendacji brany pod uwagę jest tylko jego profil; aktywność innych aktorów w systemie nie wpływa na wynik końcowy. Inną przewagą jest przejrzystość -- każda propozycja jest w pełni uzasadniona, gdyż opiera się na działaniach użytkownika w przeszłości (podczas gdy w przypadku filtrowania kolaboratywnego mamy do czynienia z czarną skrzynką). Ponadto, tego typu algorytm ma możliwość zaproponowania elementu, który nie był nigdy wcześniej oceniany przez nikogo. Zapobiega to zjawisku długiego ogona	 \cite{id:ContentBasedRecommenderSystemsState}.
+	 
 	 \subsection{Najczęściej spotykane problemy}
 	 Aby rekomendacja była skuteczna użytkownik powinien ocenić jak najwięcej elementów. Problematyczni są zatem użytkownicy, którzy dopiero co dołączyli do serwisu oraz tacy, którzy nie są aktywni i rzadko zostawiają po sobie ślad 	 \cite{id:MaleszkaMianowskaNguyenmethod}.
 	 
+	 Podejście content-based jest podatne na pułapkę tzw. bańki informacyjnej. Jeżeli w systemie rekomendującym produkcje kinowe użytkownik do tej pory oceniał jedynie filmy akcji, to mało prawdopodobne jest, że algorytm zaproponuje mu ciekawy dramat obyczajowy. Nowe propozycje nie są zaskakujące\cite{id:ContentBasedRecommenderSystemsState}.
+	 
 	 \section{Filtrowanie kolaboratywne}
 	 
-	 Tradycyjnym i zarazem najprostszym podejściem do metody filtrowania kolaboratywnego jest rekomendowanie aktywnemu użytkownikowi elementów, które inni użytkownicy o podobnym guście uznali za atrakcyjne\cite{id:IntroductionToRecommenderSystemsHandbook}\cite{id:CollaborativeFilteringRecommenderSystems}. Użytkownicy o podobnym guście to osoby, które oceniły konkretne elementy podobnie jak aktywny użytkownik. 
+	 Filtrowanie kolaboratywne opiera się o założenie, że ludzie o zbliżonym guście dokonują podobnych wyborów. Użytkownicy o zbliżonym guście to osoby, które oceniły konkretne elementy w podobny sposób\cite{id:IntroductionToRecommenderSystemsHandbook}\cite{id:CollaborativeFilteringRecommenderSystems}\cite{id:huynh2012modeling}. 
 	 
 	 W przypadku filtrowania kolaboratywnego można wyróżnić dwa główne podejścia: oparte o regułę sąsiedztwa (ang. \textit{neighborhood methods}) oraz oparte o modele ukrytych czynników (ang. \textit{latent factor models})\cite{id:MatrixFactorizationTechniquesForRecommenderSystems}. 
 	 
 	 \begin{figure}[!ht] 
 	 	\centering
 	 	\includegraphics[width=0.7\textwidth]{cf}
-	 	\caption{Filtrowanie kolaboratywne metodą sąsiedztwa zorientowanego na użytkownika\protect\cite{id:MatrixFactorizationTechniquesForRecommenderSystems}.}
+	 	\caption{Filtrowanie kolaboratywne metodą sąsiedztwa,  zorientowane na użytkownika\protect\cite{id:MatrixFactorizationTechniquesForRecommenderSystems}.}
 	 	\label{fig:cf}
 	 \end{figure}
 	 
@@ -262,9 +268,7 @@ ABSTRACT EN
 	 
 	 \section{Popularne serwisy wykorzystujące algorytmy rekomendacji}
 	 
-	 @TODO - dokończyć 
-	 
-	 Algorytmy rekomendacji napotkać można praktycznie w większości dużych serwisów internetowych.
+		W przeciągu ostatnich lat algorytmy rekomendacji zagościły na bardzo wielu popularnych serwisach internetowych z różnych domen. Poniższa lista prezentuje garstkę wybranych stron. 
 	 
 		 \subsection{Rekomendacja muzyki}
 	 
