@@ -336,23 +336,107 @@ ABSTRACT EN
  \chapter{Algorytmy}
  \shortTitle{Algorytmy}
 
-\todo{napisać dlaczego wybrałam matrix factorization a nie inne sposoby}
-
-	 \section{Filtrowanie kolaboratywne -- faktoryzacja macierzy}
+	 \section{Filtrowanie kolaboratywne}
 	 
-		 Jednym ze sposobów na przeprowadzenie filtrowania kolaboratywnego jest rozkład macierzy na czynniki (eng. matrix factorization). 
+		 Przed podjęciem decyzji dotyczącej wyboru algorytmu kolaboratywnego filtrowania zostały przeanalizowane testy na bazie MovieLense M1\cite{id:harper2016movielens}. Testy przeprowadzone zostały z pięciokrotną walidacją krzyżową. Rys. \ref{fig:cfcomparision} przedstawia wyniki (im mniejsza wartość RMSE i MAE tym lepiej). 
 	 
+		 \begin{figure}[!ht] 
+		 	\centering
+		 	\includegraphics[width=1\textwidth]{cfcomparision}
+		 	\caption{Test algorytmów filtrowania kolaboratywnego \protect\cite{id:mymedialitedatasets}}
+		 	\label{fig:cfcomparision}
+		 \end{figure}
 	 
-		  
-		  \begin{figure}[!ht] 
-		  	\centering
-		  	\includegraphics[width=1\textwidth]{factorization}
-		  	\caption{Faktoryzacja macierzy \protect\cite{id:ComputingRecommendationsExtremeScaleApacheFlink}}
-		  	\label{fig:factorization}
-		  \end{figure}
-	 
-	 
+		 Najefektywniejsze okazały się algorytmy SVD++, Biased Matrix Factorization i Matrix Factorization bazujące na podejściu model-based. One posłużą jako baza do nowego algorytmu rekomendacji. 
+	 	 
 		 \subsection{Matrix Factorization}
+	
+		 Algorytm Matrix Factorization bazuje na matematycznej metodzie rozkładu macierzy na czynniki
+	
+	
+			  \begin{figure}[!ht] 
+			  	\centering
+			  	\includegraphics[width=1\textwidth]{factorization}
+			  	\caption{Faktoryzacja macierzy \protect\cite{id:ComputingRecommendationsExtremeScaleApacheFlink}}
+			  	\label{fig:factorization}
+			  \end{figure}
+			 
+			 
+		Przebieg algorytmu składa się z dwóch faz. W pierwszej fazie inicjowany jest model (Algorytm \ref{aq:mf_init}). Daną wejściową jest macierz zawierająca dotychczasowe oceny wszystkich elementów przez wszystkich użytkowników w systemie. Na wyjściu otrzymywane są dwie nowe macierze reprezentujące ukryte własności użytkowników i elementów. Na tym etapie są one wypełnione wartościami losowymi. 		
+
+	
+		\def\alghoritm1{Matrix Factorization -- Inicjacja modelu}
+		\begin{algorithm}
+			\caption{\alghoritm1}
+			\myalgorithm{\alghoritm1}
+			\label{aq:mf_init}
+			\begin{algorithmic}
+				\STATE $N \leftarrow \text{liczba użytkowników}$
+				\STATE $M \leftarrow \text{liczba elementów}$
+				\STATE $F \leftarrow \text{liczba ukrytych własności}$
+				\STATE $ratings \leftarrow \text{Macierz NxM zawierająca dotychczasowe oceny wszystkich elementów }$
+				\STATE $\text{przez wszystkich użytkowników}$
+				\STATE $user\_factors \leftarrow \text{Macierz NxF reprezentująca ukryte własności użytkowników}$
+				\STATE $item\_factors \leftarrow \text{Macierz MxF reprezentująca ukryte własności elementów}$
+				
+				\FOR{each $uf \in user\_factors$, $if \in item\_factors$ }
+				\STATE wstaw losową wartość za pomocą transformacji Boxa-Mullera
+				\ENDFOR
+
+				\FOR{each $user, item \in ratings$ }			
+					\IF {$ratings_{user,item} = NULL$}
+					\STATE wstaw 0 do wiersza $user\_factors_{user}$ i $item\_factors_{item}$
+					\ENDIF				
+				\ENDFOR
+				\RETURN $user\_factors, item\_factors$
+			\end{algorithmic}
+		\end{algorithm}
+	
+		
+		W fazie drugiej następuje uczenie (Algorytm  \ref{aq:mf_learn}). Wynikiem tej fazy są macierze reprezentujące ukryte własności użytkowników i elementów. Mnożąc je ze sobą uzyskiwana jest przewidywana ocena każdego z elementów przez użytkowników. 
+		
+		Przed rozpoczęciem uczenia ustalane są parametry: parametr regulujący (\textit{regularization}), tempo uczenia (\textit{learn rate}), parametr zanikania (\textit{decay}) i liczba iteracji. W trakcie trwania głównej pętli parametr regulujący pozostaje niezmienny. Tempo uczenia jest przy każdym przebiegu pętli mnożone przez parametr zanikania, dzięki czemu można kontrolować jak kolejne przebiegi pętli wpływają na finalny wynik. 
+		
+		Ostatnim parametrem ustalanym przed główną pętlą jest skośność globalna (\textit{global bias}), która jest średnią wszystkich znanych ocen. 
+		
+		W pętli uczenia wykonywane są następujące operacje: dla każdej pary użytkownik -- element budowana jest przewidywana ocena poprzez obliczenie iloczynu skalarnego odpowiednich wartości z macierzy wartości ukrytych. Ocena ta jest modyfikowana poprzez dodanie globalnej skośności a następnie porównywana z faktyczną oceną elementu przez użytkownika. Tak uzyskany błąd służy do wyliczenia delty. Macierze wartości ukrytych uaktualniane są o wyliczoną deltę. 
+		
+		Pod koniec każdej iteracji aktualizowane jest tempo uczenia.
+	
+		\def\alghoritm2{Matrix Factorization -- Faza uczenia}
+		\begin{algorithm}
+			\caption{\alghoritm2}
+			\myalgorithm{\alghoritm2}
+			\label{aq:mf_learn}
+			\begin{algorithmic}
+				\STATE $global\_bias \leftarrow \text{średnia wszystkich ocen}$
+				\STATE $X \leftarrow \text{liczba iteracji}$			
+				\STATE $regularization \leftarrow \text{parametr regulujący}$			
+				\STATE $current\_learnrate \leftarrow \text{tempo uczenia}$
+				\STATE $decay \leftarrow \text{paramert zanikania}$
+				
+				\FOR{each $x \in X$ }
+					\FOR{each $user, item \in ratings$ }
+					
+						\STATE $predicion= global\_bias + IloczynSkalarny(user\_factors_{user}, item\_factors_{item}); $
+					
+						\STATE $error = ratings_{user,item} - prediction$
+				
+						\FOR{each $f \in F$}
+							\STATE $delta_u = error * item\_factors_{item, f} - regularization * user\_factors_{user, f}$
+							\STATE $delta_i = error * user\_factors_{user, f} - regularization * item\_factors_{item, f}$
+							
+							\STATE $user\_factors_{user, f} \incr current\_learnrate * delta_u$
+							\STATE $item\_factors_{item, f} \incr current\_learnrate * delta_i$
+						\ENDFOR					
+					\ENDFOR			
+					\STATE $current\_learnrate \incrtimes decay$				
+				\ENDFOR
+				\RETURN $user\_factors, item\_factors$
+			\end{algorithmic}
+		\end{algorithm}
+	
+	
 		 \subsection{Biased Matrix Factorization}
 		 \subsection{SVD++}
 	 \section{Filtrowanie z analizą zawartości}

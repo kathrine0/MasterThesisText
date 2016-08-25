@@ -3,13 +3,13 @@
 \bibitem{id:mgp}
 About the {M}usic {G}enome {P}roject.
 \newblock \url{http://www.pandora.com/about/mgp}.
-\newblock Data dostępu: 2016-06-19.
+\newblock Data dostępu: 2016-07-19.
 
 \bibitem{id:allegrofaq}
 Allegro -- korzystanie z systemu rekomendacji.
 \newblock \url{
   http://faq.allegro.pl/artykul/27613/korzystanie-z-systemu-rekomendacji}.
-\newblock Data dostępu: 2016-06-19.
+\newblock Data dostępu: 2016-07-19.
 
 \bibitem{id:celma2010music}
 Celma O.
@@ -38,13 +38,19 @@ Desrosiers C., Karypis G.
 \bibitem{id:filmwebfaq}
 Filmweb -- najczęściej zadawane pytania.
 \newblock \url{http://www.filmweb.pl/help}.
-\newblock Data dostępu: 2016-06-19.
+\newblock Data dostępu: 2016-07-19.
 
 \bibitem{id:gupta2013wtf}
 Gupta P., Goel A., Lin J., Sharma A., Wang D., Zadeh R.
 \newblock Wtf: The who to follow service at twitter.
 \newblock In {\em Proceedings of the 22nd international conference on World
   Wide Web}, pages 505--514. ACM, 2013.
+
+\bibitem{id:harper2016movielens}
+Harper F.~M., Konstan J.~A.
+\newblock The movielens datasets: History and context.
+\newblock {\em ACM Transactions on Interactive Intelligent Systems (TiiS)},
+  5(4):19, 2016.
 
 \bibitem{id:FromTapestryToSVD}
 Huttner J.
@@ -63,7 +69,7 @@ Huynh T., Hoang K.
 \bibitem{id:imdbstats}
 {IMDb} database statistics.
 \newblock \url{http://www.imdb.com/stats}.
-\newblock Data dostępu: 2016-06-19.
+\newblock Data dostępu: 2016-07-19.
 
 \bibitem{id:NextSongRecommendationWithTemporalDynamics}
 Ji K., Sun R., Shu W., Li X.
@@ -98,26 +104,31 @@ Maleszka M., Mianowska B., Nguyen N.~T.
   tools and hierarchical structure of user profiles.
 \newblock {\em Knowledge-Based Systems}, 47:1--13, 2013.
 
+\bibitem{id:mymedialitedatasets}
+Mymedialite: Example experiments.
+\newblock \url{http://www.mymedialite.net/examples/datasets.html}.
+\newblock Data dostępu: 2016-07-24.
+
 \bibitem{id:NetflixPrize}
 {N}etflix {P}rize ({I} tried to resist, but...).
 \newblock
   \url{https://www.snellman.net/blog/archive/2006-10-15-netflix-prize.html}.
-\newblock Data dostępu: 2016-06-08.
+\newblock Data dostępu: 2016-07-08.
 
 \bibitem{id:NetflixPrize2}
 {N}etflix {P}rize: forum.
 \newblock \url{http://www.netflixprize.com/community/viewtopic.php?id=1537}.
-\newblock Data dostępu: 2016-06-08.
+\newblock Data dostępu: 2016-07-08.
 
 \bibitem{id:NetflixPrizeRankings}
 {N}etflix {P}rize {R}ankings.
 \newblock \url{http://www.hackingnetflix.com/2006/10/netflix_prize_r.html}.
-\newblock Data dostępu: 2016-06-08.
+\newblock Data dostępu: 2016-07-08.
 
 \bibitem{id:NetflixPrizeRules}
 {N}etflix {P}rize {R}ules.
 \newblock \url{http://www.netflixprize.com//rules}.
-\newblock Data dostępu: 2016-06-08.
+\newblock Data dostępu: 2016-07-08.
 
 \bibitem{id:aStreamOfMovies}
 Pogue D.

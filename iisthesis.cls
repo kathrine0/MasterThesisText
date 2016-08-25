@@ -430,3 +430,8 @@
 	\theoremheaderfont{\normalsize\bfseries}
 	\newtheorem{definition}{Definicja}[chapter]
 }
+
+%%%%%%%%%%%%KASI komendy%%%%%%%%%%%%%%
+\newcommand{\incr}[0]{$ {+}{=} $ }
+\newcommand{\decr}[0]{$ {-}{=} $ }
+\newcommand{\incrtimes}[0]{$ {*}{=} $}
