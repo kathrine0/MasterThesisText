@@ -14,6 +14,7 @@
 \usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
 \usepackage{url}
 \usepackage{pgfplots, pgfplotstable}
+\usepackage{array,tabularx}
 \selectlanguage{polish}
 % Dodane przeze mnie d
 \usepackage{fancyvrb} % dla srodowiska Verbatim
@@ -95,8 +96,6 @@
 \floatname{algorithm}{Algorytm}
 
 \newtheorem{mydef}{Definicja}
-
-
 
 \begin{document}
 
@@ -351,7 +350,7 @@ ABSTRACT EN
 	 	 
 		 \subsection{Matrix Factorization}
 	
-		 Algorytm Matrix Factorization bazuje na matematycznej metodzie rozkładu macierzy na czynniki
+		 Algorytm \textit{Matrix Factorization} bazuje na matematycznej metodzie rozkładu macierzy na czynniki
 	
 	
 			  \begin{figure}[!ht] 
@@ -366,7 +365,7 @@ ABSTRACT EN
 
 	
 		\def\alghoritm1{Matrix Factorization -- Inicjacja modelu}
-		\begin{algorithm}
+		\begin{algorithm}[H]
 			\caption{\alghoritm1}
 			\myalgorithm{\alghoritm1}
 			\label{aq:mf_init}
@@ -393,7 +392,7 @@ ABSTRACT EN
 		\end{algorithm}
 	
 		
-		W fazie drugiej następuje uczenie (Algorytm  \ref{aq:mf_learn}). Wynikiem tej fazy są macierze reprezentujące ukryte własności użytkowników i elementów. Mnożąc je ze sobą uzyskiwana jest przewidywana ocena każdego z elementów przez użytkowników. 
+		W fazie drugiej następuje uczenie (Algorytm  \ref{aq:mf_learn}). Odbywa się ono metodą stochastycznego gradientu prostego. Wynikiem tej fazy są macierze reprezentujące ukryte własności użytkowników i elementów. Mnożąc je ze sobą uzyskiwana jest przewidywana ocena każdego z elementów przez użytkowników. 
 		
 		Przed rozpoczęciem uczenia ustalane są parametry: parametr regulujący (\textit{regularization}), tempo uczenia (\textit{learn rate}), parametr zanikania (\textit{decay}) i liczba iteracji. W trakcie trwania głównej pętli parametr regulujący pozostaje niezmienny. Tempo uczenia jest przy każdym przebiegu pętli mnożone przez parametr zanikania, dzięki czemu można kontrolować jak kolejne przebiegi pętli wpływają na finalny wynik. 
 		
@@ -404,7 +403,7 @@ ABSTRACT EN
 		Pod koniec każdej iteracji aktualizowane jest tempo uczenia.
 	
 		\def\alghoritm2{Matrix Factorization -- Faza uczenia}
-		\begin{algorithm}
+		\begin{algorithm}[H]
 			\caption{\alghoritm2}
 			\myalgorithm{\alghoritm2}
 			\label{aq:mf_learn}
@@ -422,6 +421,8 @@ ABSTRACT EN
 					
 						\STATE $error = ratings_{user,item} - prediction$
 				
+						\textbf{//dopasowanie własności ukrytych:}
+				
 						\FOR{each $f \in F$}
 							\STATE $delta_u = error * item\_factors_{item, f} - regularization * user\_factors_{user, f}$
 							\STATE $delta_i = error * user\_factors_{user, f} - regularization * item\_factors_{item, f}$
@@ -438,6 +439,82 @@ ABSTRACT EN
 	
 	
 		 \subsection{Biased Matrix Factorization}
+		 
+		 Algorytm \textit{Biased Matrix Factorization} jest modyfikacją wyżej opisanego algorytmu \textit{Matrix Factorization}. Podobnie jak jego pierwowzór składa się z dwóch faz. W pierwszej fazie dodatkowo inicjowane są dwa dodatkowe wektory: skośność użytkowników (\textit{user bias}) i skośność elementów (\textit{item bias}). 
+		 
+		 Inaczej jest też obliczana skośność globalna: 
+ 		 
+		 \begin{equation}
+		 \label{eq:global_bias}
+		 global\_bias = 
+		 \frac
+		 { 
+		 	\frac{ a - r_{min} }{ r_{max} - r_{min} }
+		 }
+		 {
+		 	1 - \frac{ a - r_{min} }{ r_{max} - r_{min} }	
+		 }
+		 \,,
+		 \end{equation} 
+		 		
+		 gdzie
+		 
+		 \begin{conditions*}
+		 	a & to średnia wszystkich ocen \\
+		 	r_{min}  &  to minimalna ocena w systemie  \\
+		 	r_{max}  &  to maksymalna ocena w systemie
+ 		 \end{conditions*} 
+		 
+		 Faza druga wygląda podobnie jak w przypadku algorytmu \textit{Matrix Factorization}, jednak są uwzględniane dodatkowe parametry i wykonywane dodatkowe kroki.
+		 
+		 \def\alghoritm3{Biased Matrix Factorization -- Faza uczenia}
+		 \begin{algorithm}[H]
+		 	\caption{\alghoritm3}
+		 	\myalgorithm{\alghoritm3}
+		 	\label{aq:bmf_learn}
+		 	\begin{algorithmic}
+		 		\STATE $global\_bias \leftarrow \text{średnia wszystkich ocen}$
+		 		\STATE $X \leftarrow \text{liczba iteracji}$			
+		 		\STATE $regU, regI, BiasReg \leftarrow \text{parametry regulujące dla użytkownika, elementu i ogólny }$			
+		 		\STATE $current\_learnrate \leftarrow \text{tempo uczenia}$
+				\STATE $BiasLearnRate \leftarrow \text{tempo uczenia skośności}$
+		 		\STATE $decay \leftarrow \text{paramert zanikania}$
+		 		
+		 		\FOR{each $x \in X$ }
+			 		\FOR{each $user, item \in ratings$ }			 		
+				 		\STATE $score= global\_bias + user\_bias_{user} + item\_bias_{item} + IloczynSkalarny(user\_factors_{user}, item\_factors_{item})$
+				 		
+				 		\STATE $sig\_score = \frac{1}{1 + \exp(-score)}$
+				 		
+				 		\STATE $predicion= rating_{min} + sig\_score + (rating_{max} - rating_{min}) $
+				 		
+				 		\STATE $error = ratings_{user,item} - prediction$
+				 		
+				 		\STATE $gradient\_common = err * sig\_score * (1 - sig\_score) * (rating_{max} - rating_{min})$
+				 		
+				 		\textbf{//dopasowanie skośności:}
+				 		
+				 		\STATE $user\_bias_{user} \incr BiasLearnRate * current\_learnrate * (gradient\_common - BiasReg * RegU * user\_bias_{user})$
+				 		
+				 		\STATE $item\_bias_{item} \incr BiasLearnRate * current\_learnrate * (gradient\_common - BiasReg * RegI * item\_bias_{item})$
+				 		
+				 		\textbf{//dopasowanie własności ukrytych:}
+				 		
+				 		\FOR{each $f \in F$}
+					 		\STATE $delta_u = gradient\_common * item\_factors_{item, f} - RegU * user\_factors_{user, f}$
+					 		
+					 		\STATE $delta_i = gradient\_common * user\_factors_{user, f} - RegI * item\_factors_{item, f}$
+					 		
+					 		\STATE $user\_factors_{user, f} \incr current\_learnrate * delta_u$
+					 		\STATE $item\_factors_{item, f} \incr current\_learnrate * delta_i$
+				 		\ENDFOR					
+			 		\ENDFOR			
+			 		\STATE $current\_learnrate \incrtimes decay$				
+		 		\ENDFOR
+		 		\RETURN $user\_factors, item\_factors$
+		 	\end{algorithmic}
+		 \end{algorithm}
+		 		 
 		 \subsection{SVD++}
 	 \section{Filtrowanie z analizą zawartości}
 		 \subsection{Konstrukcja sieci neuronowej}
@@ -461,10 +538,10 @@ ABSTRACT EN
 \chapter{CHAPTER 1}
 \section{SECTION}
 
-\def\alghoritm1{Alghoritm 1}
+\def\alghoritm4{Alghoritm 4}
 \begin{algorithm}
-\caption{\alghoritm1}
-\myalgorithm{\alghoritm1}
+\caption{\alghoritm4}
+\myalgorithm{\alghoritm4}
 \label{aq:algStat}
 \begin{algorithmic}
 \STATE $T \leftarrow \text{text under analysis}$
