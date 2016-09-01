@@ -435,3 +435,8 @@
 \newcommand{\incr}[0]{$ {+}{=} $ }
 \newcommand{\decr}[0]{$ {-}{=} $ }
 \newcommand{\incrtimes}[0]{$ {*}{=} $}
+
+\newenvironment{conditions*}
+{\par\vspace{\abovedisplayskip}\noindent
+	\tabularx{\columnwidth}{>{$}l<{$} @{\ } >{\raggedright\arraybackslash}X}}
+{\endtabularx\par\vspace{\belowdisplayskip}}

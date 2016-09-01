@@ -525,9 +525,102 @@ ABSTRACT EN
 \chapter{Ocena eksperymentalna}
 \shortTitle{Ocena eksperymentalna}
 	\section{Opis metody badawczej}
+	
+		\subsection{Miara oceny}
+	
+		W celu zbadania jakości algorytmów zostały zastosowane miary oceny: średnia kwadratowa błędów (RMSE) i średni błąd bezwzględny (MAE).
+		
+		\subsubsection{Średnia kwadratowa błędów}
+	
+		Średnia kwadratowa błędów (ang. RMSE -- \textit{root mean square error}) jest często wykorzystywaną miarą służącą zmierzeniu różnicy pomiędzy wartościami przewidywanymi a rzeczywistymi (obserwowanymi). 
+		
+		RMSE jest stosunkowo dobrą miarą dokładności ale tylko w celu porównania  różnych modeli dla tego samego zestawu danych. RMSE jest zależne od skali, zatem nie sprawdza się najlepiej w przypadku porównywania ze sobą różnych zmiennych \cite{hyndman2006another}.
+		
+		Średnią kwadratową błędów wylicza się ze wzoru:
+		
+		\begin{equation}
+			\label{eq:rmse}
+			RMSE = \sqrt{ \frac{1}{n} \sum_{i=1}^{n} (\hat{y}_i - y_i)^2 }
+			\,,
+		\end{equation}
+	
+		gdzie
+		
+		\begin{conditions*}
+			\hat{y}_i & to wartość przewidywana \\
+			y_i  &  to wartość rzeczywista
+		\end{conditions*} 
+		
+		Im niższa wartość RMSE tym bardziej zbliżone są wartości przewidywane do rzeczywistych, zatem tym lepszy jakościowo jest model. 
+		
+		\subsubsection{Średni błąd bezwzględny}
+		
+		Inną miarą mierzenia jakości modeli predykcyjnych jest MAE (ang. \textit{mean absolute error}). Podobnie jak RMSE miara ta jest zależna od skali, zatem najlepiej sprawdza się w działaniu na tym samym zestawie danych \cite{hyndman2006another}. 
+		
+		Średni błąd bezwzględny wylicza się ze wzoru:
+		
+		\begin{equation}
+		\label{eq:rmse}
+		MAE = \frac{1}{n} \sum_{t=1}^{n} |\hat{y}_t - y_t|
+		\,,
+		\end{equation}
+		
+		gdzie
+		
+		\begin{conditions*}
+			\hat{y}_i & to wartość przewidywana \\
+			y_i  &  to wartość rzeczywista
+		\end{conditions*} 
+	
+	
+		\subsection{Zbiory danych}
+		
+		By uzyskać jak najbardziej miarodajne wyniki, badania zostały przeprowadzone na trzech różnych bazach danych z trzech różnych domen. 
+		
+		
+		\cite{leskovec2007dynamics}
+	
+	
 	\section{Środowisko symulacyjne}
 	
+	Rys. \ref{fig:program} przedstawia zrzut ekranu środowiska symulacyjnego stworzonego przez autorkę pracy na potrzeby przeprowadzenia badań algorytmów. Główny interfejs programu składa się z trzech części: ustawienia podstawowe, okno z wynikiem oraz panel sterujący ustawieniami zaawansowanymi. 
 	
+	W sekcji z ustawieniami podstawowymi możliwy jest wybór:
+	\begin{itemize}
+		\item bazy danych, która zostanie wykorzystana do pomiarów;
+		\item typu algorytmu rekomendującego (content-based, collaborative bądź hybrydowy)
+		\item w przypadku wyboru kolaboratywnego filtrowania lub filtrowania hybrydowego możliwy jest wybór typu algorytmu: Matrix Factorization, Biased Matrix Factorization lub SVD++.
+		\item w przypadku wyboru filtrowania z analizą zawartości lub filtrowania hybrydowego automatycznie wybierany jest algorytm oparty na sieci neuronowej. 
+	\end{itemize}
+	 
+	 Widok ustawień zaawansowanych zmienia się w zależności od wybranego filtrowania. W przypadku wyboru content-based istnieje możliwość regulowania parametrów sieci neuronowej. Zawsze istnieje możliwość regulowania kryteriów doboru zestawu danych.
+	 
+	 Kryteria doboru zestawu danych są następujące:
+	 
+	 \begin{itemize}
+	 	\item liczba użytkowników do pobrania do algorytmu content-based;
+	 	\item liczba użytkowników do pobrania do algorytmu collaborative;
+	 	\item minimum elementów, jakie zostały ocenione przez każdego pobranego użytkownika;
+	 	\item stosunek wielkości zbioru treningowego do zbioru testowego (domyślnie 80\%-20\%).
+	 \end{itemize}
+	 
+	 Parametry sieci neuronowej podlegające regulacji to:
+	 
+	 \begin{itemize}
+	 	\item Sigmoidalna wartość alfa;
+	 	\item liczba neuronów w warstwie ukrytej;
+	 	\item maksymalna liczba iteracji uczenia sieci neuronowej;
+	 	\item nauczyciel sieci neuronowej: propagacja wsteczna, rprop (resilient backpropagation) lub algorytm genetyczny;
+	 	\item w przypadku wyboru algorytmu genetycznego -- rozmiar każdej kolejnej populacji;
+	 	\item minimalna ilość powtórzeń  danej cechy aby była brana pod uwagę w trakcie budowania rekomendacji.
+	 \end{itemize}	 
+	
+	\begin{figure}[!ht] 
+		\centering
+		\includegraphics[width=1\textwidth]{program}
+		\caption{Zrzut ekranu środowiska symulacyjnego}
+		\label{fig:program}
+	\end{figure}
 	
 	\section{Metodologia}
 	\section{Przeprowadzone eksperymenty}

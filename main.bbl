@@ -66,6 +66,11 @@ Huynh T., Hoang K.
 \newblock In {\em International Conference on Computational Collective
   Intelligence}, pages 41--50. Springer, 2012.
 
+\bibitem{hyndman2006another}
+Hyndman R.~J., Koehler A.~B.
+\newblock Another look at measures of forecast accuracy.
+\newblock {\em International journal of forecasting}, 22(4):679--688, 2006.
+
 \bibitem{id:imdbstats}
 {IMDb} database statistics.
 \newblock \url{http://www.imdb.com/stats}.
@@ -165,6 +170,12 @@ Sharma R., Singh R.
 \newblock {E}volution of {R}ecommender {S}ystems from {A}ncient {T}imes to
   {M}odern {E}ra: A {S}urvey.
 \newblock {\em Indian Journal of Science and Technology}, 9(20), 2016.
+
+\bibitem{willmott2005advantages}
+Willmott C.~J., Matsuura K.
+\newblock Advantages of the mean absolute error (mae) over the root mean square
+  error (rmse) in assessing average model performance.
+\newblock {\em Climate research}, 30(1):79--82, 2005.
 
 \bibitem{id:zhang2015hybrid}
 Zhang H.-R., Min F., He X., Xu Y.-Y.
