@@ -34,13 +34,13 @@
 \contentsline {section}{\numberline {6.1\relax .\kern .5em }Opis metody badawczej}{21}{section.6.1}
 \contentsline {subsection}{\numberline {6.1.1\relax .\kern .5em }Miara oceny}{21}{subsection.6.1.1}
 \contentsline {subsection}{\numberline {6.1.2\relax .\kern .5em }Zbiory danych}{22}{subsection.6.1.2}
-\contentsline {section}{\numberline {6.2\relax .\kern .5em }\IeC {\'S}rodowisko symulacyjne}{22}{section.6.2}
+\contentsline {section}{\numberline {6.2\relax .\kern .5em }\IeC {\'S}rodowisko symulacyjne}{23}{section.6.2}
 \contentsline {section}{\numberline {6.3\relax .\kern .5em }Metodologia}{23}{section.6.3}
 \contentsline {section}{\numberline {6.4\relax .\kern .5em }Przeprowadzone eksperymenty}{23}{section.6.4}
-\contentsline {chapter}{Rozdzia\l \ 7\relax .\kern .5em Wnioski}{25}{section*.20}
-\contentsline {chapter}{Rozdzia\l \ 8\relax .\kern .5em CHAPTER 1}{27}{section*.21}
+\contentsline {chapter}{Rozdzia\l \ 7\relax .\kern .5em Wnioski}{25}{section*.24}
+\contentsline {chapter}{Rozdzia\l \ 8\relax .\kern .5em CHAPTER 1}{27}{section*.25}
 \contentsline {section}{\numberline {8.1\relax .\kern .5em }SECTION}{27}{section.8.1}
 \contentsline {section}{\numberline {8.2\relax .\kern .5em }Section 2}{27}{section.8.2}
 \contentsline {subsection}{\numberline {8.2.1\relax .\kern .5em }Subsection 1}{27}{subsection.8.2.1}
-\contentsline {chapter}{Dodatek\ A\relax .\kern .5em Appendix 1}{29}{section*.24}
-\contentsline {chapter}{Bibliografia}{31}{section*.26}
+\contentsline {chapter}{Dodatek\ A\relax .\kern .5em Appendix 1}{29}{section*.28}
+\contentsline {chapter}{Bibliografia}{31}{section*.30}

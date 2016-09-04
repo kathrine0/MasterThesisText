@@ -337,7 +337,7 @@ ABSTRACT EN
 
 	 \section{Filtrowanie kolaboratywne}
 	 
-		 Przed podjęciem decyzji dotyczącej wyboru algorytmu kolaboratywnego filtrowania zostały przeanalizowane testy na bazie MovieLense M1\cite{id:harper2016movielens}. Testy przeprowadzone zostały z pięciokrotną walidacją krzyżową. Rys. \ref{fig:cfcomparision} przedstawia wyniki (im mniejsza wartość RMSE i MAE tym lepiej). 
+		 Przed podjęciem decyzji dotyczącej wyboru algorytmu kolaboratywnego filtrowania zostały przeanalizowane testy na bazie MovieLens M1\cite{harper2016movielens}. Testy przeprowadzone zostały z pięciokrotną walidacją krzyżową. Rys. \ref{fig:cfcomparision} przedstawia wyniki (im mniejsza wartość RMSE i MAE tym lepiej). 
 	 
 		 \begin{figure}[!ht] 
 		 	\centering
@@ -577,8 +577,27 @@ ABSTRACT EN
 		
 		By uzyskać jak najbardziej miarodajne wyniki, badania zostały przeprowadzone na trzech różnych bazach danych z trzech różnych domen. 
 		
+		\subsubsection{MovieLens}
+		MovieLens \cite{harper2016movielens} to baza zawierająca oceny filmów przez użytkowników portalu movielens.org. Baza zawiera 3706 filmów i 1000209 ocen wystawionych przez 6040 unikalnych użytkowników pomiędzy 25 kwietnia 2000 a 28 lutym 2003. Filmy oceniane są w skali od 1 do 5, gdzie 1 jest oceną najgorszą a 5 najlepszą. 
+		
+		Baza zawiera tabelę łączącą numery identyfikacyjne filmów z bazą IMDB.com. Korzystając z tego autorka pracy rozszerzyła oryginalną bazę filmów o informacje pobrane z IMDB.com. Ostateczny kształt bazy widoczny jest na rys. \ref{fig:movielens_schema}.
+		
+			\begin{figure}[!ht] 
+				\centering
+				\includegraphics[width=1\textwidth]{movielens}
+				\caption{Schemat bazy MovieLens}
+				\label{fig:movielens_schema}
+			\end{figure}
+		
+		\subsubsection{Yahoo Music}
+		
+		
+		
+		\subsubsection{Amazon Meta}
 		
 		\cite{leskovec2007dynamics}
+		
+		
 	
 	
 	\section{Środowisko symulacyjne}

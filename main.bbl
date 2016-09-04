@@ -46,7 +46,7 @@ Gupta P., Goel A., Lin J., Sharma A., Wang D., Zadeh R.
 \newblock In {\em Proceedings of the 22nd international conference on World
   Wide Web}, pages 505--514. ACM, 2013.
 
-\bibitem{id:harper2016movielens}
+\bibitem{harper2016movielens}
 Harper F.~M., Konstan J.~A.
 \newblock The movielens datasets: History and context.
 \newblock {\em ACM Transactions on Interactive Intelligent Systems (TiiS)},
@@ -91,6 +91,11 @@ Koren Y., Bell R.
 Koren Y., Bell R., Volinsky C.
 \newblock Matrix factorization techniques for recommender systems.
 \newblock {\em Computer}, 42(8):30--37, 2009.
+
+\bibitem{leskovec2007dynamics}
+Leskovec J., Adamic L.~A., Huberman B.~A.
+\newblock The dynamics of viral marketing.
+\newblock {\em ACM Transactions on the Web (TWEB)}, 1(1):5, 2007.
 
 \bibitem{id:linden2003amazon}
 Linden G., Smith B., York J.
