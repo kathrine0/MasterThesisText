@@ -40,6 +40,18 @@ Filmweb -- najczęściej zadawane pytania.
 \newblock \url{http://www.filmweb.pl/help}.
 \newblock Data dostępu: 2016-07-19.
 
+\bibitem{mymedialite}
+Gantner Z., Rendle S., Drumond L., Freudenthaler C.
+\newblock Mymedialite recommender system library.
+\newblock \url{http://www.mymedialite.net/}.
+\newblock Data dostępu: 2016-09-05.
+
+\bibitem{gantner2011mymedialite}
+Gantner Z., Rendle S., Freudenthaler C., Schmidt-Thieme L.
+\newblock Mymedialite: a free recommender system library.
+\newblock In {\em Proceedings of the fifth ACM conference on Recommender
+  systems}, pages 305--308. ACM, 2011.
+
 \bibitem{id:gupta2013wtf}
 Gupta P., Goel A., Lin J., Sharma A., Wang D., Zadeh R.
 \newblock Wtf: The who to follow service at twitter.
@@ -87,8 +99,8 @@ Koren Y., Bell R.
   {C}ollaborative {F}iltering, pages 145--186.
 \newblock Springer, New York Dordrecht Heidelberg London, 2010.
 
-\bibitem{id:MatrixFactorizationTechniquesForRecommenderSystems}
-Koren Y., Bell R., Volinsky C.
+\bibitem{koren2009matrix}
+Koren Y., Bell R., Volinsky C. et~al.
 \newblock Matrix factorization techniques for recommender systems.
 \newblock {\em Computer}, 42(8):30--37, 2009.
 
@@ -114,7 +126,7 @@ Maleszka M., Mianowska B., Nguyen N.~T.
   tools and hierarchical structure of user profiles.
 \newblock {\em Knowledge-Based Systems}, 47:1--13, 2013.
 
-\bibitem{id:mymedialitedatasets}
+\bibitem{mymedialitedatasets}
 Mymedialite: Example experiments.
 \newblock \url{http://www.mymedialite.net/examples/datasets.html}.
 \newblock Data dostępu: 2016-07-24.
@@ -163,6 +175,12 @@ Rubens N., Kaplan D., Sugiyama M.
 \newblock Active learning in recommender systems.
 \newblock In Kantor P., Ricci F., Rokach L., Shapira B., editors, {\em
   Recommender Systems Handbook}, pages 735--767. Springer, 2011.
+
+\bibitem{sarwar2000application}
+Sarwar B., Karypis G., Konstan J., Riedl J.
+\newblock Application of dimensionality reduction in recommender system-a case
+  study.
+\newblock Technical report, DTIC Document, 2000.
 
 \bibitem{id:CollaborativeFilteringRecommenderSystems}
 Schafer J., Frankowski D., Herlocker J., Sen S.

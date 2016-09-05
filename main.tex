@@ -1,6 +1,7 @@
 %\documentclass[twoside]{pwrthesis}
 \documentclass[twoside]{iisthesis}
 % ---
+
 \usepackage{polski}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
@@ -14,12 +15,16 @@
 \usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
 \usepackage{url}
 \usepackage{pgfplots, pgfplotstable}
+\pgfplotsset{compat=1.13}
 \usepackage{array,tabularx}
 \selectlanguage{polish}
 % Dodane przeze mnie d
 \usepackage{fancyvrb} % dla srodowiska Verbatim
 \usepackage{color}
 \usepackage{lscape}
+
+\let\lll\undefined
+\usepackage{amssymb}
 
 \hypersetup{
     colorlinks,
@@ -231,12 +236,12 @@ ABSTRACT EN
 	 
 	 Filtrowanie kolaboratywne opiera się o założenie, że ludzie o zbliżonym guście dokonują podobnych wyborów. Użytkownicy o zbliżonym guście to osoby, które oceniły konkretne elementy w podobny sposób\cite{id:IntroductionToRecommenderSystemsHandbook}\cite{id:CollaborativeFilteringRecommenderSystems}\cite{id:huynh2012modeling}. 
 	 
-	 W przypadku filtrowania kolaboratywnego można wyróżnić dwa główne podejścia: oparte o regułę sąsiedztwa (ang. \textit{neighborhood}) oraz oparte o model (ang. \textit{model-based}), wykorzystujące modele ukrytych parametrów\cite{id:MatrixFactorizationTechniquesForRecommenderSystems}\cite{id:AdvancesInCollaborativeFiltering}. 
+	 W przypadku filtrowania kolaboratywnego można wyróżnić dwa główne podejścia: oparte o regułę sąsiedztwa (ang. \textit{neighborhood}) oraz oparte o model (ang. \textit{model-based}), wykorzystujące modele ukrytych parametrów\cite{koren2009matrix}\cite{id:AdvancesInCollaborativeFiltering}. 
 	 
 	 \begin{figure}[!ht] 
 	 	\centering
 	 	\includegraphics[width=0.7\textwidth]{cf}
-	 	\caption{Filtrowanie kolaboratywne metodą sąsiedztwa,  zorientowane na użytkownika\protect\cite{id:MatrixFactorizationTechniquesForRecommenderSystems}.}
+	 	\caption{Filtrowanie kolaboratywne metodą sąsiedztwa,  zorientowane na użytkownika\protect\cite{koren2009matrix}.}
 	 	\label{fig:cf}
 	 \end{figure}
 	 
@@ -246,17 +251,17 @@ ABSTRACT EN
 	  \begin{figure}[!ht] 
 	  	\centering
 	  	\includegraphics[width=0.7\textwidth]{cf2}
-	  	\caption{Filtrowanie kolaboratywne z wykorzystaniem modelu ukrytych parametrów\protect\cite{id:MatrixFactorizationTechniquesForRecommenderSystems}.}
+	  	\caption{Filtrowanie kolaboratywne z wykorzystaniem modelu ukrytych parametrów\protect\cite{koren2009matrix}.}
 	  	\label{fig:cf2}
 	  \end{figure}
 	 
 	 Ideą podejścia model-based jest zbadanie i modelowanie zależności element-użytkownik wraz z czynnikami reprezentującymi ukryte własności elementów i użytkowników. Taki model jest następnie uczony przy użyciu dostępnych danych. W rezultacie można z niego odczytać przewidywaną ocenę elementu dla konkretnego użytkownika\cite{id:ComprehensiveSurveyOfNeighborhoodBasedRecommendationMethods}\cite{id:AdvancesInCollaborativeFiltering}.
 	 
-	 Rysunek \ref{fig:cf2} pokazuje w sposób uproszczony podejście oparte o model. W układzie współrzędnym oznaczeni są użytkownicy wedle swoich preferencji oraz konkretnych cech (np. płeć) a także filmy, które stanowią odpowiedź na dany zestaw preferencji/cech \cite{id:MatrixFactorizationTechniquesForRecommenderSystems}. 
+	 Rysunek \ref{fig:cf2} pokazuje w sposób uproszczony podejście oparte o model. W układzie współrzędnym oznaczeni są użytkownicy wedle swoich preferencji oraz konkretnych cech (np. płeć) a także filmy, które stanowią odpowiedź na dany zestaw preferencji/cech \cite{koren2009matrix}. 
 	 	 
 	 \subsection{Najczęściej spotykane problemy}
 	 
-	 Jednym z problemów klasycznego podejścia do kolaboratywnego filtrowania jest brak uwzględnienia dynamiki zmian w gustach użytkowników. Ten sam użytkownik na przestrzeni kilku lat lub miesięcy może zupełnie inaczej ocenić ten sam film bądź piosenkę. Rozwiązaniem jest dodanie czynnika czasu podczas obliczania wag kolejnych ocen. \cite{id:NewRecommentationAlgoritmBasedOnSocialNetwork}\cite{id:NextSongRecommendationWithTemporalDynamics}\cite{id:MatrixFactorizationTechniquesForRecommenderSystems}.
+	 Jednym z problemów klasycznego podejścia do kolaboratywnego filtrowania jest brak uwzględnienia dynamiki zmian w gustach użytkowników. Ten sam użytkownik na przestrzeni kilku lat lub miesięcy może zupełnie inaczej ocenić ten sam film bądź piosenkę. Rozwiązaniem jest dodanie czynnika czasu podczas obliczania wag kolejnych ocen. \cite{id:NewRecommentationAlgoritmBasedOnSocialNetwork}\cite{id:NextSongRecommendationWithTemporalDynamics}\cite{koren2009matrix}.
 	 
 	 Innym problemem jest tzw. zimny start (eng. cold start). Polega on na tym, że użytkownicy nowi w systemie ocenili zbyt mało elementów, aby można było zbudować dla nich dobre rekomendacje\cite{id:zhang2015hybrid}\cite{id:RubensRecSysHB2010}.
 	 
@@ -337,18 +342,22 @@ ABSTRACT EN
 
 	 \section{Filtrowanie kolaboratywne}
 	 
+		 Implementacja algorytmów collaborative-filtering, które wykorzystane zostały w projekcie pochodzą biblioteki MyMediaLite \cite{mymedialite}\cite{gantner2011mymedialite}. 
+	 
 		 Przed podjęciem decyzji dotyczącej wyboru algorytmu kolaboratywnego filtrowania zostały przeanalizowane testy na bazie MovieLens M1\cite{harper2016movielens}. Testy przeprowadzone zostały z pięciokrotną walidacją krzyżową. Rys. \ref{fig:cfcomparision} przedstawia wyniki (im mniejsza wartość RMSE i MAE tym lepiej). 
 	 
 		 \begin{figure}[!ht] 
 		 	\centering
 		 	\includegraphics[width=1\textwidth]{cfcomparision}
-		 	\caption{Test algorytmów filtrowania kolaboratywnego \protect\cite{id:mymedialitedatasets}}
+		 	\caption{Test algorytmów filtrowania kolaboratywnego \protect\cite{mymedialitedatasets}}
 		 	\label{fig:cfcomparision}
 		 \end{figure}
 	 
-		 Najefektywniejsze okazały się algorytmy SVD++, Biased Matrix Factorization i Matrix Factorization bazujące na podejściu model-based. One posłużą jako baza do nowego algorytmu rekomendacji. 
+		 Najefektywniejsze okazały się algorytmy SVD++, Biased Matrix Factorization i Matrix Factorization bazujące na podejściu model-based. 
 	 	 
 		 \subsection{Matrix Factorization}
+		
+		 \subsubsection{Metoda matematyczna}	
 	
 		 Algorytm \textit{Matrix Factorization} bazuje na matematycznej metodzie rozkładu macierzy na czynniki
 	
@@ -360,6 +369,15 @@ ABSTRACT EN
 			  	\label{fig:factorization}
 			  \end{figure}
 			 
+		Początkowo dana jest niekompletna macierz zawierająca oceny, jakie użytkownicy wystawili konkretnym elementom (\textit{Rating Matrix}). Celem metody jest odnalezienie wartości, jakie można wstawić w puste miejsca, czyli przewidzenie jaką ocenę dany użytkownik wystawi nieocenionemu jeszcze elementowi. 		
+		
+		Tworzone są więc odrębne macierze dla użytkowników i elementów zawierające ukryte własności. Każdy element powiązany jest z wektorem $q_i \in \mathbb{R} ^f$ a każdy użytkownik z wektorem $p_u \in \mathbb{R} ^f$. Wartości czynników ukrytych determinują stopień zainteresowania daną cechą (w przypadku macierzy użytkowników) bądź stopień, w jakim dany element posiada tę cechę (w przypadku macierzy elementów).		
+		
+		Iloczyn skalarny $q_i^T p_u$ przedstawia relację pomiędzy użytkownikiem a elementem. Na tej podstawie można wnioskować ocenę $r_{ui}$, jaką użytkownik może wystawić elementowi: $r_{ui} = q_i^T p_u$ i w konsekwencji estymować zainteresowanie użytkownika danym elementem \cite{koren2009matrix}..
+		
+		Głównym wyzwaniem jest odnalezienie wartości macierzy użytkownika i elementu, które po przemnożeniu przez siebie dadzą kompletną macierz ocen. W przypadku omawianych algorytmów stosowana jest metoda stochastycznego gradientu prostego. 
+				 
+		\subsubsection{Przebieg algorytmu}
 			 
 		Przebieg algorytmu składa się z dwóch faz. W pierwszej fazie inicjowany jest model (Algorytm \ref{aq:mf_init}). Daną wejściową jest macierz zawierająca dotychczasowe oceny wszystkich elementów przez wszystkich użytkowników w systemie. Na wyjściu otrzymywane są dwie nowe macierze reprezentujące ukryte własności użytkowników i elementów. Na tym etapie są one wypełnione wartościami losowymi. 		
 
@@ -392,11 +410,12 @@ ABSTRACT EN
 		\end{algorithm}
 	
 		
-		W fazie drugiej następuje uczenie (Algorytm  \ref{aq:mf_learn}). Odbywa się ono metodą stochastycznego gradientu prostego. Wynikiem tej fazy są macierze reprezentujące ukryte własności użytkowników i elementów. Mnożąc je ze sobą uzyskiwana jest przewidywana ocena każdego z elementów przez użytkowników. 
+		W fazie drugiej następuje uczenie metodą stochastycznego gradientu prostego (Algorytm  \ref{aq:mf_learn}). Wynikiem tej fazy są macierze reprezentujące ukryte własności użytkowników i elementów. Mnożąc je ze sobą uzyskiwana jest przewidywana ocena każdego z elementów przez użytkowników. 
 		
-		Przed rozpoczęciem uczenia ustalane są parametry: parametr regulujący (\textit{regularization}), tempo uczenia (\textit{learn rate}), parametr zanikania (\textit{decay}) i liczba iteracji. W trakcie trwania głównej pętli parametr regulujący pozostaje niezmienny. Tempo uczenia jest przy każdym przebiegu pętli mnożone przez parametr zanikania, dzięki czemu można kontrolować jak kolejne przebiegi pętli wpływają na finalny wynik. 
+		Przed rozpoczęciem uczenia ustalane są parametry: parametr regulujący (ang. \textit{regularization}), tempo uczenia (ang. \textit{learn rate}), parametr zanikania (ang. \textit{decay}) i liczba iteracji. 	
+		W trakcie trwania głównej pętli parametr regulujący pozostaje niezmienny. Służy on zapobieganiu zjawiska nadmiernego dopasowania (ang. \textit{overfitting}). Tempo uczenia jest przy każdym przebiegu pętli mnożone przez parametr zanikania, dzięki czemu można kontrolować jak kolejne przebiegi pętli wpływają na finalny wynik. 
 		
-		Ostatnim parametrem ustalanym przed główną pętlą jest skośność globalna (\textit{global bias}), która jest średnią wszystkich znanych ocen. 
+		Ostatnim parametrem ustalanym przed główną pętlą jest skośność globalna (ang. \textit{global bias}), która jest średnią wszystkich znanych ocen. 
 		
 		W pętli uczenia wykonywane są następujące operacje: dla każdej pary użytkownik -- element budowana jest przewidywana ocena poprzez obliczenie iloczynu skalarnego odpowiednich wartości z macierzy wartości ukrytych. Ocena ta jest modyfikowana poprzez dodanie globalnej skośności a następnie porównywana z faktyczną oceną elementu przez użytkownika. Tak uzyskany błąd służy do wyliczenia delty. Macierze wartości ukrytych uaktualniane są o wyliczoną deltę. 
 		
@@ -440,7 +459,7 @@ ABSTRACT EN
 	
 		 \subsection{Biased Matrix Factorization}
 		 
-		 Algorytm \textit{Biased Matrix Factorization} jest modyfikacją wyżej opisanego algorytmu \textit{Matrix Factorization}. Podobnie jak jego pierwowzór składa się z dwóch faz. W pierwszej fazie dodatkowo inicjowane są dwa dodatkowe wektory: skośność użytkowników (\textit{user bias}) i skośność elementów (\textit{item bias}). 
+		 Algorytm \textit{Biased Matrix Factorization} jest modyfikacją wyżej opisanego algorytmu \textit{Matrix Factorization}. Podobnie jak jego pierwowzór składa się z dwóch faz. W pierwszej fazie dodatkowo inicjowane są dwa dodatkowe wektory: skośność użytkowników (ang. \textit{user bias}) i skośność elementów (ang. \textit{item bias}). 
 		 
 		 Inaczej jest też obliczana skośność globalna: 
  		 
@@ -516,11 +535,67 @@ ABSTRACT EN
 		 \end{algorithm}
 		 		 
 		 \subsection{SVD++}
+		 
+		 \todo{opisać SVD++}
+		 
+		 Algorytm SVD++ to rozszerzenie popularnej metody SVD. SVD, czyli dekompozycja głównych składowych (ang. \textit{Singular Value Decomposition}) jest metodą matematyczną służąca do redukcji wymiaru macierzy. Klasyczne SVD nie działa w przypadku gdy macierz wejściowa jest niekompletna. W przeszłości problem ten był rozwiązywany poprzez wpisywanie wartości w puste miejsca, co jednak jest mało efektywne obliczeniowo i może zaburzać finalny wynik \cite{sarwar2000application}\cite{koren2009matrix}.  
+		  
+		  zatem w takiej postaci nie nadaje się do wykorzystania w algorytmach rekomendacji. Dopiero rozszerzenie, SVD++, pozwala na przewidywanie ocen elementów przez użytkowników. 
+		 
+		 
+		 
 	 \section{Filtrowanie z analizą zawartości}
-		 \subsection{Konstrukcja sieci neuronowej}
+	 
+		 Algorytmy content-based budują rekomendację na podstawie ocen, jakie zostały dotychczas wystawione przez użytkownika. Analizowane są cechy elementów i ich wartości oraz określana jest ich siła wpływu na finalną ocenę. 
+		 
+		 W tym celu dla każdego użytkownika tworzona jest sieć neuronowa, która uczy się jego preferencji.
+	 
+		 \subsection{Konstrukcja sieci neuronowej i przebieg algorytmu}
+		 
+		 Pierwszym etapem algorytmu jest analiza cech elementów ocenionych przez użytkownika. Tworzona jest lista wszystkich występujących cech które powtarzają się minimum tyle razy, ile wynosi wartość  parametru \textit{minimumRepeatingFeatures}. 
+		 
+		 Następnie inicjowana jest sieć neuronowa. Ilość neuronów warstwy wejściowej jest równa ilości wyodrębnionych cech. Warstwa ukryta zawiera tyle neuronów ile jest to określone parametrem \textit{hiddenLayerNeurons}. Warstwa wyjściowa składa się z tylko jednego neuronu. 
+		 
+		 \begin{figure}[!ht] 
+		 	\centering
+		 	\includegraphics[width=1\textwidth]{siecneuronowa}
+		 	\caption{Schemat sieci neuronowej}
+		 	\label{fig:siecneuronowa}
+		 \end{figure}
+		 
+		 W kolejnym etapie dla każdego elementu tworzona jest mapa cech. Jeżeli element zawiera daną cechę o danej wartości przypisywana jest wartość $1$. W przeciwnym razie wstawiane jest $0$. Rys. \ref{fig:mapacech} przedstawia przykładową mapę cech. Wiadomo, że element zawiera cechę ,,Aktor'' o wartościach ,,Julia Roberts, Al Pacino'' oraz cechę ,,Reżyser'' o wartości ,,Francis Ford Coppola''. Element nie zawiera cechy ,,Aktor'' o wartości ,,Brad Pitt'' ani cechy ,,Reżyser'' o wartości ,,Darren Aronofsky'' więc w te miejsca wstawiane jest $0$.
+		  Tak przygotowana lista przekazywana jest do sieci neuronowej. 
+		 
+		 \begin{figure}[!ht] 
+		 	\centering
+		 	\includegraphics[width=0.7\textwidth]{mapacech}
+		 	\caption{Mapa cech elementu}
+		 	\label{fig:mapacech}
+		 \end{figure}
+		 
+		 Na wyjściu sieć zwraca przewidywaną ocenę elementu.
+		 
 		 \subsection{Uczenie sieci neuronowej}
+		 
+		 Aby sieć zwracała jak najlepsze wyniki musi wcześniej zostać nauczona preferencji użytkownika - tzn. dla każdej pary cecha-wartość powinna zostać odnaleziona odpowiednia waga. 
+		 
+		 W zależności od wybranej opcji sieć neuronowa może być uczona w wykorzystaniem propagacji wstecznej, algorytmu RPROP lub algorytmu genetycznego. 
+		 
+		 \subsubsection{Propagacja wsteczna}
+		 
+			 Algorytm propagacji wstecznej jest jedną z popularniejszych metod uczenia nadzorowanego jednokierunkowych sieci neuronowych. 
+		 
+ 		 \subsubsection{Algorytm RPROP}
+		 		 
+ 		 \subsubsection{Algorytm Genetyczny}	
+		 
 	 \section{Algorytymy hybrydowe}
+	 
+		 \todo{Algorytymy hybrydowe}
+	 
 	 \section{Analiza złożoności i poprawności}
+ 
+		 \todo{Analiza złożoności i poprawności}
  
 \chapter{Ocena eksperymentalna}
 \shortTitle{Ocena eksperymentalna}
@@ -560,7 +635,7 @@ ABSTRACT EN
 		Średni błąd bezwzględny wylicza się ze wzoru:
 		
 		\begin{equation}
-		\label{eq:rmse}
+		\label{eq:mae}
 		MAE = \frac{1}{n} \sum_{t=1}^{n} |\hat{y}_t - y_t|
 		\,,
 		\end{equation}
@@ -591,61 +666,67 @@ ABSTRACT EN
 		
 		\subsubsection{Yahoo Music}
 		
-		
+			\todo{Opisać Yahoo Music}
 		
 		\subsubsection{Amazon Meta}
 		
-		\cite{leskovec2007dynamics}
+			\todo{Opisać Amazon Meta}
 		
+			\cite{leskovec2007dynamics}
 		
-	
-	
 	\section{Środowisko symulacyjne}
 	
-	Rys. \ref{fig:program} przedstawia zrzut ekranu środowiska symulacyjnego stworzonego przez autorkę pracy na potrzeby przeprowadzenia badań algorytmów. Główny interfejs programu składa się z trzech części: ustawienia podstawowe, okno z wynikiem oraz panel sterujący ustawieniami zaawansowanymi. 
+		Rys. \ref{fig:program} przedstawia zrzut ekranu środowiska symulacyjnego stworzonego przez autorkę pracy na potrzeby przeprowadzenia badań algorytmów. Główny interfejs programu składa się z trzech części: ustawienia podstawowe, okno z wynikiem oraz panel sterujący ustawieniami zaawansowanymi. 
 	
-	W sekcji z ustawieniami podstawowymi możliwy jest wybór:
-	\begin{itemize}
-		\item bazy danych, która zostanie wykorzystana do pomiarów;
-		\item typu algorytmu rekomendującego (content-based, collaborative bądź hybrydowy)
-		\item w przypadku wyboru kolaboratywnego filtrowania lub filtrowania hybrydowego możliwy jest wybór typu algorytmu: Matrix Factorization, Biased Matrix Factorization lub SVD++.
-		\item w przypadku wyboru filtrowania z analizą zawartości lub filtrowania hybrydowego automatycznie wybierany jest algorytm oparty na sieci neuronowej. 
-	\end{itemize}
-	 
-	 Widok ustawień zaawansowanych zmienia się w zależności od wybranego filtrowania. W przypadku wyboru content-based istnieje możliwość regulowania parametrów sieci neuronowej. Zawsze istnieje możliwość regulowania kryteriów doboru zestawu danych.
-	 
-	 Kryteria doboru zestawu danych są następujące:
-	 
-	 \begin{itemize}
-	 	\item liczba użytkowników do pobrania do algorytmu content-based;
-	 	\item liczba użytkowników do pobrania do algorytmu collaborative;
-	 	\item minimum elementów, jakie zostały ocenione przez każdego pobranego użytkownika;
-	 	\item stosunek wielkości zbioru treningowego do zbioru testowego (domyślnie 80\%-20\%).
-	 \end{itemize}
-	 
-	 Parametry sieci neuronowej podlegające regulacji to:
-	 
-	 \begin{itemize}
-	 	\item Sigmoidalna wartość alfa;
-	 	\item liczba neuronów w warstwie ukrytej;
-	 	\item maksymalna liczba iteracji uczenia sieci neuronowej;
-	 	\item nauczyciel sieci neuronowej: propagacja wsteczna, rprop (resilient backpropagation) lub algorytm genetyczny;
-	 	\item w przypadku wyboru algorytmu genetycznego -- rozmiar każdej kolejnej populacji;
-	 	\item minimalna ilość powtórzeń  danej cechy aby była brana pod uwagę w trakcie budowania rekomendacji.
-	 \end{itemize}	 
+		\begin{figure}[!ht] 
+			\centering
+			\includegraphics[width=1\textwidth]{program}
+			\caption{Zrzut ekranu środowiska symulacyjnego}
+			\label{fig:program}
+		\end{figure}
 	
-	\begin{figure}[!ht] 
-		\centering
-		\includegraphics[width=1\textwidth]{program}
-		\caption{Zrzut ekranu środowiska symulacyjnego}
-		\label{fig:program}
-	\end{figure}
-	
+		W sekcji z ustawieniami podstawowymi możliwy jest wybór:
+		\begin{itemize}
+			\item bazy danych, która zostanie wykorzystana do pomiarów;
+			\item typu algorytmu rekomendującego (content-based, collaborative bądź hybrydowy)
+			\item w przypadku wyboru kolaboratywnego filtrowania lub filtrowania hybrydowego możliwy jest wybór typu algorytmu: Matrix Factorization, Biased Matrix Factorization lub SVD++.
+			\item w przypadku wyboru filtrowania z analizą zawartości lub filtrowania hybrydowego automatycznie wybierany jest algorytm oparty na sieci neuronowej. 
+		\end{itemize}
+		 
+		 Widok ustawień zaawansowanych zmienia się w zależności od wybranego filtrowania. W przypadku wyboru content-based istnieje możliwość regulowania parametrów sieci neuronowej. Zawsze istnieje możliwość regulowania kryteriów doboru zestawu danych.
+		 
+		 Kryteria doboru zestawu danych są następujące:
+		 
+		 \begin{itemize}
+		 	\item liczba użytkowników do pobrania do algorytmu content-based;
+		 	\item liczba użytkowników do pobrania do algorytmu collaborative;
+		 	\item minimum elementów, jakie zostały ocenione przez każdego pobranego użytkownika;
+		 	\item stosunek wielkości zbioru treningowego do zbioru testowego (domyślnie 80\%-20\%).
+		 \end{itemize}
+		 
+		 Parametry sieci neuronowej podlegające regulacji to:
+		 
+		 \begin{itemize}
+		 	\item Sigmoidalna wartość alfa;
+		 	\item liczba neuronów w warstwie ukrytej;
+		 	\item maksymalna liczba iteracji uczenia sieci neuronowej;
+		 	\item nauczyciel sieci neuronowej: propagacja wsteczna, rprop (resilient backpropagation) lub algorytm genetyczny;
+		 	\item w przypadku wyboru algorytmu genetycznego -- rozmiar każdej kolejnej populacji;
+		 	\item minimalna ilość powtórzeń  danej cechy aby była brana pod uwagę w trakcie budowania rekomendacji.
+		 \end{itemize}	 
+		
 	\section{Metodologia}
+	
+		\todo{Metodologia}
+	
 	\section{Przeprowadzone eksperymenty}
+	
+		\todo{Przeprowadzone eksperymenty}
 	
 \chapter{Wnioski}
 \shortTitle{Wnioski}
+
+	\todo{Wnioski}
 
 \chapter{CHAPTER 1}
 \section{SECTION}
