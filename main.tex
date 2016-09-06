@@ -734,8 +734,40 @@ ABSTRACT EN
 		 gdzie $\alpha$ jest współczynnikiem momentum z zakresu $[0,1]$. Im wyższa wartość współczynnika tym większy jego wpływ na ostateczny kształt kolejnych wag. W dalszej części pracy przeprowadzono eksperymenty mające na celu dobranie optymalnej wartości współczynnika momentum.
 		 
  		 \subsection{Algorytm RPROP}
+		 	
+	 	 \todo{opisać rprop}
+		 
+		 Pomimo dużej popularności algorytmu propagacji wstecznej nie jest on pozbawiony wad. Sporym problemem jest jego relatywnie niska szybkość działania, szczególnie w przypadku bardzo dużych sieci neuronowych - a więc w przypadku odpowiadającemu potrzebom systemów rekomendacji. W odpowiedzi na te problemy Martin Riedmiller i Heinrich Braun zaproponowali w 1992 roku alternatywny algorytm - Resilient Backpropagation (RPROP).
+		 
+		 Główną różnicą jest wykorzystywanie jedynie informacji o dodatniości lub ujemności każdej składowej gradientu zamiast o ich wartości (jak to się odbywa w oryginalnym algorytmie). Ponadto, współczynnik uczenia modyfikowany jest w każdym kolejnym kroku. 
+		 
+		 Modyfikacja współczynników odbywa się zgodnie ze wzorem:
+		 
+		 \begin{equation}
+		 \label{eq:rprop}		 
+		 \eta(t) = 
+		 \begin{cases}
+			min\{a \eta(t-1), \eta_{max}\}, & \quad \text{gdy } \frac{\partial E^2(t)}{\partial v(t)} \frac{\partial E^2(t-1)}{\partial v(t-1)} > 0 \\
+			max\{b \eta(t-1), \eta_{min}\}, & \quad \text{gdy } \frac{\partial E^2(t)}{\partial v(t)} \frac{\partial E^2(t-1)}{\partial v(t-1)} < 0 \\
+			\eta(n-1), & \quad \text{w każdym innym przypadku} 
+		 \end{cases}		 
+		 \,,
+		 \end{equation}
+		 
+		 gdzie $\frac{\partial E^2(t)}{\partial v(t)}$ jest dokładną wartością składowej $v$ gradientu. Ponadto stałe $a$, $b$, $\eta_{min}$ i $\eta_{max}$ są zdefiniowane następująco:
+
+		 \begin{conditions*}
+		 	a = 1.2 \\
+		 	b = 0.5 \\
+		 	\eta_{min} = 10^{-6} \\
+		 	\eta_{max} = 50
+		 \end{conditions*} 
+		 
+		 Algorytm RPROP jest efektywniejszy pod kątem prędkości działania względem tradycyjnej propagacji wstecznej, więc dobrze sprawdza się tam, gdzie szybkość jest ważniejsza od wysokiej poprawności wyników  \cite{riedmiller1993direct}\cite{riedmiller1994rprop}.
 		 		 
  		 \subsection{Algorytm genetyczny}	
+		 
+		 \todo{opisać GA}
 		 
 	 \section{Algorytymy hybrydowe}
 	 

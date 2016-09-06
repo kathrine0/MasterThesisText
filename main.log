@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.5.15)  6 SEP 2016 18:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.5.15)  6 SEP 2016 18:46
 entering extended mode
 **./main.tex
 (main.tex
@@ -1495,7 +1495,7 @@ bi-na-cja do-wol-nych po-wy»-szych tech-
 
 [7
 
-] <img/cf.png, id=332, 479.54156pt x 421.575pt>
+] <img/cf.png, id=336, 479.54156pt x 421.575pt>
 File: img/cf.png Graphic file (type png)
  <use img/cf.png>
 Package pdftex.def Info: img/cf.png used on input line 243.
@@ -1512,7 +1512,7 @@ Overfull \hbox (16.63792pt too wide) in paragraph at lines 248--250
 i¦ na zwi¡z-kach element-element
  []
 
-<img/cf2.png, id=337, 424.58624pt x 315.579pt>
+<img/cf2.png, id=341, 424.58624pt x 315.579pt>
 File: img/cf2.png Graphic file (type png)
  <use img/cf2.png>
 Package pdftex.def Info: img/cf2.png used on input line 253.
@@ -1532,7 +1532,7 @@ e za-le»-no-±ci element-u»ytkownik
 [8]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [9 <./img/cf.png> <./img/cf2.png>] <img/longtail.png, id=367, 561.297pt x 332.
+ [9 <./img/cf.png> <./img/cf2.png>] <img/longtail.png, id=371, 561.297pt x 332.
 442pt>
 File: img/longtail.png Graphic file (type png)
 
@@ -1552,21 +1552,21 @@ Overfull \hbox (12.2183pt too wide) in paragraph at lines 294--295
 
 ]
 Rozdzia\l  4.
-<img/blackbox.png, id=406, 610.6815pt x 472.164pt>
+<img/blackbox.png, id=410, 610.6815pt x 472.164pt>
 File: img/blackbox.png Graphic file (type png)
  <use img/blackbox.png>
 Package pdftex.def Info: img/blackbox.png used on input line 316.
 (pdftex.def)             Requested size: 308.71107pt x 238.6967pt.
 
 [13 <./img/blackbox.png>]
-<img/modelElementu.png, id=415, 578.16pt x 233.673pt>
+<img/modelElementu.png, id=419, 578.16pt x 233.673pt>
 File: img/modelElementu.png Graphic file (type png)
 
 <use img/modelElementu.png>
 Package pdftex.def Info: img/modelElementu.png used on input line 325.
 (pdftex.def)             Requested size: 308.71107pt x 124.76958pt.
 
-<img/modelUsera.png, id=417, 533.5935pt x 105.996pt>
+<img/modelUsera.png, id=421, 533.5935pt x 105.996pt>
 File: img/modelUsera.png Graphic file (type png)
  <use img/modelUsera.png>
 Package pdftex.def Info: img/modelUsera.png used on input line 334.
@@ -1574,7 +1574,7 @@ Package pdftex.def Info: img/modelUsera.png used on input line 334.
 
 [14 <./img/modelElementu.png> <./img/modelUsera.png>]
 Rozdzia\l  5.
-<img/cfcomparision.pdf, id=429, 469.755pt x 293.095pt>
+<img/cfcomparision.pdf, id=433, 469.755pt x 293.095pt>
 File: img/cfcomparision.pdf Graphic file (type pdf)
 
 <use img/cfcomparision.pdf>
@@ -1585,7 +1585,7 @@ Underfull \vbox (badness 3612) has occurred while \output is active []
 
  [15
 
- <./img/cfcomparision.pdf>] <img/factorization.pdf, id=450, 840.79532pt x 340.9
+ <./img/cfcomparision.pdf>] <img/factorization.pdf, id=454, 840.79532pt x 340.9
 3343pt>
 File: img/factorization.pdf Graphic file (type pdf)
 
@@ -1614,27 +1614,27 @@ ine 539.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [19]
-<img/schematneuron.pdf, id=557, 398.32814pt x 227.6505pt>
+<img/schematneuron.pdf, id=561, 398.32814pt x 227.6505pt>
 File: img/schematneuron.pdf Graphic file (type pdf)
 
 <use img/schematneuron.pdf>
 Package pdftex.def Info: img/schematneuron.pdf used on input line 563.
 (pdftex.def)             Requested size: 396.91327pt x 226.8475pt.
  [20 <./img/schematneuron.pdf>]
-<img/sigmoid.png, id=594, 182.18062pt x 129.48375pt>
+<img/sigmoid.png, id=598, 182.18062pt x 129.48375pt>
 File: img/sigmoid.png Graphic file (type png)
  <use img/sigmoid.png>
 Package pdftex.def Info: img/sigmoid.png used on input line 601.
 (pdftex.def)             Requested size: 182.18016pt x 129.48341pt.
 
-<img/siecneuronowa.pdf, id=598, 455.30101pt x 284.62335pt>
+<img/siecneuronowa.pdf, id=602, 455.30101pt x 284.62335pt>
 File: img/siecneuronowa.pdf Graphic file (type pdf)
 
 <use img/siecneuronowa.pdf>
 Package pdftex.def Info: img/siecneuronowa.pdf used on input line 614.
 (pdftex.def)             Requested size: 441.01775pt x 275.70213pt.
 
-<img/mapacech.pdf, id=600, 256.07669pt x 170.79811pt>
+<img/mapacech.pdf, id=604, 256.07669pt x 170.79811pt>
 File: img/mapacech.pdf Graphic file (type pdf)
  <use img/mapacech.pdf>
 Package pdftex.def Info: img/mapacech.pdf used on input line 623.
@@ -1644,7 +1644,7 @@ Package pdftex.def Info: img/mapacech.pdf used on input line 623.
 
 pdfTeX warning: pdflatex.exe (file ./img/mapacech.pdf): PDF inclusion: multiple
  pdfs with page group included in a single page
->] <img/ilustracjabackprop.png, id=669, 419.166pt x 426.393pt>
+>] <img/ilustracjabackprop.png, id=673, 419.166pt x 426.393pt>
 File: img/ilustracjabackprop.png Graphic file (type png)
 
 <use img/ilustracjabackprop.png>
@@ -1664,47 +1664,51 @@ LaTeX Warning: Command \' invalid in math mode on input line 701.
 
 Missing character: There is no ± in font plmi8!
 Missing character: There is no ± in font plmi8!
-<img/propagacjawsteczna.pdf, id=687, 614.41545pt x 455.30101pt>
+<img/propagacjawsteczna.pdf, id=691, 614.41545pt x 455.30101pt>
 File: img/propagacjawsteczna.pdf Graphic file (type pdf)
 
 <use img/propagacjawsteczna.pdf>
 Package pdftex.def Info: img/propagacjawsteczna.pdf used on input line 713.
 (pdftex.def)             Requested size: 441.01775pt x 326.80911pt.
- [24] [25 <./img/propagacjawsteczna.pdf>]
-[26
+ [24]
+Underfull \hbox (badness 10000) in alignment at lines 764--764
+[][]
+ []
 
-]
+[25 <./img/propagacjawsteczna.pdf>] [26]
 Rozdzia\l  6.
-[27] <img/movielens.png, id=759, 426.99525pt x 208.98074pt>
+[27
+
+] <img/movielens.png, id=768, 426.99525pt x 208.98074pt>
 File: img/movielens.png Graphic file (type png)
 
 <use img/movielens.png>
-Package pdftex.def Info: img/movielens.png used on input line 810.
+Package pdftex.def Info: img/movielens.png used on input line 842.
 (pdftex.def)             Requested size: 441.01775pt x 215.85524pt.
  [28 <./img/movielens.png>]
-<img/program.png, id=772, 539.01375pt x 536.0025pt>
+<img/program.png, id=781, 539.01375pt x 536.0025pt>
 File: img/program.png Graphic file (type png)
  <use img/program.png>
-Package pdftex.def Info: img/program.png used on input line 831.
+Package pdftex.def Info: img/program.png used on input line 863.
 (pdftex.def)             Requested size: 441.01775pt x 438.5598pt.
 
 [29 <./img/program.png>]
-Overfull \hbox (9.70564pt too wide) in paragraph at lines 872--872
+Overfull \hbox (9.70564pt too wide) in paragraph at lines 904--904
 [][][][]\OT4/cmr/m/n/6 Przeprowadzone 
  []
 
 
-Overfull \hbox (9.70564pt too wide) in paragraph at lines 872--872
+Overfull \hbox (9.70564pt too wide) in paragraph at lines 904--904
 [][][][]\OT4/cmr/m/n/6 Przeprowadzone 
  []
 
 
-Overfull \hbox (9.70564pt too wide) in paragraph at lines 872--872
+Overfull \hbox (9.70564pt too wide) in paragraph at lines 904--904
 [][][][]\OT4/cmr/m/n/6 Przeprowadzone 
  []
 
 
-Overfull \hbox (9.70564pt too wide) in paragraph at lines 872--872
+Overfull \hbox (9.70564pt too wide) in paragraph at lines 904--904
 [][][][]\OT4/cmr/m/n/6 Przeprowadzone 
  []
 
@@ -1768,31 +1772,31 @@ u al-go-ryt-micz-nym\OT4/cmr/m/n/10.95 .  Wy-daw-nic-twa
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 196--201
+Underfull \hbox (badness 10000) in paragraph at lines 208--213
 []\OT4/cmr/m/n/10.95 Rohrmann T.  Com-pu-ting re-com-men-da-tions at extreme
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 196--201
+Underfull \hbox (badness 10000) in paragraph at lines 208--213
 \OT4/cmr/m/n/10.95 scale with apa-che flink.  [][]$\OT4/cmtt/m/it/10.95 http : 
 / / data-[]artisans . com /$
  []
 
 ) [39]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 944.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 944.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 976.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 976.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 944.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 944.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 976.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 976.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: EA5D3881FB87E7E683716AC89E1D245C;3339.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 944.
+(rerunfilecheck)             Checksum: E3385B9AC2F8CA0748985BE74192458D;3339.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 976.
  ) 
 Here is how much of TeX's memory you used:
- 32397 strings out of 493634
- 734384 string characters out of 3141314
+ 32421 strings out of 493634
+ 734893 string characters out of 3141314
  938248 words of memory out of 3000000
- 34895 multiletter control sequences out of 15000+200000
+ 34914 multiletter control sequences out of 15000+200000
  20617 words of font info for 57 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  62i,19n,84p,742b,837s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1822,9 +1826,9 @@ l/plsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plsy8.pfb
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb><C:/Program Files (x8
 6)/MiKTeX 2.9/fonts/type1/public/pl/plti8.pfb><C:/Program Files (x86)/MiKTeX 2.
 9/fonts/type1/public/pl/pltt10.pfb>
-Output written on main.pdf (45 pages, 2007676 bytes).
+Output written on main.pdf (45 pages, 2014571 bytes).
 PDF statistics:
- 1006 PDF objects out of 1200 (max. 8388607)
- 270 named destinations out of 1000 (max. 500000)
+ 1016 PDF objects out of 1200 (max. 8388607)
+ 275 named destinations out of 1000 (max. 500000)
  434 words of extra memory for PDF output out of 10000 (max. 10000000)
 

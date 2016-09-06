@@ -192,6 +192,18 @@ Ricci F., Rokach L., Shapira B.
   {R}ecommender {S}ystems {H}andbook, pages 1--35.
 \newblock Springer, New York Dordrecht Heidelberg London, 2010.
 
+\bibitem{riedmiller1993direct}
+Riedmiller M., Braun H.
+\newblock A direct adaptive method for faster backpropagation learning: The
+  rprop algorithm.
+\newblock In {\em Neural Networks, 1993., IEEE International Conference On},
+  pages 586--591. IEEE, 1993.
+
+\bibitem{riedmiller1994rprop}
+Riedmiller M., Rprop I.
+\newblock Rprop-description and implementation details.
+\newblock 1994.
+
 \bibitem{id:ComputingRecommendationsExtremeScaleApacheFlink}
 Rohrmann T.
 \newblock Computing recommendations at extreme scale with apache flink.
