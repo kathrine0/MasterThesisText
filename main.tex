@@ -412,14 +412,14 @@ ABSTRACT EN
 		
 		W fazie drugiej następuje uczenie metodą stochastycznego gradientu prostego (Algorytm  \ref{aq:mf_learn}). Wynikiem tej fazy są macierze reprezentujące ukryte własności użytkowników i elementów. Mnożąc je ze sobą uzyskiwana jest przewidywana ocena każdego z elementów przez użytkowników. 
 		
-		Przed rozpoczęciem uczenia ustalane są parametry: parametr regulujący (ang. \textit{regularization}), tempo uczenia (ang. \textit{learn rate}), parametr zanikania (ang. \textit{decay}) i liczba iteracji. 	
+		Przed rozpoczęciem uczenia ustalane są parametry: parametr regulujący (ang. \textit{regularization}), współczynnik uczenia (ang. \textit{learning rate}), parametr zanikania (ang. \textit{decay}) i liczba iteracji. 	
 		W trakcie trwania głównej pętli parametr regulujący pozostaje niezmienny. Służy on zapobieganiu zjawiska nadmiernego dopasowania (ang. \textit{overfitting}). Tempo uczenia jest przy każdym przebiegu pętli mnożone przez parametr zanikania, dzięki czemu można kontrolować jak kolejne przebiegi pętli wpływają na finalny wynik. 
 		
 		Ostatnim parametrem ustalanym przed główną pętlą jest skośność globalna (ang. \textit{global bias}), która jest średnią wszystkich znanych ocen. 
 		
 		W pętli uczenia wykonywane są następujące operacje: dla każdej pary użytkownik -- element budowana jest przewidywana ocena poprzez obliczenie iloczynu skalarnego odpowiednich wartości z macierzy wartości ukrytych. Ocena ta jest modyfikowana poprzez dodanie globalnej skośności a następnie porównywana z faktyczną oceną elementu przez użytkownika. Tak uzyskany błąd służy do wyliczenia delty. Macierze wartości ukrytych uaktualniane są o wyliczoną deltę. 
 		
-		Pod koniec każdej iteracji aktualizowane jest tempo uczenia.
+		Pod koniec każdej iteracji aktualizowany jest współczynnik uczenia.
 	
 		\def\alghoritm2{Matrix Factorization -- Faza uczenia}
 		\begin{algorithm}[H]
@@ -430,7 +430,7 @@ ABSTRACT EN
 				\STATE $global\_bias \leftarrow \text{średnia wszystkich ocen}$
 				\STATE $X \leftarrow \text{liczba iteracji}$			
 				\STATE $regularization \leftarrow \text{parametr regulujący}$			
-				\STATE $current\_learnrate \leftarrow \text{tempo uczenia}$
+				\STATE $current\_learnrate \leftarrow \text{współczynnik uczenia}$
 				\STATE $decay \leftarrow \text{paramert zanikania}$
 				
 				\FOR{each $x \in X$ }
@@ -495,8 +495,8 @@ ABSTRACT EN
 		 		\STATE $global\_bias \leftarrow \text{średnia wszystkich ocen}$
 		 		\STATE $X \leftarrow \text{liczba iteracji}$			
 		 		\STATE $regU, regI, BiasReg \leftarrow \text{parametry regulujące dla użytkownika, elementu i ogólny }$			
-		 		\STATE $current\_learnrate \leftarrow \text{tempo uczenia}$
-				\STATE $BiasLearnRate \leftarrow \text{tempo uczenia skośności}$
+		 		\STATE $current\_learnrate \leftarrow \text{współczynnik uczenia}$
+				\STATE $BiasLearnRate \leftarrow \text{współczynnik uczenia skośności}$
 		 		\STATE $decay \leftarrow \text{paramert zanikania}$
 		 		
 		 		\FOR{each $x \in X$ }
@@ -555,6 +555,7 @@ ABSTRACT EN
 		 \subsection{Konstrukcja sieci neuronowej}
 		 
 		 \subsubsection{Struktura perceptronów}
+		 \label{sss:strukturaperceptronow}
 		 
 		 Sieć neuronowa składa się z trzech warstw neuronów (perceptronów). W każdej warstwie wszystkie neurony mają konstrukcję na jak rys. \ref{fig:schematneuronu}
 		 
@@ -564,7 +565,7 @@ ABSTRACT EN
 	 		 	\label{fig:schematneuronu}
  		 \end{figure}
 		 
-		 Do neuronu przekazywany jest zestaw wartości w postaci wektora $x$. Następnie obliczana jest suma ważona tych wartości w zależności od nadanych wag $w$. Wynik tej operacji przekazywany jest do funkcji aktywacji neuronu. Jeżeli funkcja przyjmie wartość wyższą lub równą niż określony próg aktywacji, to perceptron zostanie pobudzony (zwróci wartość 1). Proces ten obrazuje równanie \ref{eq:neuroneq}.
+		 Do neuronu przekazywany jest zestaw wartości w postaci wektora $x$. Następnie obliczana jest suma ważona tych wartości w zależności od nadanych wag $w$. Proces dobierania odpowiednich wag jest nazywany uczeniem (zob. \ref{ss:uczeniesiecineuronowej}). W następnym kroku suma ważona przekazywana jest do funkcji aktywacji neuronu. Jeżeli funkcja przyjmie wartość wyższą lub równą niż określony próg aktywacji, to perceptron zostanie pobudzony (zwróci wartość 1). Proces ten obrazuje równanie \ref{eq:neuroneq}.
 		 
 		 \begin{equation}
 		 \label{eq:neuroneq}
@@ -585,7 +586,7 @@ ABSTRACT EN
 		 	\eta & to próg aktywacji neuronu
 		 \end{conditions*} 
 		 
-		 Na potrzeby algorytmu rekomendacji zdecydowano się przyjąć sigmoidalną funkcję aktywacji neuronu (równanie \ref{eq:sigmoidal}). Funkcja przyjmuje wartości z zakresu $[0,1]$.
+		 Na potrzeby algorytmu rekomendacji zdecydowano się przyjąć sigmoidalną unipolarną funkcję aktywacji neuronu (równanie \ref{eq:sigmoidal}). Funkcja przyjmuje wartości z zakresu $[0,1]$.
 		 
 		  \begin{equation}
 		  \label{eq:sigmoidal}
@@ -608,7 +609,7 @@ ABSTRACT EN
 		 
 		 Następnie inicjowana jest sieć neuronowa. Ilość neuronów warstwy wejściowej jest równa ilości wyodrębnionych cech. Warstwa ukryta zawiera tyle neuronów ile jest to określone parametrem \textit{hiddenLayerNeurons}. Warstwa wyjściowa składa się z tylko jednego neuronu (rys. \ref{fig:siecneuronowa}). 
 		 
-		 \begin{figure}[!ht] 
+		 \begin{figure}%[H] %!ht 
 		 	\centering
 		 	\includegraphics[width=1\textwidth]{siecneuronowa}
 		 	\caption{Schemat sieci neuronowej}
@@ -617,7 +618,7 @@ ABSTRACT EN
 		 
 		 W kolejnym etapie dla każdego elementu tworzona jest mapa cech. Jeżeli element zawiera daną cechę o danej wartości przypisywana jest wartość $1$. W przeciwnym razie wstawiane jest $0$. Rys. \ref{fig:mapacech} przedstawia przykładową mapę cech. Tak przygotowana lista przekazywana jest do sieci neuronowej. 
 		 
-		 \begin{figure}[!ht] 
+		 \begin{figure}%[H]  %!ht
 		 	\centering
 		 	\includegraphics[width=0.7\textwidth]{mapacech}
 		 	\caption{Mapa cech elementu. Wiadomo, że element X zawiera cechę ,,Aktor'' o wartościach ,,Julia Roberts, Al Pacino'' oraz cechę ,,Reżyser'' o wartości ,,Francis Ford Coppola''. Element nie zawiera cechy ,,Aktor'' o wartości ,,Brad Pitt'' ani cechy ,,Reżyser'' o wartości ,,Darren Aronofsky'' więc w te miejsca wstawiane jest $0$.}
@@ -628,27 +629,85 @@ ABSTRACT EN
 		 		 
 		 
 		 \subsection{Uczenie sieci neuronowej}
+		 \label{ss:uczeniesiecineuronowej}
 		 
-		 Aby sieć zwracała jak najlepsze wyniki musi wcześniej zostać nauczona preferencji użytkownika - tzn. dla każdej pary cecha-wartość powinna zostać odnaleziona odpowiednia waga. 
+		 Aby sieć zwracała jak najlepsze wyniki musi wcześniej zostać nauczona preferencji użytkownika. Uczenie sieci polega na odnalezieniu odpowiednich wag dla każdego wejścia każdego perceptronu sieci (budowa perceptronu zob. \ref{sss:strukturaperceptronow}). Proces ten można zapisać w postaci
 		 
-		 W zależności od wybranej opcji sieć neuronowa może być uczona w wykorzystaniem propagacji wstecznej, algorytmu RPROP lub algorytmu genetycznego. 
+		 \begin{equation}
+		 \label{eq:weightadaptation}
+		 W_{ij}(n+1) = W_{ij}(n) + \Delta W_{ij}(n) 
+		 \,,
+		 \end{equation}
+		 		 
+		 gdzie
 		 
-		 \subsubsection{Propagacja wsteczna}
+		 \begin{conditions*}
+		 	W_{ij}(n) & to poprzednie wagi wejść \\
+		 	W_{ij}(n+1) & to nowe wagi wejść \\
+		 	n & numer cyklu uczącego 
+		 \end{conditions*} 
 		 
-			 Algorytm propagacji wstecznej jest jedną z popularniejszych metod uczenia nadzorowanego jednokierunkowych sieci neuronowych. 
-			 
-			 Operując na zbiorze testowym (zwykle stanowi on 80\% wszystkich danych) algorytm kolejno porównuje oczekiwane wyniki z tymi uzyskanymi z sieci neuronowej. Każdy przebieg pętli uczenia kończy się obliczeniem błędu sieci neuronowej $d$.
-			 
-			 \begin{equation}
-			 \label{eq:backproperror}
-				 d = (o-y)f'(z)
-			 \,,
-			 \end{equation}
-			 
-			 
-			 
-			 
-			 
+		 Dostrajanie wartości wag można wykonać na wiele sposobów. Można wyróżnić uczenie nadzorowane (z nauczycielem), uczenie z krytykiem (ang. \textit{reinforcement learning}) i uczenie samoorganizujące się (bez nadzoru) \cite{osowski1996sieci}.
+		 
+		 Na potrzeby systemu rekomendacji content-based opisywanego w tej pracy wykorzystane zostały trzy metody uczenia: algorytm propagacji wstecznej, algorytm RPROP i algorytm genetyczny. Wymienione metody należą do kategorii uczenia nadzorowanego. 
+		 
+		 
+		 \subsection{Propagacja wsteczna}
+	 
+		 Algorytm propagacji wstecznej jest jedną z popularniejszych metod uczenia nadzorowanego jednokierunkowych sieci neuronowych. Zbiór uczący składa się z danych wejściowych (wektory cech elementu) i z informacji o oczekiwanym wyniku (ocena elementu). Różnica między wynikiem zwróconym przez sieć a wartością oczekiwaną stanowi miarę błędu sieci neuronowej. 
+		 
+		 \begin{figure}[!ht] 
+	 		 	\centering
+	 		 	\includegraphics[width=0.5\textwidth]{ilustracjabackprop}
+	 		 	\caption{Algorytm propagacji wstecznej w sieci trójwarstwowej - idea działania \protect\cite{kwateralgorytmy}}
+	 		 	\label{fig:ilustracjabackprop}
+		 \end{figure}
+		 
+		 Wiadomo, że funkcja celu jest funkcją ciągłą. Bazując na gradientowych metodach optymalizacji, wagi w sieci neuronowej aktualizowane są w następujący sposób:	 
+		 
+ 		 \begin{equation}
+ 		 \label{eq:weightadaptation3}
+ 		 W_{ij}(n+1) = W_{ij}(n) + \Delta W_{ij}(n) 
+ 		 \,,
+ 		 \end{equation}
+ 		 
+ 		 
+ 		 \begin{equation}
+ 		 \label{eq:weightadaptation2}
+ 		 \Delta W_{ij}(n) = \eta p(W)
+ 		 \,,
+ 		 \end{equation}
+		 
+		 gdzie
+		 
+		 \begin{conditions*}
+		 	\eta & to współczynnik uczenia (ang. \textit{learning rate}) \\
+		 	p(W) & to kierunek w przestrzeni wielowymiarowej W 
+		 \end{conditions*} 
+		 
+		 Aby wyznaczyć kierunek $p(W))$ dla wszystkich warstw sieci należy przejść przez kolejne etapy uczenia \cite{haykin1994neural}\cite{osowski1996sieci}\cite{kwateralgorytmy}\cite{hertz1993wstkep}\cite{timothy1996sieci}.
+		 
+		 \begin{enumerate}
+		 	\item W kroku pierwszym sieć neuronowa poddawana jest analizie o zwykłym kierunku przepływu sygnałów. Wynikiem są wartości sygnałów wychodzących z neuronów warstw wyjściowej i ukrytych oraz pochodne funkcji aktywacji w kolejnych warstwach. 
+		 	
+		 	\item W kroku drugim kierunek przepływu sygnałów zostaje odwrócony (stąd nazwa propagacja wsteczna). Funkcje aktywacji zostają zastąpione przez swoje pochodne. Na oryginalne wyjście sieci (aktualnie wejście) podana zostaje wartość równa różnicy pomiędzy wynikiem oczekiwanym a wynikiem zwróconym przez sieć. 
+		 	
+		 	\item Obliczana zostaje wartość różnic wstecznych.
+		 	
+			\item W kolejnym kroku następuje wreszcie proces adaptacji wag. Odbywa się on zarówno dla sieci zwykłej jak i dla sieci o propagacji wstecznej. Reguła modyfikacji ma postać: 
+
+			\begin{equation}
+			\label{eq:weightadaptation4}
+			\Delta W_{ij} = \eta \sum_{wzroce}^{} \delta_{wyjście} \cdot x_{wejście}
+			\,,
+			\end{equation}
+			
+			\item Powyższe kroki potarzane są dla każdej pary dane wejściowe - oczekiwany wynik tak długo, aż poziom błędu spadnie poniżej akceptowalnej wartości bądź osiągnięta zostanie maksymalna liczba iteracji. 
+
+		 \end{enumerate}
+				 
+		 Algorytm propagacji wstecznej obrazuje schemat blokowy \ref{fig:propagacjawsteczna}.
+		 
 			\begin{figure}[!ht] 
 				\centering
 				\includegraphics[width=1\textwidth]{propagacjawsteczna}
@@ -656,12 +715,27 @@ ABSTRACT EN
 				\label{fig:propagacjawsteczna}
 			\end{figure}
 			
+		 \subsubsection{Metoda momentum}
+	 
+		 W celu zwiększenia efektywności działania algorytmu została zastosowana metoda momentum. I tak też standardowy sposób aktualizacji wag sieci (równanie \ref{eq:weightadaptation3}) został zmodyfikowany w następujący sposób:
 		 
-			 \cite{hertz1993wstkep}\cite{timothy1996sieci}
+		 \begin{equation}
+		 \label{eq:zasadamomentum1}
+		 W_{ij}(n+1) = W_{ij}(n) + \Delta W_{ij}(n) 
+		 \,,
+		 \end{equation}
 		 
- 		 \subsubsection{Algorytm RPROP}
+		 \begin{equation}
+		 \label{eq:zasadamomentum2}
+		 \Delta W_{ij}(n) = \eta(n) \cdot p(n) + \alpha(W_{ij}(n)-W_{ij}(n-1)) 
+		 \,,
+		 \end{equation}
+		 
+		 gdzie $\alpha$ jest współczynnikiem momentum z zakresu $[0,1]$. Im wyższa wartość współczynnika tym większy jego wpływ na ostateczny kształt kolejnych wag. W dalszej części pracy przeprowadzono eksperymenty mające na celu dobranie optymalnej wartości współczynnika momentum.
+		 
+ 		 \subsection{Algorytm RPROP}
 		 		 
- 		 \subsubsection{Algorytm Genetyczny}	
+ 		 \subsection{Algorytm genetyczny}	
 		 
 	 \section{Algorytymy hybrydowe}
 	 

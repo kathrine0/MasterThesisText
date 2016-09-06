@@ -64,6 +64,12 @@ Harper F.~M., Konstan J.~A.
 \newblock {\em ACM Transactions on Interactive Intelligent Systems (TiiS)},
   5(4):19, 2016.
 
+\bibitem{haykin1994neural}
+Haykin S.
+\newblock Neural networks: A comprehensive foundation: Macmillan college
+  publishing company.
+\newblock {\em New York}, 1994.
+
 \bibitem{hertz1993wstkep}
 Hertz J.~A., Krogh A.~S., Palmer R.~G., Jankowski S.
 \newblock {\em Wst{\k{e}}p do teorii oblicze{\'n} neuronowych}.
@@ -101,7 +107,7 @@ Ji K., Sun R., Shu W., Li X.
 \bibitem{aforgenet}
 Kirillov A.
 \newblock {AF}orge.{NET} framework.
-\newblock {http://www.aforgenet.com/framework/}.
+\newblock \url{http://www.aforgenet.com/framework/}.
 \newblock Data dostępu: 2016-09-05.
 
 \bibitem{id:AdvancesInCollaborativeFiltering}
@@ -114,6 +120,13 @@ Koren Y., Bell R.
 Koren Y., Bell R., Volinsky C. et~al.
 \newblock Matrix factorization techniques for recommender systems.
 \newblock {\em Computer}, 42(8):30--37, 2009.
+
+\bibitem{kwateralgorytmy}
+Kwater T.
+\newblock Algorytmy uczenia sieci neuronowych.
+\newblock
+  \url{http://www.neurosoft.edu.pl/media/pdf/tkwater/sztuczna_inteligencja/2_alg_ucz_ssn.pdf}.
+\newblock Data dostępu: 2016-09-06.
 
 \bibitem{leskovec2007dynamics}
 Leskovec J., Adamic L.~A., Huberman B.~A.
@@ -162,6 +175,11 @@ Mymedialite: Example experiments.
 {N}etflix {P}rize {R}ules.
 \newblock \url{http://www.netflixprize.com//rules}.
 \newblock Data dostępu: 2016-07-08.
+
+\bibitem{osowski1996sieci}
+Osowski S.
+\newblock {\em Sieci neuronowe w uj{\k{e}}ciu algorytmicznym}.
+\newblock Wydawnictwa Naukowo-Techniczne, 1996.
 
 \bibitem{id:aStreamOfMovies}
 Pogue D.
