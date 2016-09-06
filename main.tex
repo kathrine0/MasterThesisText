@@ -548,13 +548,65 @@ ABSTRACT EN
 	 
 		 Algorytmy content-based budują rekomendację na podstawie ocen, jakie zostały dotychczas wystawione przez użytkownika. Analizowane są cechy elementów i ich wartości oraz określana jest ich siła wpływu na finalną ocenę. 
 		 
-		 W tym celu dla każdego użytkownika tworzona jest sieć neuronowa, która uczy się jego preferencji.
+		 W tym celu dla każdego użytkownika tworzona jest sieć neuronowa, która uczy się jego preferencji. 
+		 
+		 W projekcie wykorzystana została implementacja sieci neuronowych z biblioteki AForge.NET Framework \cite{aforgenet}.
 	 
-		 \subsection{Konstrukcja sieci neuronowej i przebieg algorytmu}
+		 \subsection{Konstrukcja sieci neuronowej}
+		 
+		 \subsubsection{Struktura perceptronów}
+		 
+		 Sieć neuronowa składa się z trzech warstw neuronów (perceptronów). W każdej warstwie wszystkie neurony mają konstrukcję na jak rys. \ref{fig:schematneuronu}
+		 
+ 		 \begin{figure}[!ht] 		 		 	
+	 		 	\includegraphics[width=0.9\textwidth]{schematneuron}
+	 		 	\caption{Schemat perceptronu}
+	 		 	\label{fig:schematneuronu}
+ 		 \end{figure}
+		 
+		 Do neuronu przekazywany jest zestaw wartości w postaci wektora $x$. Następnie obliczana jest suma ważona tych wartości w zależności od nadanych wag $w$. Wynik tej operacji przekazywany jest do funkcji aktywacji neuronu. Jeżeli funkcja przyjmie wartość wyższą lub równą niż określony próg aktywacji, to perceptron zostanie pobudzony (zwróci wartość 1). Proces ten obrazuje równanie \ref{eq:neuroneq}.
+		 
+		 \begin{equation}
+		 \label{eq:neuroneq}
+		 N(x_1, x_2, x_3, \ldots, x_n) = 
+			 \begin{cases}
+			 1       & \quad \text{jeśli } f(w_0 + \sum_{i=1}^{n}w_ix_i) \geq \eta\\
+			 0		 & \quad \text{jeśli } f(w_0 + \sum_{i=1}^{n}w_ix_i) < \eta\\
+			 \end{cases}
+		 \,,
+		 \end{equation}
+		 
+		 gdzie
+		 
+		 \begin{conditions*}
+		 	w & to wagi kolejnych wejść \\
+		 	x & to wartości przekazywane do wejść \\
+		 	f(u) & to funkcja aktywacji neuronu \\
+		 	\eta & to próg aktywacji neuronu
+		 \end{conditions*} 
+		 
+		 Na potrzeby algorytmu rekomendacji zdecydowano się przyjąć sigmoidalną funkcję aktywacji neuronu (równanie \ref{eq:sigmoidal}). Funkcja przyjmuje wartości z zakresu $[0,1]$.
+		 
+		  \begin{equation}
+		  \label{eq:sigmoidal}
+		  f(x) = \frac{1}{1 + \exp(-\alpha x)}
+		  \,.
+		  \end{equation}
+
+		 Wykres funkcji wygląda jak na rys. \ref{fig:sigmoid}.
+
+ 		 \begin{figure}[!ht] 
+			\centering
+			\includegraphics{sigmoid}
+			\caption{Wykres sigmoidalnej funkcji aktywacji perceptronu \protect\cite{aforgenet}}
+			\label{fig:sigmoid}
+		 \end{figure}
+
+		 \subsubsection{Struktura sieci i przebieg algorytmu}
 		 
 		 Pierwszym etapem algorytmu jest analiza cech elementów ocenionych przez użytkownika. Tworzona jest lista wszystkich występujących cech które powtarzają się minimum tyle razy, ile wynosi wartość  parametru \textit{minimumRepeatingFeatures}. 
 		 
-		 Następnie inicjowana jest sieć neuronowa. Ilość neuronów warstwy wejściowej jest równa ilości wyodrębnionych cech. Warstwa ukryta zawiera tyle neuronów ile jest to określone parametrem \textit{hiddenLayerNeurons}. Warstwa wyjściowa składa się z tylko jednego neuronu. 
+		 Następnie inicjowana jest sieć neuronowa. Ilość neuronów warstwy wejściowej jest równa ilości wyodrębnionych cech. Warstwa ukryta zawiera tyle neuronów ile jest to określone parametrem \textit{hiddenLayerNeurons}. Warstwa wyjściowa składa się z tylko jednego neuronu (rys. \ref{fig:siecneuronowa}). 
 		 
 		 \begin{figure}[!ht] 
 		 	\centering
@@ -563,17 +615,17 @@ ABSTRACT EN
 		 	\label{fig:siecneuronowa}
 		 \end{figure}
 		 
-		 W kolejnym etapie dla każdego elementu tworzona jest mapa cech. Jeżeli element zawiera daną cechę o danej wartości przypisywana jest wartość $1$. W przeciwnym razie wstawiane jest $0$. Rys. \ref{fig:mapacech} przedstawia przykładową mapę cech. Wiadomo, że element zawiera cechę ,,Aktor'' o wartościach ,,Julia Roberts, Al Pacino'' oraz cechę ,,Reżyser'' o wartości ,,Francis Ford Coppola''. Element nie zawiera cechy ,,Aktor'' o wartości ,,Brad Pitt'' ani cechy ,,Reżyser'' o wartości ,,Darren Aronofsky'' więc w te miejsca wstawiane jest $0$.
-		  Tak przygotowana lista przekazywana jest do sieci neuronowej. 
+		 W kolejnym etapie dla każdego elementu tworzona jest mapa cech. Jeżeli element zawiera daną cechę o danej wartości przypisywana jest wartość $1$. W przeciwnym razie wstawiane jest $0$. Rys. \ref{fig:mapacech} przedstawia przykładową mapę cech. Tak przygotowana lista przekazywana jest do sieci neuronowej. 
 		 
 		 \begin{figure}[!ht] 
 		 	\centering
 		 	\includegraphics[width=0.7\textwidth]{mapacech}
-		 	\caption{Mapa cech elementu}
+		 	\caption{Mapa cech elementu. Wiadomo, że element X zawiera cechę ,,Aktor'' o wartościach ,,Julia Roberts, Al Pacino'' oraz cechę ,,Reżyser'' o wartości ,,Francis Ford Coppola''. Element nie zawiera cechy ,,Aktor'' o wartości ,,Brad Pitt'' ani cechy ,,Reżyser'' o wartości ,,Darren Aronofsky'' więc w te miejsca wstawiane jest $0$.}
 		 	\label{fig:mapacech}
 		 \end{figure}
 		 
 		 Na wyjściu sieć zwraca przewidywaną ocenę elementu.
+		 		 
 		 
 		 \subsection{Uczenie sieci neuronowej}
 		 
@@ -584,6 +636,28 @@ ABSTRACT EN
 		 \subsubsection{Propagacja wsteczna}
 		 
 			 Algorytm propagacji wstecznej jest jedną z popularniejszych metod uczenia nadzorowanego jednokierunkowych sieci neuronowych. 
+			 
+			 Operując na zbiorze testowym (zwykle stanowi on 80\% wszystkich danych) algorytm kolejno porównuje oczekiwane wyniki z tymi uzyskanymi z sieci neuronowej. Każdy przebieg pętli uczenia kończy się obliczeniem błędu sieci neuronowej $d$.
+			 
+			 \begin{equation}
+			 \label{eq:backproperror}
+				 d = (o-y)f'(z)
+			 \,,
+			 \end{equation}
+			 
+			 
+			 
+			 
+			 
+			\begin{figure}[!ht] 
+				\centering
+				\includegraphics[width=1\textwidth]{propagacjawsteczna}
+				\caption{Algorytm propagacji wstecznej}
+				\label{fig:propagacjawsteczna}
+			\end{figure}
+			
+		 
+			 \cite{hertz1993wstkep}\cite{timothy1996sieci}
 		 
  		 \subsubsection{Algorytm RPROP}
 		 		 

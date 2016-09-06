@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.5.15)  5 SEP 2016 21:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.5.15)  6 SEP 2016 13:01
 entering extended mode
 **./main.tex
 (main.tex
@@ -1614,70 +1614,96 @@ ine 539.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [19]
-<img/siecneuronowa.pdf, id=540, 455.30101pt x 284.62335pt>
+<img/schematneuron.pdf, id=542, 398.32814pt x 227.6505pt>
+File: img/schematneuron.pdf Graphic file (type pdf)
+
+<use img/schematneuron.pdf>
+Package pdftex.def Info: img/schematneuron.pdf used on input line 562.
+(pdftex.def)             Requested size: 396.91327pt x 226.8475pt.
+ [20 <./img/schematneuron.pdf>]
+<img/sigmoid.png, id=578, 182.18062pt x 129.48375pt>
+File: img/sigmoid.png Graphic file (type png)
+ <use img/sigmoid.png>
+Package pdftex.def Info: img/sigmoid.png used on input line 600.
+(pdftex.def)             Requested size: 182.18016pt x 129.48341pt.
+
+<img/siecneuronowa.pdf, id=582, 455.30101pt x 284.62335pt>
 File: img/siecneuronowa.pdf Graphic file (type pdf)
 
 <use img/siecneuronowa.pdf>
-Package pdftex.def Info: img/siecneuronowa.pdf used on input line 561.
+Package pdftex.def Info: img/siecneuronowa.pdf used on input line 613.
 (pdftex.def)             Requested size: 441.01775pt x 275.70213pt.
 
-<img/mapacech.pdf, id=542, 256.07669pt x 170.79811pt>
+<img/mapacech.pdf, id=584, 256.07669pt x 170.79811pt>
 File: img/mapacech.pdf Graphic file (type pdf)
  <use img/mapacech.pdf>
-Package pdftex.def Info: img/mapacech.pdf used on input line 571.
+Package pdftex.def Info: img/mapacech.pdf used on input line 622.
 (pdftex.def)             Requested size: 308.71107pt x 205.91315pt.
 
-[20 <./img/siecneuronowa.pdf>] [21 <./img/mapacech.pdf>] [22
+[21 <./img/sigmoid.png>]
+Underfull \vbox (badness 2293) has occurred while \output is active []
+
+ [22 <./img/siecneuronowa.pdf> <./img/mapacech.pdf
+
+pdfTeX warning: pdflatex.exe (file ./img/mapacech.pdf): PDF inclusion: multiple
+ pdfs with page group included in a single page
+>] <img/propagacjawsteczna.pdf, id=651, 614.41545pt x 455.30101pt>
+File: img/propagacjawsteczna.pdf Graphic file (type pdf)
+
+<use img/propagacjawsteczna.pdf>
+Package pdftex.def Info: img/propagacjawsteczna.pdf used on input line 654.
+(pdftex.def)             Requested size: 441.01775pt x 326.80911pt.
+ [23 <./img/propagacjawsteczna.pdf>] [24
 
 ]
 Rozdzia\l  6.
-[23] <img/movielens.png, id=626, 426.99525pt x 208.98074pt>
+[25] <img/movielens.png, id=713, 426.99525pt x 208.98074pt>
 File: img/movielens.png Graphic file (type png)
 
 <use img/movielens.png>
-Package pdftex.def Info: img/movielens.png used on input line 662.
+Package pdftex.def Info: img/movielens.png used on input line 736.
 (pdftex.def)             Requested size: 441.01775pt x 215.85524pt.
- [24 <./img/movielens.png>]
-<img/program.png, id=639, 539.01375pt x 536.0025pt>
+ [26 <./img/movielens.png>]
+<img/program.png, id=726, 539.01375pt x 536.0025pt>
 File: img/program.png Graphic file (type png)
  <use img/program.png>
-Package pdftex.def Info: img/program.png used on input line 683.
+Package pdftex.def Info: img/program.png used on input line 757.
 (pdftex.def)             Requested size: 441.01775pt x 438.5598pt.
 
-[25 <./img/program.png>]
-Overfull \hbox (9.70564pt too wide) in paragraph at lines 724--724
+[27 <./img/program.png>]
+Overfull \hbox (9.70564pt too wide) in paragraph at lines 798--798
 [][][][]\OT4/cmr/m/n/6 Przeprowadzone 
  []
 
 
-Overfull \hbox (9.70564pt too wide) in paragraph at lines 724--724
+Overfull \hbox (9.70564pt too wide) in paragraph at lines 798--798
 [][][][]\OT4/cmr/m/n/6 Przeprowadzone 
  []
 
 
-Overfull \hbox (9.70564pt too wide) in paragraph at lines 724--724
+Overfull \hbox (9.70564pt too wide) in paragraph at lines 798--798
 [][][][]\OT4/cmr/m/n/6 Przeprowadzone 
  []
 
 
-Overfull \hbox (9.70564pt too wide) in paragraph at lines 724--724
+Overfull \hbox (9.70564pt too wide) in paragraph at lines 798--798
 [][][][]\OT4/cmr/m/n/6 Przeprowadzone 
  []
 
-[26]
+[28]
 Rozdzia\l  7.
-[27
+[29
 
-] [28
+] [30
 
 ]
 Rozdzia\l  8.
-[29] [30
+[31] [32
 
 
 ]
 Dodatek A.
-[31] (main.figu)
+[33] (main.figu)
 \tf@figu=\write8
 \openout8 = `main.figu'.
 
@@ -1689,7 +1715,7 @@ Dodatek A.
 \tf@algo=\write10
 \openout10 = `main.algo'.
 
- [32
+ [34
 
 ] (main.bbl
 LaTeX Font Info:    Try loading font information for OT4+cmtt on input line 5.
@@ -1699,51 +1725,50 @@ File: ot4cmtt.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [33
+ [35
 
 
 ]
-Underfull \hbox (badness 4634) in paragraph at lines 130--133
+Underfull \hbox (badness 4634) in paragraph at lines 141--144
 []\OT4/cmr/m/n/10.95 Mymedialite: Exam-ple expe-ri-ments.  [][]$\OT4/cmtt/m/n/1
 0.95 http : / / www . mymedialite . net / examples /$
  []
 
 
-Underfull \hbox (badness 2486) in paragraph at lines 151--154
+Underfull \hbox (badness 2486) in paragraph at lines 162--165
 []\OT4/cmr/m/n/10.95 Netflix Prize Ru-les.  [][]$\OT4/cmtt/m/n/10.95 http : / /
  www . netflixprize . com / /rules$[][]\OT4/cmr/m/n/10.95 .  Data do-st¦pu:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--172
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [36]
+Underfull \hbox (badness 10000) in paragraph at lines 178--183
 []\OT4/cmr/m/n/10.95 Rohrmann T.  Com-pu-ting re-com-men-da-tions at extreme
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--172
+Underfull \hbox (badness 10000) in paragraph at lines 178--183
 \OT4/cmr/m/n/10.95 scale with apa-che flink.  [][]$\OT4/cmtt/m/it/10.95 http : 
 / / data-[]artisans . com /$
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [34])
-[35]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 796.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 796.
+) [37]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 870.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 870.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 796.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 796.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 870.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 870.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 78D51937750CEDBDA2E8E74DDF3B1ADF;3110.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 796.
+(rerunfilecheck)             Checksum: B3B56FA07D88001996512B65B5E7C2BD;3089.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 870.
  ) 
 Here is how much of TeX's memory you used:
- 32324 strings out of 493634
- 733040 string characters out of 3141314
+ 32361 strings out of 493634
+ 733739 string characters out of 3141314
  938248 words of memory out of 3000000
- 34856 multiletter control sequences out of 15000+200000
+ 34877 multiletter control sequences out of 15000+200000
  20617 words of font info for 57 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  62i,19n,84p,742b,837s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1773,9 +1798,9 @@ l/plsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plsy8.pfb
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb><C:/Program Files (x8
 6)/MiKTeX 2.9/fonts/type1/public/pl/plti8.pfb><C:/Program Files (x86)/MiKTeX 2.
 9/fonts/type1/public/pl/pltt10.pfb>
-Output written on main.pdf (41 pages, 1471016 bytes).
+Output written on main.pdf (43 pages, 1931025 bytes).
 PDF statistics:
- 864 PDF objects out of 1000 (max. 8388607)
- 240 named destinations out of 1000 (max. 500000)
- 390 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 955 PDF objects out of 1000 (max. 8388607)
+ 253 named destinations out of 1000 (max. 500000)
+ 405 words of extra memory for PDF output out of 10000 (max. 10000000)
 

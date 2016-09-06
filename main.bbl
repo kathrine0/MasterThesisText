@@ -64,6 +64,11 @@ Harper F.~M., Konstan J.~A.
 \newblock {\em ACM Transactions on Interactive Intelligent Systems (TiiS)},
   5(4):19, 2016.
 
+\bibitem{hertz1993wstkep}
+Hertz J.~A., Krogh A.~S., Palmer R.~G., Jankowski S.
+\newblock {\em Wst{\k{e}}p do teorii oblicze{\'n} neuronowych}.
+\newblock Wydawnictwa Naukowo-Techniczne, 1993.
+
 \bibitem{id:FromTapestryToSVD}
 Huttner J.
 \newblock {F}rom {T}apestry to {SVD}: {A} survey of the algorithms that power
@@ -92,6 +97,12 @@ Hyndman R.~J., Koehler A.~B.
 Ji K., Sun R., Shu W., Li X.
 \newblock Next-song recommendation with temporal dynamics.
 \newblock {\em Knowledge-Based Systems}, 88:134--143, 2015.
+
+\bibitem{aforgenet}
+Kirillov A.
+\newblock {AF}orge.{NET} framework.
+\newblock {http://www.aforgenet.com/framework/}.
+\newblock Data dostępu: 2016-09-05.
 
 \bibitem{id:AdvancesInCollaborativeFiltering}
 Koren Y., Bell R.
@@ -193,6 +204,11 @@ Sharma R., Singh R.
 \newblock {E}volution of {R}ecommender {S}ystems from {A}ncient {T}imes to
   {M}odern {E}ra: A {S}urvey.
 \newblock {\em Indian Journal of Science and Technology}, 9(20), 2016.
+
+\bibitem{timothy1996sieci}
+Timothy M.
+\newblock Sieci neuronowe w praktyce.
+\newblock {\em WNT, Warszawa}, 1996.
 
 \bibitem{willmott2005advantages}
 Willmott C.~J., Matsuura K.
