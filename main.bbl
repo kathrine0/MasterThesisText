@@ -11,6 +11,12 @@ Allegro -- korzystanie z systemu rekomendacji.
   http://faq.allegro.pl/artykul/27613/korzystanie-z-systemu-rekomendacji}.
 \newblock Data dostępu: 2016-07-19.
 
+\bibitem{bottou2012stochastic}
+Bottou L.
+\newblock Stochastic gradient descent tricks.
+\newblock In {\em Neural Networks: Tricks of the Trade}, pages 421--436.
+  Springer, 2012.
+
 \bibitem{id:celma2010music}
 Celma O.
 \newblock {\em The Long Tail in Recommender Systems}, pages 87--107.
@@ -110,6 +116,13 @@ Kirillov A.
 \newblock \url{http://www.aforgenet.com/framework/}.
 \newblock Data dostępu: 2016-09-05.
 
+\bibitem{aforgenetgenetic}
+Kirillov A.
+\newblock {AF}orge.{NET} framework -- evolutionarylearning class.
+\newblock
+  \url{http://www.aforgenet.com/framework/docs/html/cc8bebc5-da54-5c56-6ddf-6a93aec7b9cd.htm}.
+\newblock Data dostępu: 2016-09-06.
+
 \bibitem{id:AdvancesInCollaborativeFiltering}
 Koren Y., Bell R.
 \newblock {\em {R}ecommender {S}ystems {H}andbook}, chapter {A}dvances in
@@ -150,6 +163,11 @@ Maleszka M., Mianowska B., Nguyen N.~T.
   tools and hierarchical structure of user profiles.
 \newblock {\em Knowledge-Based Systems}, 47:1--13, 2013.
 
+\bibitem{montana1989training}
+Montana D.~J., Davis L.
+\newblock Training feedforward neural networks using genetic algorithms.
+\newblock In {\em IJCAI}, volume~89, pages 762--767, 1989.
+
 \bibitem{mymedialitedatasets}
 Mymedialite: Example experiments.
 \newblock \url{http://www.mymedialite.net/examples/datasets.html}.
@@ -180,6 +198,11 @@ Mymedialite: Example experiments.
 Osowski S.
 \newblock {\em Sieci neuronowe w uj{\k{e}}ciu algorytmicznym}.
 \newblock Wydawnictwa Naukowo-Techniczne, 1996.
+
+\bibitem{pena2000evolutionary}
+Pena-Reyes C.~A., Sipper M.
+\newblock Evolutionary computation in medicine: an overview.
+\newblock {\em Artificial Intelligence in Medicine}, 19(1):1--23, 2000.
 
 \bibitem{id:aStreamOfMovies}
 Pogue D.

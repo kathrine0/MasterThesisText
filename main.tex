@@ -359,7 +359,7 @@ ABSTRACT EN
 		
 		 \subsubsection{Metoda matematyczna}	
 	
-		 Algorytm \textit{Matrix Factorization} bazuje na matematycznej metodzie rozkładu macierzy na czynniki
+		 Algorytm \textit{Matrix Factorization} bazuje na matematycznej metodzie rozkładu macierzy na czynniki.
 	
 	
 			  \begin{figure}[!ht] 
@@ -371,15 +371,64 @@ ABSTRACT EN
 			 
 		Początkowo dana jest niekompletna macierz zawierająca oceny, jakie użytkownicy wystawili konkretnym elementom (\textit{Rating Matrix}). Celem metody jest odnalezienie wartości, jakie można wstawić w puste miejsca, czyli przewidzenie jaką ocenę dany użytkownik wystawi nieocenionemu jeszcze elementowi. 		
 		
-		Tworzone są więc odrębne macierze dla użytkowników i elementów zawierające ukryte własności. Każdy element powiązany jest z wektorem $q_i \in \mathbb{R} ^f$ a każdy użytkownik z wektorem $p_u \in \mathbb{R} ^f$. Wartości czynników ukrytych determinują stopień zainteresowania daną cechą (w przypadku macierzy użytkowników) bądź stopień, w jakim dany element posiada tę cechę (w przypadku macierzy elementów).		
+		W tym celu tworzone są odrębne macierze dla użytkowników i elementów zawierające ukryte własności. Każdy element powiązany jest z wektorem $q_i \in \mathbb{R} ^f$ (wektory W, X, Y, Z na rys. \ref{fig:factorization}) a każdy użytkownik z wektorem $p_u \in \mathbb{R} ^f$ (wektory A, B, C, D na rys. \ref{fig:factorization}). Wartości czynników ukrytych determinują stopień zainteresowania daną cechą (w przypadku macierzy użytkowników) bądź stopień, w jakim dany element posiada tę cechę (w przypadku macierzy elementów).		
 		
 		Iloczyn skalarny $q_i^T p_u$ przedstawia relację pomiędzy użytkownikiem a elementem. Na tej podstawie można wnioskować ocenę $r_{ui}$, jaką użytkownik może wystawić elementowi: $r_{ui} = q_i^T p_u$ i w konsekwencji estymować zainteresowanie użytkownika danym elementem \cite{koren2009matrix}..
 		
 		Głównym wyzwaniem jest odnalezienie wartości macierzy użytkownika i elementu, które po przemnożeniu przez siebie dadzą kompletną macierz ocen. W przypadku omawianych algorytmów stosowana jest metoda stochastycznego gradientu prostego. 
+			
+		\subsubsection{Stochastyczny gradient prosty}
+			
+		Stochastyczny gradient prosty (ang. \textit{stochastic gradient descent}, \textit{SGD}) jest iteracyjnym algorytmem optymalizacyjnym mającym za zadanie odnalezienie minimum bądź maksimum zadanej funkcji. Jest on uproszczeniem popularnej metody gradientu prostego \cite{bottou2012stochastic}.
 				 
-		\subsubsection{Przebieg algorytmu}
+		Dana jest funkcja celu w postaci
+		
+		\begin{equation}
+		\label{eq:sgd1}
+		Q(w) = \sum_{i=1}^{n}Q_i(w)
+		\,.
+		\end{equation}
+			
+		Zadaniem algorytmu jest odnalezienie takiej wartości parametru $w$, dla którego $Q(w)$ będzie minimalne. Wykorzystując klasyczną metodę gradientu prostego poszukiwania minimum można zapisać w następujący sposób:
+		
+		\begin{equation}
+		\label{eq:sgd2}
+		w:= w - \eta \sum_{i=1}^{n} \nabla Q_i(w)
+		\,,
+		\end{equation}
+			
+		gdzie $\eta$ symbolizuje współczynnik uczenia (ang. \textit{learning rate}). W przypadku algorytmu stochastycznego następuje uproszczenie. Gradient $Q(w)$ aproksymowany jest gradientem pojedynczego przypadku:
+		
+		\begin{equation}
+		\label{eq:sgd3}
+		w:= w - \eta \nabla Q_i(w)
+		\,.
+		\end{equation}
+			
+		Algorytm przetwarza wszystkie elementy zbioru treningowego i dla każdego przypadku wykonuje aktualizację wartości $w$. Przebieg algorytmu przedstawiony jest pseudokodem \ref{aq:sgd}.
+			
+		\def\alghoritm5{Stochastyczny gradient prosty}
+		\begin{algorithm}[!ht]
+			\caption{\alghoritm5}
+			\myalgorithm{\alghoritm5}
+			\label{aq:sgd}
+			\begin{algorithmic}
+				\STATE $w \leftarrow \text{początkowy wektor } w$
+				\STATE $\eta \leftarrow \text{współczynnik uczenia}$
+				
+				\WHILE{nie odnaleziono minimum}
+				
+				\STATE losowo mieszkaj przykłady ze zbioru testowego
+				\FOR {$i \in \{1, 2, \ldots, n\} $}
+					\STATE $w:= w - \eta \nabla Q_i(w)$
+				\ENDFOR
+				\ENDWHILE
+			\end{algorithmic}
+		\end{algorithm}
 			 
-		Przebieg algorytmu składa się z dwóch faz. W pierwszej fazie inicjowany jest model (Algorytm \ref{aq:mf_init}). Daną wejściową jest macierz zawierająca dotychczasowe oceny wszystkich elementów przez wszystkich użytkowników w systemie. Na wyjściu otrzymywane są dwie nowe macierze reprezentujące ukryte własności użytkowników i elementów. Na tym etapie są one wypełnione wartościami losowymi. 		
+		\subsubsection{Przebieg algorytmu Matrix Factorization}
+			 
+		Przebieg algorytmu składa się z dwóch faz. W pierwszej fazie inicjowany jest model (zob. algorytm \ref{aq:mf_init}). Daną wejściową jest macierz zawierająca dotychczasowe oceny  elementów przez użytkowników w systemie. Na wyjściu otrzymywane są dwie nowe macierze reprezentujące ukryte własności użytkowników i elementów. Na tym etapie są one wypełnione wartościami losowymi. 		
 
 	
 		\def\alghoritm1{Matrix Factorization -- Inicjacja modelu}
@@ -410,10 +459,10 @@ ABSTRACT EN
 		\end{algorithm}
 	
 		
-		W fazie drugiej następuje uczenie metodą stochastycznego gradientu prostego (Algorytm  \ref{aq:mf_learn}). Wynikiem tej fazy są macierze reprezentujące ukryte własności użytkowników i elementów. Mnożąc je ze sobą uzyskiwana jest przewidywana ocena każdego z elementów przez użytkowników. 
+		W fazie drugiej następuje uczenie metodą stochastycznego gradientu prostego (zob. algorytm  \ref{aq:mf_learn}). Wynikiem tej fazy są macierze reprezentujące ukryte własności użytkowników i elementów. Mnożąc je ze sobą uzyskiwana jest przewidywana ocena każdego z elementów przez użytkowników. 
 		
 		Przed rozpoczęciem uczenia ustalane są parametry: parametr regulujący (ang. \textit{regularization}), współczynnik uczenia (ang. \textit{learning rate}), parametr zanikania (ang. \textit{decay}) i liczba iteracji. 	
-		W trakcie trwania głównej pętli parametr regulujący pozostaje niezmienny. Służy on zapobieganiu zjawiska nadmiernego dopasowania (ang. \textit{overfitting}). Tempo uczenia jest przy każdym przebiegu pętli mnożone przez parametr zanikania, dzięki czemu można kontrolować jak kolejne przebiegi pętli wpływają na finalny wynik. 
+		W trakcie trwania głównej pętli parametr regulujący pozostaje niezmienny. Służy on zapobieganiu zjawisku nadmiernego dopasowania (ang. \textit{overfitting}). Tempo uczenia jest przy każdym przebiegu pętli mnożone przez parametr zanikania, dzięki czemu można kontrolować w jakim stopniu kolejne przebiegi pętli wpływają na finalny wynik. 
 		
 		Ostatnim parametrem ustalanym przed główną pętlą jest skośność globalna (ang. \textit{global bias}), która jest średnią wszystkich znanych ocen. 
 		
@@ -733,9 +782,7 @@ ABSTRACT EN
 		 
 		 gdzie $\alpha$ jest współczynnikiem momentum z zakresu $[0,1]$. Im wyższa wartość współczynnika tym większy jego wpływ na ostateczny kształt kolejnych wag. W dalszej części pracy przeprowadzono eksperymenty mające na celu dobranie optymalnej wartości współczynnika momentum.
 		 
- 		 \subsection{Algorytm RPROP}
-		 	
-	 	 \todo{opisać rprop}
+ 		 \subsection{Algorytm RPROP}		 
 		 
 		 Pomimo dużej popularności algorytmu propagacji wstecznej nie jest on pozbawiony wad. Sporym problemem jest jego relatywnie niska szybkość działania, szczególnie w przypadku bardzo dużych sieci neuronowych - a więc w przypadku odpowiadającemu potrzebom systemów rekomendacji. W odpowiedzi na te problemy Martin Riedmiller i Heinrich Braun zaproponowali w 1992 roku alternatywny algorytm - Resilient Backpropagation (RPROP).
 		 
@@ -767,7 +814,18 @@ ABSTRACT EN
 		 		 
  		 \subsection{Algorytm genetyczny}	
 		 
-		 \todo{opisać GA}
+		 Koncepcja algorytmów genetycznych została zaproponowana już 1960 roku przez Johna Hollanda. Należą one do klasy algorytmów ewolucyjnych, inspirowanych zasadą doboru naturalnego Darwina. Analogią do środowiska naturalnego jest pewien problem, dla którego poszukiwane jest optymalne rozwiązanie. Populacja składa się z potencjalnych rozwiązań, które są oceniane funkcją przystosowania. Zgodnie z zasadą Darwina zwycięża najsilniejszy, czyli najlepsze (chociaż nie zawsze optymalne) rozwiązanie \cite{pena2000evolutionary}. Schemat działania algorytmów genetycznych przedstawia rys. \ref{fig:algorytmgenetyczny}.	 
+		 
+		 
+		 \begin{figure}[!ht] 
+		 	\centering
+		 	\includegraphics[width=1\textwidth]{algorytmgenetyczny}
+		 	\caption{Ogólny schemat algorytmu genetycznego}
+		 	\label{fig:algorytmgenetyczny}
+		 \end{figure}
+
+		 Jako, że algorytmy genetyczne należą do grupy algorytmów optymalizacyjnych mogą zostać wykorzystane do uczenia sieci neuronowych. W przypadku tej implementacji populację stanowią propozycje wag dla każdego perceptronu. Preferowane są takie zestawy wag, dla których sieć zwraca rezultaty obarczone najmniejszym błędem. Najlepsze zestawy są ze sobą krzyżowane oraz podlegają mutacji. W wyniku takich mechanizmów ewolucyjnych powstaje rozwiązanie, dla których sieć neuronowa zwraca oczekiwane rezultaty \cite{aforgenetgenetic}\cite{montana1989training}.
+		 
 		 
 	 \section{Algorytymy hybrydowe}
 	 
