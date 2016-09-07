@@ -27,23 +27,23 @@
 \contentsline {subsection}{\numberline {5.1.3\relax .\kern .5em }SVD++}{20}{subsection.5.1.3}
 \contentsline {section}{\numberline {5.2\relax .\kern .5em }Filtrowanie z analiz\IeC {\k a} zawarto\IeC {\'s}ci}{21}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1\relax .\kern .5em }Konstrukcja sieci neuronowej}{21}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2\relax .\kern .5em }Uczenie sieci neuronowej}{22}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.2\relax .\kern .5em }Uczenie sieci neuronowej}{24}{subsection.5.2.2}
 \contentsline {subsection}{\numberline {5.2.3\relax .\kern .5em }Propagacja wsteczna}{24}{subsection.5.2.3}
-\contentsline {subsection}{\numberline {5.2.4\relax .\kern .5em }Algorytm RPROP}{25}{subsection.5.2.4}
+\contentsline {subsection}{\numberline {5.2.4\relax .\kern .5em }Algorytm RPROP}{26}{subsection.5.2.4}
 \contentsline {subsection}{\numberline {5.2.5\relax .\kern .5em }Algorytm genetyczny}{27}{subsection.5.2.5}
 \contentsline {section}{\numberline {5.3\relax .\kern .5em }Algorytymy hybrydowe}{27}{section.5.3}
-\contentsline {section}{\numberline {5.4\relax .\kern .5em }Analiza z\IeC {\l }o\IeC {\.z}ono\IeC {\'s}ci i poprawno\IeC {\'s}ci}{27}{section.5.4}
-\contentsline {chapter}{Rozdzia\l \ 6\relax .\kern .5em Ocena eksperymentalna}{29}{section*.32}
+\contentsline {section}{\numberline {5.4\relax .\kern .5em }Analiza z\IeC {\l }o\IeC {\.z}ono\IeC {\'s}ci i poprawno\IeC {\'s}ci}{28}{section.5.4}
+\contentsline {chapter}{Rozdzia\l \ 6\relax .\kern .5em Ocena eksperymentalna}{29}{section*.33}
 \contentsline {section}{\numberline {6.1\relax .\kern .5em }Opis metody badawczej}{29}{section.6.1}
 \contentsline {subsection}{\numberline {6.1.1\relax .\kern .5em }Miara oceny}{29}{subsection.6.1.1}
 \contentsline {subsection}{\numberline {6.1.2\relax .\kern .5em }Zbiory danych}{30}{subsection.6.1.2}
 \contentsline {section}{\numberline {6.2\relax .\kern .5em }\IeC {\'S}rodowisko symulacyjne}{31}{section.6.2}
 \contentsline {section}{\numberline {6.3\relax .\kern .5em }Metodologia}{32}{section.6.3}
 \contentsline {section}{\numberline {6.4\relax .\kern .5em }Przeprowadzone eksperymenty}{32}{section.6.4}
-\contentsline {chapter}{Rozdzia\l \ 7\relax .\kern .5em Wnioski}{33}{section*.44}
-\contentsline {chapter}{Rozdzia\l \ 8\relax .\kern .5em CHAPTER 1}{35}{section*.46}
+\contentsline {chapter}{Rozdzia\l \ 7\relax .\kern .5em Wnioski}{33}{section*.45}
+\contentsline {chapter}{Rozdzia\l \ 8\relax .\kern .5em CHAPTER 1}{35}{section*.47}
 \contentsline {section}{\numberline {8.1\relax .\kern .5em }SECTION}{35}{section.8.1}
 \contentsline {section}{\numberline {8.2\relax .\kern .5em }Section 2}{35}{section.8.2}
 \contentsline {subsection}{\numberline {8.2.1\relax .\kern .5em }Subsection 1}{35}{subsection.8.2.1}
-\contentsline {chapter}{Dodatek\ A\relax .\kern .5em Appendix 1}{37}{section*.49}
-\contentsline {chapter}{Bibliografia}{39}{section*.51}
+\contentsline {chapter}{Dodatek\ A\relax .\kern .5em Appendix 1}{37}{section*.50}
+\contentsline {chapter}{Bibliografia}{39}{section*.52}

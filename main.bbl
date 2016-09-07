@@ -11,6 +11,13 @@ Allegro -- korzystanie z systemu rekomendacji.
   http://faq.allegro.pl/artykul/27613/korzystanie-z-systemu-rekomendacji}.
 \newblock Data dostępu: 2016-07-19.
 
+\bibitem{effandpractstochsub}
+Avron H., Kale S., Kasiviswanathan S., Sindhwani V.
+\newblock Efficient and practical stochastic subgradient descent for nuclear
+  norm regularization.
+\newblock \url{https://www.cs.cmu.edu/~yuxiangw/docs/SSGD.pdf}.
+\newblock Data dostępu: 2016-09-07.
+
 \bibitem{bottou2012stochastic}
 Bottou L.
 \newblock Stochastic gradient descent tricks.
@@ -122,6 +129,13 @@ Kirillov A.
 \newblock
   \url{http://www.aforgenet.com/framework/docs/html/cc8bebc5-da54-5c56-6ddf-6a93aec7b9cd.htm}.
 \newblock Data dostępu: 2016-09-06.
+
+\bibitem{koren2008factorization}
+Koren Y.
+\newblock Factorization meets the neighborhood: a multifaceted collaborative
+  filtering model.
+\newblock In {\em Proceedings of the 14th ACM SIGKDD international conference
+  on Knowledge discovery and data mining}, pages 426--434. ACM, 2008.
 
 \bibitem{id:AdvancesInCollaborativeFiltering}
 Koren Y., Bell R.

@@ -218,6 +218,7 @@ ABSTRACT EN
 	 Filtrowanie content-based opiera się na cechach elementów w systemie. Rekomendowane są obiekty, które podobne są do tych pozytywnie ocenionych wcześniej przez użytkownika\cite{id:huynh2012modeling}. W zależności od domeny pod uwagę mogą być brane słowa kluczowe, cechy takie jak rok wydania, reżyser, autor, kompozytor, gatunek itp.
 	 
 	 \subsection{Metody tworzenia profilu użytkownika}
+	 \label{MetodyTworzeniaProfiluUżytkownika}
 	 
 	 Profil użytkownika może być tworzony na dwa sposoby. Jeżeli użytkownik jawnie pozostawia informacje można mówić o podejściu aktywnym (explicit feedback). Do takich informacji należą: ocena konkretnych elementów, tzw. łapka w górę lub w dół, komentarz itp. 
 	 
@@ -389,7 +390,7 @@ ABSTRACT EN
 		\,.
 		\end{equation}
 			
-		Zadaniem algorytmu jest odnalezienie takiej wartości parametru $w$, dla którego $Q(w)$ będzie minimalne. Wykorzystując klasyczną metodę gradientu prostego poszukiwania minimum można zapisać w następujący sposób:
+		Zadaniem algorytmu jest odnalezienie takiej wartości parametru $w$, dla którego $Q(w)$ będzie minimalne. Wykorzystując klasyczną metodę gradientu prostego poszukiwania można zapisać następującym wzorem:
 		
 		\begin{equation}
 		\label{eq:sgd2}
@@ -397,7 +398,7 @@ ABSTRACT EN
 		\,,
 		\end{equation}
 			
-		gdzie $\eta$ symbolizuje współczynnik uczenia (ang. \textit{learning rate}). W przypadku algorytmu stochastycznego następuje uproszczenie. Gradient $Q(w)$ aproksymowany jest gradientem pojedynczego przypadku:
+		gdzie $\eta$ symbolizuje współczynnik uczenia (ang. \textit{learning rate}). W przypadku algorytmu stochastycznego następuje uproszczenie. Zamiast obliczać dokładny gradient $Q(w)$, w każdej iteracji jest  on aproksymowany na podstawie pojedynczego, losowo wybranego przypadku:
 		
 		\begin{equation}
 		\label{eq:sgd3}
@@ -405,7 +406,7 @@ ABSTRACT EN
 		\,.
 		\end{equation}
 			
-		Algorytm przetwarza wszystkie elementy zbioru treningowego i dla każdego przypadku wykonuje aktualizację wartości $w$. Przebieg algorytmu przedstawiony jest pseudokodem \ref{aq:sgd}.
+		Algorytm przetwarza wszystkie elementy zbioru treningowego i dla każdego przypadku wykonuje aktualizację wartości $w$. Przebieg algorytmu przedstawiony jest poniżej (algorytm \ref{aq:sgd}).
 			
 		\def\alghoritm5{Stochastyczny gradient prosty}
 		\begin{algorithm}[!ht]
@@ -426,6 +427,16 @@ ABSTRACT EN
 			\end{algorithmic}
 		\end{algorithm}
 			 
+		Stochastyczny gradient prosty wykonuje dużo więcej kroków niż jego klasyczny odpowiednik aby odnaleźć rozwiązanie optymalne. Mimo tego jest on szybszy, gdyż każdy pojedynczy krok jest mniej kosztowny niż w oryginale. Różnicę w działaniu przedstawia rys. \ref{fig:sgd}.  
+			 
+		 \begin{figure}[!ht] 	
+		 	\centering	 		 	
+		 	\includegraphics[width=0.5\textwidth]{sdg}
+		 	\caption{Różnica pomiędzy klasycznym gradientem prostym (po lewej) a jego stochastyczną wersją (po prawej) \protect\cite{effandpractstochsub}}
+		 	\label{fig:sgd}
+		 \end{figure}
+			 
+		\newpage
 		\subsubsection{Przebieg algorytmu Matrix Factorization}
 			 
 		Przebieg algorytmu składa się z dwóch faz. W pierwszej fazie inicjowany jest model (zob. algorytm \ref{aq:mf_init}). Daną wejściową jest macierz zawierająca dotychczasowe oceny  elementów przez użytkowników w systemie. Na wyjściu otrzymywane są dwie nowe macierze reprezentujące ukryte własności użytkowników i elementów. Na tym etapie są one wypełnione wartościami losowymi. 		
@@ -585,13 +596,18 @@ ABSTRACT EN
 		 		 
 		 \subsection{SVD++}
 		 
-		 \todo{opisać SVD++}
+		 SVD++ jest rozszerzeniem metody SVD (dekompozycja głównych składowych, ang. \textit{singular value decomposition}). Od poprzednich omawianych algorytmów różni go to, że korzysta nie tylko z podejścia aktywnego do tworzenia profilu użytkownika ale także z pasywnego (zob. \ref{MetodyTworzeniaProfiluUżytkownika}).
 		 
-		 Algorytm SVD++ to rozszerzenie popularnej metody SVD. SVD, czyli dekompozycja głównych składowych (ang. \textit{Singular Value Decomposition}) jest metodą matematyczną służąca do redukcji wymiaru macierzy. Klasyczne SVD nie działa w przypadku gdy macierz wejściowa jest niekompletna. W przeszłości problem ten był rozwiązywany poprzez wpisywanie wartości w puste miejsca, co jednak jest mało efektywne obliczeniowo i może zaburzać finalny wynik \cite{sarwar2000application}\cite{koren2009matrix}.  
-		  
-		  zatem w takiej postaci nie nadaje się do wykorzystania w algorytmach rekomendacji. Dopiero rozszerzenie, SVD++, pozwala na przewidywanie ocen elementów przez użytkowników. 
+		 Model SVD++ opisywany jest równaniem:
 		 
-		 
+		 \begin{equation}
+		 	\label{eq:svd}
+		 	r_{ui} = \mu + b_u + b_i + q_i^T (p_u + \frac{1}{\sqrt{|N(u)|}} \sum_{j \in N(u)}^{} y_j) 
+		 	\,,
+		 \end{equation}
+		 		 
+		 Użytkownik powiązany jest z wektorem $p_u \in \mathbb{R} ^f$ reprezentującym zainteresowanie konkretnymi cechami. Taki model uzupełniany jest sumą  $\frac{1}{\sqrt{|N(u)|}} \sum_{j \in N(u)}^{} y_j$, która reprezentuje informacje niejawne (\textit{implicit feedback}). Zmienne $b_u$ i $b_i$ reprezentują obserwowane odchylenie od średniej dla użytkowników i elementów, natomiast $\mu$ to średnia wszystkich ocen\cite{koren2008factorization}. 
+		 	 
 		 
 	 \section{Filtrowanie z analizą zawartości}
 	 
