@@ -22,6 +22,7 @@
 \usepackage{fancyvrb} % dla srodowiska Verbatim
 \usepackage{color}
 \usepackage{lscape}
+\usepackage{longtable}
 
 \let\lll\undefined
 \usepackage{amssymb}
@@ -101,6 +102,12 @@
 \floatname{algorithm}{Algorytm}
 
 \newtheorem{mydef}{Definicja}
+
+%tables
+\setlength{\tabcolsep}{0.5em} % for the horizontal padding
+{\renewcommand{\arraystretch}{1.25}% for the vertical padding
+
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
 \begin{document}
 
@@ -218,7 +225,7 @@ ABSTRACT EN
 	 Filtrowanie content-based opiera się na cechach elementów w systemie. Rekomendowane są obiekty, które podobne są do tych pozytywnie ocenionych wcześniej przez użytkownika\cite{id:huynh2012modeling}. W zależności od domeny pod uwagę mogą być brane słowa kluczowe, cechy takie jak rok wydania, reżyser, autor, kompozytor, gatunek itp.
 	 
 	 \subsection{Metody tworzenia profilu użytkownika}
-	 \label{MetodyTworzeniaProfiluUżytkownika}
+	 \label{ss:metody_tworzenia_profilu_uzytkownika}
 	 
 	 Profil użytkownika może być tworzony na dwa sposoby. Jeżeli użytkownik jawnie pozostawia informacje można mówić o podejściu aktywnym (explicit feedback). Do takich informacji należą: ocena konkretnych elementów, tzw. łapka w górę lub w dół, komentarz itp. 
 	 
@@ -596,7 +603,7 @@ ABSTRACT EN
 		 		 
 		 \subsection{SVD++}
 		 
-		 SVD++ jest rozszerzeniem metody SVD (dekompozycja głównych składowych, ang. \textit{singular value decomposition}). Od poprzednich omawianych algorytmów różni go to, że korzysta nie tylko z podejścia aktywnego do tworzenia profilu użytkownika ale także z pasywnego (zob. \ref{MetodyTworzeniaProfiluUżytkownika}).
+		 SVD++ jest rozszerzeniem metody SVD (dekompozycja głównych składowych, ang. \textit{singular value decomposition}). Od poprzednich omawianych algorytmów różni go przede wszystkim to, że korzysta nie tylko z podejścia aktywnego do tworzenia profilu użytkownika ale także z pasywnego (zob. \ref{ss:metody_tworzenia_profilu_uzytkownika}).
 		 
 		 Model SVD++ opisywany jest równaniem:
 		 
@@ -606,7 +613,9 @@ ABSTRACT EN
 		 	\,,
 		 \end{equation}
 		 		 
-		 Użytkownik powiązany jest z wektorem $p_u \in \mathbb{R} ^f$ reprezentującym zainteresowanie konkretnymi cechami. Taki model uzupełniany jest sumą  $\frac{1}{\sqrt{|N(u)|}} \sum_{j \in N(u)}^{} y_j$, która reprezentuje informacje niejawne (\textit{implicit feedback}). Zmienne $b_u$ i $b_i$ reprezentują obserwowane odchylenie od średniej dla użytkowników i elementów, natomiast $\mu$ to średnia wszystkich ocen\cite{koren2008factorization}. 
+		 Użytkownik powiązany jest z wektorem $p_u \in \mathbb{R} ^f$ reprezentującym zainteresowanie konkretnymi cechami. Taki model uzupełniany jest sumą  $\frac{1}{\sqrt{|N(u)|}} \sum_{j \in N(u)}^{} y_j$, która reprezentuje informacje niejawne (\textit{implicit feedback}). Przykładem informacji niejawnej jest fakt, że użytkownik w ogóle zareagował na dany element (np. ocenił go), bez względu na wynik tej interakcji. 
+		  
+		 Zmienne $b_u$ i $b_i$ reprezentują obserwowane odchylenie od średniej dla użytkowników i elementów, natomiast $\mu$ to średnia wszystkich ocen\cite{koren2008factorization}. 
 		 	 
 		 
 	 \section{Filtrowanie z analizą zawartości}
@@ -781,6 +790,7 @@ ABSTRACT EN
 			\end{figure}
 			
 		 \subsubsection{Metoda momentum}
+		 \label{sss:metoda_momentum}
 	 
 		 W celu zwiększenia efektywności działania algorytmu została zastosowana metoda momentum. I tak też standardowy sposób aktualizacji wag sieci (równanie \ref{eq:weightadaptation3}) został zmodyfikowany w następujący sposób:
 		 
@@ -829,6 +839,7 @@ ABSTRACT EN
 		 Algorytm RPROP jest efektywniejszy pod kątem prędkości działania względem tradycyjnej propagacji wstecznej, więc dobrze sprawdza się tam, gdzie szybkość jest ważniejsza od wysokiej poprawności wyników  \cite{riedmiller1993direct}\cite{riedmiller1994rprop}.
 		 		 
  		 \subsection{Algorytm genetyczny}	
+		 \label{ss:algorytm_genetyczny}
 		 
 		 Koncepcja algorytmów genetycznych została zaproponowana już 1960 roku przez Johna Hollanda. Należą one do klasy algorytmów ewolucyjnych, inspirowanych zasadą doboru naturalnego Darwina. Analogią do środowiska naturalnego jest pewien problem, dla którego poszukiwane jest optymalne rozwiązanie. Populacja składa się z potencjalnych rozwiązań, które są oceniane funkcją przystosowania. Zgodnie z zasadą Darwina zwycięża najsilniejszy, czyli najlepsze (chociaż nie zawsze optymalne) rozwiązanie \cite{pena2000evolutionary}. Schemat działania algorytmów genetycznych przedstawia rys. \ref{fig:algorytmgenetyczny}.	 
 		 
@@ -844,8 +855,51 @@ ABSTRACT EN
 		 
 		 
 	 \section{Algorytymy hybrydowe}
+		 
+		 Zaproponowany nowy algorytm jest hybrydą metod collaborative i content-based. Zaimplementowanych zostało 9 wariantów:
+		 
+		 \begin{enumerate}
+		 	\item Matrix Factorization + sieć neuronowa uczona metodą propagacji wstecznej;
+		 	\item Matrix Factorization + sieć neuronowa uczona metodą RPROP;
+		 	\item Matrix Factorization + sieć neuronowa uczona algorytmem genetycznym;
+		 	\item Biased Matrix Factorization + sieć neuronowa uczona metodą propagacji wstecznej;
+		 	\item Biased Matrix Factorization + sieć neuronowa uczona metodą RPROP;
+		 	\item Biased Matrix Factorization + sieć neuronowa uczona algorytmem genetycznym;		 	
+		 	\item SVD++ + sieć neuronowa uczona metodą propagacji wstecznej;
+		 	\item SVD++ + sieć neuronowa uczona metodą RPROP;
+		 	\item SVD++ + sieć neuronowa uczona algorytmem genetycznym.
+		 \end{enumerate}
+		 
+		 Algorytm hybrydowy uruchamia osobno metodę filtrowania kolaboratywnego i filtrowania z analizą treści. W efekcie dla każdej pary użytkownik-element uzyskiwane są dwie  predykowane oceny z obu metod:  $r_{content-based_{ui}}$ i $r_{collaborative_{ui}}$. Ponadto, znany jest błąd $e$, z jakim zakończyło się uczenie sieci neuronowej dla użytkownika $u$. Przewidywana ocena obliczana jest wzorem:
+		 
+		 \begin{equation}
+		 	\label{eq:hybrid}		 	
+		 	 r_{ui} = (\frac{1}{k})^e \cdot r_{content-based_{ui}} + (1-(\frac{1}{k})^e) \cdot r_{collaborative_{ui}}
+		 	\,,
+		 \end{equation}
+		 
+		 gdzie $k$ jest parametrem konfigurowalnym (domyślnie $k = 2$), który determinuje stopień nachylenia funkcji wykładniczej. Parametr musi spełniać warunek $k>1$. Im wyższa wartość $k$, tym większy wpływ na rezultat ma wynik algorytmu kolaboratywnego. Zależność tę obrazuje rys. \ref{fig:hybridfunction}.
+		 
+		 \begin{figure}[!ht] 
+		 	\centering
+		 	\includegraphics[width=0.7\textwidth]{hybridfunction}
+		 	\caption{Wpływ parametru $k$ na wynik algorytmu}
+		 	\label{fig:hybridfunction}
+		 \end{figure}
 	 
-		 \todo{Algorytymy hybrydowe}
+		 \subsection{Zalety zaproponowanej metody}
+		 
+		 Największą przewagą zaproponowanego algorytmu jest to, że łączy on zalety filtrowania z analizą zawartości i filtrowania kolaboratywnego minimalizując jednocześnie ich wady poprzez dynamiczne dobieranie proporcji ich wpływu na końcowy wynik. Nowa metoda cechuje się uniwersalnością, gdyż model elementu zawierający jego własności budowany jest automatycznie. Jednocześnie nie są wymagane informacje o użytkowniku inne, niż to jakie elementy ocenił i jak je ocenił. 
+		 
+		 Im więcej zostanie dostarczonych informacji na temat elementów, tym lepsze będą wyniki. Jednakże w przypadku braku takowych informacji metoda ciągle będzie działać,  wówczas wynik będzie opierał się głównie na rezultatach filtrowania kolaboratywnego.
+		 
+		 Analogicznie, w przypadku małej liczby powiązań z innymi użytkownikami, zaproponowany algorytm hybrydowy ulepszy wynik collaborative filtering dzięki czynnikowi content-based. 
+		 
+		 \subsection{Wady zaproponowanej metody}
+		 
+		 Największą wadą nowej metody jest wyższa złożoność. Czas budowania modelu jest sumą czasów budowania modeli kolaboratywnego i content-based. 
+		 
+		 Istnieje też ryzyko, że w momencie gdy wynik z metody collaborative będzie bardzo zły, to rezultat osiągnięty przez nową metodę będzie gorszy niż z samego filtrowania z analizą zawartości. 
 	 
 	 \section{Analiza złożoności i poprawności}
  
@@ -930,6 +984,8 @@ ABSTRACT EN
 		
 	\section{Środowisko symulacyjne}
 	
+		\subsection{Oprogramowanie}
+	
 		Rys. \ref{fig:program} przedstawia zrzut ekranu środowiska symulacyjnego stworzonego przez autorkę pracy na potrzeby przeprowadzenia badań algorytmów. Główny interfejs programu składa się z trzech części: ustawienia podstawowe, okno z wynikiem oraz panel sterujący ustawieniami zaawansowanymi. 
 	
 		\begin{figure}[!ht] 
@@ -969,13 +1025,192 @@ ABSTRACT EN
 		 	\item minimalna ilość powtórzeń  danej cechy aby była brana pod uwagę w trakcie budowania rekomendacji.
 		 \end{itemize}	 
 		
-	\section{Metodologia}
-	
-		\todo{Metodologia}
+		\subsection{Sprzęt}
+		
+		Wszystkie badania zostały przeprowadzone na komputerze klasy PC działającym pod kontrolą 64-bitowego systemu Windows 10 Pro. Konfiguracja sprzętowa wygląda następująco:
+		
+		\begin{center}
+			\begin{tabular}{ r  l  }
+				Procesor: & Intel Core i5-6200U 2.30GHz \\ 
+				RAM: & 8 GB \\  
+				Typ dysku twardego: & SSD     
+			\end{tabular}
+		\end{center}
 	
 	\section{Przeprowadzone eksperymenty}
 	
+		\todo{Napisać tu ładny wstęp}
 		\todo{Przeprowadzone eksperymenty}
+		
+		Dla wszystkich przeprowadzonych eksperymentów stosunek zbioru treningowego do zbioru testowego wynosił 80\%/20\%.
+		
+		\subsection{Dopasowanie parametrów sieci neuronowej}
+	
+		Pierwszy przeprowadzony eksperyment miał na celu dopasowanie optymalnych parametrów sieci neuronowej dla filtrowania content-based. Badania przeprowadzone zostały w oparciu o bazę MovieLense. 
+		
+		\subsubsection{Dopasowanie maksymalnej liczby iteracji}
+		\label{exp:expiterations}
+		
+			Uczenie sieci neuronowej odbywa się w pętli tak długo, jak wartość błędu na wyjściu spadnie poniżej określonej wartości bądź przekroczona zostanie maksymalna ilość iteracji. Eksperyment ma na celu zbadanie wartości błędów w zależności od liczby iteracji.
+				
+			\begin{center}
+				\begin{longtable}{ | R{7cm}   m{8cm} |}
+					\hline
+					\multicolumn{2}{|c|}{\textbf{Konfiguracja parametrów podstawowych}} \\
+					\hline
+					Baza danych: & MovieLens \\
+					Testowana metoda: & Content-based \\
+					\hline
+					\multicolumn{2}{|c|}{\textbf{Konfiguracja filtrowania content-based}} \\
+					\hline
+					Algorytm: & Sieć neuronowa uczona propagacją wsteczną, RPROP i algorytmem genetycznym \\
+					Maksymalna ilość iteracji nauki: & ? \\				
+					Ilość neuronów w warstwie ukrytej: & 1 \\
+					Współczynnik momentum: & 0.9 \\
+					Współczynnik uczenia: & 0.1 \\
+					Sigmoidalna wartość $\alpha$: & 2.0 \\
+					Minimum powtarzających się cech: & 10 \\
+					Minimum ocenionych elementów przez użytkownika: & 10 \\
+					Ilość testowanych użytkowników: & 10 \\				
+					\hline
+					\caption{Konfiguracja dla eksperymentu maksymalnej liczby iteracji}
+				\end{longtable}
+			\end{center}
+			
+			\todo{Zweryfikować, czy nie kłamię}
+			Wyniki eksperymentu przedstawia wykres \ref{fig:expiterations} i tabela \ref{tab:expiterations}. Wraz ze wzrostem liczby iteracji wartość błędu maleje, jednakże po przekroczeniu pewnej wartości następuje ponowny wzrost. Wynika to z występowania zjawiska nadmiernego dopasowania (ang. \textit{overfitting}). 
+			
+			Zgodnie z oczekiwaniami, czas wykonania jest wprost proporcjonalny do liczby iteracji. W trakcie tego eksperymentu potwierdzone zostały również przypuszczenia dotyczące prędkości działania algorytmów. Najszybszy okazał się RPROP, jednakże kosztem nieco większych błędów. Najgorzej wypadł algorytm genetyczny, który charakteryzował się bardzo szybko rosnącym czasem wykonania przy jednoczesnym nie najlepszym wynikiem RMSE. 
+			
+			\begin{figure}[!ht]
+				\centering
+				\includegraphics[width=0.7\textwidth]{expiterations}			
+				\caption{Wyniki eksperymentu maksymalnej liczby iteracji}
+				\label{fig:expiterations}
+			\end{figure}
+			
+
+			\begin{longtable}{l||ll|ll|ll}		
+				\label{tab:expiterations}		
+				\textbf{L. iter.} & \multicolumn{2}{c|}{\textbf{Propagacja wsteczna}}  & \multicolumn{2}{c|}{\textbf{RPROP}} & \multicolumn{2}{c}{\textbf{Algorytm genetyczny}}  \\
+				\hline
+				& \textbf{RMSE} & \textbf{czas} & \textbf{RMSE} & \textbf{czas} & \textbf{RMSE} & \textbf{czas} \\
+				\hline
+				100 & 1.03402 & 155 & 1.081065 & 139 & 1.042103 & 2824 \\
+				1000  & 1.022469 & 564 & 1.055915 & 463 & 1.033005 & 24831  \\
+				3000  & 1.035766 & 1770 & 1.054472 & 1581  & 1.038922 & 70579  \\
+				10000 & 1.058892  & 5444 & 1.081511  & 4567  & 1.068489 & 239775 \\
+				\caption{Wyniki eksperymentu maksymalnej liczby iteracji}
+			\end{longtable}
+		
+		\subsubsection{Dopasowanie parametru momentum} 
+		\label{exp:momentum}
+			
+		Parametr momentum jest dodatkowym współczynnikiem mającym na celu ulepszenie działania algorytmu propagacji wstecznej (zob. \ref{sss:metoda_momentum}). Eksperyment ma na celu zbadanie dla jakich wartości osiągany jest najniższy błąd.
+			
+		\begin{center}
+			\begin{longtable}{ | R{7cm}   m{8cm} |}
+				\hline
+				\multicolumn{2}{|c|}{\textbf{Konfiguracja parametrów podstawowych}} \\
+				\hline
+				Baza danych: & MovieLens \\
+				Testowana metoda: & Content-based \\
+				\hline
+				\multicolumn{2}{|c|}{\textbf{Konfiguracja filtrowania content-based}} \\
+				\hline
+				Algorytm: & Sieć neuronowa z propagacją wsteczną \\
+				Maksymalna ilość iteracji nauki: & 1000 \\				
+				Ilość neuronów w warstwie ukrytej: & 2 \\
+				Współczynnik momentum: & ? \\
+				Współczynnik uczenia: & 0.1 \\
+				Sigmoidalna wartość $\alpha$: & 2.0 \\
+				Minimum powtarzających się cech: & 10 \\
+				Minimum ocenionych elementów przez użytkownika: & 100 \\
+				Ilość testowanych użytkowników: & 5 \\				
+				\hline
+				\caption{Konfiguracja dla eksperymentu dopasowania wartości momentum}
+			\end{longtable}
+		\end{center}
+		
+		Wyniki eksperymentu przedstawia wykres \ref{fig:expmomentum} i tabela \ref{tab:expmomentum}. W zakresie wartości $[0,0.9]$ błąd oscyluje w granicach podobnych wartości z nieznaczną tendencją malejącą. Wyraźny skok na niekorzyść odnotowany jest dopiero przy momentum$=1$. 
+		
+		\begin{figure}[!ht]
+			\centering
+			\includegraphics[width=0.7\textwidth]{expmomentum}			
+			\caption{Wyniki eksperymentu momentum}
+			\label{fig:expmomentum}
+		\end{figure}
+				
+		\begin{longtable}{lll}
+			\label{tab:expmomentum}
+			\textbf{Momentum} & \textbf{RMSE} & \textbf{MAE} \\
+			\hline
+			0        & 1.086007 & 0.855964 \\
+			0.1      & 1.069125 & 0.851345 \\
+			0.2      & 1.077596 & 0.860146 \\
+			0.3      & 1.074588 & 0.851467 \\
+			0.4      & 1.052529 & 0.8424   \\
+			0.5      & 1.063205 & 0.846198 \\
+			0.6      & 1.065994 & 0.856964 \\
+			0.7      & 1.046752 & 0.83462  \\
+			0.8      & 1.042235 & 0.842353 \\
+			0.9      & 1.046243 & 0.840319 \\
+			1        & 1.375336 & 1.071652 \\
+			\caption{Wyniki eksperymentu momentum}
+		\end{longtable}
+					
+		\subsubsection{Dopasowanie rozmiaru populacji}
+	
+		Parametr rozmiaru populacji determinuje ilość osobników, jaka zostanie wygenerowana w każdej epoce przebiegu algorytmu genetycznego (zob \ref{ss:algorytm_genetyczny}). Eksperyment ma na celu zbadanie korelacji pomiędzy rozmiarem populacji a błędem algorytmu rekomendacji. Mierzony jest również czas uczenia sieci neuronowej.
+		
+		\begin{center}
+			\begin{longtable}{ | R{7cm}   m{8cm} |}
+				\hline
+				\multicolumn{2}{|c|}{\textbf{Konfiguracja parametrów podstawowych}} \\
+				\hline
+				Baza danych: & MovieLens \\
+				Testowana metoda: & Content-based \\
+				\hline
+				\multicolumn{2}{|c|}{\textbf{Konfiguracja filtrowania content-based}} \\
+				\hline
+				Algorytm: & Sieć neuronowa uczona algorytmem genetycznym \\
+				Maksymalna ilość iteracji nauki: & 1000 \\				
+				Ilość neuronów w warstwie ukrytej: & 1 \\
+				Współczynnik momentum: & 0.9 \\
+				Współczynnik uczenia: & 0.1 \\
+				Sigmoidalna wartość $\alpha$: & 2.0 \\
+				Minimum powtarzających się cech: & 10 \\
+				Minimum ocenionych elementów przez użytkownika: & 10 \\
+				Ilość testowanych użytkowników: & 10 \\				
+				\hline
+				\caption{Konfiguracja dla eksperymentu dopasowania wielkości populacji}
+			\end{longtable}
+		\end{center}
+		
+		Wyniki eksperymentu przedstawia wykres \ref{fig:exppopulation} i tabela \ref{tab:exppopulation}. Zgodnie z oczekiwaniami występuje dodatnia korelacja pomiędzy rozmiarem populacji a czasem wykonania i ujemna pomiędzy rozmiarem populacji a błędem algorytmu rekomendacji. 
+		
+		Zależność pomiędzy rozmiarem populacji a czasem wykonania  jest liniowa, natomiast błąd maleje wykładniczo gdy populacja osiąga większe rozmiary. Optymalnym zatem jest przyjęcie rozmiaru populacji równej $100$. 
+		
+		
+		\begin{figure}[!ht]
+			\centering
+			\includegraphics[width=0.7\textwidth]{exppopulation}
+			\caption{Wyniki eksperymentu rozmiaru populacji}
+			\label{fig:exppopulation}
+		\end{figure}
+		
+		\begin{longtable}{llll}
+			\label{tab:exppopulation}
+			\centering
+			\textbf{Populacja} & \textbf{RMSE} & \textbf{MAE} & \textbf{czas} \\
+			\hline
+			10        & 1.056848 & 0.861325 & 2519                      \\
+			25        & 1.055562 & 0.859391 & 6015                      \\
+			50        & 1.041198 & 0.850866 & 11804                     \\
+			100       & 1.022943 & 0.825477 & \multicolumn{1}{r}{24062} \\
+			200       & 1.013656 & 0.816789 & 52751                     \\
+			\caption{Wyniki eksperymentu rozmiaru populacji}
+		\end{longtable}
 	
 \chapter{Wnioski}
 \shortTitle{Wnioski}
