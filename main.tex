@@ -413,24 +413,21 @@ ABSTRACT EN
 		\label{eq:sgd1}
 		Q(w) = \sum_{i=1}^{n}Q_i(w)
 		\,.
-		\end{equation}
-			
+		\end{equation}			
 		Zadaniem algorytmu jest odnalezienie takiej wartości parametru $w$, dla którego $Q(w)$ będzie minimalne. Wykorzystując klasyczną metodę gradientu prostego poszukiwania można zapisać następującym wzorem:
 		
 		\begin{equation}
 		\label{eq:sgd2}
 		w:= w - \eta \sum_{i=1}^{n} \nabla Q_i(w)
 		\,,
-		\end{equation}
-			
+		\end{equation}			
 		gdzie $\eta$ symbolizuje współczynnik uczenia (ang. \textit{learning rate}). W przypadku algorytmu stochastycznego następuje uproszczenie. Zamiast obliczać dokładny gradient $Q(w)$, w każdej iteracji jest  on aproksymowany na podstawie pojedynczego, losowo wybranego przypadku:
 		
 		\begin{equation}
 		\label{eq:sgd3}
 		w:= w - \eta \nabla Q_i(w)
 		\,.
-		\end{equation}
-			
+		\end{equation}			
 		Algorytm przetwarza wszystkie elementy zbioru treningowego i dla każdego przypadku wykonuje aktualizację wartości $w$. Przebieg algorytmu przedstawiony jest poniżej (algorytm \ref{aq:sgd}).
 			
 		\def\alghoritm5{Stochastyczny gradient prosty}
@@ -559,8 +556,7 @@ ABSTRACT EN
 		 	1 - \frac{ a - r_{min} }{ r_{max} - r_{min} }	
 		 }
 		 \,,
-		 \end{equation} 
-		 		
+		 \end{equation} 		 		
 		 gdzie
 		 
 		 \begin{conditions*}
@@ -628,9 +624,8 @@ ABSTRACT EN
 		 \begin{equation}
 		 	\label{eq:svd}
 		 	r_{ui} = \mu + b_u + b_i + q_i^T (p_u + \frac{1}{\sqrt{|N(u)|}} \sum_{j \in N(u)}^{} y_j) 
-		 	\,,
-		 \end{equation}
-		 		 
+		 	\,
+		 \end{equation}		 		 
 		 Użytkownik powiązany jest z wektorem $p_u \in \mathbb{R} ^f$ reprezentującym zainteresowanie konkretnymi cechami. Taki model uzupełniany jest sumą  $\frac{1}{\sqrt{|N(u)|}} \sum_{j \in N(u)}^{} y_j$, która reprezentuje pośrednie informacje zwrotne. Przykładem informacji niejawnej jest fakt, że użytkownik w ogóle zareagował na dany element (np. ocenił go), bez względu na wynik tej interakcji. 
 		  
 		 Zmienne $b_u$ i $b_i$ reprezentują obserwowane odchylenie od średniej dla użytkowników i elementów, natomiast $\mu$ to średnia wszystkich ocen \cite{koren2008factorization}. 
@@ -667,8 +662,7 @@ ABSTRACT EN
 			 0		 & \quad \text{jeśli } f(w_0 + \sum_{i=1}^{n}w_ix_i) < \eta\\
 			 \end{cases}
 		 \,,
-		 \end{equation}
-		 
+		 \end{equation}		 
 		 gdzie
 		 
 		 \begin{conditions*}
@@ -685,7 +679,6 @@ ABSTRACT EN
 		  f(x) = \frac{1}{1 + \exp(-\alpha x)}
 		  \,.
 		  \end{equation}
-
 		 Wykres funkcji wygląda jak na rys. \ref{fig:sigmoid}.
 
  		 \begin{figure}[!ht] 
@@ -729,8 +722,7 @@ ABSTRACT EN
 		 \label{eq:weightadaptation}
 		 W_{ij}(n+1) = W_{ij}(n) + \Delta W_{ij}(n) 
 		 \,,
-		 \end{equation}
-		 		 
+		 \end{equation}		 		 
 		 gdzie
 		 
 		 \begin{conditions*}
@@ -768,8 +760,7 @@ ABSTRACT EN
  		 \label{eq:weightadaptation2}
  		 \Delta W_{ij}(n) = \eta p(W)
  		 \,,
- 		 \end{equation}
-		 
+ 		 \end{equation}		 
 		 gdzie
 		 
 		 \begin{conditions*}
@@ -822,8 +813,7 @@ ABSTRACT EN
 		 \label{eq:zasadamomentum2}
 		 \Delta W_{ij}(n) = \eta(n) \cdot p(n) + \alpha(W_{ij}(n)-W_{ij}(n-1)) 
 		 \,,
-		 \end{equation}
-		 
+		 \end{equation}		 
 		 gdzie $\alpha$ jest współczynnikiem momentum z zakresu $[0,1]$. Im wyższa wartość współczynnika tym większy jego wpływ na ostateczny kształt kolejnych wag. W dalszej części pracy przeprowadzono eksperymenty mające na celu dobranie optymalnej wartości współczynnika momentum.
 		 
  		 \subsection{Algorytm RPROP}		 
@@ -843,8 +833,7 @@ ABSTRACT EN
 			\eta(n-1), & \quad \text{w każdym innym przypadku} 
 		 \end{cases}		 
 		 \,,
-		 \end{equation}
-		 
+		 \end{equation}		 
 		 gdzie $\frac{\partial E^2(t)}{\partial v(t)}$ jest dokładną wartością składowej $v$ gradientu. Ponadto stałe $a$, $b$, $\eta_{min}$ i $\eta_{max}$ są zdefiniowane następująco:
 
 		 \begin{conditions*}
@@ -894,8 +883,7 @@ ABSTRACT EN
 		 	\label{eq:hybrid}		 	
 		 	 r_{ui} = (\frac{1}{k})^e \cdot r_{content-based_{ui}} + (1-(\frac{1}{k})^e) \cdot r_{collaborative_{ui}}
 		 	\,,
-		 \end{equation}
-		 
+		 \end{equation}		 
 		 gdzie $k$ jest parametrem konfigurowalnym (domyślnie $k = 2$), który determinuje stopień nachylenia funkcji wykładniczej. Parametr musi spełniać warunek $k>1$. Im wyższa wartość $k$, tym większy wpływ na rezultat ma wynik algorytmu kolaboratywnego. Zależność tę obrazuje rys. \ref{fig:hybridfunction}.
 		 
 		 \begin{figure}[!ht] 
@@ -943,8 +931,7 @@ ABSTRACT EN
 			\label{eq:rmse}
 			RMSE = \sqrt{ \frac{1}{n} \sum_{i=1}^{n} (\hat{y}_i - y_i)^2 }
 			\,,
-		\end{equation}
-	
+		\end{equation}	
 		gdzie
 		
 		\begin{conditions*}
@@ -964,8 +951,7 @@ ABSTRACT EN
 		\label{eq:mae}
 		MAE = \frac{1}{n} \sum_{t=1}^{n} |\hat{y}_t - y_t|
 		\,,
-		\end{equation}
-		
+		\end{equation}		
 		gdzie
 		
 		\begin{conditions*}
