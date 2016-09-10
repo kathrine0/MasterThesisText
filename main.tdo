@@ -9,23 +9,22 @@
 \contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Zalety filtrowania kolaboratywnego}{8}{section*.15}
 \contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ opisa\IeC {\'c} istniej\IeC {\k a}ce algorytmy hybrydowe i na czym polegaj\IeC {\k a} etc}{9}{section*.17}
 \contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ poprawi\IeC {\'c} kolokwializm}{9}{section*.18}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ (Odpowied\IeC {\'z} na komentarz) cytat z literatury: In order to compute the mapping we make use of a well-known technique known as association rule mining [1] or co-visitation counts. Jakie jest poprawne t\IeC {\l }umaczenie?}{9}{section*.19}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ wersja t\IeC {\l }umaczona czy nie?}{10}{section*.20}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Napisa\IeC {\'c} wst\IeC {\k e}p. Co powinien zawiera\IeC {\'c}?}{13}{section*.26}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ "chyba b\IeC {\k e}dzie lepiej jednak przenie\IeC {\'s}\IeC {\'c} te algorytmy do rozdzia\IeC {\l }u z przegl\IeC {\k a}dem, bo tutaj raczej czytelnik oczekuje ju\IeC {\.z} konkretnego algorytmu" --- om\IeC {\'o}wi\IeC {\'c} reorganizacj\IeC {\k e}}{13}{section*.28}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ OM\IeC {\'O}WI\IeC {\'C} dwa ostatnie zdania brzmi\IeC {\k a} razem tak, jakby wynik by\IeC {\l } losowy}{16}{section*.34}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Analiza z\IeC {\l }o\IeC {\.z}ono\IeC {\'s}ci i poprawno\IeC {\'s}ci}{27}{section*.46}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ i od razu podk\IeC {\l }ada si\IeC {\k e} Pani recenzentowi... Dwa zdania temu pisa\IeC {\l }a Pani o tym, \IeC {\.z}e MAE i RMSE s\IeC {\k a} dobre dla tych samych danych, a teraz \IeC {\.z}e b\IeC {\k e}dzie Pani por\IeC {\'o}wnywa\IeC {\'c} trzy r\IeC {\'o}\IeC {\.z}ne zbiory}{30}{section*.50}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Opisa\IeC {\'c} Yahoo Music}{30}{section*.54}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Opisa\IeC {\'c} Amazon Meta}{30}{section*.56}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ wcze\IeC {\'s}niej powinien by\IeC {\'c} zaprezentowany model sieci tak, \IeC {\.z}eby by\IeC {\l }o wiadomo, sk\IeC {\k a}d bior\IeC {\k a} si\IeC {\k e} te parametry}{32}{section*.58}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Napisa\IeC {\'c} tu \IeC {\l }adny wst\IeC {\k e}p}{32}{section*.59}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Opis i schemat eksperyment\IeC {\'o}w}{32}{section*.60}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ ?? Jak bardzo wchodzi\IeC {\'c} w szczeg\IeC {\'o}\IeC {\l }y?}{32}{section*.61}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Zweryfikowa\IeC {\'c}, czy nie k\IeC {\l }ami\IeC {\k e}}{33}{section*.63}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Koniecznie TODO}{36}{section*.70}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Czy trzeba?}{36}{section*.72}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Czy trzeba}{36}{section*.74}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Por\IeC {\'o}wnanie algorytmu hybrydowego z content-based i collaborative}{36}{section*.75}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Analiza statystyczna wynik\IeC {\'o}w, PQStat}{36}{section*.76}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Wnioski}{39}{section*.78}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ wersja t\IeC {\l }umaczona czy nie?}{10}{section*.19}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Napisa\IeC {\'c} wst\IeC {\k e}p. Co powinien zawiera\IeC {\'c}?}{13}{section*.25}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ "chyba b\IeC {\k e}dzie lepiej jednak przenie\IeC {\'s}\IeC {\'c} te algorytmy do rozdzia\IeC {\l }u z przegl\IeC {\k a}dem, bo tutaj raczej czytelnik oczekuje ju\IeC {\.z} konkretnego algorytmu" --- om\IeC {\'o}wi\IeC {\'c} reorganizacj\IeC {\k e}}{13}{section*.27}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ OM\IeC {\'O}WI\IeC {\'C} dwa ostatnie zdania brzmi\IeC {\k a} razem tak, jakby wynik by\IeC {\l } losowy}{16}{section*.33}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Analiza z\IeC {\l }o\IeC {\.z}ono\IeC {\'s}ci i poprawno\IeC {\'s}ci}{27}{section*.45}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ i od razu podk\IeC {\l }ada si\IeC {\k e} Pani recenzentowi... Dwa zdania temu pisa\IeC {\l }a Pani o tym, \IeC {\.z}e MAE i RMSE s\IeC {\k a} dobre dla tych samych danych, a teraz \IeC {\.z}e b\IeC {\k e}dzie Pani por\IeC {\'o}wnywa\IeC {\'c} trzy r\IeC {\'o}\IeC {\.z}ne zbiory}{30}{section*.49}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Opisa\IeC {\'c} Yahoo Music}{30}{section*.53}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Opisa\IeC {\'c} Amazon Meta}{30}{section*.55}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ wcze\IeC {\'s}niej powinien by\IeC {\'c} zaprezentowany model sieci tak, \IeC {\.z}eby by\IeC {\l }o wiadomo, sk\IeC {\k a}d bior\IeC {\k a} si\IeC {\k e} te parametry}{32}{section*.57}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Napisa\IeC {\'c} tu \IeC {\l }adny wst\IeC {\k e}p}{32}{section*.58}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Opis i schemat eksperyment\IeC {\'o}w}{32}{section*.59}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ ?? Jak bardzo wchodzi\IeC {\'c} w szczeg\IeC {\'o}\IeC {\l }y?}{32}{section*.60}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Zweryfikowa\IeC {\'c}, czy nie k\IeC {\l }ami\IeC {\k e}}{33}{section*.62}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Koniecznie TODO}{36}{section*.69}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Czy trzeba?}{36}{section*.71}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Czy trzeba}{36}{section*.73}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Por\IeC {\'o}wnanie algorytmu hybrydowego z content-based i collaborative}{36}{section*.74}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Analiza statystyczna wynik\IeC {\'o}w, PQStat}{36}{section*.75}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Wnioski}{39}{section*.77}

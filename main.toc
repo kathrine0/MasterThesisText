@@ -20,8 +20,8 @@
 \contentsline {subsection}{\numberline {2.3.1\relax .\kern .5em }Rekomendacja muzyki}{9}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2\relax .\kern .5em }Rekomendacja film\IeC {\'o}w}{9}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3\relax .\kern .5em }Platformy typu e-commerce}{9}{subsection.2.3.3}
-\contentsline {chapter}{Rozdzia\l \ 3\relax .\kern .5em Model systemu}{11}{section*.21}
-\contentsline {chapter}{Rozdzia\l \ 4\relax .\kern .5em Algorytmy}{13}{section*.25}
+\contentsline {chapter}{Rozdzia\l \ 3\relax .\kern .5em Model systemu}{11}{section*.20}
+\contentsline {chapter}{Rozdzia\l \ 4\relax .\kern .5em Algorytmy}{13}{section*.24}
 \contentsline {section}{\numberline {4.1\relax .\kern .5em }Filtrowanie kolaboratywne}{13}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1\relax .\kern .5em }Matrix Factorization}{13}{subsection.4.1.1}
 \contentsline {subsection}{\numberline {4.1.2\relax .\kern .5em }Biased Matrix Factorization}{17}{subsection.4.1.2}
@@ -36,7 +36,7 @@
 \contentsline {subsection}{\numberline {4.3.1\relax .\kern .5em }Zalety zaproponowanej metody}{26}{subsection.4.3.1}
 \contentsline {subsection}{\numberline {4.3.2\relax .\kern .5em }Wady zaproponowanej metody}{27}{subsection.4.3.2}
 \contentsline {section}{\numberline {4.4\relax .\kern .5em }Analiza z\IeC {\l }o\IeC {\.z}ono\IeC {\'s}ci i poprawno\IeC {\'s}ci}{27}{section.4.4}
-\contentsline {chapter}{Rozdzia\l \ 5\relax .\kern .5em Ocena eksperymentalna}{29}{section*.47}
+\contentsline {chapter}{Rozdzia\l \ 5\relax .\kern .5em Ocena eksperymentalna}{29}{section*.46}
 \contentsline {section}{\numberline {5.1\relax .\kern .5em }Opis metody badawczej}{29}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1\relax .\kern .5em }Miara oceny}{29}{subsection.5.1.1}
 \contentsline {subsection}{\numberline {5.1.2\relax .\kern .5em }Zbiory danych}{30}{subsection.5.1.2}
@@ -47,10 +47,10 @@
 \contentsline {subsection}{\numberline {5.3.1\relax .\kern .5em }Dopasowanie parametr\IeC {\'o}w sieci neuronowej}{32}{subsection.5.3.1}
 \contentsline {subsection}{\numberline {5.3.2\relax .\kern .5em }Por\IeC {\'o}wnanie algorytmu hybrydowego z content-based i collaborative}{36}{subsection.5.3.2}
 \contentsline {subsection}{\numberline {5.3.3\relax .\kern .5em }Analiza statystyczna wynik\IeC {\'o}w}{36}{subsection.5.3.3}
-\contentsline {chapter}{Rozdzia\l \ 6\relax .\kern .5em Wnioski}{39}{section*.77}
-\contentsline {chapter}{Rozdzia\l \ 7\relax .\kern .5em CHAPTER 1}{41}{section*.79}
+\contentsline {chapter}{Rozdzia\l \ 6\relax .\kern .5em Wnioski}{39}{section*.76}
+\contentsline {chapter}{Rozdzia\l \ 7\relax .\kern .5em CHAPTER 1}{41}{section*.78}
 \contentsline {section}{\numberline {7.1\relax .\kern .5em }SECTION}{41}{section.7.1}
 \contentsline {section}{\numberline {7.2\relax .\kern .5em }Section 2}{41}{section.7.2}
 \contentsline {subsection}{\numberline {7.2.1\relax .\kern .5em }Subsection 1}{41}{subsection.7.2.1}
-\contentsline {chapter}{Dodatek\ A\relax .\kern .5em Appendix 1}{43}{section*.82}
-\contentsline {chapter}{Bibliografia}{45}{section*.84}
+\contentsline {chapter}{Dodatek\ A\relax .\kern .5em Appendix 1}{43}{section*.81}
+\contentsline {chapter}{Bibliografia}{45}{section*.83}

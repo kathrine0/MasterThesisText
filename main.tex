@@ -306,7 +306,7 @@ ABSTRACT EN
 		 \subsection{Rekomendacja muzyki}
 	 
 		 \begin{itemize}
-		 	\item \textbf{YouTube} -- serwis powstały w 2005 roku, pozwalający na bezpłatne umieszczanie, odtwarzanie, ocenianie i komentowanie filmów. Od 2006 roku przejęty przez Google. YouTube buduje profil użytkownika w oparciu o jego aktywność w serwisie. Brane pod uwagę są polubienia (łapka \todo{poprawić kolokwializm} w górę), subskrypcje, udostępnianie a także informacje czy użytkownik obejrzał film do końca czy tylko pewien jego procent. Techniki rekomendacji stosowane przez serwis to przede wszystkim asocjacyjna eksploracja danych \todo{(Odpowiedź na komentarz) cytat z literatury: In order to compute the mapping we make use of a well-known technique known as association rule mining [1] or co-visitation counts. Jakie jest poprawne tłumaczenie?} i licznik wspólnych odwiedzin danego wideo w czasie trwania pojedynczej sesji \cite{id:TheYouTubeVideoRecommendationSystem}. 
+		 	\item \textbf{YouTube} -- serwis powstały w 2005 roku, pozwalający na bezpłatne umieszczanie, odtwarzanie, ocenianie i komentowanie filmów. Od 2006 roku przejęty przez Google. YouTube buduje profil użytkownika w oparciu o jego aktywność w serwisie. Brane pod uwagę są polubienia (łapka \todo{poprawić kolokwializm} w górę), subskrypcje, udostępnianie a także informacje czy użytkownik obejrzał film do końca czy tylko pewien jego procent. Techniki rekomendacji stosowane przez serwis to przede wszystkim wydobywanie reguł asocjacyjnych i licznik wspólnych odwiedzin danego wideo w czasie trwania pojedynczej sesji \cite{id:TheYouTubeVideoRecommendationSystem}. 
 		 	\item \textbf{LastFM } -- internetowa radiostacja oferująca rozbudowany mechanizm rekomendacji piosenek ''Audioscrobbler''.   
 		 	\item \textbf{Pandora}	-- spersonalizowane radio internetowe wykorzystujące projekt Music Genome Project. Każda piosenka przeanalizowana jest pod kątem maksymalnie 450 cech; na tej podstawie budowane są rekomendacje \cite{id:mgp}.
 	
@@ -323,7 +323,7 @@ ABSTRACT EN
 	
 		\begin{itemize}
 			 \item \textbf{Allegro} -- polski portal aukcyjny. Swoim użytkownikom oferuje panel rekomendacji. Prezentowane produkty wybierane są w oparciu o to, co dotychczas kupował i oglądał użytkownik \cite{id:allegrofaq}. 
-			 \item \textbf{Amazon} -- największy na świecie sklep internetowy typu B2C. Amazon w swoich mechanizmach rekomendacji wykorzystuje algorytmy filtrowania kolaboratywnego typu item-to-item \todo{wersja tłumaczona czy nie?} \cite{id:linden2003amazon}.
+			 \item \textbf{Amazon} -- największy na świecie sklep internetowy typu B2C. Amazon w swoich mechanizmach rekomendacji wykorzystuje algorytmy filtrowania kolaboratywnego typu item--to--item \todo{wersja tłumaczona czy nie?} \cite{id:linden2003amazon}.
 		 \end{itemize}	 
 	  
  
@@ -367,7 +367,7 @@ ABSTRACT EN
 
 	 \section{Filtrowanie kolaboratywne}
 	 
-		 Implementacja algorytmów collaborative-filtering, które wykorzystane zostały w projekcie pochodzą biblioteki MyMediaLite \cite{mymedialite,gantner2011mymedialite}. 
+		 Implementacja algorytmów collaborative--filtering, które wykorzystane zostały w projekcie pochodzą biblioteki MyMediaLite \cite{mymedialite,gantner2011mymedialite}. 
 	 
 		 Przed podjęciem decyzji dotyczącej wyboru algorytmu kolaboratywnego filtrowania zostały przeanalizowane testy na bazie MovieLens M1 \cite{harper2016movielens}. Testy przeprowadzone zostały z pięciokrotną walidacją krzyżową. Rys. \ref{fig:cfcomparision} przedstawia wyniki (im mniejsza wartość RMSE i MAE tym lepiej). 
 	 
@@ -380,7 +380,7 @@ ABSTRACT EN
 	 
 		 \todo{"chyba będzie lepiej jednak przenieść te algorytmy do rozdziału z przeglądem, bo tutaj raczej czytelnik oczekuje już konkretnego algorytmu" --- omówić reorganizację}
 	 
-		 Najefektywniejsze okazały się algorytmy SVD++, Biased Matrix Factorization i Matrix Factorization bazujące na podejściu model-based. 
+		 Najefektywniejsze okazały się algorytmy SVD++, Biased Matrix Factorization i Matrix Factorization bazujące na podejściu model--based. 
 	 	 
 		 \subsection{Matrix Factorization}
 		
@@ -483,7 +483,7 @@ ABSTRACT EN
 				\STATE $item\_factors \leftarrow \text{Macierz MxF reprezentująca ukryte własności elementów}$
 				
 				\FOR{each $uf \in user\_factors$, $if \in item\_factors$ }
-				\STATE wstaw losową wartość za pomocą transformacji Boxa-Mullera
+				\STATE wstaw losową wartość za pomocą transformacji Boxa--Mullera
 				\ENDFOR
 
 				\FOR{each $user, item \in ratings$ }			
@@ -752,7 +752,7 @@ ABSTRACT EN
 		 \begin{figure}[!ht] 
 	 		 	\centering
 	 		 	\includegraphics[width=0.5\textwidth]{ilustracjabackprop}
-	 		 	\caption{Algorytm propagacji wstecznej w sieci trójwarstwowej - idea działania \protect\cite{kwateralgorytmy}}
+	 		 	\caption{Algorytm propagacji wstecznej w sieci trójwarstwowej -- idea działania \protect\cite{kwateralgorytmy}}
 	 		 	\label{fig:ilustracjabackprop}
 		 \end{figure}
 		 
@@ -795,7 +795,7 @@ ABSTRACT EN
 				\,,
 			\end{equation}
 			
-			\item Powyższe kroki potarzane są dla każdej pary dane wejściowe - oczekiwany wynik tak długo, aż poziom błędu spadnie poniżej akceptowalnej wartości bądź osiągnięta zostanie maksymalna liczba iteracji. 
+			\item Powyższe kroki potarzane są dla każdej pary dane wejściowe -- oczekiwany wynik tak długo, aż poziom błędu spadnie poniżej akceptowalnej wartości bądź osiągnięta zostanie maksymalna liczba iteracji. 
 
 		 \end{enumerate}
 				 
@@ -829,7 +829,7 @@ ABSTRACT EN
 		 
  		 \subsection{Algorytm RPROP}		 
 		 
-		 Pomimo dużej popularności algorytmu propagacji wstecznej nie jest on pozbawiony wad. Sporym problemem jest jego relatywnie niska szybkość działania, szczególnie w przypadku bardzo dużych sieci neuronowych - a więc w przypadku odpowiadającemu potrzebom systemów rekomendacji. W odpowiedzi na te problemy Martin Riedmiller i Heinrich Braun zaproponowali w 1992 roku alternatywny algorytm - Resilient Backpropagation (RPROP).
+		 Pomimo dużej popularności algorytmu propagacji wstecznej nie jest on pozbawiony wad. Sporym problemem jest jego relatywnie niska szybkość działania, szczególnie w przypadku bardzo dużych sieci neuronowych -- a więc w przypadku odpowiadającemu potrzebom systemów rekomendacji. W odpowiedzi na te problemy Martin Riedmiller i Heinrich Braun zaproponowali w 1992 roku alternatywny algorytm -- Resilient Backpropagation (RPROP).
 		 
 		 Główną różnicą jest wykorzystywanie jedynie informacji o dodatniości lub ujemności każdej składowej gradientu zamiast o ich wartości (jak to się odbywa w oryginalnym algorytmie). Ponadto, współczynnik uczenia modyfikowany jest w każdym kolejnym kroku. 
 		 
@@ -889,7 +889,7 @@ ABSTRACT EN
 		 	\item SVD++ + sieć neuronowa uczona algorytmem genetycznym.
 		 \end{enumerate}
 		 
-		 Algorytm hybrydowy uruchamia osobno metodę filtrowania kolaboratywnego i filtrowania z analizą zawartości. W efekcie dla każdej pary użytkownik-element uzyskiwane są dwie  predykowane oceny z obu metod:  $r_{content-based_{ui}}$ i $r_{collaborative_{ui}}$. Ponadto, znany jest błąd $e$, z jakim zakończyło się uczenie sieci neuronowej dla użytkownika $u$. Przewidywana ocena obliczana jest wzorem:
+		 Algorytm hybrydowy uruchamia osobno metodę filtrowania kolaboratywnego i filtrowania z analizą zawartości. W efekcie dla każdej pary użytkownik--element uzyskiwane są dwie  predykowane oceny z obu metod:  $r_{content-based_{ui}}$ i $r_{collaborative_{ui}}$. Ponadto, znany jest błąd $e$, z jakim zakończyło się uczenie sieci neuronowej dla użytkownika $u$. Przewidywana ocena obliczana jest wzorem:
 		 
 		 \begin{equation}
 		 	\label{eq:hybrid}		 	
@@ -1047,11 +1047,11 @@ ABSTRACT EN
 		
 		\subsection{Sprzęt}
 		
-		Wszystkie badania zostały przeprowadzone na komputerze klasy PC działającym pod kontrolą 64-bitowego systemu Windows 10 Pro. Konfiguracja sprzętowa wygląda następująco:
+		Wszystkie badania zostały przeprowadzone na komputerze klasy PC działającym pod kontrolą 64--bitowego systemu Windows 10 Pro. Konfiguracja sprzętowa wygląda następująco:
 		
 		\begin{center}
 			\begin{tabular}{ r  l  }
-				Procesor: & Intel Core i5-6200U 2.30GHz \\ 
+				Procesor: & Intel Core i5--6200U 2.30GHz \\ 
 				RAM: & 8 GB \\  
 				Typ dysku twardego: & SSD     
 			\end{tabular}
