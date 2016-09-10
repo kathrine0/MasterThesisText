@@ -184,7 +184,6 @@ ABSTRACT EN
 
   \listoftodos
 
-\todo{ujednolicić terminologię content-based/collaborative. Która wersja?}
 
  \chapter{Wstęp}
  \shortTitle{Wstęp}
@@ -216,7 +215,7 @@ ABSTRACT EN
 	 Tradycyjnie wyróżniamy następujące techniki rekomendacji: 
 	 
 	 \begin{itemize}
-	 	\item \textbf{filtrowanie w oparciu o zawartość} (ang. \textit{content-based filtering}), technika koncentrująca się na atrybutach elementów. Użytkownikowi rekomendowane są elementy, które podobne są do tych wybieranych przez niego w przeszłości;
+	 	\item \textbf{filtrowanie w oparciu o zawartość} (ang. \textit{content--based filtering}), technika koncentrująca się na atrybutach elementów. Użytkownikowi rekomendowane są elementy, które podobne są do tych wybieranych przez niego w przeszłości;
 	 	\item \textbf{filtrowanie kolaboratywne} (ang. \textit{collaborative filtering}), technika polegająca na odnajdywaniu użytkowników o podobnych gustach i sugerowaniu lubianych przez nich elementów aktualnie aktywnemu użytkownikowi;
 	 	\item \textbf{filtrowanie demograficzne} (ang. \textit{demographic filtering}), technika koncentrująca się na sugerowaniu aktywnemu użytkownikowi elementów popularnych pośród użytkowników z tej samej okolicy bądź w podobnym przedziale wiekowym;
 	 	\item \textbf{filtrowanie z analizą domeny wiedzy} (ang. \textit{knowledge-based filtering}), technika dobierająca kolejne elementy na podstawie określonej domeny wiedzy na temat tego, jak dany element spełnia potrzeby i preferencje użytkownika;	
@@ -230,29 +229,29 @@ ABSTRACT EN
 	 
 	 \section{Filtrowanie w oparciu o zawartość}
 	 
-	 Filtrowanie content-based opiera się na cechach elementów w systemie. Rekomendowane są obiekty, które podobne są do tych pozytywnie ocenionych wcześniej przez użytkownika \cite{id:huynh2012modeling}. W zależności od domeny pod uwagę mogą być brane słowa kluczowe, cechy takie jak rok wydania, reżyser, autor, kompozytor, gatunek itp.
+	 Filtrowanie w oparciu o zawartość opiera się na cechach elementów w systemie. Rekomendowane są obiekty, które podobne są do tych pozytywnie ocenionych wcześniej przez użytkownika \cite{id:huynh2012modeling}. W zależności od domeny pod uwagę mogą być brane słowa kluczowe, cechy takie jak rok wydania, reżyser, autor, kompozytor, gatunek itp.
 	 
 	 \subsection{Metody tworzenia profilu użytkownika}
 	 \label{ss:metody_tworzenia_profilu_uzytkownika}
 	 
-	 Profil użytkownika może być tworzony na dwa sposoby. Jeżeli użytkownik jawnie pozostawia informacje można mówić o podejściu aktywnym (explicit feedback). Do takich informacji należą: ocena konkretnych elementów, tzw. łapka \todo{kolokwializm - jak poprawić?} w górę lub w dół, komentarz itp. 
+	 Profil użytkownika może być tworzony na dwa sposoby. Jeżeli użytkownik jawnie pozostawia informacje można mówić bezpośredniej informacji zwrotnej (ang. \textit{explicit feedback}). Do takich informacji należą: ocena konkretnych elementów, tzw. łapka \todo{kolokwializm - jak poprawić?} w górę lub w dół, komentarz itp. 
 	 
-	 Jednakże nawet jeżeli użytkownik nie jest skory do zostawiania tego typu śladów, to i tak można wiele na jego temat wywnioskować korzystając z podejścia pasywnego (ang. \textit{implicit feedback}). System bierze wówczas pod uwagę aktywność użytkownika taką jak: historia zakupów, historia przeglądarki a nawet ruchy myszką. W przypadku serwisu z muzyką czy filmem cenną informacją będzie fakt, czy użytkownik wysłuchał lub obejrzał dany materiał do końca czy też wyłączył go po paru sekundach \cite{id:AdvancesInCollaborativeFiltering,id:ContentBasedRecommenderSystemsState}.
+	 Jednakże nawet jeżeli użytkownik nie jest skory do zostawiania tego typu śladów, to i tak można wiele na jego temat wywnioskować korzystając z pośredniej informacji zwrotnej (ang. \textit{implicit feedback}). System bierze wówczas pod uwagę aktywność użytkownika taką jak: historia zakupów, historia przeglądarki a nawet ruchy myszką. W przypadku serwisu z muzyką czy filmem cenną informacją będzie fakt, czy użytkownik wysłuchał lub obejrzał dany materiał do końca czy też wyłączył go po paru sekundach \cite{id:AdvancesInCollaborativeFiltering,id:ContentBasedRecommenderSystemsState}.
 	 
-	 \subsection{Zalety podejścia content-based}
+	 \subsection{Zalety filtrowania w oparciu o zawartość}
 	 
 	 Do zalet filtrowania w oparciu o zawartość należy niezależność użytkownika. Podczas budowania rekomendacji brany pod uwagę jest tylko jego profil; aktywność innych aktorów w systemie nie wpływa na wynik końcowy. \todo{ktoś może Pani zarzucić, że to wada, bo nie korzystamy z informacji, które są dostępne} Inną przewagą jest przejrzystość -- każda propozycja jest w pełni uzasadniona, gdyż opiera się na działaniach użytkownika w przeszłości (podczas gdy w przypadku filtrowania kolaboratywnego mamy do czynienia z czarną skrzynką \todo{tutaj albo trzeba rozwinąć myśl, albo nie pisać w ogóle o czarnych skrzynkach}). Ponadto, tego typu algorytm ma możliwość zaproponowania elementu, który nie był nigdy wcześniej oceniany przez nikogo. Zapobiega to zjawisku długiego ogona	 \cite{id:ContentBasedRecommenderSystemsState}.
 	 
-	 \subsection{Wady podejścia content-based}
+	 \subsection{Wady filtrowania w oparciu o zawartość}
 	 Aby rekomendacja była skuteczna użytkownik powinien ocenić jak najwięcej elementów. Problematyczni są zatem użytkownicy, którzy dopiero co dołączyli do serwisu oraz tacy, którzy nie są aktywni i rzadko zostawiają po sobie ślad \cite{id:MaleszkaMianowskaNguyenmethod}.
 	 
-	 Podejście content-based jest podatne na pułapkę tzw. bańki informacyjnej. Jeżeli w systemie rekomendującym produkcje kinowe użytkownik do tej pory oceniał jedynie filmy akcji, to mało prawdopodobne jest, że algorytm zaproponuje mu ciekawy dramat obyczajowy. Nowe propozycje nie są zaskakujące \cite{id:ContentBasedRecommenderSystemsState}.
+	 Filtrowanie w oparciu o zawartość jest podatne na pułapkę tzw. bańki informacyjnej. Jeżeli w systemie rekomendującym produkcje kinowe użytkownik do tej pory oceniał jedynie filmy akcji, to mało prawdopodobne jest, że algorytm zaproponuje mu ciekawy dramat obyczajowy. Nowe propozycje nie są zaskakujące \cite{id:ContentBasedRecommenderSystemsState}.
 	 
 	 \section{Filtrowanie kolaboratywne}
 	 
 	 Filtrowanie kolaboratywne opiera się na założeniu, że ludzie o zbliżonym guście dokonują podobnych wyborów. Użytkownicy o zbliżonym guście to osoby, które oceniły konkretne elementy w podobny sposób \cite{id:IntroductionToRecommenderSystemsHandbook, id:CollaborativeFilteringRecommenderSystems, id:huynh2012modeling}. 
 	 
-	 W przypadku filtrowania kolaboratywnego można wyróżnić dwa główne podejścia: oparte o regułę sąsiedztwa (ang. \textit{neighborhood}) oraz oparte o model (ang. \textit{model-based}), wykorzystujące modele ukrytych parametrów \cite{id:AdvancesInCollaborativeFiltering,koren2009matrix}. 
+	 W przypadku filtrowania kolaboratywnego można wyróżnić dwa główne podejścia: oparte o regułę sąsiedztwa (ang. \textit{neighborhood}) oraz oparte o model (ang. \textit{model--based}), wykorzystujące modele ukrytych parametrów \cite{id:AdvancesInCollaborativeFiltering,koren2009matrix}. 
 	 
 	 \begin{figure}[!ht] 
 	 	\centering
@@ -261,7 +260,7 @@ ABSTRACT EN
 	 	\label{fig:cf}
 	 \end{figure}
 	 
-	 Filtrowanie w oparciu o regułę sąsiedztwa koncentruje się na związkach element-element bądź użytkownik-użytkownik \cite{id:AdvancesInCollaborativeFiltering}.
+	 Filtrowanie w oparciu o regułę sąsiedztwa koncentruje się na związkach element--element bądź użytkownik--użytkownik \cite{id:AdvancesInCollaborativeFiltering}.
 	 Rysunek \ref{fig:cf} pokazuje regułę sąsiedztwa skoncentrowaną na relacji użytkownik-użytkownik. Joe ocenił trzy filmy. System odnajduje innych użytkowników, którzy ocenili te trzy pozycje podobnie jak Joe. Każdy z nich pozytywnie ocenił film ,,Saving Private Ryan", zatem jest to pierwsza rekomendacja dla Joe. 
 	 
 	  \begin{figure}[!ht] 
@@ -271,7 +270,7 @@ ABSTRACT EN
 	  	\label{fig:cf2}
 	  \end{figure}
 	 
-	 Ideą podejścia model--based \todo{która wersja językowa jest lepsza?} jest zbadanie i modelowanie zależności element--użytkownik wraz z czynnikami reprezentującymi ukryte własności elementów i użytkowników. Taki model jest następnie uczony przy użyciu dostępnych danych. W rezultacie można z niego odczytać przewidywaną ocenę elementu dla konkretnego użytkownika \cite{id:ComprehensiveSurveyOfNeighborhoodBasedRecommendationMethods, id:AdvancesInCollaborativeFiltering}.
+	 Ideą podejścia w oparciu o model jest zbadanie i modelowanie zależności element--użytkownik wraz z czynnikami reprezentującymi ukryte własności elementów i użytkowników. Taki model jest następnie uczony przy użyciu dostępnych danych. W rezultacie można z niego odczytać przewidywaną ocenę elementu dla konkretnego użytkownika \cite{id:ComprehensiveSurveyOfNeighborhoodBasedRecommendationMethods, id:AdvancesInCollaborativeFiltering}.
 	 
 	 Rysunek \ref{fig:cf2} pokazuje w sposób uproszczony podejście oparte o model. W układzie współrzędnym oznaczeni są użytkownicy wedle swoich preferencji oraz konkretnych cech (np. płeć) a także filmy, które stanowią odpowiedź na dany zestaw preferencji/cech \cite{koren2009matrix}. 
 	 
@@ -323,7 +322,7 @@ ABSTRACT EN
 	
 		\begin{itemize}
 			 \item \textbf{Allegro} -- polski portal aukcyjny. Swoim użytkownikom oferuje panel rekomendacji. Prezentowane produkty wybierane są w oparciu o to, co dotychczas kupował i oglądał użytkownik \cite{id:allegrofaq}. 
-			 \item \textbf{Amazon} -- największy na świecie sklep internetowy typu B2C. Amazon w swoich mechanizmach rekomendacji wykorzystuje algorytmy filtrowania kolaboratywnego typu item--to--item \todo{wersja tłumaczona czy nie?} \cite{id:linden2003amazon}.
+			 \item \textbf{Amazon} -- największy na świecie sklep internetowy typu B2C. Amazon w swoich mechanizmach rekomendacji wykorzystuje algorytmy filtrowania kolaboratywnego typu element--element \cite{id:linden2003amazon}.
 		 \end{itemize}	 
 	  
  
@@ -367,7 +366,7 @@ ABSTRACT EN
 
 	 \section{Filtrowanie kolaboratywne}
 	 
-		 Implementacja algorytmów collaborative--filtering, które wykorzystane zostały w projekcie pochodzą biblioteki MyMediaLite \cite{mymedialite,gantner2011mymedialite}. 
+		 Implementacja algorytmów filtrowania kolaboratywnego, które wykorzystane zostały w projekcie pochodzą biblioteki MyMediaLite \cite{mymedialite,gantner2011mymedialite}. 
 	 
 		 Przed podjęciem decyzji dotyczącej wyboru algorytmu kolaboratywnego filtrowania zostały przeanalizowane testy na bazie MovieLens M1 \cite{harper2016movielens}. Testy przeprowadzone zostały z pięciokrotną walidacją krzyżową. Rys. \ref{fig:cfcomparision} przedstawia wyniki (im mniejsza wartość RMSE i MAE tym lepiej). 
 	 
@@ -380,7 +379,7 @@ ABSTRACT EN
 	 
 		 \todo{"chyba będzie lepiej jednak przenieść te algorytmy do rozdziału z przeglądem, bo tutaj raczej czytelnik oczekuje już konkretnego algorytmu" --- omówić reorganizację}
 	 
-		 Najefektywniejsze okazały się algorytmy SVD++, Biased Matrix Factorization i Matrix Factorization bazujące na podejściu model--based. 
+		 Najefektywniejsze okazały się algorytmy SVD++, Biased Matrix Factorization i Matrix Factorization bazujące na podejściu w oparciu o model. 
 	 	 
 		 \subsection{Matrix Factorization}
 		
@@ -622,7 +621,7 @@ ABSTRACT EN
 		 		 
 		 \subsection{SVD++}
 		 
-		 SVD++ jest rozszerzeniem metody SVD (dekompozycja głównych składowych, ang. \textit{singular value decomposition}). Od poprzednich omawianych algorytmów różni go przede wszystkim to, że korzysta nie tylko z podejścia aktywnego do tworzenia profilu użytkownika ale także z pasywnego (zob. \ref{ss:metody_tworzenia_profilu_uzytkownika}).
+		 SVD++ jest rozszerzeniem metody SVD (dekompozycja głównych składowych, ang. \textit{singular value decomposition}). Od poprzednich omawianych algorytmów różni go przede wszystkim to, że korzysta nie tylko z bezpośredniej informacji zwrotnej do tworzenia profilu użytkownika ale także z pośredniej (zob. \ref{ss:metody_tworzenia_profilu_uzytkownika}).
 		 
 		 Model SVD++ opisywany jest równaniem:
 		 
@@ -632,14 +631,14 @@ ABSTRACT EN
 		 	\,,
 		 \end{equation}
 		 		 
-		 Użytkownik powiązany jest z wektorem $p_u \in \mathbb{R} ^f$ reprezentującym zainteresowanie konkretnymi cechami. Taki model uzupełniany jest sumą  $\frac{1}{\sqrt{|N(u)|}} \sum_{j \in N(u)}^{} y_j$, która reprezentuje informacje niejawne (\textit{implicit feedback}). Przykładem informacji niejawnej jest fakt, że użytkownik w ogóle zareagował na dany element (np. ocenił go), bez względu na wynik tej interakcji. 
+		 Użytkownik powiązany jest z wektorem $p_u \in \mathbb{R} ^f$ reprezentującym zainteresowanie konkretnymi cechami. Taki model uzupełniany jest sumą  $\frac{1}{\sqrt{|N(u)|}} \sum_{j \in N(u)}^{} y_j$, która reprezentuje pośrednie informacje zwrotne. Przykładem informacji niejawnej jest fakt, że użytkownik w ogóle zareagował na dany element (np. ocenił go), bez względu na wynik tej interakcji. 
 		  
 		 Zmienne $b_u$ i $b_i$ reprezentują obserwowane odchylenie od średniej dla użytkowników i elementów, natomiast $\mu$ to średnia wszystkich ocen \cite{koren2008factorization}. 
 		 	 
 		 
-	 \section{Filtrowanie z analizą zawartości}
+	 \section{Filtrowanie w oparciu o zawartość}
 	 
-		 Algorytmy content-based budują rekomendację na podstawie ocen, jakie zostały dotychczas wystawione przez użytkownika. Analizowane są cechy elementów i ich wartości oraz określana jest ich siła wpływu na finalną ocenę. 
+		 Algorytmy filtrowania w oparciu o zawartość budują rekomendację na podstawie ocen, jakie zostały dotychczas wystawione przez użytkownika. Analizowane są cechy elementów i ich wartości oraz określana jest ich siła wpływu na finalną ocenę. 
 		 
 		 W tym celu dla każdego użytkownika tworzona jest sieć neuronowa, która uczy się jego preferencji. 
 		 
@@ -742,7 +741,7 @@ ABSTRACT EN
 		 
 		 Dostrajanie wartości wag można wykonać na wiele sposobów. Można wyróżnić uczenie nadzorowane (z nauczycielem), uczenie z krytykiem (ang. \textit{reinforcement learning}) i uczenie samoorganizujące się (bez nadzoru) \cite{osowski1996sieci}.
 		 
-		 Na potrzeby systemu rekomendacji content-based opisywanego w tej pracy wykorzystane zostały trzy metody uczenia: algorytm propagacji wstecznej, algorytm RPROP i algorytm genetyczny. Wymienione metody należą do kategorii uczenia nadzorowanego. 
+		 Na potrzeby systemu rekomendacji w oparciu o zawartość opisywanego w tej pracy wykorzystane zostały trzy metody uczenia: algorytm propagacji wstecznej, algorytm RPROP i algorytm genetyczny. Wymienione metody należą do kategorii uczenia nadzorowanego. 
 		 
 		 
 		 \subsection{Propagacja wsteczna}
@@ -875,7 +874,7 @@ ABSTRACT EN
 		 
 	 \section{Algorytymy hybrydowe}
 		 
-		 Zaproponowany nowy algorytm jest hybrydą metod collaborative i content-based. Zaimplementowanych zostało 9 wariantów:
+		 Zaproponowany nowy algorytm jest hybrydą filtrowania kolaboratywnego i filtrowania w oparciu o zawartość. Zaimplementowanych zostało 9 wariantów:
 		 
 		 \begin{enumerate}
 		 	\item Matrix Factorization + sieć neuronowa uczona metodą propagacji wstecznej;
@@ -912,13 +911,13 @@ ABSTRACT EN
 		 
 		 Im więcej zostanie dostarczonych informacji na temat elementów, tym lepsze będą wyniki. Jednakże w przypadku braku takowych informacji metoda ciągle będzie działać,  wówczas wynik będzie opierał się głównie na rezultatach filtrowania kolaboratywnego.
 		 
-		 Analogicznie, w przypadku małej liczby powiązań z innymi użytkownikami, zaproponowany algorytm hybrydowy ulepszy wynik collaborative filtering dzięki czynnikowi content-based. 
+		 Analogicznie, w przypadku małej liczby powiązań z innymi użytkownikami, zaproponowany algorytm hybrydowy ulepszy wynik filtrowania kolaboratywnego dzięki czynnikowi filtrowania w oparciu o zawartość. 
 		 
 		 \subsection{Wady zaproponowanej metody}
 		 
-		 Największą wadą nowej metody jest wyższa złożoność. Czas budowania modelu jest sumą czasów budowania modeli kolaboratywnego i content-based. 
+		 Największą wadą nowej metody jest wyższa złożoność. Czas budowania modelu jest sumą czasów budowania modelu kolaboratywnego i modelu filtrowania w oparciu o zawartość. 
 		 
-		 Istnieje też ryzyko, że w momencie gdy wynik z metody collaborative będzie bardzo zły, to rezultat osiągnięty przez nową metodę będzie gorszy niż z samego filtrowania z analizą zawartości. 
+		 Istnieje też ryzyko, że w momencie gdy wynik filtrowania kolaboratywnego będzie bardzo zły, to rezultat osiągnięty przez nową metodę będzie gorszy niż z samego filtrowania z analizą zawartości. 
 	 
 	 \section{Analiza złożoności i poprawności}
  
@@ -1018,18 +1017,18 @@ ABSTRACT EN
 		W sekcji z ustawieniami podstawowymi możliwy jest wybór:
 		\begin{itemize}
 			\item bazy danych, która zostanie wykorzystana do pomiarów;
-			\item typu algorytmu rekomendującego (content-based, collaborative bądź hybrydowy)
+			\item typu algorytmu rekomendującego (filtrowanie w oparciu o zawartość, filtrowanie kolaboratywne bądź algorytm hybrydowy)
 			\item w przypadku wyboru kolaboratywnego filtrowania lub filtrowania hybrydowego możliwy jest wybór typu algorytmu: Matrix Factorization, Biased Matrix Factorization lub SVD++.
 			\item w przypadku wyboru filtrowania z analizą zawartości lub filtrowania hybrydowego automatycznie wybierany jest algorytm oparty na sieci neuronowej. 
 		\end{itemize}
 		 
-		 Widok ustawień zaawansowanych zmienia się w zależności od wybranego filtrowania. W przypadku wyboru content-based istnieje możliwość regulowania parametrów sieci neuronowej. Zawsze istnieje możliwość regulowania kryteriów doboru zestawu danych.
+		 Widok ustawień zaawansowanych zmienia się w zależności od wybranego filtrowania. W przypadku wyboru filtrowania w oparciu o zawartość istnieje możliwość regulowania parametrów sieci neuronowej. W każdym wariancie można regulować kryteria doboru zestawu danych.
 		 
 		 Kryteria doboru zestawu danych są następujące:
 		 
 		 \begin{itemize}
-		 	\item liczba użytkowników do pobrania do algorytmu content-based;
-		 	\item liczba użytkowników do pobrania do algorytmu collaborative;
+		 	\item liczba użytkowników do pobrania do filtrowania w oparciu o zawartość;
+		 	\item liczba użytkowników do pobrania do filtrowania kolaboratywnego;
 		 	\item minimum elementów, jakie zostały ocenione przez każdego pobranego użytkownika;
 		 	\item stosunek wielkości zbioru treningowego do zbioru testowego (domyślnie 80\%-20\%).
 		 \end{itemize}
@@ -1068,7 +1067,7 @@ ABSTRACT EN
 		
 		\subsection{Dopasowanie parametrów sieci neuronowej}
 	
-		Pierwszy przeprowadzony eksperyment miał na celu dopasowanie optymalnych parametrów sieci neuronowej dla filtrowania content-based. Badania przeprowadzone zostały w oparciu o bazę MovieLense. 
+		Pierwszy przeprowadzony eksperyment miał na celu dopasowanie optymalnych parametrów sieci neuronowej dla filtrowania w oparciu o zawartość. Badania przeprowadzone zostały w oparciu o bazę MovieLense. 
 		
 		\subsubsection{Dopasowanie maksymalnej liczby iteracji}
 		\label{exp:expiterations}
@@ -1081,9 +1080,9 @@ ABSTRACT EN
 					\multicolumn{2}{|c|}{\textbf{Konfiguracja parametrów podstawowych}} \\
 					\hline
 					Baza danych: & MovieLens \\
-					Testowana metoda: & Content-based \\
+					Testowana metoda: & Filtrowanie w oparciu o zawartość \\
 					\hline
-					\multicolumn{2}{|c|}{\textbf{Konfiguracja filtrowania content-based}} \\
+					\multicolumn{2}{|c|}{\textbf{Konfiguracja filtrowania w oparciu o zawartość}} \\
 					\hline
 					Algorytm: & Sieć neuronowa uczona propagacją wsteczną, RPROP i algorytmem genetycznym \\
 					Maksymalna ilość iteracji nauki: & ? \\				
@@ -1136,9 +1135,9 @@ ABSTRACT EN
 				\multicolumn{2}{|c|}{\textbf{Konfiguracja parametrów podstawowych}} \\
 				\hline
 				Baza danych: & MovieLens \\
-				Testowana metoda: & Content-based \\
+				Testowana metoda: & Filtrowanie w oparciu o zawartość \\
 				\hline
-				\multicolumn{2}{|c|}{\textbf{Konfiguracja filtrowania content-based}} \\
+				\multicolumn{2}{|c|}{\textbf{Konfiguracja filtrowania w oparciu o zawartość}} \\
 				\hline
 				Algorytm: & Sieć neuronowa z propagacją wsteczną \\
 				Maksymalna ilość iteracji nauki: & 1000 \\				
@@ -1191,9 +1190,9 @@ ABSTRACT EN
 				\multicolumn{2}{|c|}{\textbf{Konfiguracja parametrów podstawowych}} \\
 				\hline
 				Baza danych: & MovieLens \\
-				Testowana metoda: & Content-based \\
+				Testowana metoda: & Filtrowanie w oparciu o zawartość \\
 				\hline
-				\multicolumn{2}{|c|}{\textbf{Konfiguracja filtrowania content-based}} \\
+				\multicolumn{2}{|c|}{\textbf{Konfiguracja filtrowania w oparciu o zawartość}} \\
 				\hline
 				Algorytm: & Sieć neuronowa uczona algorytmem genetycznym \\
 				Maksymalna ilość iteracji nauki: & 1000 \\				
@@ -1248,7 +1247,7 @@ ABSTRACT EN
 		
 			\todo{Czy trzeba}
 
-		\subsection{Porównanie algorytmu hybrydowego z content-based i collaborative}
+		\subsection{Porównanie algorytmu hybrydowego z filtrowaniem w oparciu o zawartość i filtrowaniem kolaboratywnym}
 
 			\todo{Porównanie algorytmu hybrydowego z content-based i collaborative}
 
