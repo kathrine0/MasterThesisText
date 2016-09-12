@@ -177,6 +177,11 @@ Maleszka M., Mianowska B., Nguyen N.~T.
   tools and hierarchical structure of user profiles.
 \newblock {\em Knowledge-Based Systems}, 47:1--13, 2013.
 
+\bibitem{melville2002content}
+Melville P., Mooney R.~J., Nagarajan R.
+\newblock Content-boosted collaborative filtering for improved recommendations.
+\newblock In {\em Aaai/iaai}, pages 187--192, 2002.
+
 \bibitem{montana1989training}
 Montana D.~J., Davis L.
 \newblock Training feedforward neural networks using genetic algorithms.
@@ -212,6 +217,11 @@ Mymedialite: Example experiments.
 Osowski S.
 \newblock {\em Sieci neuronowe w uj{\k{e}}ciu algorytmicznym}.
 \newblock Wydawnictwa Naukowo-Techniczne, 1996.
+
+\bibitem{pariser2011filter}
+Pariser E.
+\newblock {\em The filter bubble: What the Internet is hiding from you}.
+\newblock Penguin UK, 2011.
 
 \bibitem{pena2000evolutionary}
 Pena-Reyes C.~A., Sipper M.

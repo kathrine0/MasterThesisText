@@ -240,7 +240,9 @@ ABSTRACT EN
 	 
 	 \subsection{Zalety filtrowania w oparciu o zawartość}
 	 
-	 Do zalet filtrowania w oparciu o zawartość należy niezależność użytkownika. Podczas budowania rekomendacji brany pod uwagę jest tylko jego profil; aktywność innych aktorów w systemie nie wpływa na wynik końcowy. \todo{ktoś może Pani zarzucić, że to wada, bo nie korzystamy z informacji, które są dostępne} Inną przewagą jest przejrzystość -- każda propozycja jest w pełni uzasadniona, gdyż opiera się na działaniach użytkownika w przeszłości. Ponadto, tego typu algorytm ma możliwość zaproponowania elementu, który nie był nigdy wcześniej oceniany przez nikogo. Zapobiega to zjawisku długiego ogona	 \cite{id:ContentBasedRecommenderSystemsState}.
+	 Do zalet filtrowania w oparciu o zawartość należy niezależność użytkownika. Podczas budowania rekomendacji brany pod uwagę jest tylko jego profil, aktywność innych aktorów w systemie nie wpływa na wynik końcowy. Nawet, gdy w bazie będzie istniało niewielu użytkowników lub ocenią oni zupełnie inne elementy niż użytkownik aktywny, to rekomendacja w dalszym ciągu może być miarodajna. 
+	 
+	 Inną przewagą jest przejrzystość -- każda propozycja jest w pełni uzasadniona, gdyż opiera się na działaniach użytkownika w przeszłości. Ponadto, tego typu algorytm ma możliwość zaproponowania elementu, który nie był nigdy wcześniej oceniany przez nikogo. Zapobiega to zjawisku długiego ogona \cite{id:ContentBasedRecommenderSystemsState}.
 	 
 	 \subsection{Wady filtrowania w oparciu o zawartość}
 	 Aby rekomendacja była skuteczna użytkownik powinien ocenić jak najwięcej elementów. Problematyczni są zatem użytkownicy, którzy dopiero co dołączyli do serwisu oraz tacy, którzy nie są aktywni i rzadko zostawiają po sobie ślad \cite{id:MaleszkaMianowskaNguyenmethod}.
@@ -276,8 +278,10 @@ ABSTRACT EN
 	 
 	 \subsection{Zalety filtrowania kolaboratywnego}
 	 
-	 \todo{Zalety filtrowania kolaboratywnego}
+	 Filtrowanie kolaboratywne dobrze radzi sobie nawet w takich wypadkach, gdzie elementy nie są dobrze opisane lub nie zawierają żadnych własności. Niektóre systemy zawierają zawartość trudną do przeanalizowania przez komputer, np. opinie, pomysły, komentarze. Mimo tego, dzięki filtrowaniu kolaboratywnemu i tak można zbudować efektywny system rekomendacji \cite{melville2002content}.
 	 
+	 Dzięki zastosowaniu tej metody mniej prawdopodobne jest wystąpienia zjawiska zwanego ''bańką informacyjną'' (ang. \textit{filter bubble}). Polega ono na tym, że użytkownik otrzymując informacje wyselekcjonowane przez określony algorytm zostaje zamknięty w pewnego rodzaju ,,bańce'', tzn. sugerowane mu elementy są do siebie podobne, gdyż dobierane są w oparciu o jego przeszłe zainteresowania \cite{pariser2011filter}. Dzięki filtrowaniu kolaboratywnemu użytkownik może otrzymać zaskakujące rekomendacje i (w zależności od domeny) odkryć nowy gatunek muzyczny, nowego reżysera lub nową kategorię produktów w sklepie.	 
+
 	 \subsection{Wady filtrowania kolaboratywnego}
 	 
 	 Jednym z problemów klasycznego podejścia do kolaboratywnego filtrowania jest brak uwzględnienia dynamiki zmian w gustach użytkowników. Ten sam użytkownik na przestrzeni kilku lat lub miesięcy może zupełnie inaczej ocenić ten sam film bądź piosenkę. Rozwiązaniem jest dodanie czynnika czasu podczas obliczania wag kolejnych ocen. \cite{id:NewRecommentationAlgoritmBasedOnSocialNetwork,id:NextSongRecommendationWithTemporalDynamics,koren2009matrix}.

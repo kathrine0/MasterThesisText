@@ -13,37 +13,37 @@
 \BOOKMARK [2][-]{subsection.2.3.1}{2.3.1. \040Rekomendacja muzyki}{section.2.3}% 13
 \BOOKMARK [2][-]{subsection.2.3.2}{2.3.2. \040Rekomendacja film\363w}{section.2.3}% 14
 \BOOKMARK [2][-]{subsection.2.3.3}{2.3.3. \040Platformy typu e-commerce}{section.2.3}% 15
-\BOOKMARK [0][-]{section*.14}{Rozdzia\233 3. Model systemu}{}% 16
-\BOOKMARK [0][-]{section*.18}{Rozdzia\233 4. Algorytmy}{}% 17
-\BOOKMARK [1][-]{section.4.1}{4.1. \040Filtrowanie kolaboratywne}{section*.18}% 18
+\BOOKMARK [0][-]{section*.12}{Rozdzia\233 3. Model systemu}{}% 16
+\BOOKMARK [0][-]{section*.16}{Rozdzia\233 4. Algorytmy}{}% 17
+\BOOKMARK [1][-]{section.4.1}{4.1. \040Filtrowanie kolaboratywne}{section*.16}% 18
 \BOOKMARK [2][-]{subsection.4.1.1}{4.1.1. \040Matrix Factorization}{section.4.1}% 19
 \BOOKMARK [2][-]{subsection.4.1.2}{4.1.2. \040Biased Matrix Factorization}{section.4.1}% 20
 \BOOKMARK [2][-]{subsection.4.1.3}{4.1.3. \040SVD++}{section.4.1}% 21
-\BOOKMARK [1][-]{section.4.2}{4.2. \040Filtrowanie w oparciu o zawartosc}{section*.18}% 22
+\BOOKMARK [1][-]{section.4.2}{4.2. \040Filtrowanie w oparciu o zawartosc}{section*.16}% 22
 \BOOKMARK [2][-]{subsection.4.2.1}{4.2.1. \040Konstrukcja sieci neuronowej}{section.4.2}% 23
 \BOOKMARK [2][-]{subsection.4.2.2}{4.2.2. \040Uczenie sieci neuronowej}{section.4.2}% 24
 \BOOKMARK [2][-]{subsection.4.2.3}{4.2.3. \040Propagacja wsteczna}{section.4.2}% 25
 \BOOKMARK [2][-]{subsection.4.2.4}{4.2.4. \040Algorytm RPROP}{section.4.2}% 26
 \BOOKMARK [2][-]{subsection.4.2.5}{4.2.5. \040Algorytm genetyczny}{section.4.2}% 27
-\BOOKMARK [1][-]{section.4.3}{4.3. \040Algorytymy hybrydowe}{section*.18}% 28
+\BOOKMARK [1][-]{section.4.3}{4.3. \040Algorytymy hybrydowe}{section*.16}% 28
 \BOOKMARK [2][-]{subsection.4.3.1}{4.3.1. \040Zalety zaproponowanej metody}{section.4.3}% 29
 \BOOKMARK [2][-]{subsection.4.3.2}{4.3.2. \040Wady zaproponowanej metody}{section.4.3}% 30
-\BOOKMARK [1][-]{section.4.4}{4.4. \040Analiza z\233ozonosci i poprawnosci}{section*.18}% 31
-\BOOKMARK [0][-]{section*.42}{Rozdzia\233 5. Ocena eksperymentalna}{}% 32
-\BOOKMARK [1][-]{section.5.1}{5.1. \040Opis metody badawczej}{section*.42}% 33
+\BOOKMARK [1][-]{section.4.4}{4.4. \040Analiza z\233ozonosci i poprawnosci}{section*.16}% 31
+\BOOKMARK [0][-]{section*.40}{Rozdzia\233 5. Ocena eksperymentalna}{}% 32
+\BOOKMARK [1][-]{section.5.1}{5.1. \040Opis metody badawczej}{section*.40}% 33
 \BOOKMARK [2][-]{subsection.5.1.1}{5.1.1. \040Miara oceny}{section.5.1}% 34
 \BOOKMARK [2][-]{subsection.5.1.2}{5.1.2. \040Zbiory danych}{section.5.1}% 35
-\BOOKMARK [1][-]{section.5.2}{5.2. \040Srodowisko symulacyjne}{section*.42}% 36
+\BOOKMARK [1][-]{section.5.2}{5.2. \040Srodowisko symulacyjne}{section*.40}% 36
 \BOOKMARK [2][-]{subsection.5.2.1}{5.2.1. \040Oprogramowanie}{section.5.2}% 37
 \BOOKMARK [2][-]{subsection.5.2.2}{5.2.2. \040Sprzet}{section.5.2}% 38
-\BOOKMARK [1][-]{section.5.3}{5.3. \040Przeprowadzone eksperymenty}{section*.42}% 39
+\BOOKMARK [1][-]{section.5.3}{5.3. \040Przeprowadzone eksperymenty}{section*.40}% 39
 \BOOKMARK [2][-]{subsection.5.3.1}{5.3.1. \040Dopasowanie parametr\363w sieci neuronowej}{section.5.3}% 40
 \BOOKMARK [2][-]{subsection.5.3.2}{5.3.2. \040Por\363wnanie algorytmu hybrydowego z filtrowaniem w oparciu o zawartosc i filtrowaniem kolaboratywnym}{section.5.3}% 41
 \BOOKMARK [2][-]{subsection.5.3.3}{5.3.3. \040Analiza statystyczna wynik\363w}{section.5.3}% 42
-\BOOKMARK [0][-]{section*.75}{Rozdzia\233 6. Wnioski}{}% 43
-\BOOKMARK [0][-]{section*.77}{Rozdzia\233 7. CHAPTER 1}{}% 44
-\BOOKMARK [1][-]{section.7.1}{7.1. \040SECTION}{section*.77}% 45
-\BOOKMARK [1][-]{section.7.2}{7.2. \040Section 2}{section*.77}% 46
+\BOOKMARK [0][-]{section*.73}{Rozdzia\233 6. Wnioski}{}% 43
+\BOOKMARK [0][-]{section*.75}{Rozdzia\233 7. CHAPTER 1}{}% 44
+\BOOKMARK [1][-]{section.7.1}{7.1. \040SECTION}{section*.75}% 45
+\BOOKMARK [1][-]{section.7.2}{7.2. \040Section 2}{section*.75}% 46
 \BOOKMARK [2][-]{subsection.7.2.1}{7.2.1. \040Subsection 1}{section.7.2}% 47
-\BOOKMARK [0][-]{section*.80}{Dodatek A. Appendix 1}{}% 48
-\BOOKMARK [0][-]{section*.82}{Bibliografia}{}% 49
+\BOOKMARK [0][-]{section*.78}{Dodatek A. Appendix 1}{}% 48
+\BOOKMARK [0][-]{section*.80}{Bibliografia}{}% 49
