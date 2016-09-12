@@ -226,7 +226,8 @@
 	 & &\ \ \large{kierunek studiów: Informatyka}\\
 	 & &\ \ specjalność: Projektowanie Systemów Informatycznych\\
 	 & &\multicolumn{1}{c}{\rule{0pt}{2.5cm} \Large{Praca dyplomowa - magisterska}} \\
-	 & &\multicolumn{1}{p{13.5cm}}{\rule{0pt}{2cm}\centering\parbox{0.7\textwidth}{\centering\bfseries\sc\Large{\@title }\\\small{\@titleEN}}} \\
+	 & &\multicolumn{1}{p{13.5cm}}{\rule{0pt}{2.3cm}\centering\parbox{0.9\textwidth}{\centering\bfseries\sc\linespread{0.8}\Large{\@title } \\
+		\linespread{0.9}\small{\@titleEN}}} \\
 	 & &\multicolumn{1}{c}{\rule{0pt}{1cm}\large\@author} \\
 	 & &\multicolumn{1}{p{13.5cm}}{\rule{0pt}{0cm}\small\begin{flushright}\noindent słowa kluczowe:\\ \@slowaKluczowe\end{flushright}} \\
 	 & & \multicolumn{1}{p{13.5cm}}{

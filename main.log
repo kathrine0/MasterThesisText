@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.5.15)  10 SEP 2016 16:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.5.15)  12 SEP 2016 13:46
 entering extended mode
 **./main.tex
 (main.tex
@@ -1461,11 +1461,19 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 179.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+Overfull \hbox (12.80107pt too wide) in paragraph at lines 179--179
+ []|[]$[]$| 
+ []
+
+
 Overfull \hbox (11.18063pt too wide) in alignment at lines 179--179
 [][][] 
  []
 
-[1
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1
 
 {C:/Users/kathr/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./logos/pwr
 .png>]
@@ -1489,7 +1497,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ] [6
 
-] (main.tdo [1
+] (main.tdo
+Underfull \vbox (badness 1112) has occurred while \output is active []
+
+ [1
 
 
 
@@ -1497,7 +1508,8 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 \tf@tdo=\write7
 \openout7 = `main.tdo'.
 
- [2]
+
+[2]
 Rozdzia\l  1.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1515,11 +1527,7 @@ LaTeX Warning: Marginpar on page 4 moved.
 Rozdzia\l  2.
 [5
 
-]
-
-LaTeX Warning: Marginpar on page 6 moved.
-
-<img/cf.png, id=405, 479.54156pt x 421.575pt>
+] <img/cf.png, id=410, 479.54156pt x 421.575pt>
 File: img/cf.png Graphic file (type png)
  <use img/cf.png>
 Package pdftex.def Info: img/cf.png used on input line 258.
@@ -1530,7 +1538,7 @@ Overfull \hbox (18.59624pt too wide) in paragraph at lines 263--265
 i¦ na zwi¡z-kach element--element
  []
 
-<img/cf2.png, id=410, 424.58624pt x 315.579pt>
+<img/cf2.png, id=415, 424.58624pt x 315.579pt>
 File: img/cf2.png Graphic file (type png)
  <use img/cf2.png>
 Package pdftex.def Info: img/cf2.png used on input line 268.
@@ -1542,7 +1550,7 @@ lo-wa-nie za-le»-no-±ci element--u»ytkownik
  []
 
 [7 <./img/cf.png> <./img/cf2.png>]
-<img/longtail.png, id=441, 561.297pt x 332.442pt>
+<img/longtail.png, id=446, 561.297pt x 332.442pt>
 File: img/longtail.png Graphic file (type png)
  <use img/longtail.png>
 Package pdftex.def Info: img/longtail.png used on input line 291.
@@ -1550,7 +1558,7 @@ Package pdftex.def Info: img/longtail.png used on input line 291.
 
 [8 <./img/longtail.png>] [9] [10]
 Rozdzia\l  3.
-<img/blackbox.png, id=480, 610.6815pt x 472.164pt>
+<img/blackbox.png, id=485, 610.6815pt x 472.164pt>
 File: img/blackbox.png Graphic file (type png)
  <use img/blackbox.png>
 Package pdftex.def Info: img/blackbox.png used on input line 338.
@@ -1559,14 +1567,14 @@ Package pdftex.def Info: img/blackbox.png used on input line 338.
 [11
 
  <./img/blackbox.png>]
-<img/modelElementu.png, id=488, 578.16pt x 233.673pt>
+<img/modelElementu.png, id=493, 578.16pt x 233.673pt>
 File: img/modelElementu.png Graphic file (type png)
 
 <use img/modelElementu.png>
 Package pdftex.def Info: img/modelElementu.png used on input line 347.
 (pdftex.def)             Requested size: 308.71107pt x 124.76958pt.
 
-<img/modelUsera.png, id=490, 533.5935pt x 105.996pt>
+<img/modelUsera.png, id=495, 533.5935pt x 105.996pt>
 File: img/modelUsera.png Graphic file (type png)
  <use img/modelUsera.png>
 Package pdftex.def Info: img/modelUsera.png used on input line 356.
@@ -1574,14 +1582,14 @@ Package pdftex.def Info: img/modelUsera.png used on input line 356.
 
 [12 <./img/modelElementu.png> <./img/modelUsera.png>]
 Rozdzia\l  4.
-<img/cfcomparision.pdf, id=502, 469.755pt x 293.095pt>
+<img/cfcomparision.pdf, id=507, 469.755pt x 293.095pt>
 File: img/cfcomparision.pdf Graphic file (type pdf)
 
 <use img/cfcomparision.pdf>
 Package pdftex.def Info: img/cfcomparision.pdf used on input line 375.
 (pdftex.def)             Requested size: 441.01775pt x 275.16496pt.
 
-<img/factorization.pdf, id=505, 840.79532pt x 340.93343pt>
+<img/factorization.pdf, id=510, 840.79532pt x 340.93343pt>
 File: img/factorization.pdf Graphic file (type pdf)
 
 <use img/factorization.pdf>
@@ -1596,7 +1604,7 @@ tiple pdfs with page group included in a single page
 >]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 435.
- <img/sdg.png, id=548, 607.068pt x 245.11575pt>
+ <img/sdg.png, id=553, 607.068pt x 245.11575pt>
 File: img/sdg.png Graphic file (type png)
  <use img/sdg.png>
 Package pdftex.def Info: img/sdg.png used on input line 456.
@@ -1609,190 +1617,189 @@ T4/cmr/m/n/12 + \OML/plm/m/it/12 user[]bias[] \OT4/cmr/m/n/12 + \OML/plm/m/it/1
 2 item[]bias[] \OT4/cmr/m/n/12 +$
  []
 
-[18] <img/schematneuron.pdf, id=656, 398.32814pt x 227.6505pt>
+[18] <img/schematneuron.pdf, id=661, 398.32814pt x 227.6505pt>
 File: img/schematneuron.pdf Graphic file (type pdf)
 
 <use img/schematneuron.pdf>
-Package pdftex.def Info: img/schematneuron.pdf used on input line 650.
+Package pdftex.def Info: img/schematneuron.pdf used on input line 652.
 (pdftex.def)             Requested size: 396.91327pt x 226.8475pt.
  [19]
-<img/sigmoid.png, id=672, 182.18062pt x 129.48375pt>
+<img/sigmoid.png, id=677, 182.18062pt x 129.48375pt>
 File: img/sigmoid.png Graphic file (type png)
  <use img/sigmoid.png>
-Package pdftex.def Info: img/sigmoid.png used on input line 686.
+Package pdftex.def Info: img/sigmoid.png used on input line 688.
 (pdftex.def)             Requested size: 182.18016pt x 129.48341pt.
 
-<img/siecneuronowa.pdf, id=676, 455.30101pt x 284.62335pt>
+<img/siecneuronowa.pdf, id=681, 455.30101pt x 284.62335pt>
 File: img/siecneuronowa.pdf Graphic file (type pdf)
 
 <use img/siecneuronowa.pdf>
-Package pdftex.def Info: img/siecneuronowa.pdf used on input line 699.
+Package pdftex.def Info: img/siecneuronowa.pdf used on input line 701.
 (pdftex.def)             Requested size: 441.01775pt x 275.70213pt.
  [20 <./img/schematneuron.pdf> <./img/sigmoid.png>]
-<img/mapacech.pdf, id=709, 256.07669pt x 170.79811pt>
+<img/mapacech.pdf, id=714, 256.07669pt x 170.79811pt>
 File: img/mapacech.pdf Graphic file (type pdf)
  <use img/mapacech.pdf>
-Package pdftex.def Info: img/mapacech.pdf used on input line 708.
+Package pdftex.def Info: img/mapacech.pdf used on input line 710.
 (pdftex.def)             Requested size: 308.71107pt x 205.91315pt.
 
 [21 <./img/siecneuronowa.pdf>]
-<img/ilustracjabackprop.png, id=753, 419.166pt x 426.393pt>
+<img/ilustracjabackprop.png, id=758, 419.166pt x 426.393pt>
 File: img/ilustracjabackprop.png Graphic file (type png)
 
 <use img/ilustracjabackprop.png>
-Package pdftex.def Info: img/ilustracjabackprop.png used on input line 745.
+Package pdftex.def Info: img/ilustracjabackprop.png used on input line 747.
 (pdftex.def)             Requested size: 220.50887pt x 224.31511pt.
  [22 <./img/mapacech.pdf>]
-Overfull \hbox (1.05385pt too wide) in paragraph at lines 776--777
+Overfull \hbox (1.05385pt too wide) in paragraph at lines 778--779
 \OT4/cmr/m/n/12 pro-pa-ga-cja wsteczna). Funk-cje ak-ty-wa-cji zo-staj¡ za-st¡-
 pione przez swoje po-chodne.
  []
 
-<img/propagacjawsteczna.pdf, id=791, 614.41545pt x 455.30101pt>
+<img/propagacjawsteczna.pdf, id=796, 614.41545pt x 455.30101pt>
 File: img/propagacjawsteczna.pdf Graphic file (type pdf)
 
 <use img/propagacjawsteczna.pdf>
-Package pdftex.def Info: img/propagacjawsteczna.pdf used on input line 796.
+Package pdftex.def Info: img/propagacjawsteczna.pdf used on input line 798.
 (pdftex.def)             Requested size: 441.01775pt x 326.80911pt.
  [23 <./img/ilustracjabackprop.png>] [24 <./img/propagacjawsteczna.pdf>]
-Underfull \hbox (badness 10000) in alignment at lines 844--844
+Underfull \hbox (badness 10000) in alignment at lines 846--846
 [][]
  []
 
-<img/algorytmgenetyczny.pdf, id=847, 614.41545pt x 270.41025pt>
+<img/algorytmgenetyczny.pdf, id=852, 614.41545pt x 270.41025pt>
 File: img/algorytmgenetyczny.pdf Graphic file (type pdf)
 
 <use img/algorytmgenetyczny.pdf>
-Package pdftex.def Info: img/algorytmgenetyczny.pdf used on input line 856.
+Package pdftex.def Info: img/algorytmgenetyczny.pdf used on input line 858.
 (pdftex.def)             Requested size: 441.01775pt x 194.09692pt.
  [25 <./img/algorytmgenetyczny.pdf>]
-<img/hybridfunction.pdf, id=880, 844.95674pt x 597.432pt>
+<img/hybridfunction.pdf, id=885, 496.0131pt x 284.33224pt>
 File: img/hybridfunction.pdf Graphic file (type pdf)
 
 <use img/hybridfunction.pdf>
-Package pdftex.def Info: img/hybridfunction.pdf used on input line 891.
-(pdftex.def)             Requested size: 308.71107pt x 218.27509pt.
+Package pdftex.def Info: img/hybridfunction.pdf used on input line 895.
+(pdftex.def)             Requested size: 308.71107pt x 176.96532pt.
  [26] [27 <./img/hybridfunction.pdf>] [28
 
 ]
 Rozdzia\l  5.
-[29] <img/movielens.png, id=934, 426.99525pt x 208.98074pt>
+
+LaTeX Warning: Marginpar on page 29 moved.
+
+
+LaTeX Warning: Marginpar on page 29 moved.
+
+[29] <img/movielens.png, id=939, 426.99525pt x 205.36725pt>
 File: img/movielens.png Graphic file (type png)
 
 <use img/movielens.png>
-Package pdftex.def Info: img/movielens.png used on input line 975.
-(pdftex.def)             Requested size: 441.01775pt x 215.85524pt.
+Package pdftex.def Info: img/movielens.png used on input line 984.
+(pdftex.def)             Requested size: 441.01775pt x 212.12288pt.
  [30 <./img/movielens.png>]
-<img/program.png, id=947, 539.01375pt x 536.0025pt>
+<img/program.png, id=951, 539.01375pt x 536.0025pt>
 File: img/program.png Graphic file (type png)
  <use img/program.png>
-Package pdftex.def Info: img/program.png used on input line 998.
+Package pdftex.def Info: img/program.png used on input line 1007.
 (pdftex.def)             Requested size: 441.01775pt x 438.5598pt.
 
-[31 <./img/program.png>]
+[31]
 
 LaTeX Warning: Marginpar on page 32 moved.
 
 
 LaTeX Warning: Marginpar on page 32 moved.
 
-[32]
-Overfull \hbox (10.07332pt too wide) in alignment at lines 1064--1084
+[32 <./img/program.png>]
+Overfull \hbox (10.07332pt too wide) in alignment at lines 1075--1095
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1084
+Underfull \vbox (badness 10000) detected at line 1095
  []
 
 
-Overfull \hbox (2.85017pt too wide) in paragraph at lines 1087--1087
+Overfull \hbox (2.85017pt too wide) in paragraph at lines 1098--1098
 [][][][]\OT4/cmr/m/n/6 Zweryfikowa¢, 
  []
 
 
-Overfull \hbox (2.85017pt too wide) in paragraph at lines 1087--1087
+Overfull \hbox (2.85017pt too wide) in paragraph at lines 1098--1098
 [][][][]\OT4/cmr/m/n/6 Zweryfikowa¢, 
  []
 
 
-Overfull \hbox (2.85017pt too wide) in paragraph at lines 1087--1087
+Overfull \hbox (2.85017pt too wide) in paragraph at lines 1098--1098
 [][][][]\OT4/cmr/m/n/6 Zweryfikowa¢, 
  []
 
 
-Overfull \hbox (2.85017pt too wide) in paragraph at lines 1087--1087
+Overfull \hbox (2.85017pt too wide) in paragraph at lines 1098--1098
 [][][][]\OT4/cmr/m/n/6 Zweryfikowa¢, 
  []
 
-<img/expiterations.pdf, id=961, 692.2462pt x 579.36452pt>
+<img/expiterations.pdf, id=966, 692.2462pt x 579.36452pt>
 File: img/expiterations.pdf Graphic file (type pdf)
 
 <use img/expiterations.pdf>
-Package pdftex.def Info: img/expiterations.pdf used on input line 1094.
+Package pdftex.def Info: img/expiterations.pdf used on input line 1105.
 (pdftex.def)             Requested size: 308.71107pt x 258.37776pt.
  [33]
-Overfull \hbox (10.07332pt too wide) in alignment at lines 1119--1139
+Overfull \hbox (10.07332pt too wide) in alignment at lines 1130--1150
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1139
+Underfull \vbox (badness 10000) detected at line 1150
  []
 
-<img/expmomentum.pdf, id=972, 498.0206pt x 291.36855pt>
+[34 <./img/expiterations.pdf>]
+<img/expmomentum.pdf, id=992, 498.0206pt x 291.36855pt>
 File: img/expmomentum.pdf Graphic file (type pdf)
 
 <use img/expmomentum.pdf>
-Package pdftex.def Info: img/expmomentum.pdf used on input line 1146.
+Package pdftex.def Info: img/expmomentum.pdf used on input line 1157.
 (pdftex.def)             Requested size: 308.71107pt x 180.61551pt.
- [34]
-Overfull \hbox (10.07332pt too wide) in alignment at lines 1174--1194
+ [35 <./img/expmomentum.pdf>]
+Overfull \hbox (10.07332pt too wide) in alignment at lines 1185--1205
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1194
+Underfull \vbox (badness 10000) detected at line 1205
  []
 
-<img/exppopulation.pdf, id=984, 742.47389pt x 428.74179pt>
+<img/exppopulation.pdf, id=1010, 742.47389pt x 428.74179pt>
 File: img/exppopulation.pdf Graphic file (type pdf)
 
 <use img/exppopulation.pdf>
-Package pdftex.def Info: img/exppopulation.pdf used on input line 1204.
+Package pdftex.def Info: img/exppopulation.pdf used on input line 1215.
 (pdftex.def)             Requested size: 308.71107pt x 178.26471pt.
- [35]
-Overfull \hbox (2.11128pt too wide) in paragraph at lines 1238--1238
+ [36]
+Overfull \hbox (2.11128pt too wide) in paragraph at lines 1249--1249
 \OT4/cmr/m/n/6 content-based 
  []
 
 
-Overfull \hbox (2.11128pt too wide) in paragraph at lines 1238--1238
+Overfull \hbox (2.11128pt too wide) in paragraph at lines 1249--1249
 \OT4/cmr/m/n/6 content-based 
  []
 
 
-Overfull \hbox (2.11128pt too wide) in paragraph at lines 1238--1238
+Overfull \hbox (2.11128pt too wide) in paragraph at lines 1249--1249
 \OT4/cmr/m/n/6 content-based 
  []
 
 
-Overfull \hbox (2.11128pt too wide) in paragraph at lines 1238--1238
+Overfull \hbox (2.11128pt too wide) in paragraph at lines 1249--1249
 \OT4/cmr/m/n/6 content-based 
  []
 
 
-LaTeX Warning: Marginpar on page 36 moved.
+LaTeX Warning: Marginpar on page 37 moved.
 
-
-Overfull \vbox (227.39188pt too high) has occurred while \output is active []
-
-
-[36 <./img/expiterations.pdf> <./img/expmomentum.pdf
-
-pdfTeX warning: pdflatex.exe (file ./img/expmomentum.pdf): PDF inclusion: multi
-ple pdfs with page group included in a single page
->] [37 <./img/exppopulation.pdf>] [38
+[37 <./img/exppopulation.pdf>] [38
 
 ]
 Rozdzia\l  6.
@@ -1873,28 +1880,28 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [47])
 [48]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1312.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1312.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1323.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1323.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1312.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1312.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1323.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1323.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 57779A5646AA0E4CA82A8A325030BF61;4125.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1312.
+(rerunfilecheck)             Checksum: 683E089CB5413D90E42D623C7BDE6D31;4125.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1323.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 108 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 32822 strings out of 493634
- 742094 string characters out of 3141314
- 955884 words of memory out of 3000000
- 35224 multiletter control sequences out of 15000+200000
+ 32840 strings out of 493634
+ 742502 string characters out of 3141314
+ 971666 words of memory out of 3000000
+ 35240 multiletter control sequences out of 15000+200000
  20617 words of font info for 57 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 62i,19n,84p,926b,2471s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 62i,19n,84p,744b,2531s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/pl/plitt.enc
 }{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/pl/pltt.enc}{C:/Program Fil
 es (x86)/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.enc}{C:/Program Files (x86)/MiKTeX 
@@ -1921,9 +1928,9 @@ c/pl/plsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plti10.
 pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb><C:/Pro
 gram Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plti8.pfb><C:/Program Files (
 x86)/MiKTeX 2.9/fonts/type1/public/pl/pltt10.pfb>
-Output written on main.pdf (54 pages, 3050296 bytes).
+Output written on main.pdf (54 pages, 3059340 bytes).
 PDF statistics:
- 1283 PDF objects out of 1440 (max. 8388607)
- 355 named destinations out of 1000 (max. 500000)
+ 1290 PDF objects out of 1440 (max. 8388607)
+ 357 named destinations out of 1000 (max. 500000)
  520 words of extra memory for PDF output out of 10000 (max. 10000000)
 

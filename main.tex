@@ -153,10 +153,10 @@ nodes near coords align={vertical},
 \pgfkeys{/pgf/number format/use comma}
 \pgfkeys{/pgf/number format/.cd, set thousands separator={}}%
 \nocite{*}
-\title{ TITLE }
-\titleEN{ TITLE EN}
+\title{ Hybrydowy algorytm rekomendacji wykorzystujący metody filtrowania z analizą zawartości i filtrowania kolaboratywnego }
+\titleEN{ Hybryd recommender algorithm based on content-based filtering and collaborative filtering}
 \shortTitle{SHORT TITLE}
-\author{Katatzyna Biernat }
+\author{Katarzyna Biernat }
 \advisor{dr inż. Bernadetta Maleszka}
 \instituteLogo{logos/pwr}
 \slowaKluczowe{KEYWORDS}
@@ -234,13 +234,13 @@ ABSTRACT EN
 	 \subsection{Metody tworzenia profilu użytkownika}
 	 \label{ss:metody_tworzenia_profilu_uzytkownika}
 	 
-	 Profil użytkownika może być tworzony na dwa sposoby. Jeżeli użytkownik jawnie pozostawia informacje można mówić bezpośredniej informacji zwrotnej (ang. \textit{explicit feedback}). Do takich informacji należą: ocena konkretnych elementów, tzw. łapka \todo{kolokwializm - jak poprawić?} w górę lub w dół, komentarz itp. 
+	 Profil użytkownika może być tworzony na dwa sposoby. Jeżeli użytkownik jawnie pozostawia informacje można mówić bezpośredniej informacji zwrotnej (ang. \textit{explicit feedback}). Do takich informacji należą: ocena konkretnych elementów, przycisk lubienia lub nielubienia (tzw. ,,łapka'' w górę lub w dół), komentarz itp. 
 	 
 	 Jednakże nawet jeżeli użytkownik nie jest skory do zostawiania tego typu śladów, to i tak można wiele na jego temat wywnioskować korzystając z pośredniej informacji zwrotnej (ang. \textit{implicit feedback}). System bierze wówczas pod uwagę aktywność użytkownika taką jak: historia zakupów, historia przeglądarki a nawet ruchy myszką. W przypadku serwisu z muzyką czy filmem cenną informacją będzie fakt, czy użytkownik wysłuchał lub obejrzał dany materiał do końca czy też wyłączył go po paru sekundach \cite{id:AdvancesInCollaborativeFiltering,id:ContentBasedRecommenderSystemsState}.
 	 
 	 \subsection{Zalety filtrowania w oparciu o zawartość}
 	 
-	 Do zalet filtrowania w oparciu o zawartość należy niezależność użytkownika. Podczas budowania rekomendacji brany pod uwagę jest tylko jego profil; aktywność innych aktorów w systemie nie wpływa na wynik końcowy. \todo{ktoś może Pani zarzucić, że to wada, bo nie korzystamy z informacji, które są dostępne} Inną przewagą jest przejrzystość -- każda propozycja jest w pełni uzasadniona, gdyż opiera się na działaniach użytkownika w przeszłości (podczas gdy w przypadku filtrowania kolaboratywnego mamy do czynienia z czarną skrzynką \todo{tutaj albo trzeba rozwinąć myśl, albo nie pisać w ogóle o czarnych skrzynkach}). Ponadto, tego typu algorytm ma możliwość zaproponowania elementu, który nie był nigdy wcześniej oceniany przez nikogo. Zapobiega to zjawisku długiego ogona	 \cite{id:ContentBasedRecommenderSystemsState}.
+	 Do zalet filtrowania w oparciu o zawartość należy niezależność użytkownika. Podczas budowania rekomendacji brany pod uwagę jest tylko jego profil; aktywność innych aktorów w systemie nie wpływa na wynik końcowy. \todo{ktoś może Pani zarzucić, że to wada, bo nie korzystamy z informacji, które są dostępne} Inną przewagą jest przejrzystość -- każda propozycja jest w pełni uzasadniona, gdyż opiera się na działaniach użytkownika w przeszłości. Ponadto, tego typu algorytm ma możliwość zaproponowania elementu, który nie był nigdy wcześniej oceniany przez nikogo. Zapobiega to zjawisku długiego ogona	 \cite{id:ContentBasedRecommenderSystemsState}.
 	 
 	 \subsection{Wady filtrowania w oparciu o zawartość}
 	 Aby rekomendacja była skuteczna użytkownik powinien ocenić jak najwięcej elementów. Problematyczni są zatem użytkownicy, którzy dopiero co dołączyli do serwisu oraz tacy, którzy nie są aktywni i rzadko zostawiają po sobie ślad \cite{id:MaleszkaMianowskaNguyenmethod}.
@@ -300,12 +300,12 @@ ABSTRACT EN
 	 
 	 \section{Popularne serwisy wykorzystujące algorytmy rekomendacji}
 	 
-		W przeciągu ostatnich lat algorytmy rekomendacji zagościły na bardzo wielu popularnych serwisach internetowych z różnych domen. Poniższa lista prezentuje garstkę wybranych stron. 
+		W przeciągu ostatnich lat algorytmy rekomendacji stały się nieodłącznym elementem wielu popularnych serwisów internetowych z różnych domen. Poniższa lista prezentuje wybrane produkty. 
 	 
 		 \subsection{Rekomendacja muzyki}
 	 
 		 \begin{itemize}
-		 	\item \textbf{YouTube} -- serwis powstały w 2005 roku, pozwalający na bezpłatne umieszczanie, odtwarzanie, ocenianie i komentowanie filmów. Od 2006 roku przejęty przez Google. YouTube buduje profil użytkownika w oparciu o jego aktywność w serwisie. Brane pod uwagę są polubienia (łapka \todo{poprawić kolokwializm} w górę), subskrypcje, udostępnianie a także informacje czy użytkownik obejrzał film do końca czy tylko pewien jego procent. Techniki rekomendacji stosowane przez serwis to przede wszystkim wydobywanie reguł asocjacyjnych i licznik wspólnych odwiedzin danego wideo w czasie trwania pojedynczej sesji \cite{id:TheYouTubeVideoRecommendationSystem}. 
+		 	\item \textbf{YouTube} -- serwis powstały w 2005 roku, pozwalający na bezpłatne umieszczanie, odtwarzanie, ocenianie i komentowanie filmów. Od 2006 roku przejęty przez Google. YouTube buduje profil użytkownika w oparciu o jego aktywność w serwisie. Brane pod uwagę są polubienia, subskrypcje, udostępnianie a także informacje czy użytkownik obejrzał film do końca czy tylko pewien jego procent. Techniki rekomendacji stosowane przez serwis to przede wszystkim wydobywanie reguł asocjacyjnych i licznik wspólnych odwiedzin danego wideo w czasie trwania pojedynczej sesji \cite{id:TheYouTubeVideoRecommendationSystem}. 
 		 	\item \textbf{LastFM } -- internetowa radiostacja oferująca rozbudowany mechanizm rekomendacji piosenek ''Audioscrobbler''.   
 		 	\item \textbf{Pandora}	-- spersonalizowane radio internetowe wykorzystujące projekt Music Genome Project. Każda piosenka przeanalizowana jest pod kątem maksymalnie 450 cech; na tej podstawie budowane są rekomendacje \cite{id:mgp}.
 	
@@ -633,6 +633,8 @@ ABSTRACT EN
 		 
 	 \section{Filtrowanie w oparciu o zawartość}
 	 
+		 \todo{to będzie początek rozdziału}
+	 
 		 Algorytmy filtrowania w oparciu o zawartość budują rekomendację na podstawie ocen, jakie zostały dotychczas wystawione przez użytkownika. Analizowane są cechy elementów i ich wartości oraz określana jest ich siła wpływu na finalną ocenę. 
 		 
 		 W tym celu dla każdego użytkownika tworzona jest sieć neuronowa, która uczy się jego preferencji. 
@@ -877,7 +879,9 @@ ABSTRACT EN
 		 	\item SVD++ + sieć neuronowa uczona algorytmem genetycznym.
 		 \end{enumerate}
 		 
-		 Algorytm hybrydowy uruchamia osobno metodę filtrowania kolaboratywnego i filtrowania z analizą zawartości. W efekcie dla każdej pary użytkownik--element uzyskiwane są dwie  predykowane oceny z obu metod:  $r_{content-based_{ui}}$ i $r_{collaborative_{ui}}$. Ponadto, znany jest błąd $e$, z jakim zakończyło się uczenie sieci neuronowej dla użytkownika $u$. Przewidywana ocena obliczana jest wzorem:
+		 \todo{NAPISAĆ TUTAJ WIĘCEJ o tych wszystkich wariantach, dodać analizę własności}
+		 
+		 Algorytm hybrydowy uruchamia osobno metodę filtrowania kolaboratywnego i filtrowania z analizą zawartości. W efekcie dla każdej pary użytkownik--element uzyskiwane są dwie  predykowane oceny z obu metod:  $r_{content-based_{ui}}$ i $r_{collaborative_{ui}}$. Ponadto, znany jest błąd $e \geq 0$, z jakim zakończyło się uczenie sieci neuronowej dla użytkownika $u$. Przewidywana ocena obliczana jest wzorem:
 		 
 		 \begin{equation}
 		 	\label{eq:hybrid}		 	
@@ -889,7 +893,7 @@ ABSTRACT EN
 		 \begin{figure}[!ht] 
 		 	\centering
 		 	\includegraphics[width=0.7\textwidth]{hybridfunction}
-		 	\caption{Wpływ parametru $k$ na wynik algorytmu}
+		 	\caption{Wpływ parametru $k$ na wynik algorytmu. Jeżeli parametr k wynosi 2 a uczenie sieci neuronowej zakończyło się z błędem równym 1,2, to końcowy stosunek wag wyniku filtrowania z analizą zawartości do wyniku filtrowania kolaboratywnego wyniesie ok. 43,5\% do 56,5\%.}
 		 	\label{fig:hybridfunction}
 		 \end{figure}
 	 
@@ -915,7 +919,12 @@ ABSTRACT EN
 \shortTitle{Ocena eksperymentalna}
 	\section{Opis metody badawczej}
 	
+		\todo{Opisać eksperyment w puntktach - co się po kolei dzieje}
+		\todo{Dodać pseudokod }
+	
 		\subsection{Miara oceny}
+	
+		\todo{Przenieść niżej w rozdziale}
 	
 		W celu zbadania jakości algorytmów zostały zastosowane miary oceny: średnia kwadratowa błędów (RMSE) i średni błąd bezwzględny (MAE).
 		
@@ -962,13 +971,13 @@ ABSTRACT EN
 	
 		\subsection{Zbiory danych}
 		
-		By uzyskać jak najbardziej miarodajne wyniki, badania zostały przeprowadzone na trzech różnych bazach danych z trzech różnych domen. 
+		W celu uzyskania jak najbardziej miarodajnych wyników, badania zostały przeprowadzone na trzech różnych bazach danych z trzech różnych domen. 
 		\todo{i od razu podkłada się Pani recenzentowi... Dwa zdania temu pisała Pani o tym, że MAE i RMSE są dobre dla tych samych danych, a teraz że będzie Pani porównywać trzy różne zbiory}
 		
 		\subsubsection{MovieLens}
 		MovieLens \cite{harper2016movielens} to baza zawierająca oceny filmów przez użytkowników portalu movielens.org. Baza zawiera 3706 filmów i 1000209 ocen wystawionych przez 6040 unikalnych użytkowników pomiędzy 25 kwietnia 2000 a 28 lutym 2003. Filmy oceniane są w skali od 1 do 5, gdzie 1 jest oceną najgorszą a 5 najlepszą. 
 		
-		Baza zawiera tabelę łączącą numery identyfikacyjne filmów z bazą IMDB.com. Korzystając z tego autorka pracy rozszerzyła oryginalną bazę filmów o informacje pobrane z IMDB.com. Ostateczny kształt bazy widoczny jest na rys. \ref{fig:movielens_schema}.
+		Baza zawiera tabelę łączącą numery identyfikacyjne filmów z bazą IMDB.com. Wykorzystując te informacje baza filmów została rozszerzona o informacje pobrane z IMDB.com. Ostateczny kształt bazy widoczny jest na rys. \ref{fig:movielens_schema}.
 		
 			\begin{figure}[!ht] 
 				\centering
@@ -1021,8 +1030,10 @@ ABSTRACT EN
 		 
 		 Parametry sieci neuronowej podlegające strojeniu to:
 		 
+		 \todo{Do parametrów dodać symbole takie jak były wcześniej wykorzystane w modelu}
+		 
 		 \begin{itemize}
-		 	\item Sigmoidalna wartość alfa; \todo{wcześniej powinien być zaprezentowany model sieci tak, żeby było wiadomo, skąd biorą się te parametry}
+		 	\item Parametr funkcji aktywacji $\alpha$;
 		 	\item liczba neuronów w warstwie ukrytej;
 		 	\item maksymalna liczba iteracji uczenia sieci neuronowej;
 		 	\item algorytm uczący sieć neuronową: propagacja wsteczna, rprop (resilient backpropagation) lub algorytm genetyczny;
@@ -1075,7 +1086,7 @@ ABSTRACT EN
 					Ilość neuronów w warstwie ukrytej: & 1 \\
 					Współczynnik momentum: & 0.9 \\
 					Współczynnik uczenia: & 0.1 \\
-					Sigmoidalna wartość $\alpha$: & 2.0 \\
+					Parametr funkcji aktywacji $\alpha$: & 2.0 \\
 					Minimum powtarzających się cech: & 10 \\
 					Minimum ocenionych elementów przez użytkownika: & 10 \\
 					Ilość testowanych użytkowników: & 10 \\				
@@ -1130,7 +1141,7 @@ ABSTRACT EN
 				Ilość neuronów w warstwie ukrytej: & 2 \\
 				Współczynnik momentum: & ? \\
 				Współczynnik uczenia: & 0.1 \\
-				Sigmoidalna wartość $\alpha$: & 2.0 \\
+				Parametr funkcji aktywacji $\alpha$: & 2.0 \\
 				Minimum powtarzających się cech: & 10 \\
 				Minimum ocenionych elementów przez użytkownika: & 100 \\
 				Ilość testowanych użytkowników: & 5 \\				
@@ -1185,7 +1196,7 @@ ABSTRACT EN
 				Ilość neuronów w warstwie ukrytej: & 1 \\
 				Współczynnik momentum: & 0.9 \\
 				Współczynnik uczenia: & 0.1 \\
-				Sigmoidalna wartość $\alpha$: & 2.0 \\
+				Parametr funkcji aktywacji $\alpha$: & 2.0 \\
 				Minimum powtarzających się cech: & 10 \\
 				Minimum ocenionych elementów przez użytkownika: & 10 \\
 				Ilość testowanych użytkowników: & 10 \\				
