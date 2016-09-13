@@ -435,7 +435,7 @@ ABSTRACT EN
 		Algorytm przetwarza wszystkie elementy zbioru treningowego i dla każdego przypadku wykonuje aktualizację wartości $w$. Przebieg algorytmu przedstawiony jest poniżej (algorytm \ref{aq:sgd}).
 			
 		\def\alghoritm5{Stochastyczny gradient prosty}
-		\begin{algorithm}[!ht]
+		\begin{breakablealgorithm}
 			\caption{\alghoritm5}
 			\myalgorithm{\alghoritm5}
 			\label{aq:sgd}
@@ -451,7 +451,7 @@ ABSTRACT EN
 				\ENDFOR
 				\ENDWHILE
 			\end{algorithmic}
-		\end{algorithm}
+		\end{breakablealgorithm}
 			 
 		Stochastyczny gradient prosty wykonuje dużo więcej kroków niż jego klasyczny odpowiednik aby odnaleźć rozwiązanie optymalne. Mimo tego jest on szybszy, gdyż każdy pojedynczy krok jest mniej kosztowny niż w oryginale. Różnicę w działaniu przedstawia rys. \ref{fig:sgd}.  
 			 
@@ -469,7 +469,7 @@ ABSTRACT EN
 
 	
 		\def\alghoritm1{Matrix Factorization -- Inicjacja modelu}
-		\begin{algorithm}[H]
+		\begin{breakablealgorithm}
 			\caption{\alghoritm1}
 			\myalgorithm{\alghoritm1}
 			\label{aq:mf_init}
@@ -493,7 +493,7 @@ ABSTRACT EN
 				\ENDFOR
 				\RETURN $user\_factors, item\_factors$
 			\end{algorithmic}
-		\end{algorithm}
+		\end{breakablealgorithm}
 	
 		
 		W fazie drugiej następuje uczenie metodą stochastycznego gradientu prostego (zob. algorytm  \ref{aq:mf_learn}). Wynikiem tej fazy są macierze reprezentujące ukryte własności użytkowników i elementów. Mnożąc je ze sobą uzyskiwana jest przewidywana ocena każdego z elementów przez użytkowników. 
@@ -508,7 +508,7 @@ ABSTRACT EN
 		Pod koniec każdej iteracji aktualizowany jest współczynnik uczenia.
 	
 		\def\alghoritm2{Matrix Factorization -- Faza uczenia}
-		\begin{algorithm}[H]
+		\begin{breakablealgorithm}
 			\caption{\alghoritm2}
 			\myalgorithm{\alghoritm2}
 			\label{aq:mf_learn}
@@ -540,7 +540,7 @@ ABSTRACT EN
 				\ENDFOR
 				\RETURN $user\_factors, item\_factors$
 			\end{algorithmic}
-		\end{algorithm}
+		\end{breakablealgorithm}
 	
 	
 		 \subsection{Biased Matrix Factorization}
@@ -572,7 +572,7 @@ ABSTRACT EN
 		 Faza druga wygląda podobnie jak w przypadku algorytmu \textit{Matrix Factorization}, jednak są uwzględniane dodatkowe parametry i wykonywane dodatkowe kroki.
 		 
 		 \def\alghoritm3{Biased Matrix Factorization -- Faza uczenia}
-		 \begin{algorithm}[H]
+		 \begin{breakablealgorithm}
 		 	\caption{\alghoritm3}
 		 	\myalgorithm{\alghoritm3}
 		 	\label{aq:bmf_learn}
@@ -617,7 +617,7 @@ ABSTRACT EN
 		 		\ENDFOR
 		 		\RETURN $user\_factors, item\_factors$
 		 	\end{algorithmic}
-		 \end{algorithm}
+		 \end{breakablealgorithm}
 		 		 
 		 \subsection{SVD++}
 		 
@@ -926,7 +926,7 @@ ABSTRACT EN
 		W celu zbadania jakości algorytmów zaprojektowane zostały eksperymenty. Przebieg wygląda następująco:
 		
 		\def\alghoritm6{Przebieg eksperymentu}
-		\begin{algorithm}[!ht]
+		\begin{breakablealgorithm}
 			\caption{\alghoritm6}
 			\myalgorithm{\alghoritm6}
 			\label{aq:experiment}
@@ -975,7 +975,7 @@ ABSTRACT EN
 				\ENDFOR
 
 			\end{algorithmic}
-		\end{algorithm}
+		\end{breakablealgorithm}
 			
 		\todo{Algorytm page break http://tex.stackexchange.com/questions/33866/algorithm-tag-and-page-break}
 	
@@ -1319,7 +1319,7 @@ ABSTRACT EN
 \section{SECTION}
 
 \def\alghoritm4{Alghoritm 4}
-\begin{algorithm}
+\begin{breakablealgorithm}
 \caption{\alghoritm4}
 \myalgorithm{\alghoritm4}
 \label{aq:algStat}
@@ -1338,7 +1338,7 @@ ABSTRACT EN
 %\STATE $x\in\{POSITIVE,NEGATIVE,NEUTRAL\}$
 \RETURN $\arg\max_x Sentiment[x]$
 \end{algorithmic}
-\end{algorithm}
+\end{breakablealgorithm}
 
 
 \def\schema1{Schema 1}

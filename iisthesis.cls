@@ -92,7 +92,7 @@
 % Rysunek 1: => Rys. 1.
 \addto\captionspolish{
    \def\figurename{Rys.}%
-   \def\algorithmname{Algorytm}%
+   \def\algorithmname{Algorytm }%
    \def\tablename{\textbf{Tabela}}%
 }
 \def\captionlabel#1{\textbf{#1.} }
@@ -441,3 +441,24 @@
 {\par\vspace{\abovedisplayskip}\noindent
 	\tabularx{\columnwidth}{>{$}l<{$} @{\ } >{\raggedright\arraybackslash}X}}
 {\endtabularx\par\vspace{\belowdisplayskip}}
+
+
+\newenvironment{breakablealgorithm}
+{% \begin{breakablealgorithm}
+	\begin{center}
+		\refstepcounter{algorithm}% New algorithm
+		\hrule height.8pt depth0pt \kern2pt% \@fs@pre for \@fs@ruled
+		\renewcommand{\caption}[2][\relax]{% Make a new \caption
+			{\raggedright\textbf{\algorithmname\thealgorithm} ##2\par}%
+			\ifx\relax##1\relax % #1 is \relax
+			\addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##2}%
+			\else % #1 is not \relax
+			\addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##1}%
+			\fi
+			\kern2pt\hrule\kern2pt
+		}
+	}{% \end{breakablealgorithm}
+	\kern2pt\hrule\relax% \@fs@post for \@fs@ruled
+\end{center}
+}
+\makeatother
