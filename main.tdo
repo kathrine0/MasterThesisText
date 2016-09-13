@@ -1,6 +1,6 @@
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ CEL PRACY: trzeba rozszerzy\IeC {\'c} opis, w szczeg\IeC {\'o}lno\IeC {\'s}ci o to, co jest nowego i czym r\IeC {\'o}\IeC {\.z}ni si\IeC {\k e} od innych ju\IeC {\.z} istniej\IeC {\k a}cych algorytm\IeC {\'o}w}{4}{section*.4}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ streszczenie spisu tre\IeC {\'s}ci}{4}{section*.5}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ kr\IeC {\'o}tka wzmianka o tym, \IeC {\.z}e w kolejnych podrozdzia\IeC {\l }ach b\IeC {\k e}d\IeC {\k a} opisane wybrane techniki - te, kt\IeC {\'o}re b\IeC {\k e}d\IeC {\k a} wykorzystywane w Pani systemie}{5}{section*.7}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ (P\IeC {\'O}\IeC {\'Z}NIEJ) CEL PRACY: trzeba rozszerzy\IeC {\'c} opis, w szczeg\IeC {\'o}lno\IeC {\'s}ci o to, co jest nowego i czym r\IeC {\'o}\IeC {\.z}ni si\IeC {\k e} od innych ju\IeC {\.z} istniej\IeC {\k a}cych algorytm\IeC {\'o}w}{4}{section*.4}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ (P\IeC {\'O}\IeC {\'Z}NIEJ) streszczenie spisu tre\IeC {\'s}ci}{4}{section*.5}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ (P\IeC {\'O}\IeC {\'Z}NIEJ) kr\IeC {\'o}tka wzmianka o tym, \IeC {\.z}e w kolejnych podrozdzia\IeC {\l }ach b\IeC {\k e}d\IeC {\k a} opisane wybrane techniki - te, kt\IeC {\'o}re b\IeC {\k e}d\IeC {\k a} wykorzystywane w Pani systemie}{5}{section*.7}
 \contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ opisa\IeC {\'c} istniej\IeC {\k a}ce algorytmy hybrydowe i na czym polegaj\IeC {\k a} etc}{8}{section*.11}
 \contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Napisa\IeC {\'c} wst\IeC {\k e}p. Co powinien zawiera\IeC {\'c}?}{13}{section*.17}
 \contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ "chyba b\IeC {\k e}dzie lepiej jednak przenie\IeC {\'s}\IeC {\'c} te algorytmy do rozdzia\IeC {\l }u z przegl\IeC {\k a}dem, bo tutaj raczej czytelnik oczekuje ju\IeC {\.z} konkretnego algorytmu" --- om\IeC {\'o}wi\IeC {\'c} reorganizacj\IeC {\k e}}{13}{section*.19}
@@ -11,17 +11,16 @@
 \contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Opisa\IeC {\'c} eksperyment w puntktach - co si\IeC {\k e} po kolei dzieje}{29}{section*.41}
 \contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Doda\IeC {\'c} pseudokod }{29}{section*.42}
 \contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Przenie\IeC {\'s}\IeC {\'c} ni\IeC {\.z}ej w rozdziale}{29}{section*.43}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ i od razu podk\IeC {\l }ada si\IeC {\k e} Pani recenzentowi... Dwa zdania temu pisa\IeC {\l }a Pani o tym, \IeC {\.z}e MAE i RMSE s\IeC {\k a} dobre dla tych samych danych, a teraz \IeC {\.z}e b\IeC {\k e}dzie Pani por\IeC {\'o}wnywa\IeC {\'c} trzy r\IeC {\'o}\IeC {\.z}ne zbiory}{30}{section*.46}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ i od razu podk\IeC {\l }ada si\IeC {\k e} Pani recenzentowi... Dwa zdania temu pisa\IeC {\l }a Pani o tym, \IeC {\.z}e MAE i RMSE s\IeC {\k a} dobre dla tych samych danych, a teraz \IeC {\.z}e b\IeC {\k e}dzie Pani por\IeC {\'o}wnywa\IeC {\'c} trzy r\IeC {\'o}\IeC {\.z}ne zbiory}{31}{section*.46}
 \contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Opisa\IeC {\'c} Yahoo Music}{31}{section*.50}
 \contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Opisa\IeC {\'c} Amazon Meta}{31}{section*.52}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Do parametr\IeC {\'o}w doda\IeC {\'c} symbole takie jak by\IeC {\l }y wcze\IeC {\'s}niej wykorzystane w modelu}{31}{section*.54}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Napisa\IeC {\'c} tu \IeC {\l }adny wst\IeC {\k e}p}{32}{section*.55}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Opis i schemat eksperyment\IeC {\'o}w}{32}{section*.56}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ ?? Jak bardzo wchodzi\IeC {\'c} w szczeg\IeC {\'o}\IeC {\l }y?}{32}{section*.57}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Zweryfikowa\IeC {\'c}, czy nie k\IeC {\l }ami\IeC {\k e}}{33}{section*.59}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Koniecznie TODO}{37}{section*.66}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Czy trzeba?}{37}{section*.68}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Czy trzeba}{37}{section*.70}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Por\IeC {\'o}wnanie algorytmu hybrydowego z content-based i collaborative}{37}{section*.71}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Analiza statystyczna wynik\IeC {\'o}w, PQStat}{37}{section*.72}
-\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Wnioski}{39}{section*.74}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Napisa\IeC {\'c} tu \IeC {\l }adny wst\IeC {\k e}p}{33}{section*.54}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Opis i schemat eksperyment\IeC {\'o}w}{33}{section*.55}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ ?? Jak bardzo wchodzi\IeC {\'c} w szczeg\IeC {\'o}\IeC {\l }y?}{33}{section*.56}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Zweryfikowa\IeC {\'c}, czy nie k\IeC {\l }ami\IeC {\k e}}{34}{section*.58}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Koniecznie TODO}{38}{section*.65}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Czy trzeba?}{38}{section*.67}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Czy trzeba}{38}{section*.69}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Por\IeC {\'o}wnanie algorytmu hybrydowego z content-based i collaborative}{38}{section*.70}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Analiza statystyczna wynik\IeC {\'o}w, PQStat}{38}{section*.71}
+\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color {orange}o}}\ Wnioski}{39}{section*.73}

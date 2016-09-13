@@ -201,13 +201,13 @@ ABSTRACT EN
 	 
 	 Systemy rekomendacji ulepszane są nieustannie, o czym świadczy chociażby organizowana rokrocznie konferencja\textit{ ACM International Conference on Recommender Systems}. Tematyka ta poruszana jest także na konferencjach \textit{European Conference on Information Retrieval}, \textit{European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases} i wielu innych. Mimo dużego stopnia zaawansowania wciąż istnieje pole manewru do ulepszania algorytmów rekomendacji i co za tym idzie zwiększanie zadowolenia użytkowników, które z kolei prowadzi do osiągania korzyści biznesowych.
 	 
-	 Celem pracy jest opracowanie i zbudowanie hybrydowego algorytmu rekomendacji. Składowymi docelowego algorytmu są metody kolaboratywnego filtrowania oraz metody filtrowania z analizą treści.  
+	 Celem pracy jest opracowanie i zbudowanie hybrydowego algorytmu rekomendacji. Składowymi docelowego algorytmu są metody kolaboratywnego filtrowania oraz metody filtrowania z analizą zawartości.  
 	 
-	 \todo{CEL PRACY: trzeba rozszerzyć opis, w szczególności o to, co jest nowego i czym różni się od innych już istniejących algorytmów}
+	 \todo{(PÓŹNIEJ) CEL PRACY: trzeba rozszerzyć opis, w szczególności o to, co jest nowego i czym różni się od innych już istniejących algorytmów}
 	 
 	 W kolejnych rozdziałach przedstawione są istniejące oraz proponowane ulepszenia, które pozwalają na jeszcze lepsze dopasowanie wyników rekomendacji do oczekiwań użytkowników. 
 	 
-	 \todo{streszczenie spisu treści}
+	 \todo{(PÓŹNIEJ) streszczenie spisu treści}
 	 
  
  \chapter{Przegląd istniejących rozwiązań}
@@ -215,7 +215,7 @@ ABSTRACT EN
 	 Tradycyjnie wyróżniamy następujące techniki rekomendacji: 
 	 
 	 \begin{itemize}
-	 	\item \textbf{filtrowanie w oparciu o zawartość} (ang. \textit{content--based filtering}), technika koncentrująca się na atrybutach elementów. Użytkownikowi rekomendowane są elementy, które podobne są do tych wybieranych przez niego w przeszłości;
+	 	\item \textbf{filtrowanie z analizą zawartości} (ang. \textit{content--based filtering}), technika koncentrująca się na atrybutach elementów. Użytkownikowi rekomendowane są elementy, które podobne są do tych wybieranych przez niego w przeszłości;
 	 	\item \textbf{filtrowanie kolaboratywne} (ang. \textit{collaborative filtering}), technika polegająca na odnajdywaniu użytkowników o podobnych gustach i sugerowaniu lubianych przez nich elementów aktualnie aktywnemu użytkownikowi;
 	 	\item \textbf{filtrowanie demograficzne} (ang. \textit{demographic filtering}), technika koncentrująca się na sugerowaniu aktywnemu użytkownikowi elementów popularnych pośród użytkowników z tej samej okolicy bądź w podobnym przedziale wiekowym;
 	 	\item \textbf{filtrowanie z analizą domeny wiedzy} (ang. \textit{knowledge-based filtering}), technika dobierająca kolejne elementy na podstawie określonej domeny wiedzy na temat tego, jak dany element spełnia potrzeby i preferencje użytkownika;	
@@ -225,11 +225,11 @@ ABSTRACT EN
 	 
 	 Każda z tych technik ma swoje wady i zalety w zależności od kontekstu, w którym ma być stosowana \cite{id:IntroductionToRecommenderSystemsHandbook}. 
 	 
-	 \todo{krótka wzmianka o tym, że w kolejnych podrozdziałach będą opisane wybrane techniki - te, które będą wykorzystywane w Pani systemie}
+	 \todo{(PÓŹNIEJ) krótka wzmianka o tym, że w kolejnych podrozdziałach będą opisane wybrane techniki - te, które będą wykorzystywane w Pani systemie}
 	 
-	 \section{Filtrowanie w oparciu o zawartość}
+	 \section{Filtrowanie z analizą zawartości}
 	 
-	 Filtrowanie w oparciu o zawartość opiera się na cechach elementów w systemie. Rekomendowane są obiekty, które podobne są do tych pozytywnie ocenionych wcześniej przez użytkownika \cite{id:huynh2012modeling}. W zależności od domeny pod uwagę mogą być brane słowa kluczowe, cechy takie jak rok wydania, reżyser, autor, kompozytor, gatunek itp.
+	 Filtrowanie z analizą zawartości opiera się na cechach elementów w systemie. Rekomendowane są obiekty, które podobne są do tych pozytywnie ocenionych wcześniej przez użytkownika \cite{id:huynh2012modeling}. W zależności od domeny pod uwagę mogą być brane słowa kluczowe, cechy takie jak rok wydania, reżyser, autor, kompozytor, gatunek itp.
 	 
 	 \subsection{Metody tworzenia profilu użytkownika}
 	 \label{ss:metody_tworzenia_profilu_uzytkownika}
@@ -238,16 +238,16 @@ ABSTRACT EN
 	 
 	 Jednakże nawet jeżeli użytkownik nie jest skory do zostawiania tego typu śladów, to i tak można wiele na jego temat wywnioskować korzystając z pośredniej informacji zwrotnej (ang. \textit{implicit feedback}). System bierze wówczas pod uwagę aktywność użytkownika taką jak: historia zakupów, historia przeglądarki a nawet ruchy myszką. W przypadku serwisu z muzyką czy filmem cenną informacją będzie fakt, czy użytkownik wysłuchał lub obejrzał dany materiał do końca czy też wyłączył go po paru sekundach \cite{id:AdvancesInCollaborativeFiltering,id:ContentBasedRecommenderSystemsState}.
 	 
-	 \subsection{Zalety filtrowania w oparciu o zawartość}
+	 \subsection{Zalety filtrowania z analizą zawartości}
 	 
-	 Do zalet filtrowania w oparciu o zawartość należy niezależność użytkownika. Podczas budowania rekomendacji brany pod uwagę jest tylko jego profil, aktywność innych aktorów w systemie nie wpływa na wynik końcowy. Nawet, gdy w bazie będzie istniało niewielu użytkowników lub ocenią oni zupełnie inne elementy niż użytkownik aktywny, to rekomendacja w dalszym ciągu może być miarodajna. 
+	 Do zalet filtrowania z analizą zawartości należy niezależność użytkownika. Podczas budowania rekomendacji brany pod uwagę jest tylko jego profil, aktywność innych aktorów w systemie nie wpływa na wynik końcowy. Nawet, gdy w bazie będzie istniało niewielu użytkowników lub ocenią oni zupełnie inne elementy niż użytkownik aktywny, to rekomendacja w dalszym ciągu może być miarodajna. 
 	 
 	 Inną przewagą jest przejrzystość -- każda propozycja jest w pełni uzasadniona, gdyż opiera się na działaniach użytkownika w przeszłości. Ponadto, tego typu algorytm ma możliwość zaproponowania elementu, który nie był nigdy wcześniej oceniany przez nikogo. Zapobiega to zjawisku długiego ogona \cite{id:ContentBasedRecommenderSystemsState}.
 	 
-	 \subsection{Wady filtrowania w oparciu o zawartość}
+	 \subsection{Wady filtrowania z analizą zawartości}
 	 Aby rekomendacja była skuteczna użytkownik powinien ocenić jak najwięcej elementów. Problematyczni są zatem użytkownicy, którzy dopiero co dołączyli do serwisu oraz tacy, którzy nie są aktywni i rzadko zostawiają po sobie ślad \cite{id:MaleszkaMianowskaNguyenmethod}.
 	 
-	 Filtrowanie w oparciu o zawartość jest podatne na pułapkę tzw. bańki informacyjnej. Jeżeli w systemie rekomendującym produkcje kinowe użytkownik do tej pory oceniał jedynie filmy akcji, to mało prawdopodobne jest, że algorytm zaproponuje mu ciekawy dramat obyczajowy. Nowe propozycje nie są zaskakujące \cite{id:ContentBasedRecommenderSystemsState}.
+	 Filtrowanie z analizą zawartości jest podatne na pułapkę tzw. bańki informacyjnej. Jeżeli w systemie rekomendującym produkcje kinowe użytkownik do tej pory oceniał jedynie filmy akcji, to mało prawdopodobne jest, że algorytm zaproponuje mu ciekawy dramat obyczajowy. Nowe propozycje nie są zaskakujące \cite{id:ContentBasedRecommenderSystemsState}.
 	 
 	 \section{Filtrowanie kolaboratywne}
 	 
@@ -474,13 +474,13 @@ ABSTRACT EN
 			\myalgorithm{\alghoritm1}
 			\label{aq:mf_init}
 			\begin{algorithmic}
-				\STATE $N \leftarrow \text{liczba użytkowników}$
-				\STATE $M \leftarrow \text{liczba elementów}$
-				\STATE $F \leftarrow \text{liczba ukrytych własności}$
-				\STATE $ratings \leftarrow \text{Macierz NxM zawierająca dotychczasowe oceny wszystkich elementów }$
-				\STATE $\text{przez wszystkich użytkowników}$
-				\STATE $user\_factors \leftarrow \text{Macierz NxF reprezentująca ukryte własności użytkowników}$
-				\STATE $item\_factors \leftarrow \text{Macierz MxF reprezentująca ukryte własności elementów}$
+				\STATE $N \leftarrow $ liczba użytkowników
+				\STATE $M \leftarrow $ liczba elementów
+				\STATE $F \leftarrow $ liczba ukrytych własności
+				\STATE $ratings \leftarrow $ Macierz NxM zawierająca dotychczasowe oceny wszystkich elementów
+				\STATE przez wszystkich użytkowników
+				\STATE $user\_factors \leftarrow $ Macierz NxF reprezentująca ukryte własności użytkowników
+				\STATE $item\_factors \leftarrow $ Macierz MxF reprezentująca ukryte własności elementów
 				
 				\FOR{each $uf \in user\_factors$, $if \in item\_factors$ }
 				\STATE wstaw losową wartość za pomocą transformacji Boxa--Mullera
@@ -513,11 +513,11 @@ ABSTRACT EN
 			\myalgorithm{\alghoritm2}
 			\label{aq:mf_learn}
 			\begin{algorithmic}
-				\STATE $global\_bias \leftarrow \text{średnia wszystkich ocen}$
-				\STATE $X \leftarrow \text{liczba iteracji}$			
-				\STATE $regularization \leftarrow \text{parametr regulujący}$			
-				\STATE $current\_learnrate \leftarrow \text{współczynnik uczenia}$
-				\STATE $decay \leftarrow \text{paramert zanikania}$
+				\STATE $global\_bias \leftarrow $ średnia wszystkich ocen
+				\STATE $X \leftarrow $ liczba iteracji			
+				\STATE $regularization \leftarrow $ parametr regulujący			
+				\STATE $current\_learnrate \leftarrow $ współczynnik uczenia
+				\STATE $decay \leftarrow $ parametr zanikania
 				
 				\FOR{each $x \in X$ }
 					\FOR{each $user, item \in ratings$ }
@@ -577,12 +577,12 @@ ABSTRACT EN
 		 	\myalgorithm{\alghoritm3}
 		 	\label{aq:bmf_learn}
 		 	\begin{algorithmic}
-		 		\STATE $global\_bias \leftarrow \text{średnia wszystkich ocen}$
-		 		\STATE $X \leftarrow \text{liczba iteracji}$			
-		 		\STATE $regU, regI, BiasReg \leftarrow \text{parametry regulujące dla użytkownika, elementu i ogólny }$			
-		 		\STATE $current\_learnrate \leftarrow \text{współczynnik uczenia}$
-				\STATE $BiasLearnRate \leftarrow \text{współczynnik uczenia skośności}$
-		 		\STATE $decay \leftarrow \text{paramert zanikania}$
+		 		\STATE $global\_bias \leftarrow $ średnia wszystkich ocen
+		 		\STATE $X \leftarrow $ liczba iteracji			
+		 		\STATE $regU, regI, BiasReg \leftarrow $ parametry regulujące dla użytkownika, elementu i ogólny 			
+		 		\STATE $current\_learnrate \leftarrow $ współczynnik uczenia
+				\STATE $BiasLearnRate \leftarrow $ współczynnik uczenia skośności
+		 		\STATE $decay \leftarrow $ parametr zanikania
 		 		
 		 		\FOR{each $x \in X$ }
 			 		\FOR{each $user, item \in ratings$ }			 		
@@ -635,11 +635,11 @@ ABSTRACT EN
 		 Zmienne $b_u$ i $b_i$ reprezentują obserwowane odchylenie od średniej dla użytkowników i elementów, natomiast $\mu$ to średnia wszystkich ocen \cite{koren2008factorization}. 
 		 	 
 		 
-	 \section{Filtrowanie w oparciu o zawartość}
+	 \section{Filtrowanie z analizą zawartości}
 	 
 		 \todo{to będzie początek rozdziału}
 	 
-		 Algorytmy filtrowania w oparciu o zawartość budują rekomendację na podstawie ocen, jakie zostały dotychczas wystawione przez użytkownika. Analizowane są cechy elementów i ich wartości oraz określana jest ich siła wpływu na finalną ocenę. 
+		 Algorytmy filtrowania z analizą zawartości budują rekomendację na podstawie ocen, jakie zostały dotychczas wystawione przez użytkownika. Analizowane są cechy elementów i ich wartości oraz określana jest ich siła wpływu na finalną ocenę. 
 		 
 		 W tym celu dla każdego użytkownika tworzona jest sieć neuronowa, która uczy się jego preferencji. 
 		 
@@ -739,7 +739,7 @@ ABSTRACT EN
 		 
 		 Dostrajanie wartości wag można wykonać na wiele sposobów. Można wyróżnić uczenie nadzorowane (z nauczycielem), uczenie z krytykiem (ang. \textit{reinforcement learning}) i uczenie samoorganizujące się (bez nadzoru) \cite{osowski1996sieci}.
 		 
-		 Na potrzeby systemu rekomendacji w oparciu o zawartość opisywanego w tej pracy wykorzystane zostały trzy metody uczenia: algorytm propagacji wstecznej, algorytm RPROP i algorytm genetyczny. Wymienione metody należą do kategorii uczenia nadzorowanego. 
+		 Na potrzeby systemu rekomendacji z analizą zawartości opisywanego w tej pracy wykorzystane zostały trzy metody uczenia: algorytm propagacji wstecznej, algorytm RPROP i algorytm genetyczny. Wymienione metody należą do kategorii uczenia nadzorowanego. 
 		 
 		 
 		 \subsection{Propagacja wsteczna}
@@ -869,7 +869,7 @@ ABSTRACT EN
 		 
 	 \section{Algorytymy hybrydowe}
 		 
-		 Zaproponowany nowy algorytm jest hybrydą filtrowania kolaboratywnego i filtrowania w oparciu o zawartość. Zaimplementowanych zostało 9 wariantów:
+		 Zaproponowany nowy algorytm jest hybrydą filtrowania kolaboratywnego i filtrowania z analizą zawartości. Zaimplementowanych zostało 9 wariantów:
 		 
 		 \begin{enumerate}
 		 	\item Matrix Factorization + sieć neuronowa uczona metodą propagacji wstecznej;
@@ -907,11 +907,11 @@ ABSTRACT EN
 		 
 		 Im więcej zostanie dostarczonych informacji na temat elementów, tym lepsze będą wyniki. Jednakże w przypadku braku takowych informacji metoda ciągle będzie działać,  wówczas wynik będzie opierał się głównie na rezultatach filtrowania kolaboratywnego.
 		 
-		 Analogicznie, w przypadku małej liczby powiązań z innymi użytkownikami, zaproponowany algorytm hybrydowy ulepszy wynik filtrowania kolaboratywnego dzięki czynnikowi filtrowania w oparciu o zawartość. 
+		 Analogicznie, w przypadku małej liczby powiązań z innymi użytkownikami, zaproponowany algorytm hybrydowy ulepszy wynik filtrowania kolaboratywnego dzięki czynnikowi filtrowania z analizą zawartości. 
 		 
 		 \subsection{Wady zaproponowanej metody}
 		 
-		 Największą wadą nowej metody jest wyższa złożoność. Czas budowania modelu jest sumą czasów budowania modelu kolaboratywnego i modelu filtrowania w oparciu o zawartość. 
+		 Największą wadą nowej metody jest wyższa złożoność. Czas budowania modelu jest sumą czasów budowania modelu kolaboratywnego i modelu filtrowania z analizą zawartości. 
 		 
 		 Istnieje też ryzyko, że w momencie gdy wynik filtrowania kolaboratywnego będzie bardzo zły, to rezultat osiągnięty przez nową metodę będzie gorszy niż z samego filtrowania z analizą zawartości. 
 	 
@@ -922,6 +922,64 @@ ABSTRACT EN
 \chapter{Ocena eksperymentalna}
 \shortTitle{Ocena eksperymentalna}
 	\section{Opis metody badawczej}
+	
+		W celu zbadania jakości algorytmów zaprojektowane zostały eksperymenty. Przebieg wygląda następująco:
+		
+		\def\alghoritm6{Przebieg eksperymentu}
+		\begin{algorithm}[!ht]
+			\caption{\alghoritm6}
+			\myalgorithm{\alghoritm6}
+			\label{aq:experiment}
+			\begin{algorithmic}	
+				\STATE $recommenderType \leftarrow$ silnik rekomendacji: filtrowanie kolaboratywne, filtrowanie z analizą zawartości bądź filtrowanie hybrydowe 			
+				\STATE $parameters[] \leftarrow $ ustaw parametry wybranego algorytmu rekomendacji
+				\STATE $pt[] \leftarrow $ zdefiniuj wartości parametru testowanego				
+				\STATE $cbUsersCount \leftarrow$ liczba użytkowników do pobrania do filtrowania z analizą zawartości
+				\STATE $cfUsersCount \leftarrow$ liczba użytkowników do pobrania do filtrowania kolaboratywnego
+				\STATE $minimumRepeatingFeatures \leftarrow $ minimalna ilość powtórzeń danej cechy 
+				\STATE $pt[] \leftarrow $ zdefiniuj wartości parametru testowanego
+				\STATE $k \leftarrow $ parametr podziału dla do sprawdzianu krzyżowego 
+				
+				\FOR {$i \in pt $}
+					\STATE $parameters[parametrZmienny]:= i$					
+					\textbf{//Faza pobierania danych}			
+					\IF {$recommenderType == $ filtrowanie kolaboratywne \textbf{or} filtrowanie hybrydowe}					
+					\STATE $cfUsers \leftarrow$ załaduj oceny $cfUsersCount$ użytkowników;
+					\ELSIF {$recommenderType == $ filtrowanie z analizą zawartości \textbf{or} filtrowanie hybrydowe}
+					\STATE $cbUsers \leftarrow$ załaduj oceny $cbUsersCount$ użytkowników wraz z własnościami elementów;
+					\ENDIF
+					
+					\STATE {podziel zbiory na k części}
+					
+					\textbf{//Faza nauki}
+					
+					\FOR {$i \in k $}
+					
+					\STATE wybierz testowy $i$ a z pozostałych danych utwórz zbiór treningowy
+					
+					\IF {$recommenderType == $ filtrowanie kolaboratywne}					
+					\STATE $cfRecommender \leftarrow$ ucz filtrowaniem kolaboratywnym wykorzystując zbiór treningowy $cfUsers$;
+					\ELSIF {$recommenderType == $ filtrowanie z analizą zawartości}
+					\STATE $cbRecommender \leftarrow$ ucz filtrowaniem z analizą zawartości wykorzystując zbiór treningowy $cbUsers$;
+					\ELSIF {$recommenderType == $ filtrowanie hybrydowe}
+					\STATE $hybridRecommender \leftarrow$ ucz filtrowaniem hybrydowym wykorzystując zbiory treningowe $cbUsers$ i $cfUsers$;
+					\ENDIF
+					
+					\STATE{Wykonaj test silnika rekomendacji wykorzystując zbiór testowy}
+					\STATE{Oblicz błąd RMSE i MAE}	
+					
+					\ENDFOR
+					
+					\STATE{Oblicz średnią błędów RMSE i MAE ze wszystkich iteracji}
+					\STATE Wyświetl wyniki 
+				\ENDFOR
+
+			\end{algorithmic}
+		\end{algorithm}
+			
+		\todo{Algorytm page break http://tex.stackexchange.com/questions/33866/algorithm-tag-and-page-break}
+	
+		\todo{zaimplementować crosswalidację w kodzie}
 	
 		\todo{Opisać eksperyment w puntktach - co się po kolei dzieje}
 		\todo{Dodać pseudokod }
@@ -1016,33 +1074,31 @@ ABSTRACT EN
 		W sekcji z ustawieniami podstawowymi możliwy jest wybór:
 		\begin{itemize}
 			\item bazy danych, która zostanie wykorzystana do pomiarów;
-			\item typu algorytmu rekomendującego (filtrowanie w oparciu o zawartość, filtrowanie kolaboratywne bądź algorytm hybrydowy)
+			\item typu algorytmu rekomendującego (filtrowanie z analizą zawartości, filtrowanie kolaboratywne bądź algorytm hybrydowy)
 			\item w przypadku wyboru kolaboratywnego filtrowania lub filtrowania hybrydowego możliwy jest wybór typu algorytmu: Matrix Factorization, Biased Matrix Factorization lub SVD++.
 			\item w przypadku wyboru filtrowania z analizą zawartości lub filtrowania hybrydowego automatycznie wybierany jest algorytm oparty na sieci neuronowej. 
 		\end{itemize}
 		 
-		 Widok ustawień zaawansowanych zmienia się w zależności od wybranego filtrowania. W przypadku wyboru filtrowania w oparciu o zawartość istnieje możliwość regulowania parametrów sieci neuronowej. W każdym wariancie można regulować kryteria doboru zestawu danych.
+		 Widok ustawień zaawansowanych zmienia się w zależności od wybranego filtrowania. W przypadku wyboru filtrowania z analizą zawartości istnieje możliwość regulowania parametrów sieci neuronowej. W każdym wariancie można regulować kryteria doboru zestawu danych.
 		 
 		 Kryteria doboru zestawu danych są następujące:
 		 
 		 \begin{itemize}
-		 	\item liczba użytkowników do pobrania do filtrowania w oparciu o zawartość;
-		 	\item liczba użytkowników do pobrania do filtrowania kolaboratywnego;
-		 	\item minimum elementów, jakie zostały ocenione przez każdego pobranego użytkownika;
-		 	\item stosunek wielkości zbioru treningowego do zbioru testowego (domyślnie 80\%-20\%).
+		 	\item \textit{cbUsersCount} -- liczba użytkowników do pobrania do filtrowania z analizą zawartości;
+		 	\item \textit{cfUsersCount} -- liczba użytkowników do pobrania do filtrowania kolaboratywnego;
+		 	\item \textit{minimumItemsRated} -- minimum elementów, jakie zostały ocenione przez każdego pobranego użytkownika;
+		 	\item \textit{setRatio} -- stosunek wielkości zbioru treningowego do zbioru testowego (domyślnie 80\%-20\%).
 		 \end{itemize}
 		 
 		 Parametry sieci neuronowej podlegające strojeniu to:
-		 
-		 \todo{Do parametrów dodać symbole takie jak były wcześniej wykorzystane w modelu}
-		 
+
 		 \begin{itemize}
-		 	\item Parametr funkcji aktywacji $\alpha$;
-		 	\item liczba neuronów w warstwie ukrytej;
-		 	\item maksymalna liczba iteracji uczenia sieci neuronowej;
-		 	\item algorytm uczący sieć neuronową: propagacja wsteczna, rprop (resilient backpropagation) lub algorytm genetyczny;
-		 	\item w przypadku wyboru algorytmu genetycznego -- rozmiar każdej kolejnej populacji;
-		 	\item minimalna wymagana ilość powtórzeń danej cechy, aby była brana pod uwagę w trakcie budowania rekomendacji.
+		 	\item $\alpha$ -- parametr funkcji aktywacji;
+		 	\item \textit{hiddenLayerNeurons} -- liczba neuronów w warstwie ukrytej;
+		 	\item \textit{iterationLimit} -- maksymalna liczba iteracji uczenia sieci neuronowej;
+		 	\item \textit{teacherFunction} -- algorytm uczący sieć neuronową: propagacja wsteczna, rprop (resilient backpropagation) lub algorytm genetyczny;
+		 	\item \textit{populationSize} -- w przypadku wyboru algorytmu genetycznego -- rozmiar każdej kolejnej populacji;
+		 	\item \textit{minimumRepeatingFeatures} -- minimalna wymagana ilość powtórzeń danej cechy, aby była brana pod uwagę w trakcie budowania rekomendacji.
 		 \end{itemize}	 
 		
 		\subsection{Sprzęt}
@@ -1068,7 +1124,7 @@ ABSTRACT EN
 		
 		\subsection{Dopasowanie parametrów sieci neuronowej}
 	
-		Pierwszy przeprowadzony eksperyment miał na celu dopasowanie optymalnych parametrów sieci neuronowej dla filtrowania w oparciu o zawartość. Badania przeprowadzone zostały w oparciu o bazę MovieLense. 
+		Pierwszy przeprowadzony eksperyment miał na celu dopasowanie optymalnych parametrów sieci neuronowej dla filtrowania z analizą zawartości. Badania przeprowadzone zostały w oparciu o bazę MovieLense. 
 		
 		\subsubsection{Dopasowanie maksymalnej liczby iteracji}
 		\label{exp:expiterations}
@@ -1081,9 +1137,9 @@ ABSTRACT EN
 					\multicolumn{2}{|c|}{\textbf{Konfiguracja parametrów podstawowych}} \\
 					\hline
 					Baza danych: & MovieLens \\
-					Testowana metoda: & Filtrowanie w oparciu o zawartość \\
+					Testowana metoda: & Filtrowanie z analizą zawartości \\
 					\hline
-					\multicolumn{2}{|c|}{\textbf{Konfiguracja filtrowania w oparciu o zawartość}} \\
+					\multicolumn{2}{|c|}{\textbf{Konfiguracja filtrowania z analizą zawartości}} \\
 					\hline
 					Algorytm: & Sieć neuronowa uczona propagacją wsteczną, RPROP i algorytmem genetycznym \\
 					Maksymalna ilość iteracji nauki: & ? \\				
@@ -1136,9 +1192,9 @@ ABSTRACT EN
 				\multicolumn{2}{|c|}{\textbf{Konfiguracja parametrów podstawowych}} \\
 				\hline
 				Baza danych: & MovieLens \\
-				Testowana metoda: & Filtrowanie w oparciu o zawartość \\
+				Testowana metoda: & Filtrowanie z analizą zawartości \\
 				\hline
-				\multicolumn{2}{|c|}{\textbf{Konfiguracja filtrowania w oparciu o zawartość}} \\
+				\multicolumn{2}{|c|}{\textbf{Konfiguracja filtrowania z analizą zawartości}} \\
 				\hline
 				Algorytm: & Sieć neuronowa z propagacją wsteczną \\
 				Maksymalna ilość iteracji nauki: & 1000 \\				
@@ -1191,9 +1247,9 @@ ABSTRACT EN
 				\multicolumn{2}{|c|}{\textbf{Konfiguracja parametrów podstawowych}} \\
 				\hline
 				Baza danych: & MovieLens \\
-				Testowana metoda: & Filtrowanie w oparciu o zawartość \\
+				Testowana metoda: & Filtrowanie z analizą zawartości \\
 				\hline
-				\multicolumn{2}{|c|}{\textbf{Konfiguracja filtrowania w oparciu o zawartość}} \\
+				\multicolumn{2}{|c|}{\textbf{Konfiguracja filtrowania z analizą zawartości}} \\
 				\hline
 				Algorytm: & Sieć neuronowa uczona algorytmem genetycznym \\
 				Maksymalna ilość iteracji nauki: & 1000 \\				
@@ -1248,7 +1304,7 @@ ABSTRACT EN
 		
 			\todo{Czy trzeba}
 
-		\subsection{Porównanie algorytmu hybrydowego z filtrowaniem w oparciu o zawartość i filtrowaniem kolaboratywnym}
+		\subsection{Porównanie algorytmu hybrydowego z filtrowaniem z analizą zawartości i filtrowaniem kolaboratywnym}
 
 			\todo{Porównanie algorytmu hybrydowego z content-based i collaborative}
 
