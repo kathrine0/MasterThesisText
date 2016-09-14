@@ -383,7 +383,7 @@ ABSTRACT EN
 	 
 		 \todo{"chyba będzie lepiej jednak przenieść te algorytmy do rozdziału z przeglądem, bo tutaj raczej czytelnik oczekuje już konkretnego algorytmu" --- omówić reorganizację}
 	 
-		 Najefektywniejsze okazały się algorytmy SVD++, Biased Matrix Factorization i Matrix Factorization bazujące na podejściu w oparciu o model. 
+		 Najefektywniejsze okazały się algorytmy SVD++, Biased Matrix Factorization i Matrix Factorization bazujące na podejściu w oparciu o model. \todo{Wymienic algorytmy z wykresu i coś o nich napisać}
 	 	 
 		 \subsection{Matrix Factorization}
 		
@@ -923,7 +923,14 @@ ABSTRACT EN
 \shortTitle{Ocena eksperymentalna}
 	\section{Opis metody badawczej}
 	
-		W celu zbadania jakości algorytmów zaprojektowane zostały eksperymenty. Przebieg wygląda następująco:
+		W celu zbadania jakości algorytmów zaprojektowany został eksperyment. W pierwszej kolejności definiowane są wartości parametrów, zgodnie z którymi ma zostać wykonany kod algorytmów. 
+		Dla parametru podlegającemu testom definiowany jest zakres wartości. 
+		
+		Następnie do pamięci ładowany jest zestaw danych zawierający oceny elementów przez użytkowników oraz dodatkowe własności elementów (jeżeli testowanym algorytmem jest filtrowanie z analizą zawartości lub filtrowanie hybrydowe). Zbiór dzielony jest $k$ części, gdzie $k$ to liczba powtórzeń walidacji krzyżowej. Konstruowane jest $k$ par: zbiór testowy-zbiór treningowy. Rozmiar każdego zbioru testowego to $\frac{1}{k}$ liczby wszystkich ocen.
+		
+		Dla każdej pary zbiorów treningowego i testowego przeprowadzana jest nauka i sprawdzanie algorytmu. Z każdego przebiegu błędy są sumowane a na końcu wyciągana jest średnia.
+		
+		Przebieg algorytmu wygląda następująco:
 		
 		\def\alghoritm6{Przebieg eksperymentu}
 		\begin{breakablealgorithm}
@@ -977,12 +984,7 @@ ABSTRACT EN
 			\end{algorithmic}
 		\end{breakablealgorithm}
 			
-		\todo{Algorytm page break http://tex.stackexchange.com/questions/33866/algorithm-tag-and-page-break}
-	
-		\todo{zaimplementować crosswalidację w kodzie}
-	
 		\todo{Opisać eksperyment w puntktach - co się po kolei dzieje}
-		\todo{Dodać pseudokod }
 	
 		\subsection{Miara oceny}
 	
@@ -1087,7 +1089,7 @@ ABSTRACT EN
 		 	\item \textit{cbUsersCount} -- liczba użytkowników do pobrania do filtrowania z analizą zawartości;
 		 	\item \textit{cfUsersCount} -- liczba użytkowników do pobrania do filtrowania kolaboratywnego;
 		 	\item \textit{minimumItemsRated} -- minimum elementów, jakie zostały ocenione przez każdego pobranego użytkownika;
-		 	\item \textit{setRatio} -- stosunek wielkości zbioru treningowego do zbioru testowego (domyślnie 80\%-20\%).
+		 	\item \textit{CrossvalidationFolds} -- ilość powtórzeń walidacji krzyżowej.
 		 \end{itemize}
 		 
 		 Parametry sieci neuronowej podlegające strojeniu to:
@@ -1103,7 +1105,7 @@ ABSTRACT EN
 		
 		\subsection{Sprzęt}
 		
-		Wszystkie badania zostały przeprowadzone na komputerze klasy PC działającym pod kontrolą 64--bitowego systemu Windows 10 Pro. Konfiguracja sprzętowa wygląda następująco:
+		Wszystkie badania zostały przeprowadzone w tych samych warunkach na komputerze klasy PC działającym pod kontrolą 64--bitowego systemu Windows 10 Pro. Konfiguracja sprzętowa wygląda następująco:
 		
 		\begin{center}
 			\begin{tabular}{ r  l  }
@@ -1155,7 +1157,6 @@ ABSTRACT EN
 				\end{longtable}
 			\end{center}
 			
-			\todo{Zweryfikować, czy nie kłamię}
 			Wyniki eksperymentu przedstawia wykres \ref{fig:expiterations} i tabela \ref{tab:expiterations}. Wraz ze wzrostem liczby iteracji wartość błędu maleje, jednakże po przekroczeniu pewnej wartości następuje ponowny wzrost. Wynika to z występowania zjawiska nadmiernego dopasowania (ang. \textit{overfitting}). 
 			
 			Zgodnie z oczekiwaniami, czas wykonania jest wprost proporcjonalny do liczby iteracji. W trakcie tego eksperymentu potwierdzone zostały również przypuszczenia dotyczące prędkości działania algorytmów. Najszybszy okazał się RPROP, jednakże kosztem nieco większych błędów. Najgorzej wypadł algorytm genetyczny, który charakteryzował się bardzo szybko rosnącym czasem wykonania przy jednoczesnym nie najlepszym wynikiem RMSE. 
