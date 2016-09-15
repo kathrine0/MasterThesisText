@@ -8,49 +8,49 @@
 \contentsline {chapter}{Todo list}{1}{section*.2}
 \contentsline {chapter}{Rozdzia\l \ 1\relax .\kern .5em Wst\IeC {\k e}p}{3}{section*.3}
 \contentsline {chapter}{Rozdzia\l \ 2\relax .\kern .5em Przegl\IeC {\k a}d istniej\IeC {\k a}cych rozwi\IeC {\k a}za\IeC {\'n}}{5}{section*.6}
-\contentsline {section}{\numberline {2.1\relax .\kern .5em }Filtrowanie z analiz\IeC {\k a} zawarto\IeC {\'s}ci}{5}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1\relax .\kern .5em }Metody tworzenia profilu u\IeC {\.z}ytkownika}{6}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2\relax .\kern .5em }Zalety filtrowania z analiz\IeC {\k a} zawarto\IeC {\'s}ci}{6}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3\relax .\kern .5em }Wady filtrowania z analiz\IeC {\k a} zawarto\IeC {\'s}ci}{6}{subsection.2.1.3}
-\contentsline {section}{\numberline {2.2\relax .\kern .5em }Filtrowanie kolaboratywne}{6}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1\relax .\kern .5em }Zalety filtrowania kolaboratywnego}{8}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2\relax .\kern .5em }Wady filtrowania kolaboratywnego}{8}{subsection.2.2.2}
-\contentsline {section}{\numberline {2.3\relax .\kern .5em }Algorytmy hybrydowe}{9}{section.2.3}
-\contentsline {section}{\numberline {2.4\relax .\kern .5em }Popularne serwisy wykorzystuj\IeC {\k a}ce algorytmy rekomendacji}{9}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1\relax .\kern .5em }Rekomendacja muzyki}{10}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2\relax .\kern .5em }Rekomendacja film\IeC {\'o}w}{10}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3\relax .\kern .5em }Platformy typu e-commerce}{10}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.0.1\relax .\kern .5em }Rekomendacja muzyki}{5}{subsection.2.0.1}
+\contentsline {subsection}{\numberline {2.0.2\relax .\kern .5em }Rekomendacja film\IeC {\'o}w}{5}{subsection.2.0.2}
+\contentsline {subsection}{\numberline {2.0.3\relax .\kern .5em }Platformy typu e-commerce}{6}{subsection.2.0.3}
+\contentsline {section}{\numberline {2.1\relax .\kern .5em }Techniki rekomendacji}{6}{section.2.1}
+\contentsline {section}{\numberline {2.2\relax .\kern .5em }Filtrowanie z analiz\IeC {\k a} zawarto\IeC {\'s}ci}{6}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1\relax .\kern .5em }Metody tworzenia profilu u\IeC {\.z}ytkownika}{6}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2\relax .\kern .5em }Zalety filtrowania z analiz\IeC {\k a} zawarto\IeC {\'s}ci}{7}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3\relax .\kern .5em }Wady filtrowania z analiz\IeC {\k a} zawarto\IeC {\'s}ci}{7}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3\relax .\kern .5em }Filtrowanie kolaboratywne}{7}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1\relax .\kern .5em }Zalety filtrowania kolaboratywnego}{9}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2\relax .\kern .5em }Wady filtrowania kolaboratywnego}{9}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4\relax .\kern .5em }Algorytmy hybrydowe}{9}{section.2.4}
 \contentsline {chapter}{Rozdzia\l \ 3\relax .\kern .5em Model systemu}{11}{section*.11}
 \contentsline {chapter}{Rozdzia\l \ 4\relax .\kern .5em Algorytmy}{13}{section*.15}
 \contentsline {section}{\numberline {4.1\relax .\kern .5em }Filtrowanie kolaboratywne}{13}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1\relax .\kern .5em }Matrix Factorization}{13}{subsection.4.1.1}
 \contentsline {subsection}{\numberline {4.1.2\relax .\kern .5em }Biased Matrix Factorization}{17}{subsection.4.1.2}
 \contentsline {subsection}{\numberline {4.1.3\relax .\kern .5em }SVD++}{18}{subsection.4.1.3}
-\contentsline {section}{\numberline {4.2\relax .\kern .5em }Filtrowanie z analiz\IeC {\k a} zawarto\IeC {\'s}ci}{18}{section.4.2}
+\contentsline {section}{\numberline {4.2\relax .\kern .5em }Filtrowanie z analiz\IeC {\k a} zawarto\IeC {\'s}ci}{19}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1\relax .\kern .5em }Konstrukcja sieci neuronowej}{19}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2\relax .\kern .5em }Uczenie sieci neuronowej}{20}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.2\relax .\kern .5em }Uczenie sieci neuronowej}{22}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3\relax .\kern .5em }Propagacja wsteczna}{22}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4\relax .\kern .5em }Algorytm RPROP}{23}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.4\relax .\kern .5em }Algorytm RPROP}{24}{subsection.4.2.4}
 \contentsline {subsection}{\numberline {4.2.5\relax .\kern .5em }Algorytm genetyczny}{25}{subsection.4.2.5}
-\contentsline {section}{\numberline {4.3\relax .\kern .5em }Algorytymy hybrydowe}{25}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1\relax .\kern .5em }Zalety zaproponowanej metody}{26}{subsection.4.3.1}
+\contentsline {section}{\numberline {4.3\relax .\kern .5em }Algorytymy hybrydowe}{26}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1\relax .\kern .5em }Zalety zaproponowanej metody}{27}{subsection.4.3.1}
 \contentsline {subsection}{\numberline {4.3.2\relax .\kern .5em }Wady zaproponowanej metody}{27}{subsection.4.3.2}
 \contentsline {section}{\numberline {4.4\relax .\kern .5em }Analiza z\IeC {\l }o\IeC {\.z}ono\IeC {\'s}ci i poprawno\IeC {\'s}ci}{27}{section.4.4}
-\contentsline {chapter}{Rozdzia\l \ 5\relax .\kern .5em Ocena eksperymentalna}{29}{section*.40}
+\contentsline {chapter}{Rozdzia\l \ 5\relax .\kern .5em Ocena eksperymentalna}{29}{section*.38}
 \contentsline {section}{\numberline {5.1\relax .\kern .5em }Opis metody badawczej}{29}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1\relax .\kern .5em }Miara oceny}{30}{subsection.5.1.1}
 \contentsline {subsection}{\numberline {5.1.2\relax .\kern .5em }Zbiory danych}{31}{subsection.5.1.2}
-\contentsline {section}{\numberline {5.2\relax .\kern .5em }\IeC {\'S}rodowisko symulacyjne}{31}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1\relax .\kern .5em }Oprogramowanie}{31}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2\relax .\kern .5em }Sprz\IeC {\k e}t}{33}{subsection.5.2.2}
+\contentsline {section}{\numberline {5.2\relax .\kern .5em }\IeC {\'S}rodowisko symulacyjne}{32}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1\relax .\kern .5em }Oprogramowanie}{32}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2\relax .\kern .5em }Sprz\IeC {\k e}t}{34}{subsection.5.2.2}
 \contentsline {section}{\numberline {5.3\relax .\kern .5em }Przeprowadzone eksperymenty}{34}{section.5.3}
 \contentsline {subsection}{\numberline {5.3.1\relax .\kern .5em }Dopasowanie parametr\IeC {\'o}w sieci neuronowej}{34}{subsection.5.3.1}
 \contentsline {subsection}{\numberline {5.3.2\relax .\kern .5em }Por\IeC {\'o}wnanie algorytmu hybrydowego z filtrowaniem z analiz\IeC {\k a} zawarto\IeC {\'s}ci i filtrowaniem kolaboratywnym}{38}{subsection.5.3.2}
 \contentsline {subsection}{\numberline {5.3.3\relax .\kern .5em }Analiza statystyczna wynik\IeC {\'o}w}{38}{subsection.5.3.3}
-\contentsline {chapter}{Rozdzia\l \ 6\relax .\kern .5em Wnioski}{41}{section*.69}
-\contentsline {chapter}{Rozdzia\l \ 7\relax .\kern .5em CHAPTER 1}{43}{section*.71}
+\contentsline {chapter}{Rozdzia\l \ 6\relax .\kern .5em Wnioski}{41}{section*.62}
+\contentsline {chapter}{Rozdzia\l \ 7\relax .\kern .5em CHAPTER 1}{43}{section*.64}
 \contentsline {section}{\numberline {7.1\relax .\kern .5em }SECTION}{43}{section.7.1}
 \contentsline {section}{\numberline {7.2\relax .\kern .5em }Section 2}{43}{section.7.2}
 \contentsline {subsection}{\numberline {7.2.1\relax .\kern .5em }Subsection 1}{43}{subsection.7.2.1}
-\contentsline {chapter}{Dodatek\ A\relax .\kern .5em Appendix 1}{45}{section*.74}
-\contentsline {chapter}{Bibliografia}{47}{section*.76}
+\contentsline {chapter}{Dodatek\ A\relax .\kern .5em Appendix 1}{45}{section*.67}
+\contentsline {chapter}{Bibliografia}{47}{section*.69}

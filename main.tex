@@ -212,6 +212,38 @@ ABSTRACT EN
  
  \chapter{Przegląd istniejących rozwiązań}
  \shortTitle{Przegląd istniejących rozwiązań}
+ 
+ \todo{(PYTANIE) Czy to dobry pomysł żeby ten rozdział zacząć w taki sposób? A niżej już wymienić metody, algorytmy etc.}
+ 	 
+	 W przeciągu ostatnich lat algorytmy rekomendacji stały się nieodłącznym elementem wielu popularnych serwisów internetowych z różnych domen. Poniższa lista prezentuje wybrane produkty. 
+	 
+	 \subsection{Rekomendacja muzyki}
+	 
+	 \begin{itemize}
+	 	\item \textbf{YouTube} -- serwis powstały w 2005 roku, pozwalający na bezpłatne umieszczanie, odtwarzanie, ocenianie i komentowanie filmów. Od 2006 roku przejęty przez Google. YouTube buduje profil użytkownika w oparciu o jego aktywność w serwisie. Brane pod uwagę są polubienia, subskrypcje, udostępnianie a także informacje czy użytkownik obejrzał film do końca czy tylko pewien jego procent. Techniki rekomendacji stosowane przez serwis to przede wszystkim wydobywanie reguł asocjacyjnych i licznik wspólnych odwiedzin danego wideo w czasie trwania pojedynczej sesji \cite{id:TheYouTubeVideoRecommendationSystem}. 
+	 	\item \textbf{LastFM } -- internetowa radiostacja oferująca rozbudowany mechanizm rekomendacji piosenek ''Audioscrobbler''.   
+	 	\item \textbf{Pandora}	-- spersonalizowane radio internetowe wykorzystujące projekt Music Genome Project. Każda piosenka przeanalizowana jest pod kątem maksymalnie 450 cech; na tej podstawie budowane są rekomendacje \cite{id:mgp}.
+	 	
+	 \end{itemize}
+	 
+	 \subsection{Rekomendacja filmów}
+	 \begin{itemize}
+	 	\item \textbf{Netflix} -- amerykańska platforma oferująca strumieniowanie filmów i seriali. Działający od 2007 roku gigant oferuje rozbudowany system rekomendacji Cinematch \cite{id:aStreamOfMovies}. 
+	 	\item \textbf{Filmweb} -- polski serwis poświęcony filmom i jednocześnie druga największa baza filmowa na świecie. Oferuje system rekomendacji Gustomierz, który umożliwia poznawanie nowych filmów w guście użytkownika \cite{id:filmwebfaq}.
+	 	\item \textbf{Internet Movie Database (IMDb)} -- największa internetowa baza filmów. Baza zawiera $3,837,014$ pozycji, które są oceniane w skali od 1 do 10 przez użytkowników \cite{id:imdbstats}.
+	 \end{itemize}
+	 
+	 \subsection{Platformy typu e-commerce}
+	 
+	 \begin{itemize}
+	 	\item \textbf{Allegro} -- polski portal aukcyjny. Swoim użytkownikom oferuje panel rekomendacji. Prezentowane produkty wybierane są w oparciu o to, co dotychczas kupował i oglądał użytkownik \cite{id:allegrofaq}. 
+	 	\item \textbf{Amazon} -- największy na świecie sklep internetowy typu B2C. Amazon w swoich mechanizmach rekomendacji wykorzystuje algorytmy filtrowania kolaboratywnego typu element--element \cite{id:linden2003amazon}.
+	 \end{itemize}	 
+	 
+	 
+	 
+	 \section{Techniki rekomendacji}
+ 
 	 Tradycyjnie wyróżniamy następujące techniki rekomendacji: 
 	 
 	 \begin{itemize}
@@ -308,35 +340,7 @@ ABSTRACT EN
 	 Kolejnym spotykanym podejściem jest konstruowanie ogólnego, jednolitego modelu, który zawiera charakterystyki zarówno filtrowania z analizą zawartości jak i kolaboratywnego.
 	 Przykładowo \cite{basu1998recommendation} proponuje wykorzystanie charakterystyki opartej o zawartość i kolaboratywnej w pojedynczym klasyfikatorze regułowym.
 	 
-	 \section{Popularne serwisy wykorzystujące algorytmy rekomendacji}
-	 
-		W przeciągu ostatnich lat algorytmy rekomendacji stały się nieodłącznym elementem wielu popularnych serwisów internetowych z różnych domen. Poniższa lista prezentuje wybrane produkty. 
-	 
-		 \subsection{Rekomendacja muzyki}
-	 
-		 \begin{itemize}
-		 	\item \textbf{YouTube} -- serwis powstały w 2005 roku, pozwalający na bezpłatne umieszczanie, odtwarzanie, ocenianie i komentowanie filmów. Od 2006 roku przejęty przez Google. YouTube buduje profil użytkownika w oparciu o jego aktywność w serwisie. Brane pod uwagę są polubienia, subskrypcje, udostępnianie a także informacje czy użytkownik obejrzał film do końca czy tylko pewien jego procent. Techniki rekomendacji stosowane przez serwis to przede wszystkim wydobywanie reguł asocjacyjnych i licznik wspólnych odwiedzin danego wideo w czasie trwania pojedynczej sesji \cite{id:TheYouTubeVideoRecommendationSystem}. 
-		 	\item \textbf{LastFM } -- internetowa radiostacja oferująca rozbudowany mechanizm rekomendacji piosenek ''Audioscrobbler''.   
-		 	\item \textbf{Pandora}	-- spersonalizowane radio internetowe wykorzystujące projekt Music Genome Project. Każda piosenka przeanalizowana jest pod kątem maksymalnie 450 cech; na tej podstawie budowane są rekomendacje \cite{id:mgp}.
-	
-		 \end{itemize}
-	 
-		 \subsection{Rekomendacja filmów}
-		 \begin{itemize}
-			 \item \textbf{Netflix} -- amerykańska platforma oferująca strumieniowanie filmów i seriali. Działający od 2007 roku gigant oferuje rozbudowany system rekomendacji Cinematch \cite{id:aStreamOfMovies}. 
-			 \item \textbf{Filmweb} -- polski serwis poświęcony filmom i jednocześnie druga największa baza filmowa na świecie. Oferuje system rekomendacji Gustomierz, który umożliwia poznawanie nowych filmów w guście użytkownika \cite{id:filmwebfaq}.
-			 \item \textbf{Internet Movie Database (IMDb)} -- największa internetowa baza filmów. Baza zawiera $3,837,014$ pozycji, które są oceniane w skali od 1 do 10 przez użytkowników \cite{id:imdbstats}.
-		 \end{itemize}
-		 
-		 \subsection{Platformy typu e-commerce}
-	
-		\begin{itemize}
-			 \item \textbf{Allegro} -- polski portal aukcyjny. Swoim użytkownikom oferuje panel rekomendacji. Prezentowane produkty wybierane są w oparciu o to, co dotychczas kupował i oglądał użytkownik \cite{id:allegrofaq}. 
-			 \item \textbf{Amazon} -- największy na świecie sklep internetowy typu B2C. Amazon w swoich mechanizmach rekomendacji wykorzystuje algorytmy filtrowania kolaboratywnego typu element--element \cite{id:linden2003amazon}.
-		 \end{itemize}	 
-	  
- 
- \chapter{Model systemu}
+	 \chapter{Model systemu}
  \shortTitle{Model systemu}
  
  Głównym założeniem systemu zaproponowanego przez autorkę jest połączenie zalet kolaboratywnego filtrowania i filtrowania w oparciu zawartość minimalizując jednocześnie wady obu podejść. 
@@ -376,20 +380,25 @@ ABSTRACT EN
 
 	 \section{Filtrowanie kolaboratywne}
 	 
-		 Implementacja algorytmów filtrowania kolaboratywnego, które wykorzystane zostały w projekcie pochodzą biblioteki MyMediaLite \cite{mymedialite,gantner2011mymedialite}. 
+		 Istnieje wiele implementacji algorytmów filtrowania kolaboratywnego. Jedną z bibliotek, która takie algorytmy implementuje i która została wykorzystana w tym projekcie jako baza do algorytmów hybrydowych jest MyMediaLite \cite{mymedialite,gantner2011mymedialite}. Zawiera ona zestaw metod opartych zarówno o model jak też o regułę sąsiedztwa:
 	 
-		 Przed podjęciem decyzji dotyczącej wyboru algorytmu kolaboratywnego filtrowania zostały przeanalizowane testy na bazie MovieLens M1 \cite{harper2016movielens}. Testy przeprowadzone zostały z pięciokrotną walidacją krzyżową. Rys. \ref{fig:cfcomparision} przedstawia wyniki (im mniejsza wartość RMSE i MAE tym lepiej). 
+		 \begin{itemize}
+		 	\item SVD++ \cite{koren2008factorization}
+		 	\item Biased Matrix Factorization \cite{salakhutdinov2011probabilistic,rendle2008online}
+		 	\item Matrix Factorization
+		 	\item Factor-Wise Matrix Factorization \cite{bell2007modeling}
+		 	\item Slope One \cite{lemire2005slope}
+		 	\item User-Item Baseline \cite{koren2010factor}
+		 \end{itemize}
 	 
 		 \begin{figure}[!ht] 
 		 	\centering
-		 	\includegraphics[width=1\textwidth]{cfcomparision}
+		 	\includegraphics[width=0.7\textwidth]{cfcomparision}
 		 	\caption{Test algorytmów filtrowania kolaboratywnego \protect\cite{mymedialitedatasets}}
 		 	\label{fig:cfcomparision}
 		 \end{figure}
 	 
-		 \todo{"chyba będzie lepiej jednak przenieść te algorytmy do rozdziału z przeglądem, bo tutaj raczej czytelnik oczekuje już konkretnego algorytmu" --- omówić reorganizację}
-	 
-		 Najefektywniejsze okazały się algorytmy SVD++, Biased Matrix Factorization i Matrix Factorization bazujące na podejściu w oparciu o model. \todo{Wymienic algorytmy z wykresu i coś o nich napisać}
+		 Rys. \ref{fig:cfcomparision} przedstawia wyniki działania wymienionych algorytmów (im mniejsza wartość RMSE i MAE tym lepiej). Testy przeprowadzone zostały na bazie MovieLens M1 z pięciokrotną walidacją krzyżową \cite{harper2016movielens}. Najefektywniejsze okazały się algorytmy SVD++, Biased Matrix Factorization i Matrix Factorization działające w oparciu o model.
 	 	 
 		 \subsection{Matrix Factorization}
 		
@@ -991,9 +1000,7 @@ ABSTRACT EN
 		\end{breakablealgorithm}
 			
 		\subsection{Miara oceny}
-	
-		\todo{Przenieść niżej w rozdziale}
-	
+		
 		W celu zbadania jakości algorytmów zostały zastosowane miary oceny: średnia kwadratowa błędów (RMSE) i średni błąd bezwzględny (MAE).
 		
 		\subsubsection{Średnia kwadratowa błędów}
@@ -1039,8 +1046,7 @@ ABSTRACT EN
 	
 		\subsection{Zbiory danych}
 		
-		W celu uzyskania jak najbardziej miarodajnych wyników, badania zostały przeprowadzone na trzech różnych bazach danych z trzech różnych domen. 
-		\todo{i od razu podkłada się Pani recenzentowi... Dwa zdania temu pisała Pani o tym, że MAE i RMSE są dobre dla tych samych danych, a teraz że będzie Pani porównywać trzy różne zbiory}
+		W celu uzyskania obiektywnych wyników algorytmy zostały przetestowane na trzech różnych bazach danych z trzech różnych domen. Eksperyment nie ma na celu porównania wyników między różnymi zestawami danych, lecz porównanie wyników testowanych algorytmów w różnych warunkach. 
 		
 		\subsubsection{MovieLens}
 		MovieLens \cite{harper2016movielens} to baza zawierająca oceny filmów przez użytkowników portalu movielens.org. Baza zawiera 3706 filmów i 1000209 ocen wystawionych przez 6040 unikalnych użytkowników pomiędzy 25 kwietnia 2000 a 28 lutym 2003. Filmy oceniane są w skali od 1 do 5, gdzie 1 jest oceną najgorszą a 5 najlepszą. 
@@ -1120,13 +1126,8 @@ ABSTRACT EN
 		\end{center}
 	
 	\section{Przeprowadzone eksperymenty}
-	
-		\todo{Napisać tu ładny wstęp}
-		\todo{Opis i schemat eksperymentów}
-		\todo{?? Jak bardzo wchodzić w szczegóły?}
 		
-		Dla wszystkich przeprowadzonych eksperymentów stosunek zbioru treningowego do zbioru testowego wynosił 80\%/20\%.
-
+		Dla wszystkie eksperymenty zostały przeprowadzone z 5-krotną walidacją krzyżową.
 		
 		\subsection{Dopasowanie parametrów sieci neuronowej}
 	
@@ -1299,21 +1300,21 @@ ABSTRACT EN
 		
 		\subsubsection{Dopasowanie ilości neuronów w warstwie ukrytej}
 		
-			\todo{Koniecznie TODO}
+			\todo{(BADANIA) Koniecznie TODO}
 		
 		\subsubsection{Dopasowanie współczynnika uczenia}
 		
-			\todo{Czy trzeba?}
+			\todo{(NA KOŃCU, BADANIA) Czy trzeba?}
 		
 		\subsubsection{Dopasowanie wartości alfa}
 		
-			\todo{Czy trzeba}
+			\todo{(NA KOŃCU, BADANIA) Czy trzeba}
 
 		\subsection{Porównanie algorytmu hybrydowego z filtrowaniem z analizą zawartości i filtrowaniem kolaboratywnym}
 
-			\todo{Porównanie algorytmu hybrydowego z content-based i collaborative}
+			\todo{(BADANIA) Porównanie algorytmu hybrydowego z content-based i collaborative}
 
-		\subsection{Analiza statystyczna wyników}		\todo{Analiza statystyczna wyników, PQStat}
+		\subsection{Analiza statystyczna wyników}		\todo{(PÓŹNIEJ) Analiza statystyczna wyników, PQStat}
 
 \chapter{Wnioski}
 \shortTitle{Wnioski}

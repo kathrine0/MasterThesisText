@@ -31,6 +31,13 @@ Basu C., Hirsh H., Cohen W. et~al.
   information in recommendation.
 \newblock In {\em Aaai/iaai}, pages 714--720, 1998.
 
+\bibitem{bell2007modeling}
+Bell R., Koren Y., Volinsky C.
+\newblock Modeling relationships at multiple scales to improve accuracy of
+  large recommender systems.
+\newblock In {\em Proceedings of the 13th ACM SIGKDD international conference
+  on Knowledge discovery and data mining}, pages 95--104. ACM, 2007.
+
 \bibitem{bottou2012stochastic}
 Bottou L.
 \newblock Stochastic gradient descent tricks.
@@ -157,6 +164,13 @@ Koren Y.
 \newblock In {\em Proceedings of the 14th ACM SIGKDD international conference
   on Knowledge discovery and data mining}, pages 426--434. ACM, 2008.
 
+\bibitem{koren2010factor}
+Koren Y.
+\newblock Factor in the neighbors: Scalable and accurate collaborative
+  filtering.
+\newblock {\em ACM Transactions on Knowledge Discovery from Data (TKDD)},
+  4(1):1, 2010.
+
 \bibitem{id:AdvancesInCollaborativeFiltering}
 Koren Y., Bell R.
 \newblock {\em {R}ecommender {S}ystems {H}andbook}, chapter {A}dvances in
@@ -174,6 +188,11 @@ Kwater T.
 \newblock
   \url{http://www.neurosoft.edu.pl/media/pdf/tkwater/sztuczna_inteligencja/2_alg_ucz_ssn.pdf}.
 \newblock Data dostępu: 2016-09-06.
+
+\bibitem{lemire2005slope}
+Lemire D., Maclachlan A.
+\newblock Slope one predictors for online rating-based collaborative filtering.
+\newblock In {\em SDM}, volume~5, pages 1--5. SIAM, 2005.
 
 \bibitem{leskovec2007dynamics}
 Leskovec J., Adamic L.~A., Huberman B.~A.
@@ -253,6 +272,13 @@ Pogue D.
 \newblock A {S}tream of {M}ovies, {S}ort of {F}ree.
 \newblock {\em The New York Times}, 2007.
 
+\bibitem{rendle2008online}
+Rendle S., Schmidt-Thieme L.
+\newblock Online-updating regularized kernel matrix factorization models for
+  large-scale recommender systems.
+\newblock In {\em Proceedings of the 2008 ACM conference on Recommender
+  systems}, pages 251--258. ACM, 2008.
+
 \bibitem{id:IntroductionToRecommenderSystemsHandbook}
 Ricci F., Rokach L., Shapira B.
 \newblock {\em {R}ecommender {S}ystems {H}andbook}, chapter {I}ntroduction to
@@ -283,6 +309,11 @@ Rubens N., Kaplan D., Sugiyama M.
 \newblock Active learning in recommender systems.
 \newblock In Kantor P., Ricci F., Rokach L., Shapira B., editors, {\em
   Recommender Systems Handbook}, pages 735--767. Springer, 2011.
+
+\bibitem{salakhutdinov2011probabilistic}
+Salakhutdinov R., Mnih A.
+\newblock Probabilistic matrix factorization.
+\newblock In {\em NIPS}, volume~20, pages 1--8, 2011.
 
 \bibitem{sarwar2000application}
 Sarwar B., Karypis G., Konstan J., Riedl J.
