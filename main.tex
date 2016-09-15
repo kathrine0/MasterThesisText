@@ -879,27 +879,11 @@ ABSTRACT EN
 
 	 \section{Algorytymy hybrydowe}
 		 
-		 Zaproponowany nowy algorytm jest hybrydą filtrowania kolaboratywnego i filtrowania z analizą zawartości. Zaimplementowanych zostało 9 wariantów:
-		 
-		 \begin{enumerate}
-		 	\item Matrix Factorization + sieć neuronowa uczona metodą propagacji wstecznej;
-		 	\item Matrix Factorization + sieć neuronowa uczona metodą RPROP;
-		 	\item Matrix Factorization + sieć neuronowa uczona algorytmem genetycznym;
-		 	\item Biased Matrix Factorization + sieć neuronowa uczona metodą propagacji wstecznej;
-		 	\item Biased Matrix Factorization + sieć neuronowa uczona metodą RPROP;
-		 	\item Biased Matrix Factorization + sieć neuronowa uczona algorytmem genetycznym;		 	
-		 	\item SVD++ + sieć neuronowa uczona metodą propagacji wstecznej;
-		 	\item SVD++ + sieć neuronowa uczona metodą RPROP;
-		 	\item SVD++ + sieć neuronowa uczona algorytmem genetycznym.
-		 \end{enumerate}
-		 
-		 \todo{NAPISAĆ TUTAJ WIĘCEJ o tych wszystkich wariantach, dodać analizę własności}
-		 
-		 Algorytm hybrydowy uruchamia osobno metodę filtrowania kolaboratywnego i filtrowania z analizą zawartości. W efekcie dla każdej pary użytkownik--element uzyskiwane są dwie  predykowane oceny z obu metod:  $r_{content-based_{ui}}$ i $r_{collaborative_{ui}}$. Ponadto, znany jest błąd $e \geq 0$, z jakim zakończyło się uczenie sieci neuronowej dla użytkownika $u$. Przewidywana ocena obliczana jest wzorem:
+		 Zaproponowany nowy algorytm jest hybrydą filtrowania kolaboratywnego i filtrowania z analizą zawartości. Obie te metody uruchamiane są osobno, w efekcie dla każdej pary użytkownik--element uzyskiwane są dwie  predykowane oceny z obu metod:  $r_{content-based_{ui}}$ i $r_{collaborative_{ui}}$. Ponadto, znany jest błąd $d \geq 0$, z jakim zakończyło się uczenie sieci neuronowej dla użytkownika $u$. Przewidywana ocena obliczana jest wzorem:
 		 
 		 \begin{equation}
 		 	\label{eq:hybrid}		 	
-		 	 r_{ui} = (\frac{1}{k})^e \cdot r_{content-based_{ui}} + (1-(\frac{1}{k})^e) \cdot r_{collaborative_{ui}}
+		 	 r_{ui} = (\frac{1}{k})^d \cdot r_{content-based_{ui}} + (1-(\frac{1}{k})^d) \cdot r_{collaborative_{ui}}
 		 	\,,
 		 \end{equation}		 
 		 gdzie $k$ jest parametrem konfigurowalnym (domyślnie $k = 2$), który determinuje stopień nachylenia funkcji wykładniczej. Parametr musi spełniać warunek $k>1$. Im wyższa wartość $k$, tym większy wpływ na rezultat ma wynik algorytmu kolaboratywnego. Zależność tę obrazuje rys. \ref{fig:hybridfunction}.
@@ -907,9 +891,23 @@ ABSTRACT EN
 		 \begin{figure}[!ht] 
 		 	\centering
 		 	\includegraphics[width=0.7\textwidth]{hybridfunction}
-		 	\caption{Wpływ parametru $k$ na wynik algorytmu. Jeżeli parametr k wynosi 2 a uczenie sieci neuronowej zakończyło się z błędem równym 1,2, to końcowy stosunek wag wyniku filtrowania z analizą zawartości do wyniku filtrowania kolaboratywnego wyniesie ok. 43,5\% do 56,5\%.}
+		 	\caption{Wpływ parametru $k$ na wynik algorytmu. Jeżeli parametr $k=2$ a uczenie sieci neuronowej zakończyło się z błędem równym $d=1,2$, to końcowy stosunek wag wyniku filtrowania z analizą zawartości do wyniku filtrowania kolaboratywnego wyniesie ok. 43,5\% do 56,5\%.}
 		 	\label{fig:hybridfunction}
 		 \end{figure}
+		 
+		 Zaimplementowanych zostało 9 wariantów:
+		 
+		 \begin{enumerate}
+		 	\item \textbf{Matrix Factorization i sieć neuronowa uczona metodą propagacji wstecznej} --- ten wariant łączy ze sobą szybki, ale najmniej efektywny ze wszystkich wykorzystywanych metod kolaboratywnych algorytm z dość dokładnym, lecz nie najszybszym sposobem uczenia sieci neuronowej. Spodziewanym efektem jest dość stosunkowo wysoki wpływ algorytmu z analizą zawartości na końcowy wynik. 
+		 	\item \textbf{Matrix Factorization i sieć neuronowa uczona metodą RPROP} --- jako, że zarówno metoda RPROP jak i Matrix Factorization są najszybszymi algorytmami wśród innych zaprezentowanych propozycji, to takie połączenie dostarcza najszybsze, lecz najmniej efektywne rozwiązanie.
+		 	\item \textbf{Matrix Factorization i sieć neuronowa uczona algorytmem genetycznym} --- sieć neuronowa uczona algorytmem genetycznym cechuje się dość wysoką efektywnością, jednakże czas uczenia jest dużo większy w porównaniu do innych metod. Spodziewanym efektem jest stosunkowo wysoki wpływ algorytmu z analizą zawartości na końcowy wynik przy dość wolnym czasie wykonania.
+		 	\item \textbf{Biased Matrix Factorization i sieć neuronowa uczona metodą propagacji wstecznej} --- algorytm Biased Matrix Factorization cechuje się wyższą skutecznością niż Matrix Factorization ale też dłuższym czasem wykonania. W związku z tym taki wariant będzie wolniejszy ale bardziej efektywny niż wariant nr 1.
+		 	\item \textbf{Biased Matrix Factorization i sieć neuronowa uczona metodą RPROP} --- analogicznie jak powyżej, taki wariant powinien cechować się wyższą skuteczności i niższą prędkością niż wariant 2. Z drugiej strony będzie on szybszy i mniej skuteczny niż wariant 4.
+		 	\item \textbf{Biased Matrix Factorization i sieć neuronowa uczona algorytmem genetycznym} ---  z powodu wykorzystania algorytmu genetycznego będzie to jeden z wolniejszych wariantów, ale cechować się będzie dobrą efektywnością.	 	
+		 	\item \textbf{SVD++ i sieć neuronowa uczona metodą propagacji wstecznej} --- algorytm SVD++ jest najwolniejszą metodą filtrowania kolaboratywnego ale jednocześnie najefektywniejszą. Połączenie z siecią neuronową uczoną metodą propagacji wstecznej może dać najlepsze wyniki ze wszystkich wariantów.
+		 	\item \textbf{SVD++ i sieć neuronowa uczona metodą RPROP} --- w tym wypadku długi czas wykonania algorytmu SVD++ może zbilansować szybki czas algorytmu RPROP. Uzyskany wynik możenie być tak dobry jak w wariancie 7 z powodu niższej efektywności RPROP niż klasycznej propagacji wstecznej.
+		 	\item \textbf{SVD++ i sieć neuronowa uczona algorytmem genetycznym} --- jest to najwolniejszy wariant ze wszystkich lecz może konkurować efektywnością z wariantem 7 (zależnie od konfiguracji algorytmu genetycznego).
+		 \end{enumerate}
 	 
 		 \subsection{Zalety zaproponowanej metody}
 		 
