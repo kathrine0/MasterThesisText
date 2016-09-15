@@ -259,16 +259,328 @@ ABSTRACT EN
 	 
 	 \todo{(PÓŹNIEJ) krótka wzmianka o tym, że w kolejnych podrozdziałach będą opisane wybrane techniki - te, które będą wykorzystywane w Pani systemie}
 	 
+	  \section{Filtrowanie kolaboratywne}
+	  
+	  Filtrowanie kolaboratywne opiera się na założeniu, że ludzie o zbliżonym guście dokonują podobnych wyborów. Użytkownicy o zbliżonym guście to osoby, które oceniły konkretne elementy w podobny sposób \cite{id:IntroductionToRecommenderSystemsHandbook, id:CollaborativeFilteringRecommenderSystems, id:huynh2012modeling}. 
+	  
+	  W przypadku filtrowania kolaboratywnego można wyróżnić dwa główne podejścia: oparte o regułę sąsiedztwa (ang. \textit{neighborhood}) oraz oparte o model (ang. \textit{model--based}), wykorzystujące modele ukrytych parametrów \cite{id:AdvancesInCollaborativeFiltering,koren2009matrix}. 
+	  
+	  \begin{figure}[!ht] 
+	  	\centering
+	  	\includegraphics[width=0.7\textwidth]{cf}
+	  	\caption{Filtrowanie kolaboratywne metodą sąsiedztwa,  zorientowane na użytkownika \protect\cite{koren2009matrix}.}
+	  	\label{fig:cf}
+	  \end{figure}
+	  
+	  Filtrowanie w oparciu o regułę sąsiedztwa koncentruje się na związkach element--element bądź użytkownik--użytkownik \cite{id:AdvancesInCollaborativeFiltering}.
+	  Rysunek \ref{fig:cf} pokazuje regułę sąsiedztwa skoncentrowaną na relacji użytkownik-użytkownik. Joe ocenił trzy filmy. System odnajduje innych użytkowników, którzy ocenili te trzy pozycje podobnie jak Joe. Każdy z nich pozytywnie ocenił film ,,Saving Private Ryan", zatem jest to pierwsza rekomendacja dla Joe. 
+	  
+	  \begin{figure}[!ht] 
+	  	\centering
+	  	\includegraphics[width=0.7\textwidth]{cf2}
+	  	\caption{Filtrowanie kolaboratywne z wykorzystaniem modelu ukrytych parametrów \protect\cite{koren2009matrix}.}
+	  	\label{fig:cf2}
+	  \end{figure}
+	  
+	  Ideą podejścia w oparciu o model jest zbadanie i modelowanie zależności element--użytkownik wraz z czynnikami reprezentującymi ukryte własności elementów i użytkowników. Taki model jest następnie uczony przy użyciu dostępnych danych. W rezultacie można z niego odczytać przewidywaną ocenę elementu dla konkretnego użytkownika \cite{id:ComprehensiveSurveyOfNeighborhoodBasedRecommendationMethods, id:AdvancesInCollaborativeFiltering}.
+	  
+	  Rysunek \ref{fig:cf2} pokazuje w sposób uproszczony podejście oparte o model. W układzie współrzędnym oznaczeni są użytkownicy wedle swoich preferencji oraz konkretnych cech (np. płeć) a także filmy, które stanowią odpowiedź na dany zestaw preferencji/cech \cite{koren2009matrix}. 
+	  
+	  \subsection{Zalety filtrowania kolaboratywnego}
+	  
+	  Filtrowanie kolaboratywne dobrze radzi sobie nawet w takich wypadkach, gdzie elementy nie są dobrze opisane lub nie zawierają żadnych własności. Niektóre systemy zawierają zawartość trudną do przeanalizowania przez komputer, np. opinie, pomysły, komentarze. Mimo tego, dzięki filtrowaniu kolaboratywnemu i tak można zbudować efektywny system rekomendacji \cite{melville2002content}.
+	  
+	  Dzięki zastosowaniu tej metody mniej prawdopodobne jest wystąpienia zjawiska zwanego ''bańką informacyjną'' (ang. \textit{filter bubble}). Polega ono na tym, że użytkownik otrzymując informacje wyselekcjonowane przez określony algorytm zostaje zamknięty w pewnego rodzaju ,,bańce'', tzn. sugerowane mu elementy są do siebie podobne, gdyż dobierane są w oparciu o jego przeszłe zainteresowania \cite{pariser2011filter}. Dzięki filtrowaniu kolaboratywnemu użytkownik może otrzymać zaskakujące rekomendacje i (w zależności od domeny) odkryć nowy gatunek muzyczny, nowego reżysera lub nową kategorię produktów w sklepie.	 
+	  
+	  \subsection{Wady filtrowania kolaboratywnego}
+	  
+	  Jednym z problemów klasycznego podejścia do kolaboratywnego filtrowania jest brak uwzględnienia dynamiki zmian w gustach użytkowników. Ten sam użytkownik na przestrzeni kilku lat lub miesięcy może zupełnie inaczej ocenić ten sam film bądź piosenkę. Rozwiązaniem jest dodanie czynnika czasu podczas obliczania wag kolejnych ocen. \cite{id:NewRecommentationAlgoritmBasedOnSocialNetwork,id:NextSongRecommendationWithTemporalDynamics,koren2009matrix}.
+	  
+	  Innym problemem jest tzw. zimny start (ang. \textit{cold start}). Polega on na tym, że nowi użytkownicy w systemie ocenili zbyt mało elementów, aby można było zbudować dla nich dobre rekomendacje \cite{id:RubensRecSysHB2010,id:zhang2015hybrid}.
+	  
+	  Powszechnym zjawiskiem jest tzw. efekt długiego ogona. Rysunek \ref{fig:longtail} przedstawia jak rozkłada się procentowa ilość ocen danych elementów w zależności od ich popularności. Jeżeli algorytm rekomendacji nie wspiera mniej popularnych elementów, to istnieje ryzyko, że użytkownicy nie otrzymają możliwości eksplorowania nowych, niszowych materiałów \cite{id:celma2010music,id:RubensRecSysHB2010}.
+	  
+	  \begin{figure}[!ht] 
+	  	\centering
+	  	\includegraphics[width=0.7\textwidth]{longtail}
+	  	\caption{Problem długiego ogona: 50\% ocen dotyczy 10-12\% najpopularniejszych elementów w systemie \protect\cite{id:RubensRecSysHB2010}.}
+	  	\label{fig:longtail}
+	  \end{figure}
+	  
+	  Systemy rekomendacji wykorzystujące filtrowanie kolaboratywne nie są skalowalne. Złożoność rośnie proporcjonalnie do ilości użytkowników i elementów. Wielkie koncerny internetowe takie jak Twitter wykorzystają klastry i maszyny z bardzo dużą pamięcią aby zachować płynność działania serwisu \cite{id:gupta2013wtf}.
+	 
+	 \subsection{Algorytmy filtrowania kolaboratywnego}
+	 
+	 Istnieje wiele implementacji algorytmów filtrowania kolaboratywnego. Jedną z bibliotek, która takie algorytmy implementuje i która została wykorzystana w tym projekcie jako baza do algorytmów hybrydowych jest MyMediaLite \cite{mymedialite,gantner2011mymedialite}. Zawiera ona zestaw metod opartych zarówno o model jak też o regułę sąsiedztwa:
+	 
+	 \begin{itemize}
+	 	\item SVD++ \cite{koren2008factorization}
+	 	\item Biased Matrix Factorization \cite{salakhutdinov2011probabilistic,rendle2008online}
+	 	\item Matrix Factorization
+	 	\item Factor-Wise Matrix Factorization \cite{bell2007modeling}
+	 	\item Slope One \cite{lemire2005slope}
+	 	\item User-Item Baseline \cite{koren2010factor}
+	 \end{itemize}
+	 
+	 \begin{figure}[!ht] 
+	 	\centering
+	 	\includegraphics[width=0.7\textwidth]{cfcomparision}
+	 	\caption{Test algorytmów filtrowania kolaboratywnego \protect\cite{mymedialitedatasets}}
+	 	\label{fig:cfcomparision}
+	 \end{figure}
+	 
+	 Rys. \ref{fig:cfcomparision} przedstawia wyniki działania wymienionych algorytmów (im mniejsza wartość RMSE i MAE tym lepiej). Testy przeprowadzone zostały na bazie MovieLens M1 z pięciokrotną walidacją krzyżową \cite{harper2016movielens}. Najefektywniejsze okazały się algorytmy SVD++, Biased Matrix Factorization i Matrix Factorization działające w oparciu o model.
+	 
+	 \subsubsection{Matrix Factorization}	
+	 
+	 Algorytm \textit{Matrix Factorization} bazuje na matematycznej metodzie rozkładu macierzy na czynniki.
+	 
+	 
+	 \begin{figure}[!ht] 
+	 	\centering
+	 	\includegraphics[width=1\textwidth]{factorization}
+	 	\caption{Faktoryzacja macierzy \protect\cite{id:ComputingRecommendationsExtremeScaleApacheFlink}}
+	 	\label{fig:factorization}
+	 \end{figure}
+	 
+	 Początkowo dana jest niekompletna macierz zawierająca oceny, jakie użytkownicy wystawili konkretnym elementom (\textit{Rating Matrix}). Celem metody jest odnalezienie wartości, jakie można wstawić w puste miejsca, czyli przewidzenie jaką ocenę dany użytkownik wystawi nieocenionemu jeszcze elementowi. 		
+	 
+	 W tym celu tworzone są odrębne macierze dla użytkowników i elementów zawierające ukryte własności. Każdy element powiązany jest z wektorem $q_i \in \mathbb{R} ^f$ (wektory W, X, Y, Z na rys. \ref{fig:factorization}) a każdy użytkownik z wektorem $p_u \in \mathbb{R} ^f$ (wektory A, B, C, D na rys. \ref{fig:factorization}). Wartości czynników ukrytych determinują stopień zainteresowania daną cechą (w przypadku macierzy użytkowników) bądź stopień, w jakim dany element posiada tę cechę (w przypadku macierzy elementów).		
+	 
+	 Iloczyn skalarny $q_i^T p_u$ przedstawia relację pomiędzy użytkownikiem a elementem. Na tej podstawie można wnioskować ocenę $r_{ui}$, jaką użytkownik może wystawić elementowi: $r_{ui} = q_i^T p_u$ i w konsekwencji estymować zainteresowanie użytkownika danym elementem \cite{koren2009matrix}.
+	 
+	 Głównym wyzwaniem jest odnalezienie wartości macierzy użytkownika i elementu, które po przemnożeniu przez siebie dadzą kompletną macierz ocen. W przypadku omawianych algorytmów stosowana jest metoda stochastycznego gradientu prostego. 
+	 
+	 \subsubsection{Stochastyczny gradient prosty}
+	 
+	 Stochastyczny gradient prosty (ang. \textit{stochastic gradient descent}, \textit{SGD}) jest iteracyjnym algorytmem optymalizacyjnym mającym za zadanie odnalezienie minimum bądź maksimum zadanej funkcji. Jest on uproszczeniem popularnej metody gradientu prostego \cite{bottou2012stochastic}.
+	 
+	 Dana jest funkcja celu w postaci
+	 
+	 \begin{equation}
+	 \label{eq:sgd1}
+	 Q(w) = \sum_{i=1}^{n}Q_i(w)
+	 \,.
+	 \end{equation}			
+	 Zadaniem algorytmu jest odnalezienie takiej wartości parametru $w$, dla którego $Q(w)$ będzie minimalne. Wykorzystując klasyczną metodę gradientu prostego poszukiwania można zapisać następującym wzorem:
+	 
+	 \begin{equation}
+	 \label{eq:sgd2}
+	 w:= w - \eta \sum_{i=1}^{n} \nabla Q_i(w)
+	 \,,
+	 \end{equation}			
+	 gdzie $\eta$ symbolizuje współczynnik uczenia (ang. \textit{learning rate}). W przypadku algorytmu stochastycznego następuje uproszczenie. Zamiast obliczać dokładny gradient $Q(w)$, w każdej iteracji jest  on aproksymowany na podstawie pojedynczego, losowo wybranego przypadku:
+	 
+	 \begin{equation}
+	 \label{eq:sgd3}
+	 w:= w - \eta \nabla Q_i(w)
+	 \,.
+	 \end{equation}			
+	 Algorytm przetwarza wszystkie elementy zbioru treningowego i dla każdego przypadku wykonuje aktualizację wartości $w$. Przebieg algorytmu przedstawiony jest poniżej (algorytm \ref{aq:sgd}).
+	 
+	 \def\alghoritm5{Stochastyczny gradient prosty}
+	 \begin{breakablealgorithm}
+	 	\caption{\alghoritm5}
+	 	\myalgorithm{\alghoritm5}
+	 	\label{aq:sgd}
+	 	\begin{algorithmic}
+	 		\STATE $w \leftarrow \text{początkowy wektor } w$
+	 		\STATE $\eta \leftarrow \text{współczynnik uczenia}$
+	 		
+	 		\WHILE{nie odnaleziono minimum}
+	 		
+	 		\STATE losowo mieszkaj przykłady ze zbioru testowego
+	 		\FOR {$i \in \{1, 2, \ldots, n\} $}
+	 		\STATE $w:= w - \eta \nabla Q_i(w)$
+	 		\ENDFOR
+	 		\ENDWHILE
+	 	\end{algorithmic}
+	 \end{breakablealgorithm}
+	 
+	 Stochastyczny gradient prosty wykonuje dużo więcej kroków niż jego klasyczny odpowiednik aby odnaleźć rozwiązanie optymalne. Mimo tego jest on szybszy, gdyż każdy pojedynczy krok jest mniej kosztowny niż w oryginale. Różnicę w działaniu przedstawia rys. \ref{fig:sgd}.  
+	 
+	 \begin{figure}[!ht] 	
+	 	\centering	 		 	
+	 	\includegraphics[width=0.5\textwidth]{sdg}
+	 	\caption{Różnica pomiędzy klasycznym gradientem prostym (po lewej) a jego stochastyczną wersją (po prawej) \protect\cite{effandpractstochsub}}
+	 	\label{fig:sgd}
+	 \end{figure}
+	 
+	 \newpage
+	 \subsubsection{Przebieg algorytmu Matrix Factorization}
+	 
+	 Przebieg algorytmu składa się z dwóch faz. W pierwszej fazie inicjowany jest model (zob. algorytm \ref{aq:mf_init}). Daną wejściową jest macierz zawierająca dotychczasowe oceny  elementów przez użytkowników w systemie. Na wyjściu otrzymywane są dwie nowe macierze reprezentujące ukryte własności użytkowników i elementów. Na tym etapie \todo{OMÓWIĆ dwa ostatnie zdania brzmią razem tak, jakby wynik był losowy} są one wypełnione wartościami losowymi. 		
+	 
+	 
+	 \def\alghoritm1{Matrix Factorization -- Inicjacja modelu}
+	 \begin{breakablealgorithm}
+	 	\caption{\alghoritm1}
+	 	\myalgorithm{\alghoritm1}
+	 	\label{aq:mf_init}
+	 	\begin{algorithmic}
+	 		\STATE $N \leftarrow $ liczba użytkowników
+	 		\STATE $M \leftarrow $ liczba elementów
+	 		\STATE $F \leftarrow $ liczba ukrytych własności
+	 		\STATE $ratings \leftarrow $ Macierz NxM zawierająca dotychczasowe oceny wszystkich elementów
+	 		\STATE przez wszystkich użytkowników
+	 		\STATE $user\_factors \leftarrow $ Macierz NxF reprezentująca ukryte własności użytkowników
+	 		\STATE $item\_factors \leftarrow $ Macierz MxF reprezentująca ukryte własności elementów
+	 		
+	 		\FOR{each $uf \in user\_factors$, $if \in item\_factors$ }
+	 		\STATE wstaw losową wartość za pomocą transformacji Boxa--Mullera
+	 		\ENDFOR
+	 		
+	 		\FOR{each $user, item \in ratings$ }			
+	 		\IF {$ratings_{user,item} = NULL$}
+	 		\STATE wstaw 0 do wiersza $user\_factors_{user}$ i $item\_factors_{item}$
+	 		\ENDIF				
+	 		\ENDFOR
+	 		\RETURN $user\_factors, item\_factors$
+	 	\end{algorithmic}
+	 \end{breakablealgorithm}
+	 
+	 
+	 W fazie drugiej następuje uczenie metodą stochastycznego gradientu prostego (zob. algorytm  \ref{aq:mf_learn}). Wynikiem tej fazy są macierze reprezentujące ukryte własności użytkowników i elementów. Mnożąc je ze sobą uzyskiwana jest przewidywana ocena każdego z elementów przez użytkowników. 
+	 
+	 Przed rozpoczęciem uczenia ustalane są parametry: parametr regulujący (ang. \textit{regularization}), współczynnik uczenia (ang. \textit{learning rate}), parametr zanikania (ang. \textit{decay}) i liczba iteracji. 	
+	 W trakcie trwania głównej pętli parametr regulujący pozostaje niezmienny. Służy on zapobieganiu zjawisku nadmiernego dopasowania (ang. \textit{overfitting}). Tempo uczenia jest przy każdym przebiegu pętli mnożone przez parametr zanikania, dzięki czemu można kontrolować w jakim stopniu kolejne przebiegi pętli wpływają na finalny wynik. 
+	 
+	 Ostatnim parametrem ustalanym przed główną pętlą jest skośność globalna (ang. \textit{global bias}), która jest średnią wszystkich znanych ocen. 
+	 
+	 W pętli uczenia wykonywane są następujące operacje: dla każdej pary użytkownik -- element budowana jest przewidywana ocena poprzez obliczenie iloczynu skalarnego odpowiednich wartości z macierzy wartości ukrytych. Ocena ta jest modyfikowana poprzez dodanie globalnej skośności a następnie porównywana z faktyczną oceną elementu przez użytkownika. Tak uzyskany błąd służy do wyliczenia delty. Macierze wartości ukrytych uaktualniane są o wyliczoną deltę. 
+	 
+	 Pod koniec każdej iteracji aktualizowany jest współczynnik uczenia.
+	 
+	 \def\alghoritm2{Matrix Factorization -- Faza uczenia}
+	 \begin{breakablealgorithm}
+	 	\caption{\alghoritm2}
+	 	\myalgorithm{\alghoritm2}
+	 	\label{aq:mf_learn}
+	 	\begin{algorithmic}
+	 		\STATE $global\_bias \leftarrow $ średnia wszystkich ocen
+	 		\STATE $X \leftarrow $ liczba iteracji			
+	 		\STATE $regularization \leftarrow $ parametr regulujący			
+	 		\STATE $current\_learnrate \leftarrow $ współczynnik uczenia
+	 		\STATE $decay \leftarrow $ parametr zanikania
+	 		
+	 		\FOR{each $x \in X$ }
+	 		\FOR{each $user, item \in ratings$ }
+	 		
+	 		\STATE $predicion= global\_bias + IloczynSkalarny(user\_factors_{user}, item\_factors_{item}); $
+	 		
+	 		\STATE $error = ratings_{user,item} - prediction$
+	 		
+	 		\textbf{//dopasowanie własności ukrytych:}
+	 		
+	 		\FOR{each $f \in F$}
+	 		\STATE $delta_u = error * item\_factors_{item, f} - regularization * user\_factors_{user, f}$
+	 		\STATE $delta_i = error * user\_factors_{user, f} - regularization * item\_factors_{item, f}$
+	 		
+	 		\STATE $user\_factors_{user, f} \incr current\_learnrate * delta_u$
+	 		\STATE $item\_factors_{item, f} \incr current\_learnrate * delta_i$
+	 		\ENDFOR					
+	 		\ENDFOR			
+	 		\STATE $current\_learnrate \incrtimes decay$				
+	 		\ENDFOR
+	 		\RETURN $user\_factors, item\_factors$
+	 	\end{algorithmic}
+	 \end{breakablealgorithm}
+	 
+	 
+	 \subsubsection{Biased Matrix Factorization}
+	 
+	 Algorytm \textit{Biased Matrix Factorization} jest modyfikacją wyżej opisanego algorytmu \textit{Matrix Factorization}. Podobnie jak jego pierwowzór składa się z dwóch faz. W pierwszej fazie dodatkowo inicjowane są dwa dodatkowe wektory: skośność użytkowników (ang. \textit{user bias}) i skośność elementów (ang. \textit{item bias}). 
+	 
+	 Inaczej jest też obliczana skośność globalna: 
+	 
+	 \begin{equation}
+	 \label{eq:global_bias}
+	 global\_bias = 
+	 \frac
+	 { 
+	 	\frac{ a - r_{min} }{ r_{max} - r_{min} }
+	 }
+	 {
+	 	1 - \frac{ a - r_{min} }{ r_{max} - r_{min} }	
+	 }
+	 \,,
+	 \end{equation} 		 		
+	 gdzie
+	 
+	 \begin{conditions*}
+	 	a & to średnia wszystkich ocen \\
+	 	r_{min}  &  to minimalna ocena w systemie  \\
+	 	r_{max}  &  to maksymalna ocena w systemie
+	 \end{conditions*} 
+	 
+	 Faza druga wygląda podobnie jak w przypadku algorytmu \textit{Matrix Factorization}, jednak są uwzględniane dodatkowe parametry i wykonywane dodatkowe kroki.
+	 
+	 \def\alghoritm3{Biased Matrix Factorization -- Faza uczenia}
+	 \begin{breakablealgorithm}
+	 	\caption{\alghoritm3}
+	 	\myalgorithm{\alghoritm3}
+	 	\label{aq:bmf_learn}
+	 	\begin{algorithmic}
+	 		\STATE $global\_bias \leftarrow $ średnia wszystkich ocen
+	 		\STATE $X \leftarrow $ liczba iteracji			
+	 		\STATE $regU, regI, BiasReg \leftarrow $ parametry regulujące dla użytkownika, elementu i ogólny 			
+	 		\STATE $current\_learnrate \leftarrow $ współczynnik uczenia
+	 		\STATE $BiasLearnRate \leftarrow $ współczynnik uczenia skośności
+	 		\STATE $decay \leftarrow $ parametr zanikania
+	 		
+	 		\FOR{each $x \in X$ }
+	 		\FOR{each $user, item \in ratings$ }			 		
+	 		\STATE $score= global\_bias + user\_bias_{user} + item\_bias_{item} + IloczynSkalarny(user\_factors_{user}, item\_factors_{item})$
+	 		
+	 		\STATE $sig\_score = \frac{1}{1 + \exp(-score)}$
+	 		
+	 		\STATE $predicion= rating_{min} + sig\_score + (rating_{max} - rating_{min}) $
+	 		
+	 		\STATE $error = ratings_{user,item} - prediction$
+	 		
+	 		\STATE $gradient\_common = err * sig\_score * (1 - sig\_score) * (rating_{max} - rating_{min})$
+	 		
+	 		\textbf{//dopasowanie skośności:}
+	 		
+	 		\STATE $user\_bias_{user} \incr BiasLearnRate * current\_learnrate * (gradient\_common - BiasReg * RegU * user\_bias_{user})$
+	 		
+	 		\STATE $item\_bias_{item} \incr BiasLearnRate * current\_learnrate * (gradient\_common - BiasReg * RegI * item\_bias_{item})$
+	 		
+	 		\textbf{//dopasowanie własności ukrytych:}
+	 		
+	 		\FOR{each $f \in F$}
+	 		\STATE $delta_u = gradient\_common * item\_factors_{item, f} - RegU * user\_factors_{user, f}$
+	 		
+	 		\STATE $delta_i = gradient\_common * user\_factors_{user, f} - RegI * item\_factors_{item, f}$
+	 		
+	 		\STATE $user\_factors_{user, f} \incr current\_learnrate * delta_u$
+	 		\STATE $item\_factors_{item, f} \incr current\_learnrate * delta_i$
+	 		\ENDFOR					
+	 		\ENDFOR			
+	 		\STATE $current\_learnrate \incrtimes decay$				
+	 		\ENDFOR
+	 		\RETURN $user\_factors, item\_factors$
+	 	\end{algorithmic}
+	 \end{breakablealgorithm}
+	 
+	 \subsubsection{SVD++}
+	 
+	 SVD++ jest rozszerzeniem metody SVD (dekompozycja głównych składowych, ang. \textit{singular value decomposition}). Od poprzednich omawianych algorytmów różni go przede wszystkim to, że korzysta nie tylko z bezpośredniej informacji zwrotnej do tworzenia profilu użytkownika ale także z pośredniej (zob. \ref{ss:metody_tworzenia_profilu_uzytkownika}).
+	 
+	 Model SVD++ opisywany jest równaniem:
+	 
+	 \begin{equation}
+	 \label{eq:svd}
+	 r_{ui} = \mu + b_u + b_i + q_i^T (p_u + \frac{1}{\sqrt{|N(u)|}} \sum_{j \in N(u)}^{} y_j) 
+	 \,
+	 \end{equation}		 		 
+	 Użytkownik powiązany jest z wektorem $p_u \in \mathbb{R} ^f$ reprezentującym zainteresowanie konkretnymi cechami. Taki model uzupełniany jest sumą  $\frac{1}{\sqrt{|N(u)|}} \sum_{j \in N(u)}^{} y_j$, która reprezentuje pośrednie informacje zwrotne. Przykładem informacji niejawnej jest fakt, że użytkownik w ogóle zareagował na dany element (np. ocenił go), bez względu na wynik tej interakcji. 
+	 
+	 Zmienne $b_u$ i $b_i$ reprezentują obserwowane odchylenie od średniej dla użytkowników i elementów, natomiast $\mu$ to średnia wszystkich ocen \cite{koren2008factorization}. 
+	 
 	 \section{Filtrowanie z analizą zawartości}
 	 
 	 Filtrowanie z analizą zawartości opiera się na cechach elementów w systemie. Rekomendowane są obiekty, które podobne są do tych pozytywnie ocenionych wcześniej przez użytkownika \cite{id:huynh2012modeling}. W zależności od domeny pod uwagę mogą być brane słowa kluczowe, cechy takie jak rok wydania, reżyser, autor, kompozytor, gatunek itp.
-	 
-	 \subsection{Metody tworzenia profilu użytkownika}
-	 \label{ss:metody_tworzenia_profilu_uzytkownika}
-	 
-	 Profil użytkownika może być tworzony na dwa sposoby. Jeżeli użytkownik jawnie pozostawia informacje można mówić bezpośredniej informacji zwrotnej (ang. \textit{explicit feedback}). Do takich informacji należą: ocena konkretnych elementów, przycisk lubienia lub nielubienia (tzw. ,,łapka'' w górę lub w dół), komentarz itp. 
-	 
-	 Jednakże nawet jeżeli użytkownik nie jest skory do zostawiania tego typu śladów, to i tak można wiele na jego temat wywnioskować korzystając z pośredniej informacji zwrotnej (ang. \textit{implicit feedback}). System bierze wówczas pod uwagę aktywność użytkownika taką jak: historia zakupów, historia przeglądarki a nawet ruchy myszką. W przypadku serwisu z muzyką czy filmem cenną informacją będzie fakt, czy użytkownik wysłuchał lub obejrzał dany materiał do końca czy też wyłączył go po paru sekundach \cite{id:AdvancesInCollaborativeFiltering,id:ContentBasedRecommenderSystemsState}.
 	 
 	 \subsection{Zalety filtrowania z analizą zawartości}
 	 
@@ -280,56 +592,143 @@ ABSTRACT EN
 	 Aby rekomendacja była skuteczna użytkownik powinien ocenić jak najwięcej elementów. Problematyczni są zatem użytkownicy, którzy dopiero co dołączyli do serwisu oraz tacy, którzy nie są aktywni i rzadko zostawiają po sobie ślad \cite{id:MaleszkaMianowskaNguyenmethod}.
 	 
 	 Filtrowanie z analizą zawartości jest podatne na pułapkę tzw. bańki informacyjnej. Jeżeli w systemie rekomendującym produkcje kinowe użytkownik do tej pory oceniał jedynie filmy akcji, to mało prawdopodobne jest, że algorytm zaproponuje mu ciekawy dramat obyczajowy. Nowe propozycje nie są zaskakujące \cite{id:ContentBasedRecommenderSystemsState}.
+	 	 
+	 \subsection{Metody tworzenia profilu użytkownika}
+	 \label{ss:metody_tworzenia_profilu_uzytkownika}
 	 
-	 \section{Filtrowanie kolaboratywne}
+	 Profil użytkownika może być tworzony na dwa sposoby. Jeżeli użytkownik jawnie pozostawia informacje można mówić bezpośredniej informacji zwrotnej (ang. \textit{explicit feedback}). Do takich informacji należą: ocena konkretnych elementów, przycisk lubienia lub nielubienia (tzw. ,,łapka'' w górę lub w dół), komentarz itp. 
 	 
-	 Filtrowanie kolaboratywne opiera się na założeniu, że ludzie o zbliżonym guście dokonują podobnych wyborów. Użytkownicy o zbliżonym guście to osoby, które oceniły konkretne elementy w podobny sposób \cite{id:IntroductionToRecommenderSystemsHandbook, id:CollaborativeFilteringRecommenderSystems, id:huynh2012modeling}. 
+	 Gdy użytkownik nie zostawia po sobie tego typu śladów, to informacje na temat jego zachowań i preferencji można uzyskać korzystając z pośredniej informacji zwrotnej (ang. \textit{implicit feedback}). System bierze wówczas pod uwagę aktywność użytkownika taką jak: historia zakupów, historia przeglądarki a nawet ruchy myszką. W przypadku serwisu z muzyką czy filmem pośrednią informacją zwrotną będzie fakt, czy użytkownik wysłuchał lub obejrzał dany materiał do końca czy też wyłączył go po paru sekundach \cite{id:AdvancesInCollaborativeFiltering,id:ContentBasedRecommenderSystemsState}.
 	 
-	 W przypadku filtrowania kolaboratywnego można wyróżnić dwa główne podejścia: oparte o regułę sąsiedztwa (ang. \textit{neighborhood}) oraz oparte o model (ang. \textit{model--based}), wykorzystujące modele ukrytych parametrów \cite{id:AdvancesInCollaborativeFiltering,koren2009matrix}. 
+	 \subsection{Algorytmy filtrowania z analizą zawartości}
+	 
+	 Najprostszym sposobem implementacji filtrowania z analizą zawartości jest wyciąganie średnich wartości cech z wektora ocenianego elementu. Bardziej efektywne jest jednak wykorzystanie technik uczenia maszynowego takich jak naiwny klasyfikator bayesowski, klasteryzacja, drzewa decyzyjne lub sztuczne sieci neuronowe. W niniejszej pracy wykorzystana została sztuczna sieć neuronowa uczona algorytmami opisanymi poniżej. 
+	 
+	 \subsubsection{Propagacja wsteczna}
+	 \label{sss:backprop}
+	 
+	 Algorytm propagacji wstecznej jest jedną z popularniejszych metod uczenia nadzorowanego jednokierunkowych sieci neuronowych. Zbiór uczący składa się z danych wejściowych (wektory cech elementu) i z informacji o oczekiwanym wyniku (ocena elementu). Różnica między wynikiem zwróconym przez sieć a wartością oczekiwaną stanowi miarę błędu sieci neuronowej. 
 	 
 	 \begin{figure}[!ht] 
-	 	\centering
-	 	\includegraphics[width=0.7\textwidth]{cf}
-	 	\caption{Filtrowanie kolaboratywne metodą sąsiedztwa,  zorientowane na użytkownika \protect\cite{koren2009matrix}.}
-	 	\label{fig:cf}
+			 	\centering
+			 	\includegraphics[width=0.5\textwidth]{ilustracjabackprop}
+			 	\caption{Algorytm propagacji wstecznej w sieci trójwarstwowej -- idea działania \protect\cite{kwateralgorytmy}}
+			 	\label{fig:ilustracjabackprop}
 	 \end{figure}
 	 
-	 Filtrowanie w oparciu o regułę sąsiedztwa koncentruje się na związkach element--element bądź użytkownik--użytkownik \cite{id:AdvancesInCollaborativeFiltering}.
-	 Rysunek \ref{fig:cf} pokazuje regułę sąsiedztwa skoncentrowaną na relacji użytkownik-użytkownik. Joe ocenił trzy filmy. System odnajduje innych użytkowników, którzy ocenili te trzy pozycje podobnie jak Joe. Każdy z nich pozytywnie ocenił film ,,Saving Private Ryan", zatem jest to pierwsza rekomendacja dla Joe. 
+	 Wiadomo, że funkcja celu jest funkcją ciągłą. Bazując na gradientowych metodach optymalizacji, wagi w sieci neuronowej aktualizowane są w następujący sposób:	 
 	 
-	  \begin{figure}[!ht] 
-	  	\centering
-	  	\includegraphics[width=0.7\textwidth]{cf2}
-	  	\caption{Filtrowanie kolaboratywne z wykorzystaniem modelu ukrytych parametrów \protect\cite{koren2009matrix}.}
-	  	\label{fig:cf2}
-	  \end{figure}
+	 \begin{equation}
+	 \label{eq:weightadaptation3}
+	 W_{ij}(n+1) = W_{ij}(n) + \Delta W_{ij}(n) 
+	 \,,
+	 \end{equation}
 	 
-	 Ideą podejścia w oparciu o model jest zbadanie i modelowanie zależności element--użytkownik wraz z czynnikami reprezentującymi ukryte własności elementów i użytkowników. Taki model jest następnie uczony przy użyciu dostępnych danych. W rezultacie można z niego odczytać przewidywaną ocenę elementu dla konkretnego użytkownika \cite{id:ComprehensiveSurveyOfNeighborhoodBasedRecommendationMethods, id:AdvancesInCollaborativeFiltering}.
 	 
-	 Rysunek \ref{fig:cf2} pokazuje w sposób uproszczony podejście oparte o model. W układzie współrzędnym oznaczeni są użytkownicy wedle swoich preferencji oraz konkretnych cech (np. płeć) a także filmy, które stanowią odpowiedź na dany zestaw preferencji/cech \cite{koren2009matrix}. 
+	 \begin{equation}
+	 \label{eq:weightadaptation2}
+	 \Delta W_{ij}(n) = \eta p(W)
+	 \,,
+	 \end{equation}		 
+	 gdzie
 	 
-	 \subsection{Zalety filtrowania kolaboratywnego}
+	 \begin{conditions*}
+			 	\eta & to współczynnik uczenia (ang. \textit{learning rate}) \\
+			 	p(W) & to kierunek w przestrzeni wielowymiarowej W 
+	 \end{conditions*} 
 	 
-	 Filtrowanie kolaboratywne dobrze radzi sobie nawet w takich wypadkach, gdzie elementy nie są dobrze opisane lub nie zawierają żadnych własności. Niektóre systemy zawierają zawartość trudną do przeanalizowania przez komputer, np. opinie, pomysły, komentarze. Mimo tego, dzięki filtrowaniu kolaboratywnemu i tak można zbudować efektywny system rekomendacji \cite{melville2002content}.
+	 Aby wyznaczyć kierunek $p(W))$ dla wszystkich warstw sieci należy przejść przez kolejne etapy uczenia \cite{haykin1994neural,hertz1993wstkep,kwateralgorytmy,osowski1996sieci,timothy1996sieci}.
 	 
-	 Dzięki zastosowaniu tej metody mniej prawdopodobne jest wystąpienia zjawiska zwanego ''bańką informacyjną'' (ang. \textit{filter bubble}). Polega ono na tym, że użytkownik otrzymując informacje wyselekcjonowane przez określony algorytm zostaje zamknięty w pewnego rodzaju ,,bańce'', tzn. sugerowane mu elementy są do siebie podobne, gdyż dobierane są w oparciu o jego przeszłe zainteresowania \cite{pariser2011filter}. Dzięki filtrowaniu kolaboratywnemu użytkownik może otrzymać zaskakujące rekomendacje i (w zależności od domeny) odkryć nowy gatunek muzyczny, nowego reżysera lub nową kategorię produktów w sklepie.	 
-
-	 \subsection{Wady filtrowania kolaboratywnego}
+	 \begin{enumerate}
+			 	\item W kroku pierwszym sieć neuronowa poddawana jest analizie o zwykłym kierunku przepływu sygnałów. Wynikiem są wartości sygnałów wychodzących z neuronów warstw wyjściowej i ukrytych oraz pochodne funkcji aktywacji w kolejnych warstwach. 
+			 	
+			 	\item W kroku drugim kierunek przepływu sygnałów zostaje odwrócony (stąd nazwa propagacja wsteczna). Funkcje aktywacji zostają zastąpione przez swoje pochodne. Na oryginalne wyjście sieci (aktualnie wejście) podana zostaje wartość równa różnicy pomiędzy wynikiem oczekiwanym a wynikiem zwróconym przez sieć. 
+			 	
+			 	\item Obliczana zostaje wartość różnic wstecznych.
+			 	
+			 	\item W kolejnym kroku następuje wreszcie proces adaptacji wag. Odbywa się on zarówno dla sieci zwykłej jak i dla sieci o propagacji wstecznej. Reguła modyfikacji ma postać: 
+			 	
+			 	\begin{equation}
+			 	\label{eq:weightadaptation4}
+			 	\Delta W_{ij} = \eta \sum_\text{wzroce}^{} \delta_\text{wyjście} \cdot x_\text{wejście}
+			 	\,,
+			 	\end{equation}
+			 	
+			 	\item Powyższe kroki potarzane są dla każdej pary dane wejściowe -- oczekiwany wynik tak długo, aż poziom błędu spadnie poniżej akceptowalnej wartości bądź osiągnięta zostanie maksymalna liczba iteracji. 
+			 	
+	 \end{enumerate}
 	 
-	 Jednym z problemów klasycznego podejścia do kolaboratywnego filtrowania jest brak uwzględnienia dynamiki zmian w gustach użytkowników. Ten sam użytkownik na przestrzeni kilku lat lub miesięcy może zupełnie inaczej ocenić ten sam film bądź piosenkę. Rozwiązaniem jest dodanie czynnika czasu podczas obliczania wag kolejnych ocen. \cite{id:NewRecommentationAlgoritmBasedOnSocialNetwork,id:NextSongRecommendationWithTemporalDynamics,koren2009matrix}.
+	 Algorytm propagacji wstecznej obrazuje schemat blokowy \ref{fig:propagacjawsteczna}.
 	 
-	 Innym problemem jest tzw. zimny start (ang. \textit{cold start}). Polega on na tym, że nowi użytkownicy w systemie ocenili zbyt mało elementów, aby można było zbudować dla nich dobre rekomendacje \cite{id:RubensRecSysHB2010,id:zhang2015hybrid}.
+	 \begin{figure}[!ht] 
+			 	\centering
+			 	\includegraphics[width=1\textwidth]{propagacjawsteczna}
+			 	\caption{Algorytm propagacji wstecznej}
+			 	\label{fig:propagacjawsteczna}
+	 \end{figure}
 	 
-	 Powszechnym zjawiskiem jest tzw. efekt długiego ogona. Rysunek \ref{fig:longtail} przedstawia jak rozkłada się procentowa ilość ocen danych elementów w zależności od ich popularności. Jeżeli algorytm rekomendacji nie wspiera mniej popularnych elementów, to istnieje ryzyko, że użytkownicy nie otrzymają możliwości eksplorowania nowych, niszowych materiałów \cite{id:celma2010music,id:RubensRecSysHB2010}.
+	 \subsubsection{Metoda momentum}
+	 \label{sss:metoda_momentum}
 	 
-  \begin{figure}[!ht] 
- 	  	\centering
- 	  	\includegraphics[width=0.7\textwidth]{longtail}
- 	  	\caption{Problem długiego ogona: 50\% ocen dotyczy 10-12\% najpopularniejszych elementów w systemie \protect\cite{id:RubensRecSysHB2010}.}
- 	  	\label{fig:longtail}
-  \end{figure}
+	 W celu zwiększenia efektywności działania algorytmu została zastosowana metoda momentum. I tak też standardowy sposób aktualizacji wag sieci (równanie \ref{eq:weightadaptation3}) został zmodyfikowany w następujący sposób:
 	 
-	 Systemy rekomendacji wykorzystujące filtrowanie kolaboratywne nie są skalowalne. Złożoność rośnie proporcjonalnie do ilości użytkowników i elementów. Wielkie koncerny internetowe takie jak Twitter wykorzystają klastry i maszyny z bardzo dużą pamięcią aby zachować płynność działania serwisu \cite{id:gupta2013wtf}.
+	 \begin{equation}
+	 \label{eq:zasadamomentum1}
+	 W_{ij}(n+1) = W_{ij}(n) + \Delta W_{ij}(n) 
+	 \,,
+	 \end{equation}
+	 
+	 \begin{equation}
+	 \label{eq:zasadamomentum2}
+	 \Delta W_{ij}(n) = \eta(n) \cdot p(n) + \alpha(W_{ij}(n)-W_{ij}(n-1)) 
+	 \,,
+	 \end{equation}		 
+	 gdzie $\alpha$ jest współczynnikiem momentum z zakresu $[0,1]$. Im wyższa wartość współczynnika tym większy jego wpływ na ostateczny kształt kolejnych wag. W dalszej części pracy przeprowadzono eksperymenty mające na celu dobranie optymalnej wartości współczynnika momentum.
+	 
+	 \subsubsection{Algorytm RPROP}		 
+	 
+	 Pomimo dużej popularności algorytmu propagacji wstecznej nie jest on pozbawiony wad. Sporym problemem jest jego relatywnie niska szybkość działania, szczególnie w przypadku bardzo dużych sieci neuronowych -- a więc w przypadku odpowiadającemu potrzebom systemów rekomendacji. W odpowiedzi na te problemy Martin Riedmiller i Heinrich Braun zaproponowali w 1992 roku alternatywny algorytm -- Resilient Backpropagation (RPROP).
+	 
+	 Główną różnicą jest wykorzystywanie jedynie informacji o dodatniości lub ujemności każdej składowej gradientu zamiast o ich wartości (jak to się odbywa w oryginalnym algorytmie). Ponadto, współczynnik uczenia modyfikowany jest w każdym kolejnym kroku. 
+	 
+	 Modyfikacja współczynników odbywa się zgodnie ze wzorem:
+	 
+	 \begin{equation}
+	 \label{eq:rprop}		 
+	 \eta(t) = 
+	 \begin{cases}
+	 min\{a \eta(t-1), \eta_{max}\}, & \quad \text{gdy } \frac{\partial E^2(t)}{\partial v(t)} \frac{\partial E^2(t-1)}{\partial v(t-1)} > 0 \\
+	 max\{b \eta(t-1), \eta_{min}\}, & \quad \text{gdy } \frac{\partial E^2(t)}{\partial v(t)} \frac{\partial E^2(t-1)}{\partial v(t-1)} < 0 \\
+	 \eta(n-1), & \quad \text{w każdym innym przypadku} 
+	 \end{cases}		 
+	 \,,
+	 \end{equation}		 
+	 gdzie $\frac{\partial E^2(t)}{\partial v(t)}$ jest dokładną wartością składowej $v$ gradientu. Ponadto stałe $a$, $b$, $\eta_{min}$ i $\eta_{max}$ są zdefiniowane następująco:
+	 
+	 \begin{conditions*}
+			 	a = 1.2 \\
+			 	b = 0.5 \\
+			 	\eta_{min} = 10^{-6} \\
+			 	\eta_{max} = 50
+	 \end{conditions*} 
+	 
+	 Algorytm RPROP jest efektywniejszy pod kątem prędkości działania względem tradycyjnej propagacji wstecznej, więc dobrze sprawdza się tam, gdzie szybkość jest ważniejsza od wysokiej poprawności wyników \cite{riedmiller1993direct,riedmiller1994rprop}.
+	 
+	 \subsubsection{Algorytm genetyczny}	
+	 		 \label{ss:algorytm_genetyczny}
+	 		 
+	 		 Koncepcja algorytmów genetycznych została zaproponowana już 1960 roku przez Johna Hollanda. Należą one do klasy algorytmów ewolucyjnych, inspirowanych zasadą doboru naturalnego Darwina. Analogią do środowiska naturalnego jest pewien problem, dla którego poszukiwane jest optymalne rozwiązanie. Populacja składa się z potencjalnych rozwiązań, które są oceniane funkcją przystosowania. Zgodnie z zasadą Darwina zwycięża najsilniejszy, czyli najlepsze (chociaż nie zawsze optymalne) rozwiązanie \cite{pena2000evolutionary}. Schemat działania algorytmów genetycznych przedstawia rys. \ref{fig:algorytmgenetyczny}.	 
+	 		 
+	 		 
+	 		 \begin{figure}[!ht] 
+	 		 	\centering
+	 		 	\includegraphics[width=1\textwidth]{algorytmgenetyczny}
+	 		 	\caption{Ogólny schemat algorytmu genetycznego}
+	 		 	\label{fig:algorytmgenetyczny}
+	 		 \end{figure}
+	 		 
+	 		 Jako, że algorytmy genetyczne należą do grupy algorytmów optymalizacyjnych mogą zostać wykorzystane do uczenia sieci neuronowych. W przypadku tej implementacji populację stanowią propozycje wag dla każdego perceptronu. Preferowane są takie zestawy wag, dla których sieć zwraca rezultaty obarczone najmniejszym błędem. Najlepsze zestawy są ze sobą krzyżowane oraz podlegają mutacji. W wyniku takich mechanizmów ewolucyjnych powstaje rozwiązanie, dla których sieć neuronowa zwraca oczekiwane rezultaty \cite{aforgenetgenetic,montana1989training}.
+	 		 
 	 
 	 \section{Algorytmy hybrydowe}
 
@@ -376,340 +775,62 @@ ABSTRACT EN
  \chapter{Algorytmy}
  \shortTitle{Algorytmy}
 
-	\todo{Napisać wstęp. Co powinien zawierać?}
-
-	 \section{Filtrowanie kolaboratywne}
+	W celu ulepszenia wyników dostarczanych przez algorytmy filtrowania kolaboratywnego: Matrix Factorization, Biased Matrix Factorization i SVD++ stworzony został nowy algorytm filtrowania z analizą zawartości. W wyniku połączenia obu tych metod powstał algorytm hybrydowy. Ten rozdział zawiera opis działania i implementacji opracowanego algorytmu filtrowania z analizą zawartości oraz opis sposobu działania zaproponowanego algorytmu hybrydowego.
+		 
+ 	\section{Propozycja algorytmu filtrowania z analizą zawartości}
 	 
-		 Istnieje wiele implementacji algorytmów filtrowania kolaboratywnego. Jedną z bibliotek, która takie algorytmy implementuje i która została wykorzystana w tym projekcie jako baza do algorytmów hybrydowych jest MyMediaLite \cite{mymedialite,gantner2011mymedialite}. Zawiera ona zestaw metod opartych zarówno o model jak też o regułę sąsiedztwa:
+	Algorytmy filtrowania z analizą zawartości budują rekomendację na podstawie ocen, jakie zostały dotychczas wystawione przez użytkownika. Analizowane są cechy elementów i ich wartości oraz określana jest ich siła wpływu na finalną ocenę. 
+	
+	W tym celu dla każdego użytkownika tworzona jest sieć neuronowa, która uczy się jego preferencji. W projekcie wykorzystana została implementacja sieci neuronowych z biblioteki AForge.NET Framework \cite{aforgenet}.
 	 
-		 \begin{itemize}
-		 	\item SVD++ \cite{koren2008factorization}
-		 	\item Biased Matrix Factorization \cite{salakhutdinov2011probabilistic,rendle2008online}
-		 	\item Matrix Factorization
-		 	\item Factor-Wise Matrix Factorization \cite{bell2007modeling}
-		 	\item Slope One \cite{lemire2005slope}
-		 	\item User-Item Baseline \cite{koren2010factor}
-		 \end{itemize}
+	 \subsection{Struktura perceptronów i funkcja aktywacji}
+	 \label{sss:strukturaperceptronow}
 	 
-		 \begin{figure}[!ht] 
-		 	\centering
-		 	\includegraphics[width=0.7\textwidth]{cfcomparision}
-		 	\caption{Test algorytmów filtrowania kolaboratywnego \protect\cite{mymedialitedatasets}}
-		 	\label{fig:cfcomparision}
-		 \end{figure}
+	 Wykorzystywana sieć neuronowa składa się z trzech warstw neuronów (perceptronów). W każdej warstwie wszystkie neurony mają konstrukcję na jak rys. \ref{fig:schematneuronu}
 	 
-		 Rys. \ref{fig:cfcomparision} przedstawia wyniki działania wymienionych algorytmów (im mniejsza wartość RMSE i MAE tym lepiej). Testy przeprowadzone zostały na bazie MovieLens M1 z pięciokrotną walidacją krzyżową \cite{harper2016movielens}. Najefektywniejsze okazały się algorytmy SVD++, Biased Matrix Factorization i Matrix Factorization działające w oparciu o model.
-	 	 
-		 \subsection{Matrix Factorization}
-		
-		 \subsubsection{Metoda matematyczna}	
-	
-		 Algorytm \textit{Matrix Factorization} bazuje na matematycznej metodzie rozkładu macierzy na czynniki.
-	
-	
-			  \begin{figure}[!ht] 
-			  	\centering
-			  	\includegraphics[width=1\textwidth]{factorization}
-			  	\caption{Faktoryzacja macierzy \protect\cite{id:ComputingRecommendationsExtremeScaleApacheFlink}}
-			  	\label{fig:factorization}
-			  \end{figure}
-			 
-		Początkowo dana jest niekompletna macierz zawierająca oceny, jakie użytkownicy wystawili konkretnym elementom (\textit{Rating Matrix}). Celem metody jest odnalezienie wartości, jakie można wstawić w puste miejsca, czyli przewidzenie jaką ocenę dany użytkownik wystawi nieocenionemu jeszcze elementowi. 		
-		
-		W tym celu tworzone są odrębne macierze dla użytkowników i elementów zawierające ukryte własności. Każdy element powiązany jest z wektorem $q_i \in \mathbb{R} ^f$ (wektory W, X, Y, Z na rys. \ref{fig:factorization}) a każdy użytkownik z wektorem $p_u \in \mathbb{R} ^f$ (wektory A, B, C, D na rys. \ref{fig:factorization}). Wartości czynników ukrytych determinują stopień zainteresowania daną cechą (w przypadku macierzy użytkowników) bądź stopień, w jakim dany element posiada tę cechę (w przypadku macierzy elementów).		
-		
-		Iloczyn skalarny $q_i^T p_u$ przedstawia relację pomiędzy użytkownikiem a elementem. Na tej podstawie można wnioskować ocenę $r_{ui}$, jaką użytkownik może wystawić elementowi: $r_{ui} = q_i^T p_u$ i w konsekwencji estymować zainteresowanie użytkownika danym elementem \cite{koren2009matrix}.
-		
-		Głównym wyzwaniem jest odnalezienie wartości macierzy użytkownika i elementu, które po przemnożeniu przez siebie dadzą kompletną macierz ocen. W przypadku omawianych algorytmów stosowana jest metoda stochastycznego gradientu prostego. 
-			
-		\subsubsection{Stochastyczny gradient prosty}
-			
-		Stochastyczny gradient prosty (ang. \textit{stochastic gradient descent}, \textit{SGD}) jest iteracyjnym algorytmem optymalizacyjnym mającym za zadanie odnalezienie minimum bądź maksimum zadanej funkcji. Jest on uproszczeniem popularnej metody gradientu prostego \cite{bottou2012stochastic}.
-				 
-		Dana jest funkcja celu w postaci
-		
-		\begin{equation}
-		\label{eq:sgd1}
-		Q(w) = \sum_{i=1}^{n}Q_i(w)
-		\,.
-		\end{equation}			
-		Zadaniem algorytmu jest odnalezienie takiej wartości parametru $w$, dla którego $Q(w)$ będzie minimalne. Wykorzystując klasyczną metodę gradientu prostego poszukiwania można zapisać następującym wzorem:
-		
-		\begin{equation}
-		\label{eq:sgd2}
-		w:= w - \eta \sum_{i=1}^{n} \nabla Q_i(w)
-		\,,
-		\end{equation}			
-		gdzie $\eta$ symbolizuje współczynnik uczenia (ang. \textit{learning rate}). W przypadku algorytmu stochastycznego następuje uproszczenie. Zamiast obliczać dokładny gradient $Q(w)$, w każdej iteracji jest  on aproksymowany na podstawie pojedynczego, losowo wybranego przypadku:
-		
-		\begin{equation}
-		\label{eq:sgd3}
-		w:= w - \eta \nabla Q_i(w)
-		\,.
-		\end{equation}			
-		Algorytm przetwarza wszystkie elementy zbioru treningowego i dla każdego przypadku wykonuje aktualizację wartości $w$. Przebieg algorytmu przedstawiony jest poniżej (algorytm \ref{aq:sgd}).
-			
-		\def\alghoritm5{Stochastyczny gradient prosty}
-		\begin{breakablealgorithm}
-			\caption{\alghoritm5}
-			\myalgorithm{\alghoritm5}
-			\label{aq:sgd}
-			\begin{algorithmic}
-				\STATE $w \leftarrow \text{początkowy wektor } w$
-				\STATE $\eta \leftarrow \text{współczynnik uczenia}$
-				
-				\WHILE{nie odnaleziono minimum}
-				
-				\STATE losowo mieszkaj przykłady ze zbioru testowego
-				\FOR {$i \in \{1, 2, \ldots, n\} $}
-					\STATE $w:= w - \eta \nabla Q_i(w)$
-				\ENDFOR
-				\ENDWHILE
-			\end{algorithmic}
-		\end{breakablealgorithm}
-			 
-		Stochastyczny gradient prosty wykonuje dużo więcej kroków niż jego klasyczny odpowiednik aby odnaleźć rozwiązanie optymalne. Mimo tego jest on szybszy, gdyż każdy pojedynczy krok jest mniej kosztowny niż w oryginale. Różnicę w działaniu przedstawia rys. \ref{fig:sgd}.  
-			 
-		 \begin{figure}[!ht] 	
-		 	\centering	 		 	
-		 	\includegraphics[width=0.5\textwidth]{sdg}
-		 	\caption{Różnica pomiędzy klasycznym gradientem prostym (po lewej) a jego stochastyczną wersją (po prawej) \protect\cite{effandpractstochsub}}
-		 	\label{fig:sgd}
-		 \end{figure}
-			 
-		\newpage
-		\subsubsection{Przebieg algorytmu Matrix Factorization}
-			 
-		Przebieg algorytmu składa się z dwóch faz. W pierwszej fazie inicjowany jest model (zob. algorytm \ref{aq:mf_init}). Daną wejściową jest macierz zawierająca dotychczasowe oceny  elementów przez użytkowników w systemie. Na wyjściu otrzymywane są dwie nowe macierze reprezentujące ukryte własności użytkowników i elementów. Na tym etapie \todo{OMÓWIĆ dwa ostatnie zdania brzmią razem tak, jakby wynik był losowy} są one wypełnione wartościami losowymi. 		
-
-	
-		\def\alghoritm1{Matrix Factorization -- Inicjacja modelu}
-		\begin{breakablealgorithm}
-			\caption{\alghoritm1}
-			\myalgorithm{\alghoritm1}
-			\label{aq:mf_init}
-			\begin{algorithmic}
-				\STATE $N \leftarrow $ liczba użytkowników
-				\STATE $M \leftarrow $ liczba elementów
-				\STATE $F \leftarrow $ liczba ukrytych własności
-				\STATE $ratings \leftarrow $ Macierz NxM zawierająca dotychczasowe oceny wszystkich elementów
-				\STATE przez wszystkich użytkowników
-				\STATE $user\_factors \leftarrow $ Macierz NxF reprezentująca ukryte własności użytkowników
-				\STATE $item\_factors \leftarrow $ Macierz MxF reprezentująca ukryte własności elementów
-				
-				\FOR{each $uf \in user\_factors$, $if \in item\_factors$ }
-				\STATE wstaw losową wartość za pomocą transformacji Boxa--Mullera
-				\ENDFOR
-
-				\FOR{each $user, item \in ratings$ }			
-					\IF {$ratings_{user,item} = NULL$}
-					\STATE wstaw 0 do wiersza $user\_factors_{user}$ i $item\_factors_{item}$
-					\ENDIF				
-				\ENDFOR
-				\RETURN $user\_factors, item\_factors$
-			\end{algorithmic}
-		\end{breakablealgorithm}
-	
-		
-		W fazie drugiej następuje uczenie metodą stochastycznego gradientu prostego (zob. algorytm  \ref{aq:mf_learn}). Wynikiem tej fazy są macierze reprezentujące ukryte własności użytkowników i elementów. Mnożąc je ze sobą uzyskiwana jest przewidywana ocena każdego z elementów przez użytkowników. 
-		
-		Przed rozpoczęciem uczenia ustalane są parametry: parametr regulujący (ang. \textit{regularization}), współczynnik uczenia (ang. \textit{learning rate}), parametr zanikania (ang. \textit{decay}) i liczba iteracji. 	
-		W trakcie trwania głównej pętli parametr regulujący pozostaje niezmienny. Służy on zapobieganiu zjawisku nadmiernego dopasowania (ang. \textit{overfitting}). Tempo uczenia jest przy każdym przebiegu pętli mnożone przez parametr zanikania, dzięki czemu można kontrolować w jakim stopniu kolejne przebiegi pętli wpływają na finalny wynik. 
-		
-		Ostatnim parametrem ustalanym przed główną pętlą jest skośność globalna (ang. \textit{global bias}), która jest średnią wszystkich znanych ocen. 
-		
-		W pętli uczenia wykonywane są następujące operacje: dla każdej pary użytkownik -- element budowana jest przewidywana ocena poprzez obliczenie iloczynu skalarnego odpowiednich wartości z macierzy wartości ukrytych. Ocena ta jest modyfikowana poprzez dodanie globalnej skośności a następnie porównywana z faktyczną oceną elementu przez użytkownika. Tak uzyskany błąd służy do wyliczenia delty. Macierze wartości ukrytych uaktualniane są o wyliczoną deltę. 
-		
-		Pod koniec każdej iteracji aktualizowany jest współczynnik uczenia.
-	
-		\def\alghoritm2{Matrix Factorization -- Faza uczenia}
-		\begin{breakablealgorithm}
-			\caption{\alghoritm2}
-			\myalgorithm{\alghoritm2}
-			\label{aq:mf_learn}
-			\begin{algorithmic}
-				\STATE $global\_bias \leftarrow $ średnia wszystkich ocen
-				\STATE $X \leftarrow $ liczba iteracji			
-				\STATE $regularization \leftarrow $ parametr regulujący			
-				\STATE $current\_learnrate \leftarrow $ współczynnik uczenia
-				\STATE $decay \leftarrow $ parametr zanikania
-				
-				\FOR{each $x \in X$ }
-					\FOR{each $user, item \in ratings$ }
-					
-						\STATE $predicion= global\_bias + IloczynSkalarny(user\_factors_{user}, item\_factors_{item}); $
-					
-						\STATE $error = ratings_{user,item} - prediction$
-				
-						\textbf{//dopasowanie własności ukrytych:}
-				
-						\FOR{each $f \in F$}
-							\STATE $delta_u = error * item\_factors_{item, f} - regularization * user\_factors_{user, f}$
-							\STATE $delta_i = error * user\_factors_{user, f} - regularization * item\_factors_{item, f}$
-							
-							\STATE $user\_factors_{user, f} \incr current\_learnrate * delta_u$
-							\STATE $item\_factors_{item, f} \incr current\_learnrate * delta_i$
-						\ENDFOR					
-					\ENDFOR			
-					\STATE $current\_learnrate \incrtimes decay$				
-				\ENDFOR
-				\RETURN $user\_factors, item\_factors$
-			\end{algorithmic}
-		\end{breakablealgorithm}
-	
-	
-		 \subsection{Biased Matrix Factorization}
-		 
-		 Algorytm \textit{Biased Matrix Factorization} jest modyfikacją wyżej opisanego algorytmu \textit{Matrix Factorization}. Podobnie jak jego pierwowzór składa się z dwóch faz. W pierwszej fazie dodatkowo inicjowane są dwa dodatkowe wektory: skośność użytkowników (ang. \textit{user bias}) i skośność elementów (ang. \textit{item bias}). 
-		 
-		 Inaczej jest też obliczana skośność globalna: 
- 		 
-		 \begin{equation}
-		 \label{eq:global_bias}
-		 global\_bias = 
-		 \frac
-		 { 
-		 	\frac{ a - r_{min} }{ r_{max} - r_{min} }
-		 }
-		 {
-		 	1 - \frac{ a - r_{min} }{ r_{max} - r_{min} }	
-		 }
-		 \,,
-		 \end{equation} 		 		
-		 gdzie
-		 
-		 \begin{conditions*}
-		 	a & to średnia wszystkich ocen \\
-		 	r_{min}  &  to minimalna ocena w systemie  \\
-		 	r_{max}  &  to maksymalna ocena w systemie
- 		 \end{conditions*} 
-		 
-		 Faza druga wygląda podobnie jak w przypadku algorytmu \textit{Matrix Factorization}, jednak są uwzględniane dodatkowe parametry i wykonywane dodatkowe kroki.
-		 
-		 \def\alghoritm3{Biased Matrix Factorization -- Faza uczenia}
-		 \begin{breakablealgorithm}
-		 	\caption{\alghoritm3}
-		 	\myalgorithm{\alghoritm3}
-		 	\label{aq:bmf_learn}
-		 	\begin{algorithmic}
-		 		\STATE $global\_bias \leftarrow $ średnia wszystkich ocen
-		 		\STATE $X \leftarrow $ liczba iteracji			
-		 		\STATE $regU, regI, BiasReg \leftarrow $ parametry regulujące dla użytkownika, elementu i ogólny 			
-		 		\STATE $current\_learnrate \leftarrow $ współczynnik uczenia
-				\STATE $BiasLearnRate \leftarrow $ współczynnik uczenia skośności
-		 		\STATE $decay \leftarrow $ parametr zanikania
-		 		
-		 		\FOR{each $x \in X$ }
-			 		\FOR{each $user, item \in ratings$ }			 		
-				 		\STATE $score= global\_bias + user\_bias_{user} + item\_bias_{item} + IloczynSkalarny(user\_factors_{user}, item\_factors_{item})$
-				 		
-				 		\STATE $sig\_score = \frac{1}{1 + \exp(-score)}$
-				 		
-				 		\STATE $predicion= rating_{min} + sig\_score + (rating_{max} - rating_{min}) $
-				 		
-				 		\STATE $error = ratings_{user,item} - prediction$
-				 		
-				 		\STATE $gradient\_common = err * sig\_score * (1 - sig\_score) * (rating_{max} - rating_{min})$
-				 		
-				 		\textbf{//dopasowanie skośności:}
-				 		
-				 		\STATE $user\_bias_{user} \incr BiasLearnRate * current\_learnrate * (gradient\_common - BiasReg * RegU * user\_bias_{user})$
-				 		
-				 		\STATE $item\_bias_{item} \incr BiasLearnRate * current\_learnrate * (gradient\_common - BiasReg * RegI * item\_bias_{item})$
-				 		
-				 		\textbf{//dopasowanie własności ukrytych:}
-				 		
-				 		\FOR{each $f \in F$}
-					 		\STATE $delta_u = gradient\_common * item\_factors_{item, f} - RegU * user\_factors_{user, f}$
-					 		
-					 		\STATE $delta_i = gradient\_common * user\_factors_{user, f} - RegI * item\_factors_{item, f}$
-					 		
-					 		\STATE $user\_factors_{user, f} \incr current\_learnrate * delta_u$
-					 		\STATE $item\_factors_{item, f} \incr current\_learnrate * delta_i$
-				 		\ENDFOR					
-			 		\ENDFOR			
-			 		\STATE $current\_learnrate \incrtimes decay$				
-		 		\ENDFOR
-		 		\RETURN $user\_factors, item\_factors$
-		 	\end{algorithmic}
-		 \end{breakablealgorithm}
-		 		 
-		 \subsection{SVD++}
-		 
-		 SVD++ jest rozszerzeniem metody SVD (dekompozycja głównych składowych, ang. \textit{singular value decomposition}). Od poprzednich omawianych algorytmów różni go przede wszystkim to, że korzysta nie tylko z bezpośredniej informacji zwrotnej do tworzenia profilu użytkownika ale także z pośredniej (zob. \ref{ss:metody_tworzenia_profilu_uzytkownika}).
-		 
-		 Model SVD++ opisywany jest równaniem:
-		 
-		 \begin{equation}
-		 	\label{eq:svd}
-		 	r_{ui} = \mu + b_u + b_i + q_i^T (p_u + \frac{1}{\sqrt{|N(u)|}} \sum_{j \in N(u)}^{} y_j) 
-		 	\,
-		 \end{equation}		 		 
-		 Użytkownik powiązany jest z wektorem $p_u \in \mathbb{R} ^f$ reprezentującym zainteresowanie konkretnymi cechami. Taki model uzupełniany jest sumą  $\frac{1}{\sqrt{|N(u)|}} \sum_{j \in N(u)}^{} y_j$, która reprezentuje pośrednie informacje zwrotne. Przykładem informacji niejawnej jest fakt, że użytkownik w ogóle zareagował na dany element (np. ocenił go), bez względu na wynik tej interakcji. 
-		  
-		 Zmienne $b_u$ i $b_i$ reprezentują obserwowane odchylenie od średniej dla użytkowników i elementów, natomiast $\mu$ to średnia wszystkich ocen \cite{koren2008factorization}. 
-		 	 
-		 
-	 \section{Filtrowanie z analizą zawartości}
+	 \begin{figure}[!ht] 		 		 	
+	 	\includegraphics[width=0.9\textwidth]{schematneuron}
+	 	\caption{Schemat perceptronu}
+	 	\label{fig:schematneuronu}
+	 \end{figure}
 	 
-		 \todo{to będzie początek rozdziału}
+	 Do neuronu przekazywany jest zestaw wartości w postaci wektora $x$. Następnie obliczana jest suma ważona tych wartości w zależności od nadanych wag $w$. Proces dobierania odpowiednich wag jest nazywany uczeniem (zob. \ref{ss:uczeniesiecineuronowej}). W następnym kroku suma ważona przekazywana jest do funkcji aktywacji neuronu. Jeżeli funkcja przyjmie wartość wyższą lub równą niż określony próg aktywacji, to perceptron zostanie pobudzony (zwróci wartość 1). Proces ten obrazuje równanie \ref{eq:neuroneq}.
 	 
-		 Algorytmy filtrowania z analizą zawartości budują rekomendację na podstawie ocen, jakie zostały dotychczas wystawione przez użytkownika. Analizowane są cechy elementów i ich wartości oraz określana jest ich siła wpływu na finalną ocenę. 
-		 
-		 W tym celu dla każdego użytkownika tworzona jest sieć neuronowa, która uczy się jego preferencji. 
-		 
-		 W projekcie wykorzystana została implementacja sieci neuronowych z biblioteki AForge.NET Framework \cite{aforgenet}.
+	 \begin{equation}
+	 \label{eq:neuroneq}
+	 N(x_1, x_2, x_3, \ldots, x_n) = 
+	 \begin{cases}
+	 1       & \quad \text{jeśli } f(w_0 + \sum_{i=1}^{n}w_ix_i) \geq \eta\\
+	 0		 & \quad \text{jeśli } f(w_0 + \sum_{i=1}^{n}w_ix_i) < \eta\\
+	 \end{cases}
+	 \,,
+	 \end{equation}		 
+	 gdzie
 	 
-		 \subsection{Konstrukcja sieci neuronowej}
-		 
-		 \subsubsection{Struktura perceptronów}
-		 \label{sss:strukturaperceptronow}
-		 
-		 Sieć neuronowa składa się z trzech warstw neuronów (perceptronów). W każdej warstwie wszystkie neurony mają konstrukcję na jak rys. \ref{fig:schematneuronu}
-		 
- 		 \begin{figure}[!ht] 		 		 	
-	 		 	\includegraphics[width=0.9\textwidth]{schematneuron}
-	 		 	\caption{Schemat perceptronu}
-	 		 	\label{fig:schematneuronu}
- 		 \end{figure}
-		 
-		 Do neuronu przekazywany jest zestaw wartości w postaci wektora $x$. Następnie obliczana jest suma ważona tych wartości w zależności od nadanych wag $w$. Proces dobierania odpowiednich wag jest nazywany uczeniem (zob. \ref{ss:uczeniesiecineuronowej}). W następnym kroku suma ważona przekazywana jest do funkcji aktywacji neuronu. Jeżeli funkcja przyjmie wartość wyższą lub równą niż określony próg aktywacji, to perceptron zostanie pobudzony (zwróci wartość 1). Proces ten obrazuje równanie \ref{eq:neuroneq}.
-		 
-		 \begin{equation}
-		 \label{eq:neuroneq}
-		 N(x_1, x_2, x_3, \ldots, x_n) = 
-			 \begin{cases}
-			 1       & \quad \text{jeśli } f(w_0 + \sum_{i=1}^{n}w_ix_i) \geq \eta\\
-			 0		 & \quad \text{jeśli } f(w_0 + \sum_{i=1}^{n}w_ix_i) < \eta\\
-			 \end{cases}
-		 \,,
-		 \end{equation}		 
-		 gdzie
-		 
-		 \begin{conditions*}
-		 	w & to wagi kolejnych wejść \\
-		 	x & to wartości przekazywane do wejść \\
-		 	f(u) & to funkcja aktywacji neuronu \\
-		 	\eta & to próg aktywacji neuronu
-		 \end{conditions*} 
-		 
-		 Na potrzeby algorytmu rekomendacji zdecydowano się przyjąć sigmoidalną unipolarną funkcję aktywacji neuronu (równanie \ref{eq:sigmoidal}). Funkcja przyjmuje wartości z zakresu $[0,1]$.
-		 
-		  \begin{equation}
-		  \label{eq:sigmoidal}
-		  f(x) = \frac{1}{1 + \exp(-\alpha x)}
-		  \,.
-		  \end{equation}
-		 Wykres funkcji wygląda jak na rys. \ref{fig:sigmoid}.
-
- 		 \begin{figure}[!ht] 
-			\centering
-			\includegraphics{sigmoid}
-			\caption{Wykres sigmoidalnej funkcji aktywacji perceptronu \protect\cite{aforgenet}}
-			\label{fig:sigmoid}
-		 \end{figure}
-
-		 \subsubsection{Struktura sieci i przebieg algorytmu}
+	 \begin{conditions*}
+	 	w & to wagi kolejnych wejść \\
+	 	x & to wartości przekazywane do wejść \\
+	 	f(u) & to funkcja aktywacji neuronu \\
+	 	\eta & to próg aktywacji neuronu
+	 \end{conditions*} 
+	 
+	 Na potrzeby algorytmu rekomendacji zdecydowano się przyjąć sigmoidalną unipolarną funkcję aktywacji neuronu (równanie \ref{eq:sigmoidal}). Funkcja przyjmuje wartości z zakresu $[0,1]$.
+	 
+	 \begin{equation}
+	 \label{eq:sigmoidal}
+	 f(x) = \frac{1}{1 + \exp(-\alpha x)}
+	 \,.
+	 \end{equation}
+	 Wykres funkcji wygląda jak na rys. \ref{fig:sigmoid}.
+	 
+	 \begin{figure}[!ht] 
+	 	\centering
+	 	\includegraphics{sigmoid}
+	 	\caption{Wykres sigmoidalnej funkcji aktywacji perceptronu \protect\cite{aforgenet}}
+	 	\label{fig:sigmoid}
+	 \end{figure}
+	 
+	 \subsection{Struktura sieci i przebieg algorytmu}
 		 
 		 Pierwszym etapem algorytmu jest analiza cech elementów ocenionych przez użytkownika. Tworzona jest lista wszystkich występujących cech które powtarzają się minimum tyle razy, ile wynosi wartość  parametru \textit{minimumRepeatingFeatures}. 
 		 
@@ -734,7 +855,7 @@ ABSTRACT EN
 		 Na wyjściu sieć zwraca przewidywaną ocenę elementu.
 		 		 
 		 
-		 \subsection{Uczenie sieci neuronowej}
+	 \subsection{Uczenie sieci neuronowej}
 		 \label{ss:uczeniesiecineuronowej}
 		 
 		 Aby sieć zwracała jak najlepsze wyniki musi wcześniej zostać nauczona preferencji użytkownika. Uczenie sieci polega na odnalezieniu odpowiednich wag dla każdego wejścia każdego perceptronu sieci (budowa perceptronu zob. \ref{sss:strukturaperceptronow}). Proces ten można zapisać w postaci
@@ -754,134 +875,8 @@ ABSTRACT EN
 		 
 		 Dostrajanie wartości wag można wykonać na wiele sposobów. Można wyróżnić uczenie nadzorowane (z nauczycielem), uczenie z krytykiem (ang. \textit{reinforcement learning}) i uczenie samoorganizujące się (bez nadzoru) \cite{osowski1996sieci}.
 		 
-		 Na potrzeby systemu rekomendacji z analizą zawartości opisywanego w tej pracy wykorzystane zostały trzy metody uczenia: algorytm propagacji wstecznej, algorytm RPROP i algorytm genetyczny. Wymienione metody należą do kategorii uczenia nadzorowanego. 
-		 
-		 
-		 \subsection{Propagacja wsteczna}
-	 
-		 Algorytm propagacji wstecznej jest jedną z popularniejszych metod uczenia nadzorowanego jednokierunkowych sieci neuronowych. Zbiór uczący składa się z danych wejściowych (wektory cech elementu) i z informacji o oczekiwanym wyniku (ocena elementu). Różnica między wynikiem zwróconym przez sieć a wartością oczekiwaną stanowi miarę błędu sieci neuronowej. 
-		 
-		 \begin{figure}[!ht] 
-	 		 	\centering
-	 		 	\includegraphics[width=0.5\textwidth]{ilustracjabackprop}
-	 		 	\caption{Algorytm propagacji wstecznej w sieci trójwarstwowej -- idea działania \protect\cite{kwateralgorytmy}}
-	 		 	\label{fig:ilustracjabackprop}
-		 \end{figure}
-		 
-		 Wiadomo, że funkcja celu jest funkcją ciągłą. Bazując na gradientowych metodach optymalizacji, wagi w sieci neuronowej aktualizowane są w następujący sposób:	 
-		 
- 		 \begin{equation}
- 		 \label{eq:weightadaptation3}
- 		 W_{ij}(n+1) = W_{ij}(n) + \Delta W_{ij}(n) 
- 		 \,,
- 		 \end{equation}
- 		 
- 		 
- 		 \begin{equation}
- 		 \label{eq:weightadaptation2}
- 		 \Delta W_{ij}(n) = \eta p(W)
- 		 \,,
- 		 \end{equation}		 
-		 gdzie
-		 
-		 \begin{conditions*}
-		 	\eta & to współczynnik uczenia (ang. \textit{learning rate}) \\
-		 	p(W) & to kierunek w przestrzeni wielowymiarowej W 
-		 \end{conditions*} 
-		 
-		 Aby wyznaczyć kierunek $p(W))$ dla wszystkich warstw sieci należy przejść przez kolejne etapy uczenia \cite{haykin1994neural,hertz1993wstkep,kwateralgorytmy,osowski1996sieci,timothy1996sieci}.
-		 
-		 \begin{enumerate}
-		 	\item W kroku pierwszym sieć neuronowa poddawana jest analizie o zwykłym kierunku przepływu sygnałów. Wynikiem są wartości sygnałów wychodzących z neuronów warstw wyjściowej i ukrytych oraz pochodne funkcji aktywacji w kolejnych warstwach. 
-		 	
-		 	\item W kroku drugim kierunek przepływu sygnałów zostaje odwrócony (stąd nazwa propagacja wsteczna). Funkcje aktywacji zostają zastąpione przez swoje pochodne. Na oryginalne wyjście sieci (aktualnie wejście) podana zostaje wartość równa różnicy pomiędzy wynikiem oczekiwanym a wynikiem zwróconym przez sieć. 
-		 	
-		 	\item Obliczana zostaje wartość różnic wstecznych.
-		 	
-			\item W kolejnym kroku następuje wreszcie proces adaptacji wag. Odbywa się on zarówno dla sieci zwykłej jak i dla sieci o propagacji wstecznej. Reguła modyfikacji ma postać: 
+		 Na potrzeby systemu rekomendacji z analizą zawartości opisywanego w tej pracy wykorzystane zostały trzy metody uczenia: algorytm propagacji wstecznej, algorytm RPROP i algorytm genetyczny (zob. \ref{sss:backprop}). Wymienione metody należą do kategorii uczenia nadzorowanego. 
 
-			\begin{equation}
-				\label{eq:weightadaptation4}
-				\Delta W_{ij} = \eta \sum_\text{wzroce}^{} \delta_\text{wyjście} \cdot x_\text{wejście}
-				\,,
-			\end{equation}
-			
-			\item Powyższe kroki potarzane są dla każdej pary dane wejściowe -- oczekiwany wynik tak długo, aż poziom błędu spadnie poniżej akceptowalnej wartości bądź osiągnięta zostanie maksymalna liczba iteracji. 
-
-		 \end{enumerate}
-				 
-		 Algorytm propagacji wstecznej obrazuje schemat blokowy \ref{fig:propagacjawsteczna}.
-		 
-			\begin{figure}[!ht] 
-				\centering
-				\includegraphics[width=1\textwidth]{propagacjawsteczna}
-				\caption{Algorytm propagacji wstecznej}
-				\label{fig:propagacjawsteczna}
-			\end{figure}
-			
-		 \subsubsection{Metoda momentum}
-		 \label{sss:metoda_momentum}
-	 
-		 W celu zwiększenia efektywności działania algorytmu została zastosowana metoda momentum. I tak też standardowy sposób aktualizacji wag sieci (równanie \ref{eq:weightadaptation3}) został zmodyfikowany w następujący sposób:
-		 
-		 \begin{equation}
-		 \label{eq:zasadamomentum1}
-		 W_{ij}(n+1) = W_{ij}(n) + \Delta W_{ij}(n) 
-		 \,,
-		 \end{equation}
-		 
-		 \begin{equation}
-		 \label{eq:zasadamomentum2}
-		 \Delta W_{ij}(n) = \eta(n) \cdot p(n) + \alpha(W_{ij}(n)-W_{ij}(n-1)) 
-		 \,,
-		 \end{equation}		 
-		 gdzie $\alpha$ jest współczynnikiem momentum z zakresu $[0,1]$. Im wyższa wartość współczynnika tym większy jego wpływ na ostateczny kształt kolejnych wag. W dalszej części pracy przeprowadzono eksperymenty mające na celu dobranie optymalnej wartości współczynnika momentum.
-		 
- 		 \subsection{Algorytm RPROP}		 
-		 
-		 Pomimo dużej popularności algorytmu propagacji wstecznej nie jest on pozbawiony wad. Sporym problemem jest jego relatywnie niska szybkość działania, szczególnie w przypadku bardzo dużych sieci neuronowych -- a więc w przypadku odpowiadającemu potrzebom systemów rekomendacji. W odpowiedzi na te problemy Martin Riedmiller i Heinrich Braun zaproponowali w 1992 roku alternatywny algorytm -- Resilient Backpropagation (RPROP).
-		 
-		 Główną różnicą jest wykorzystywanie jedynie informacji o dodatniości lub ujemności każdej składowej gradientu zamiast o ich wartości (jak to się odbywa w oryginalnym algorytmie). Ponadto, współczynnik uczenia modyfikowany jest w każdym kolejnym kroku. 
-		 
-		 Modyfikacja współczynników odbywa się zgodnie ze wzorem:
-		 
-		 \begin{equation}
-		 \label{eq:rprop}		 
-		 \eta(t) = 
-		 \begin{cases}
-			min\{a \eta(t-1), \eta_{max}\}, & \quad \text{gdy } \frac{\partial E^2(t)}{\partial v(t)} \frac{\partial E^2(t-1)}{\partial v(t-1)} > 0 \\
-			max\{b \eta(t-1), \eta_{min}\}, & \quad \text{gdy } \frac{\partial E^2(t)}{\partial v(t)} \frac{\partial E^2(t-1)}{\partial v(t-1)} < 0 \\
-			\eta(n-1), & \quad \text{w każdym innym przypadku} 
-		 \end{cases}		 
-		 \,,
-		 \end{equation}		 
-		 gdzie $\frac{\partial E^2(t)}{\partial v(t)}$ jest dokładną wartością składowej $v$ gradientu. Ponadto stałe $a$, $b$, $\eta_{min}$ i $\eta_{max}$ są zdefiniowane następująco:
-
-		 \begin{conditions*}
-		 	a = 1.2 \\
-		 	b = 0.5 \\
-		 	\eta_{min} = 10^{-6} \\
-		 	\eta_{max} = 50
-		 \end{conditions*} 
-		 
-		 Algorytm RPROP jest efektywniejszy pod kątem prędkości działania względem tradycyjnej propagacji wstecznej, więc dobrze sprawdza się tam, gdzie szybkość jest ważniejsza od wysokiej poprawności wyników \cite{riedmiller1993direct,riedmiller1994rprop}.
-		 		 
- 		 \subsection{Algorytm genetyczny}	
-		 \label{ss:algorytm_genetyczny}
-		 
-		 Koncepcja algorytmów genetycznych została zaproponowana już 1960 roku przez Johna Hollanda. Należą one do klasy algorytmów ewolucyjnych, inspirowanych zasadą doboru naturalnego Darwina. Analogią do środowiska naturalnego jest pewien problem, dla którego poszukiwane jest optymalne rozwiązanie. Populacja składa się z potencjalnych rozwiązań, które są oceniane funkcją przystosowania. Zgodnie z zasadą Darwina zwycięża najsilniejszy, czyli najlepsze (chociaż nie zawsze optymalne) rozwiązanie \cite{pena2000evolutionary}. Schemat działania algorytmów genetycznych przedstawia rys. \ref{fig:algorytmgenetyczny}.	 
-		 
-		 
-		 \begin{figure}[!ht] 
-		 	\centering
-		 	\includegraphics[width=1\textwidth]{algorytmgenetyczny}
-		 	\caption{Ogólny schemat algorytmu genetycznego}
-		 	\label{fig:algorytmgenetyczny}
-		 \end{figure}
-
-		 Jako, że algorytmy genetyczne należą do grupy algorytmów optymalizacyjnych mogą zostać wykorzystane do uczenia sieci neuronowych. W przypadku tej implementacji populację stanowią propozycje wag dla każdego perceptronu. Preferowane są takie zestawy wag, dla których sieć zwraca rezultaty obarczone najmniejszym błędem. Najlepsze zestawy są ze sobą krzyżowane oraz podlegają mutacji. W wyniku takich mechanizmów ewolucyjnych powstaje rozwiązanie, dla których sieć neuronowa zwraca oczekiwane rezultaty \cite{aforgenetgenetic,montana1989training}.
-		 
-		 
 	 \section{Algorytymy hybrydowe}
 		 
 		 Zaproponowany nowy algorytm jest hybrydą filtrowania kolaboratywnego i filtrowania z analizą zawartości. Zaimplementowanych zostało 9 wariantów:
