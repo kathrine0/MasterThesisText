@@ -15,13 +15,13 @@
 \contentsline {section}{\numberline {2.2\relax .\kern .5em }Filtrowanie kolaboratywne}{6}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1\relax .\kern .5em }Zalety filtrowania kolaboratywnego}{8}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2\relax .\kern .5em }Wady filtrowania kolaboratywnego}{8}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3\relax .\kern .5em }Algorytmy hybrydowe}{8}{subsection.2.2.3}
-\contentsline {section}{\numberline {2.3\relax .\kern .5em }Popularne serwisy wykorzystuj\IeC {\k a}ce algorytmy rekomendacji}{9}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1\relax .\kern .5em }Rekomendacja muzyki}{9}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2\relax .\kern .5em }Rekomendacja film\IeC {\'o}w}{9}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3\relax .\kern .5em }Platformy typu e-commerce}{10}{subsection.2.3.3}
-\contentsline {chapter}{Rozdzia\l \ 3\relax .\kern .5em Model systemu}{11}{section*.12}
-\contentsline {chapter}{Rozdzia\l \ 4\relax .\kern .5em Algorytmy}{13}{section*.16}
+\contentsline {section}{\numberline {2.3\relax .\kern .5em }Algorytmy hybrydowe}{9}{section.2.3}
+\contentsline {section}{\numberline {2.4\relax .\kern .5em }Popularne serwisy wykorzystuj\IeC {\k a}ce algorytmy rekomendacji}{9}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1\relax .\kern .5em }Rekomendacja muzyki}{10}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2\relax .\kern .5em }Rekomendacja film\IeC {\'o}w}{10}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3\relax .\kern .5em }Platformy typu e-commerce}{10}{subsection.2.4.3}
+\contentsline {chapter}{Rozdzia\l \ 3\relax .\kern .5em Model systemu}{11}{section*.11}
+\contentsline {chapter}{Rozdzia\l \ 4\relax .\kern .5em Algorytmy}{13}{section*.15}
 \contentsline {section}{\numberline {4.1\relax .\kern .5em }Filtrowanie kolaboratywne}{13}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1\relax .\kern .5em }Matrix Factorization}{13}{subsection.4.1.1}
 \contentsline {subsection}{\numberline {4.1.2\relax .\kern .5em }Biased Matrix Factorization}{17}{subsection.4.1.2}
@@ -36,7 +36,7 @@
 \contentsline {subsection}{\numberline {4.3.1\relax .\kern .5em }Zalety zaproponowanej metody}{26}{subsection.4.3.1}
 \contentsline {subsection}{\numberline {4.3.2\relax .\kern .5em }Wady zaproponowanej metody}{27}{subsection.4.3.2}
 \contentsline {section}{\numberline {4.4\relax .\kern .5em }Analiza z\IeC {\l }o\IeC {\.z}ono\IeC {\'s}ci i poprawno\IeC {\'s}ci}{27}{section.4.4}
-\contentsline {chapter}{Rozdzia\l \ 5\relax .\kern .5em Ocena eksperymentalna}{29}{section*.41}
+\contentsline {chapter}{Rozdzia\l \ 5\relax .\kern .5em Ocena eksperymentalna}{29}{section*.40}
 \contentsline {section}{\numberline {5.1\relax .\kern .5em }Opis metody badawczej}{29}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1\relax .\kern .5em }Miara oceny}{30}{subsection.5.1.1}
 \contentsline {subsection}{\numberline {5.1.2\relax .\kern .5em }Zbiory danych}{31}{subsection.5.1.2}
@@ -47,10 +47,10 @@
 \contentsline {subsection}{\numberline {5.3.1\relax .\kern .5em }Dopasowanie parametr\IeC {\'o}w sieci neuronowej}{34}{subsection.5.3.1}
 \contentsline {subsection}{\numberline {5.3.2\relax .\kern .5em }Por\IeC {\'o}wnanie algorytmu hybrydowego z filtrowaniem z analiz\IeC {\k a} zawarto\IeC {\'s}ci i filtrowaniem kolaboratywnym}{38}{subsection.5.3.2}
 \contentsline {subsection}{\numberline {5.3.3\relax .\kern .5em }Analiza statystyczna wynik\IeC {\'o}w}{38}{subsection.5.3.3}
-\contentsline {chapter}{Rozdzia\l \ 6\relax .\kern .5em Wnioski}{41}{section*.71}
-\contentsline {chapter}{Rozdzia\l \ 7\relax .\kern .5em CHAPTER 1}{43}{section*.73}
+\contentsline {chapter}{Rozdzia\l \ 6\relax .\kern .5em Wnioski}{41}{section*.69}
+\contentsline {chapter}{Rozdzia\l \ 7\relax .\kern .5em CHAPTER 1}{43}{section*.71}
 \contentsline {section}{\numberline {7.1\relax .\kern .5em }SECTION}{43}{section.7.1}
 \contentsline {section}{\numberline {7.2\relax .\kern .5em }Section 2}{43}{section.7.2}
 \contentsline {subsection}{\numberline {7.2.1\relax .\kern .5em }Subsection 1}{43}{subsection.7.2.1}
-\contentsline {chapter}{Dodatek\ A\relax .\kern .5em Appendix 1}{45}{section*.76}
-\contentsline {chapter}{Bibliografia}{47}{section*.78}
+\contentsline {chapter}{Dodatek\ A\relax .\kern .5em Appendix 1}{45}{section*.74}
+\contentsline {chapter}{Bibliografia}{47}{section*.76}

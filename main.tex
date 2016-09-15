@@ -299,8 +299,14 @@ ABSTRACT EN
 	 
 	 Systemy rekomendacji wykorzystujące filtrowanie kolaboratywne nie są skalowalne. Złożoność rośnie proporcjonalnie do ilości użytkowników i elementów. Wielkie koncerny internetowe takie jak Twitter wykorzystają klastry i maszyny z bardzo dużą pamięcią aby zachować płynność działania serwisu \cite{id:gupta2013wtf}.
 	 
-	 \subsection{Algorytmy hybrydowe}
-	 \todo{opisać istniejące algorytmy hybrydowe i na czym polegają etc}
+	 \section{Algorytmy hybrydowe}
+
+	 W wielu przypadkach podejście hybrydowe okazuje się bardziej skuteczne niż samo filtrowanie z analizą zawartości lub kolaboratywne. Algorytmy hybrydowe można budować na wiele różnych sposobów. Jednym z nich jest odrębna implementacja filtrowania z analizą zawartości i filtrowania kolaboratywnego a następnie łączenie ich wyników. Łączyć wyniki można poprzez liniową kombinację ocen bądź też schemat głosowania \cite{claypool1999combining}. Alternatywą jest wybór algorytmu decydującego na podstawie zadanych metryk jakości, na przykład ilości cech danego elementu bądź kompletności macierzy ocen użytkownik-element.
+	 
+	 Innym sposobem jest wykorzystanie charakterystyki filtrowania kolaboratywnego w podejściu z analizą zawartości. Pozwala ono na redukcję wymiarowości. Alternatywą jest podejście odwrotne, tzn wykorzystanie charakterystyki filtrowania z analizą zawartości w podejściu kolaboratywnym. Uwzględnienie profilu użytkownika i charakterystyki elementów pozwala na pokonanie problemów związanych ze zbyt rzadkim wypełnieniem macierzy ocen użytkownik-element \cite{adomavicius2005toward}.
+	 
+	 Kolejnym spotykanym podejściem jest konstruowanie ogólnego, jednolitego modelu, który zawiera charakterystyki zarówno filtrowania z analizą zawartości jak i kolaboratywnego.
+	 Przykładowo \cite{basu1998recommendation} proponuje wykorzystanie charakterystyki opartej o zawartość i kolaboratywnej w pojedynczym klasyfikatorze regułowym.
 	 
 	 \section{Popularne serwisy wykorzystujące algorytmy rekomendacji}
 	 
@@ -984,8 +990,6 @@ ABSTRACT EN
 			\end{algorithmic}
 		\end{breakablealgorithm}
 			
-		\todo{Opisać eksperyment w puntktach - co się po kolei dzieje}
-	
 		\subsection{Miara oceny}
 	
 		\todo{Przenieść niżej w rozdziale}

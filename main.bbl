@@ -5,6 +5,13 @@ About the {M}usic {G}enome {P}roject.
 \newblock \url{http://www.pandora.com/about/mgp}.
 \newblock Data dostępu: 2016-07-19.
 
+\bibitem{adomavicius2005toward}
+Adomavicius G., Tuzhilin A.
+\newblock Toward the next generation of recommender systems: A survey of the
+  state-of-the-art and possible extensions.
+\newblock {\em IEEE transactions on knowledge and data engineering},
+  17(6):734--749, 2005.
+
 \bibitem{id:allegrofaq}
 Allegro -- korzystanie z systemu rekomendacji.
 \newblock \url{
@@ -17,6 +24,12 @@ Avron H., Kale S., Kasiviswanathan S., Sindhwani V.
   norm regularization.
 \newblock \url{https://www.cs.cmu.edu/~yuxiangw/docs/SSGD.pdf}.
 \newblock Data dostępu: 2016-09-07.
+
+\bibitem{basu1998recommendation}
+Basu C., Hirsh H., Cohen W. et~al.
+\newblock Recommendation as classification: Using social and content-based
+  information in recommendation.
+\newblock In {\em Aaai/iaai}, pages 714--720, 1998.
 
 \bibitem{bottou2012stochastic}
 Bottou L.
@@ -34,6 +47,13 @@ Cheng J., Liu Y., Zhang H., Wu X., Chen F.
 \newblock A new recommendation algorithm based on user’s dynamic information
   in complex social network.
 \newblock {\em Mathematical Problems in Engineering}, 2015, 2015.
+
+\bibitem{claypool1999combining}
+Claypool M., Gokhale A., Miranda T., Murnikov P., Netes D., Sartin M.
+\newblock Combining content-based and collaborative filters in an online
+  newspaper.
+\newblock In {\em Proceedings of ACM SIGIR workshop on recommender systems},
+  volume~60. Citeseer, 1999.
 
 \bibitem{id:TheYouTubeVideoRecommendationSystem}
 Davidson J., Liebald B., Liu J., Nandy P., Van~Vleet T., Gargi U., Gupta S., He
