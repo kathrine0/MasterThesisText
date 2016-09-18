@@ -1042,7 +1042,7 @@ ABSTRACT EN
 		W celu uzyskania obiektywnych wyników algorytmy zostały przetestowane na trzech różnych bazach danych z trzech różnych domen. Eksperyment nie ma na celu porównania wyników między różnymi zestawami danych, lecz porównanie wyników testowanych algorytmów w różnych warunkach. 
 		
 		\subsubsection{MovieLens}
-		MovieLens \cite{harper2016movielens} to baza zawierająca oceny filmów przez użytkowników portalu movielens.org. Baza zawiera 3706 filmów i 1000209 ocen wystawionych przez 6040 unikalnych użytkowników pomiędzy 25 kwietnia 2000 a 28 lutym 2003. Filmy oceniane są w skali od 1 do 5, gdzie 1 jest oceną najgorszą a 5 najlepszą. 
+		MovieLens \cite{harper2016movielens} to baza zawierająca oceny filmów przez użytkowników portalu movielens.org. Baza zawiera 3,706 filmów i 1,000,209 ocen wystawionych przez 6,040 unikalnych użytkowników pomiędzy 25 kwietnia 2000 a 28 lutym 2003, średnio 166 ocen na użytkownika i 270 ocen na film. Filmy oceniane są w skali od 1 do 5, gdzie 1 jest oceną najgorszą a 5 najlepszą. 
 		
 		Baza zawiera tabelę łączącą numery identyfikacyjne filmów z bazą IMDB.com. Wykorzystując te informacje baza filmów została rozszerzona o informacje pobrane z IMDB.com. Ostateczny kształt bazy widoczny jest na rys. \ref{fig:movielens_schema}.
 		
@@ -1054,6 +1054,9 @@ ABSTRACT EN
 			\end{figure}
 		
 		\subsubsection{Yahoo Music}
+			
+			YahooMusic to baza zawierająca oceny utworów muzycznych przez użytkowników. Baza zawiera 136,736 piosenek i 325,327,926 ocen wystawionych przez 1,823,179 unikalnych użytkowników, średnio 178 ocen na użytkownika i 2,379 ocen na piosenkę. Filmy oceniane są w skali od 1 do 5, gdzie 1 jest oceną najgorszą a 5 najlepszą.
+		
 		
 			\todo{Opisać Yahoo Music}
 		
@@ -1218,7 +1221,7 @@ ABSTRACT EN
 			\label{fig:expmomentum}
 		\end{figure}
 				
-		\begin{longtable}{lll}
+		\begin{longtable}{l||ll}
 			\label{tab:expmomentum}
 			\textbf{Momentum} & \textbf{RMSE} & \textbf{MAE} \\
 			\hline
@@ -1304,8 +1307,49 @@ ABSTRACT EN
 			\todo{(NA KOŃCU, BADANIA) Czy trzeba}
 
 		\subsection{Porównanie algorytmu hybrydowego z filtrowaniem z analizą zawartości i filtrowaniem kolaboratywnym}
+		
+		Następny eksperyment miał na celu porównanie efektywności wszystkich wariantów algorytmu hybrydowego z algorytmami kolaboratywnym i z analizą zawartości. 
+		
+		Początkowo zostały przeprowadzone testy dla algorytmów kolaboratywnego i z analizą zawartości. Następnie dla takie samej konfiguracji zostały uruchomione kolejne warianty algorytmu hybrydowego.
+		
+		\subsubsection{Badania na bazie MovieLens}
+		
+		\subsubsection{Badania na bazie AmazonMeta}
+		
 
 			\todo{(BADANIA) Porównanie algorytmu hybrydowego z content-based i collaborative}
+
+
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[page=1,width=1\textwidth]{exphybrid_amazon1}
+	\label{fig:exphybrid_amazon1a}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[page=2,width=1\textwidth]{exphybrid1amazon1}
+	\caption{Porównanie algorytmu hybrydowego z analizą zawartości na podstawie danych z bazy AmazonMeta. Skuteczność filtrowania z hybrydowego w zależności od liczby użytkowników i powtarzających się cech. Pogrubiona linia przedstawia działanie filtrowania z analizą zawartości.}
+	\label{fig:exphybrid_amazon1b}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[page=1,width=1\textwidth]{exphybrid_amazon2}
+	\label{fig:exphybrid_amazon2a}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[page=2,width=1\textwidth]{exphybrid_amazon2}
+	\caption{Porównanie algorytmu hybrydowego z kolaboratywnym na podstawie danych z bazy AmazonMeta. Skuteczność filtrowania z hybrydowego w zależności od liczby użytkowników i powtarzających się cech. Pogrubiona linia przedstawia działanie filtrowania kolaboratywnego.}
+	\label{fig:exphybrid_amazon2b}
+\end{figure}
+
+
+		\subsubsection{Badania na bazie YahooMusic}
+	
 
 		\subsection{Analiza statystyczna wyników}		\todo{(PÓŹNIEJ) Analiza statystyczna wyników, PQStat}
 
