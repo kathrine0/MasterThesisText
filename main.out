@@ -15,31 +15,30 @@
 \BOOKMARK [2][-]{subsection.2.3.3}{2.3.3. \040Metody tworzenia profilu uzytkownika}{section.2.3}% 15
 \BOOKMARK [2][-]{subsection.2.3.4}{2.3.4. \040Algorytmy filtrowania z analiza zawartosci}{section.2.3}% 16
 \BOOKMARK [1][-]{section.2.4}{2.4. \040Algorytmy hybrydowe}{section*.6}% 17
-\BOOKMARK [0][-]{section*.28}{Rozdzia\233 3. Model systemu}{}% 18
-\BOOKMARK [0][-]{section*.32}{Rozdzia\233 4. Algorytmy}{}% 19
-\BOOKMARK [1][-]{section.4.1}{4.1. \040Propozycja algorytmu filtrowania z analiza zawartosci}{section*.32}% 20
-\BOOKMARK [2][-]{subsection.4.1.1}{4.1.1. \040Struktura perceptron\363w i funkcja aktywacji}{section.4.1}% 21
-\BOOKMARK [2][-]{subsection.4.1.2}{4.1.2. \040Struktura sieci i przebieg algorytmu}{section.4.1}% 22
-\BOOKMARK [2][-]{subsection.4.1.3}{4.1.3. \040Uczenie sieci neuronowej}{section.4.1}% 23
-\BOOKMARK [1][-]{section.4.2}{4.2. \040Algorytymy hybrydowe}{section*.32}% 24
-\BOOKMARK [2][-]{subsection.4.2.1}{4.2.1. \040Zalety zaproponowanej metody}{section.4.2}% 25
-\BOOKMARK [2][-]{subsection.4.2.2}{4.2.2. \040Wady zaproponowanej metody}{section.4.2}% 26
-\BOOKMARK [1][-]{section.4.3}{4.3. \040Analiza z\233ozonosci i poprawnosci}{section*.32}% 27
-\BOOKMARK [0][-]{section*.39}{Rozdzia\233 5. Ocena eksperymentalna}{}% 28
-\BOOKMARK [1][-]{section.5.1}{5.1. \040Opis metody badawczej}{section*.39}% 29
-\BOOKMARK [2][-]{subsection.5.1.1}{5.1.1. \040Miara oceny}{section.5.1}% 30
-\BOOKMARK [2][-]{subsection.5.1.2}{5.1.2. \040Zbiory danych}{section.5.1}% 31
-\BOOKMARK [1][-]{section.5.2}{5.2. \040Srodowisko symulacyjne}{section*.39}% 32
-\BOOKMARK [2][-]{subsection.5.2.1}{5.2.1. \040Oprogramowanie}{section.5.2}% 33
-\BOOKMARK [2][-]{subsection.5.2.2}{5.2.2. \040Sprzet}{section.5.2}% 34
-\BOOKMARK [1][-]{section.5.3}{5.3. \040Przeprowadzone eksperymenty}{section*.39}% 35
-\BOOKMARK [2][-]{subsection.5.3.1}{5.3.1. \040Dopasowanie parametr\363w sieci neuronowej}{section.5.3}% 36
-\BOOKMARK [2][-]{subsection.5.3.2}{5.3.2. \040Por\363wnanie algorytmu hybrydowego z filtrowaniem z analiza zawartosci i filtrowaniem kolaboratywnym}{section.5.3}% 37
-\BOOKMARK [2][-]{subsection.5.3.3}{5.3.3. \040Analiza statystyczna wynik\363w}{section.5.3}% 38
-\BOOKMARK [0][-]{section*.70}{Rozdzia\233 6. Wnioski}{}% 39
-\BOOKMARK [0][-]{section*.72}{Rozdzia\233 7. CHAPTER 1}{}% 40
-\BOOKMARK [1][-]{section.7.1}{7.1. \040SECTION}{section*.72}% 41
-\BOOKMARK [1][-]{section.7.2}{7.2. \040Section 2}{section*.72}% 42
-\BOOKMARK [2][-]{subsection.7.2.1}{7.2.1. \040Subsection 1}{section.7.2}% 43
-\BOOKMARK [0][-]{section*.75}{Dodatek A. Appendix 1}{}% 44
-\BOOKMARK [0][-]{section*.77}{Bibliografia}{}% 45
+\BOOKMARK [0][-]{section*.28}{Rozdzia\233 3. Algorytmy}{}% 18
+\BOOKMARK [1][-]{section.3.1}{3.1. \040Model systemu}{section*.28}% 19
+\BOOKMARK [1][-]{section.3.2}{3.2. \040Propozycja algorytmu filtrowania z analiza zawartosci}{section*.28}% 20
+\BOOKMARK [2][-]{subsection.3.2.1}{3.2.1. \040Struktura perceptron\363w i funkcja aktywacji}{section.3.2}% 21
+\BOOKMARK [2][-]{subsection.3.2.2}{3.2.2. \040Struktura sieci i przebieg algorytmu}{section.3.2}% 22
+\BOOKMARK [2][-]{subsection.3.2.3}{3.2.3. \040Uczenie sieci neuronowej}{section.3.2}% 23
+\BOOKMARK [1][-]{section.3.3}{3.3. \040Propozycja nowych algorytm\363w hybrydowych}{section*.28}% 24
+\BOOKMARK [2][-]{subsection.3.3.1}{3.3.1. \040Zalety zaproponowanych metod}{section.3.3}% 25
+\BOOKMARK [2][-]{subsection.3.3.2}{3.3.2. \040Wady zaproponowanych metod}{section.3.3}% 26
+\BOOKMARK [0][-]{section*.37}{Rozdzia\233 4. Ocena eksperymentalna}{}% 27
+\BOOKMARK [1][-]{section.4.1}{4.1. \040Opis metody badawczej}{section*.37}% 28
+\BOOKMARK [2][-]{subsection.4.1.1}{4.1.1. \040Miara oceny}{section.4.1}% 29
+\BOOKMARK [2][-]{subsection.4.1.2}{4.1.2. \040Zbiory danych}{section.4.1}% 30
+\BOOKMARK [1][-]{section.4.2}{4.2. \040Srodowisko symulacyjne}{section*.37}% 31
+\BOOKMARK [2][-]{subsection.4.2.1}{4.2.1. \040Oprogramowanie}{section.4.2}% 32
+\BOOKMARK [2][-]{subsection.4.2.2}{4.2.2. \040Sprzet}{section.4.2}% 33
+\BOOKMARK [1][-]{section.4.3}{4.3. \040Przeprowadzone eksperymenty}{section*.37}% 34
+\BOOKMARK [2][-]{subsection.4.3.1}{4.3.1. \040Dopasowanie parametr\363w sieci neuronowej}{section.4.3}% 35
+\BOOKMARK [2][-]{subsection.4.3.2}{4.3.2. \040Por\363wnanie algorytmu hybrydowego z filtrowaniem z analiza zawartosci i filtrowaniem kolaboratywnym}{section.4.3}% 36
+\BOOKMARK [2][-]{subsection.4.3.3}{4.3.3. \040Analiza statystyczna wynik\363w}{section.4.3}% 37
+\BOOKMARK [0][-]{section*.72}{Rozdzia\233 5. Wnioski}{}% 38
+\BOOKMARK [0][-]{section*.74}{Rozdzia\233 6. CHAPTER 1}{}% 39
+\BOOKMARK [1][-]{section.6.1}{6.1. \040SECTION}{section*.74}% 40
+\BOOKMARK [1][-]{section.6.2}{6.2. \040Section 2}{section*.74}% 41
+\BOOKMARK [2][-]{subsection.6.2.1}{6.2.1. \040Subsection 1}{section.6.2}% 42
+\BOOKMARK [0][-]{section*.77}{Dodatek A. Appendix 1}{}% 43
+\BOOKMARK [0][-]{section*.79}{Bibliografia}{}% 44

@@ -22,31 +22,30 @@
 \contentsline {subsection}{\numberline {2.3.3\relax .\kern .5em }Metody tworzenia profilu u\IeC {\.z}ytkownika}{15}{subsection.2.3.3}
 \contentsline {subsection}{\numberline {2.3.4\relax .\kern .5em }Algorytmy filtrowania z analiz\IeC {\k a} zawarto\IeC {\'s}ci}{15}{subsection.2.3.4}
 \contentsline {section}{\numberline {2.4\relax .\kern .5em }Algorytmy hybrydowe}{19}{section.2.4}
-\contentsline {chapter}{Rozdzia\l \ 3\relax .\kern .5em Model systemu}{21}{section*.28}
-\contentsline {chapter}{Rozdzia\l \ 4\relax .\kern .5em Algorytmy}{23}{section*.32}
-\contentsline {section}{\numberline {4.1\relax .\kern .5em }Propozycja algorytmu filtrowania z analiz\IeC {\k a} zawarto\IeC {\'s}ci}{23}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1\relax .\kern .5em }Struktura perceptron\IeC {\'o}w i funkcja aktywacji}{23}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2\relax .\kern .5em }Struktura sieci i przebieg algorytmu}{25}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3\relax .\kern .5em }Uczenie sieci neuronowej}{25}{subsection.4.1.3}
-\contentsline {section}{\numberline {4.2\relax .\kern .5em }Algorytymy hybrydowe}{26}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1\relax .\kern .5em }Zalety zaproponowanej metody}{28}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2\relax .\kern .5em }Wady zaproponowanej metody}{28}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3\relax .\kern .5em }Analiza z\IeC {\l }o\IeC {\.z}ono\IeC {\'s}ci i poprawno\IeC {\'s}ci}{28}{section.4.3}
-\contentsline {chapter}{Rozdzia\l \ 5\relax .\kern .5em Ocena eksperymentalna}{29}{section*.39}
-\contentsline {section}{\numberline {5.1\relax .\kern .5em }Opis metody badawczej}{29}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1\relax .\kern .5em }Miara oceny}{30}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2\relax .\kern .5em }Zbiory danych}{31}{subsection.5.1.2}
-\contentsline {section}{\numberline {5.2\relax .\kern .5em }\IeC {\'S}rodowisko symulacyjne}{32}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1\relax .\kern .5em }Oprogramowanie}{32}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2\relax .\kern .5em }Sprz\IeC {\k e}t}{34}{subsection.5.2.2}
-\contentsline {section}{\numberline {5.3\relax .\kern .5em }Przeprowadzone eksperymenty}{34}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1\relax .\kern .5em }Dopasowanie parametr\IeC {\'o}w sieci neuronowej}{34}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2\relax .\kern .5em }Por\IeC {\'o}wnanie algorytmu hybrydowego z filtrowaniem z analiz\IeC {\k a} zawarto\IeC {\'s}ci i filtrowaniem kolaboratywnym}{38}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3\relax .\kern .5em }Analiza statystyczna wynik\IeC {\'o}w}{38}{subsection.5.3.3}
-\contentsline {chapter}{Rozdzia\l \ 6\relax .\kern .5em Wnioski}{45}{section*.70}
-\contentsline {chapter}{Rozdzia\l \ 7\relax .\kern .5em CHAPTER 1}{47}{section*.72}
-\contentsline {section}{\numberline {7.1\relax .\kern .5em }SECTION}{47}{section.7.1}
-\contentsline {section}{\numberline {7.2\relax .\kern .5em }Section 2}{47}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1\relax .\kern .5em }Subsection 1}{47}{subsection.7.2.1}
-\contentsline {chapter}{Dodatek\ A\relax .\kern .5em Appendix 1}{49}{section*.75}
-\contentsline {chapter}{Bibliografia}{51}{section*.77}
+\contentsline {chapter}{Rozdzia\l \ 3\relax .\kern .5em Algorytmy}{21}{section*.28}
+\contentsline {section}{\numberline {3.1\relax .\kern .5em }Model systemu}{21}{section.3.1}
+\contentsline {section}{\numberline {3.2\relax .\kern .5em }Propozycja algorytmu filtrowania z analiz\IeC {\k a} zawarto\IeC {\'s}ci}{22}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1\relax .\kern .5em }Struktura perceptron\IeC {\'o}w i funkcja aktywacji}{23}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2\relax .\kern .5em }Struktura sieci i przebieg algorytmu}{24}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3\relax .\kern .5em }Uczenie sieci neuronowej}{24}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3\relax .\kern .5em }Propozycja nowych algorytm\IeC {\'o}w hybrydowych}{26}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1\relax .\kern .5em }Zalety zaproponowanych metod}{27}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2\relax .\kern .5em }Wady zaproponowanych metod}{28}{subsection.3.3.2}
+\contentsline {chapter}{Rozdzia\l \ 4\relax .\kern .5em Ocena eksperymentalna}{29}{section*.37}
+\contentsline {section}{\numberline {4.1\relax .\kern .5em }Opis metody badawczej}{29}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1\relax .\kern .5em }Miara oceny}{30}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2\relax .\kern .5em }Zbiory danych}{31}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2\relax .\kern .5em }\IeC {\'S}rodowisko symulacyjne}{32}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1\relax .\kern .5em }Oprogramowanie}{32}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2\relax .\kern .5em }Sprz\IeC {\k e}t}{34}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3\relax .\kern .5em }Przeprowadzone eksperymenty}{34}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1\relax .\kern .5em }Dopasowanie parametr\IeC {\'o}w sieci neuronowej}{34}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2\relax .\kern .5em }Por\IeC {\'o}wnanie algorytmu hybrydowego z filtrowaniem z analiz\IeC {\k a} zawarto\IeC {\'s}ci i filtrowaniem kolaboratywnym}{38}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3\relax .\kern .5em }Analiza statystyczna wynik\IeC {\'o}w}{38}{subsection.4.3.3}
+\contentsline {chapter}{Rozdzia\l \ 5\relax .\kern .5em Wnioski}{49}{section*.72}
+\contentsline {chapter}{Rozdzia\l \ 6\relax .\kern .5em CHAPTER 1}{51}{section*.74}
+\contentsline {section}{\numberline {6.1\relax .\kern .5em }SECTION}{51}{section.6.1}
+\contentsline {section}{\numberline {6.2\relax .\kern .5em }Section 2}{51}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1\relax .\kern .5em }Subsection 1}{51}{subsection.6.2.1}
+\contentsline {chapter}{Dodatek\ A\relax .\kern .5em Appendix 1}{53}{section*.77}
+\contentsline {chapter}{Bibliografia}{55}{section*.79}

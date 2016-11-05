@@ -154,7 +154,7 @@ nodes near coords align={vertical},
 \pgfkeys{/pgf/number format/.cd, set thousands separator={}}%
 \nocite{*}
 \title{ Hybrydowy algorytm rekomendacji wykorzystujący metody filtrowania z analizą zawartości i filtrowania kolaboratywnego }
-\titleEN{ Hybryd recommender algorithm based on content-based filtering and collaborative filtering}
+\titleEN{ Hybrid recommender algorithm based on content-based filtering and collaborative filtering}
 \shortTitle{SHORT TITLE}
 \author{Katarzyna Biernat }
 \advisor{dr inż. Bernadetta Maleszka}
@@ -739,43 +739,44 @@ ABSTRACT EN
 	 Kolejnym spotykanym podejściem jest konstruowanie ogólnego, jednolitego modelu, który zawiera charakterystyki zarówno filtrowania z analizą zawartości jak i kolaboratywnego.
 	 Przykładowo \cite{basu1998recommendation} proponuje wykorzystanie charakterystyki opartej o zawartość i kolaboratywnej w pojedynczym klasyfikatorze regułowym.
 	 
-	 \chapter{Model systemu}
- \shortTitle{Model systemu}
- 
- Głównym założeniem systemu zaproponowanego przez autorkę jest połączenie zalet kolaboratywnego filtrowania i filtrowania w oparciu zawartość minimalizując jednocześnie wady obu podejść. 
- 
- Rys. \ref{fig:blackbox} przedstawia czarnoskrzynkowy model systemu. Danymi wejściowymi są numery identyfikacyjne użytkownika, dla którego ma być zbudowana rekomendacja oraz elementu, dla którego ma być przewidziana ocena. System pobiera model elementu a także modele wszystkich innych elementów, które użytkownik ocenił w przyszłości. Jednocześnie pobierane są informacje o tym, jak użytkownicy systemu ocenili inne elementy. Wynikiem wyjściowym jest predykcja -- jak aktywny użytkownik oceni element.
- 
- \begin{figure}[!ht] 
-   	\centering
-   	\includegraphics[width=0.7\textwidth]{blackbox}
-   	\caption{Model czarnoskrzynkowy}
-   	\label{fig:blackbox}
- \end{figure}
- 
- Założeniem systemu jest uniwersalność, zatem model elementu jest uogólniony i dostosowuje się w zależności do domeny, w której system jest wykorzystywany. Rys. \ref{fig:modelElementu} przedstawia reprezentację elementu w systemie. W zbiorze wartości mogą znaleźć się takie pozycje jak lista aktorów, reżyser (w przypadku filmów), gatunek, wykonawca (w przypadku muzyki), typ produktu lub cena (w przypadku systemów typu e-commerce).
- 
- \begin{figure}[!ht] 
- 	\centering
- 	\includegraphics[width=0.7\textwidth]{modelElementu}
- 	\caption{Uogólniony model elementu}
- 	\label{fig:modelElementu}
- \end{figure}
- 
- Każdy użytkownik systemu jest anonimowy. Nie jest znana jego płeć, wiek, pochodzenie itp. System nie przechowuje także informacji właściwych mediom społecznościowym, takich jak relacje między użytkownikami (przyjaźnie, śledzenie). Wiadomym jest jedynie, jakie elementy zostały ocenione i jak zostały ocenione. Rys. \ref{fig:modelUsera} przedstawia reprezentację użytkownika w systemie.
- 
- \begin{figure}[!ht] 
-  	\centering
-  	\includegraphics[width=0.7\textwidth]{modelUsera}
-  	\caption{Uogólniony model elementu}
-  	\label{fig:modelUsera}
-  \end{figure}
-
 
  \chapter{Algorytmy}
  \shortTitle{Algorytmy}
 
-	W celu ulepszenia wyników dostarczanych przez algorytmy filtrowania kolaboratywnego: Matrix Factorization, Biased Matrix Factorization i SVD++ stworzony został nowy algorytm filtrowania z analizą zawartości. W wyniku połączenia obu tych metod powstał algorytm hybrydowy. Ten rozdział zawiera opis działania i implementacji opracowanego algorytmu filtrowania z analizą zawartości oraz opis sposobu działania zaproponowanego algorytmu hybrydowego.
+
+	W celu ulepszenia wyników dostarczanych przez algorytmy filtrowania kolaboratywnego: Matrix Factorization, Biased Matrix Factorization i SVD++ stworzony został nowy algorytm filtrowania z analizą zawartości. W wyniku połączenia obu tych metod powstał algorytm hybrydowy. Ten rozdział zawiera model systemu, opis działania i implementacji opracowanego algorytmu filtrowania z analizą zawartości oraz opis sposobu działania zaproponowanego algorytmu hybrydowego.
+
+	\section{Model systemu}
+	\shortTitle{Model systemu}
+	
+	Głównym założeniem systemu zaproponowanego przez autorkę jest połączenie zalet kolaboratywnego filtrowania i filtrowania w oparciu zawartość minimalizując jednocześnie wady obu podejść. 
+	
+	Rys. \ref{fig:blackbox} przedstawia czarnoskrzynkowy model systemu. Danymi wejściowymi są numery identyfikacyjne użytkownika, dla którego ma być zbudowana rekomendacja oraz elementu, dla którego ma być przewidziana ocena. System pobiera model elementu a także modele wszystkich innych elementów, które użytkownik ocenił w przyszłości. Jednocześnie pobierane są informacje o tym, jak użytkownicy systemu ocenili inne elementy. Wynikiem wyjściowym jest predykcja -- jak aktywny użytkownik oceni element.
+	
+	\begin{figure}[!ht] 
+		\centering
+		\includegraphics[width=0.7\textwidth]{blackbox}
+		\caption{Model czarnoskrzynkowy}
+		\label{fig:blackbox}
+	\end{figure}
+	
+	Założeniem systemu jest uniwersalność, zatem model elementu jest uogólniony i dostosowuje się w zależności do domeny, w której system jest wykorzystywany. Rys. \ref{fig:modelElementu} przedstawia reprezentację elementu w systemie. W zbiorze wartości mogą znaleźć się takie pozycje jak lista aktorów, reżyser (w przypadku filmów), gatunek, wykonawca (w przypadku muzyki), typ produktu lub cena (w przypadku systemów typu e-commerce).
+	
+	\begin{figure}[!ht] 
+		\centering
+		\includegraphics[width=0.7\textwidth]{modelElementu}
+		\caption{Uogólniony model elementu}
+		\label{fig:modelElementu}
+	\end{figure}
+	
+	Każdy użytkownik systemu jest anonimowy. Nie jest znana jego płeć, wiek, pochodzenie itp. System nie przechowuje także informacji właściwych mediom społecznościowym, takich jak relacje między użytkownikami (przyjaźnie, śledzenie). Wiadomym jest jedynie, jakie elementy zostały ocenione i jak zostały ocenione. Rys. \ref{fig:modelUsera} przedstawia reprezentację użytkownika w systemie.
+	
+	\begin{figure}[!ht] 
+		\centering
+		\includegraphics[width=0.7\textwidth]{modelUsera}
+		\caption{Uogólniony model elementu}
+		\label{fig:modelUsera}
+	\end{figure}
 		 
  	\section{Propozycja algorytmu filtrowania z analizą zawartości}
 	 
@@ -877,9 +878,9 @@ ABSTRACT EN
 		 
 		 Na potrzeby systemu rekomendacji z analizą zawartości opisywanego w tej pracy wykorzystane zostały trzy metody uczenia: algorytm propagacji wstecznej, algorytm RPROP i algorytm genetyczny (zob. \ref{sss:backprop}). Wymienione metody należą do kategorii uczenia nadzorowanego. 
 
-	 \section{Algorytymy hybrydowe}
+	 \section{Propozycja nowych algorytmów hybrydowych}
 		 
-		 Zaproponowany nowy algorytm jest hybrydą filtrowania kolaboratywnego i filtrowania z analizą zawartości. Obie te metody uruchamiane są osobno, w efekcie dla każdej pary użytkownik--element uzyskiwane są dwie  predykowane oceny z obu metod:  $r_{content-based_{ui}}$ i $r_{collaborative_{ui}}$. Ponadto, znany jest błąd $d \geq 0$, z jakim zakończyło się uczenie sieci neuronowej dla użytkownika $u$. Przewidywana ocena obliczana jest wzorem:
+		 Zaproponowane nowe algorytmy są hybrydą filtrowania kolaboratywnego i filtrowania z analizą zawartości. Obie te metody uruchamiane są osobno, w efekcie dla każdej pary użytkownik--element uzyskiwane są dwie  predykowane oceny z obu metod:  $r_{content-based_{ui}}$ i $r_{collaborative_{ui}}$. Ponadto, znany jest błąd $d \geq 0$, z jakim zakończyło się uczenie sieci neuronowej dla użytkownika $u$. Przewidywana ocena obliczana jest wzorem:
 		 
 		 \begin{equation}
 		 	\label{eq:hybrid}		 	
@@ -895,7 +896,7 @@ ABSTRACT EN
 		 	\label{fig:hybridfunction}
 		 \end{figure}
 		 
-		 Zaimplementowanych zostało 9 wariantów:
+		 Zaimplementowanych zostało 9 algorytmów łączących różne metody filtrowania kolaboratywnego i filtrowania z analizą zawartości:
 		 
 		 \begin{enumerate}
 		 	\item \textbf{Matrix Factorization i sieć neuronowa uczona metodą propagacji wstecznej} --- ten wariant łączy ze sobą szybki, ale najmniej efektywny ze wszystkich wykorzystywanych metod kolaboratywnych algorytm z dość dokładnym, lecz nie najszybszym sposobem uczenia sieci neuronowej. Spodziewanym efektem jest dość stosunkowo wysoki wpływ algorytmu z analizą zawartości na końcowy wynik. 
@@ -909,23 +910,25 @@ ABSTRACT EN
 		 	\item \textbf{SVD++ i sieć neuronowa uczona algorytmem genetycznym} --- jest to najwolniejszy wariant ze wszystkich lecz może konkurować efektywnością z wariantem 7 (zależnie od konfiguracji algorytmu genetycznego).
 		 \end{enumerate}
 	 
-		 \subsection{Zalety zaproponowanej metody}
+		 \subsection{Zalety zaproponowanych metod}
 		 
-		 Największą przewagą zaproponowanego algorytmu jest to, że łączy on zalety filtrowania z analizą zawartości i filtrowania kolaboratywnego minimalizując jednocześnie ich wady poprzez dynamiczne dobieranie proporcji ich wpływu na końcowy wynik. Nowa metoda cechuje się uniwersalnością, gdyż model elementu zawierający jego własności budowany jest automatycznie. Jednocześnie nie są wymagane informacje o użytkowniku inne, niż to jakie elementy ocenił i jak je ocenił. 
+		 Największą przewagą zaproponowanych algorytmów jest to, że łączą on zalety filtrowania z analizą zawartości i filtrowania kolaboratywnego minimalizując jednocześnie ich wady poprzez dynamiczne dobieranie proporcji ich wpływu na końcowy wynik. Nowa metoda cechuje się uniwersalnością, gdyż model elementu zawierający jego własności budowany jest automatycznie. Jednocześnie nie są wymagane informacje o użytkowniku inne, niż to jakie elementy ocenił i jak je ocenił. 
 		 
 		 Im więcej zostanie dostarczonych informacji na temat elementów, tym lepsze będą wyniki. Jednakże w przypadku braku takowych informacji metoda ciągle będzie działać,  wówczas wynik będzie opierał się głównie na rezultatach filtrowania kolaboratywnego.
 		 
 		 Analogicznie, w przypadku małej liczby powiązań z innymi użytkownikami, zaproponowany algorytm hybrydowy ulepszy wynik filtrowania kolaboratywnego dzięki czynnikowi filtrowania z analizą zawartości. 
 		 
-		 \subsection{Wady zaproponowanej metody}
+		 W zależności od tego, czy bardziej istotna jest dokładność czy czas wykonania, można dobrać odpowiedni wariant nowej metody. 
+		 
+		 W zależności od konstrukcji danych można tak dopasować parametr $k$, aby wynik był dokładniejszy. W przypadku takiej konfiguracji danych, gdzie macierz użytkownik-element jest wypełniona w małym stopniu, istnieje możliwość takiego dostrojenia parametru, żeby większy wpływ na wynik końcowy miało filtrowanie z analizą zawartości. W przypadku odwrotnym preferowanym jest aby większy wpływ na wynik końcowy miał algorytm filtrowania kolaboratywnego.
+		 
+		 \subsection{Wady zaproponowanych metod}
 		 
 		 Największą wadą nowej metody jest wyższa złożoność. Czas budowania modelu jest sumą czasów budowania modelu kolaboratywnego i modelu filtrowania z analizą zawartości. 
 		 
 		 Istnieje też ryzyko, że w momencie gdy wynik filtrowania kolaboratywnego będzie bardzo zły, to rezultat osiągnięty przez nową metodę będzie gorszy niż z samego filtrowania z analizą zawartości. 
-	 
-	 \section{Analiza złożoności i poprawności}
- 
-		 \todo{Analiza złożoności i poprawności}
+		 
+		 Niebezpieczeństwem może też być złe dopasowanie parametru $k$ do przetwarzanych danych.
  
 \chapter{Ocena eksperymentalna}
 \shortTitle{Ocena eksperymentalna}
@@ -1319,7 +1322,40 @@ ABSTRACT EN
 
 			\todo{(BADANIA) Porównanie algorytmu hybrydowego z content-based i collaborative}
 
+%% Hybrid movielens1 %%
 
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[page=1,width=1\textwidth]{exphybrid_movielens1}
+	\label{fig:exphybrid_movielens1a}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[page=2,width=1\textwidth]{exphybrid_movielens1}
+	\caption{Porównanie algorytmu hybrydowego z analizą zawartości na podstawie danych z bazy MovieLense. Skuteczność filtrowania z hybrydowego w zależności od liczby użytkowników i powtarzających się cech. Pogrubiona linia przedstawia działanie filtrowania z analizą zawartości.}
+	\label{fig:exphybrid_movielens1b}
+\end{figure}
+
+%% END Hybrid amazon1 %%
+%% Hybrid amazon2 %%
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[page=1,width=1\textwidth]{exphybrid_movielens2}
+	\label{fig:exphybrid_movielens2a}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[page=2,width=1\textwidth]{exphybrid_movielens2}
+	\caption{Porównanie algorytmu hybrydowego z kolaboratywnym na podstawie danych z bazy MovieLense. Skuteczność filtrowania z hybrydowego w zależności od liczby użytkowników i powtarzających się cech. Pogrubiona linia przedstawia działanie filtrowania kolaboratywnego.}
+	\label{fig:exphybrid_movielens2b}
+\end{figure}
+
+%% END Hybrid amazon2 %%
+
+%% Hybrid amazon1 %%
 
 \begin{figure}[!ht]
 	\centering
@@ -1329,10 +1365,13 @@ ABSTRACT EN
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[page=2,width=1\textwidth]{exphybrid1amazon1}
+	\includegraphics[page=2,width=1\textwidth]{exphybrid_amazon1}
 	\caption{Porównanie algorytmu hybrydowego z analizą zawartości na podstawie danych z bazy AmazonMeta. Skuteczność filtrowania z hybrydowego w zależności od liczby użytkowników i powtarzających się cech. Pogrubiona linia przedstawia działanie filtrowania z analizą zawartości.}
 	\label{fig:exphybrid_amazon1b}
 \end{figure}
+
+%% END Hybrid amazon1 %%
+%% Hybrid amazon2 %%
 
 \begin{figure}[!ht]
 	\centering
@@ -1347,6 +1386,7 @@ ABSTRACT EN
 	\label{fig:exphybrid_amazon2b}
 \end{figure}
 
+%% END Hybrid amazon2 %%
 
 		\subsubsection{Badania na bazie YahooMusic}
 	
