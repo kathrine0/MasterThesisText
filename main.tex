@@ -212,11 +212,11 @@ ABSTRACT EN
  
  \chapter{Przegląd istniejących rozwiązań}
  \shortTitle{Przegląd istniejących rozwiązań}
- 
- \todo{(PYTANIE) Czy to dobry pomysł żeby ten rozdział zacząć w taki sposób? A niżej już wymienić metody, algorytmy etc.}
- 	 
-	 W przeciągu ostatnich lat algorytmy rekomendacji stały się nieodłącznym elementem wielu popularnych serwisów internetowych z różnych domen. Poniższa lista prezentuje wybrane produkty. 
+
+	 W przeciągu ostatnich lat algorytmy rekomendacji stały się nieodłącznym elementem wielu popularnych serwisów internetowych z różnych domen. Są wykorzystywane m.in. na portalach muzycznych w celu podpowiadania kolejnych piosenek oraz na witrynach poświęconych tematyce filmowej, w celu sugerowania kolejnych interesujących produkcji kinowych. Odnalazły one szerokie zastosowanie w branży e-commerce, gdzie poprzez podpowiadanie klientom kolejnych produktów zwiększana jest sprzedaż i generowane są wyższe zyski. Dzięki tego typu rozwiązaniom możliwe jest indywidualne dopasowanie oferty sklepu do osobistych preferencji każdego użytkownika. 
 	 
+	 Poniżej zaprezentowany jest przegląd kilku wybranych popularnych serwisów, które korzystają z algorytmów rekomendacji w celu zwiększenia swojej atrakcyjności.
+	  
 	 \subsection{Rekomendacja muzyki}
 	 
 	 \begin{itemize}
@@ -255,11 +255,10 @@ ABSTRACT EN
 	 	\item \textbf{hybrydowe systemy rekomendacji} to kombinacja dowolnych powyższych technik.
 	 \end{itemize}
 	 
-	 Każda z tych technik ma swoje wady i zalety w zależności od kontekstu, w którym ma być stosowana \cite{id:IntroductionToRecommenderSystemsHandbook}. 
-	 
-	 \todo{(PÓŹNIEJ) krótka wzmianka o tym, że w kolejnych podrozdziałach będą opisane wybrane techniki - te, które będą wykorzystywane w Pani systemie}
+	 Każda z tych technik ma swoje pozytywne i negatywne strony w zależności od kontekstu, w którym ma być stosowana \cite{id:IntroductionToRecommenderSystemsHandbook}. W systemie prezentowanym w tej pracy wykorzystane zostały algorytmy filtrowania kolaboratywnego, filtrowania z analizą zawartości i systemy hybrydowe. Omówienie koncepcji ich działania oraz ich zalet i wad znajduje się kolejno w sekcjach \ref{s:filtrowaniekolaboratywne}, \ref{s:filtrowaniezanalizazawartosci} i \ref{s:algorytmyhybrydowe}. Dalsze rozdziały zawierają szczegóły dotyczące implementacji tych rozwiązań.
 	 
 	  \section{Filtrowanie kolaboratywne}
+	  \label{s:filtrowaniekolaboratywne}
 	  
 	  Filtrowanie kolaboratywne opiera się na założeniu, że ludzie o zbliżonym guście dokonują podobnych wyborów. Użytkownicy o zbliżonym guście to osoby, które oceniły konkretne elementy w podobny sposób \cite{id:IntroductionToRecommenderSystemsHandbook, id:CollaborativeFilteringRecommenderSystems, id:huynh2012modeling}. 
 	  
@@ -409,7 +408,7 @@ ABSTRACT EN
 	 \newpage
 	 \subsubsection{Przebieg algorytmu Matrix Factorization}
 	 
-	 Przebieg algorytmu składa się z dwóch faz. W pierwszej fazie inicjowany jest model (zob. algorytm \ref{aq:mf_init}). Daną wejściową jest macierz zawierająca dotychczasowe oceny  elementów przez użytkowników w systemie. Na wyjściu otrzymywane są dwie nowe macierze reprezentujące ukryte własności użytkowników i elementów. Na tym etapie \todo{OMÓWIĆ dwa ostatnie zdania brzmią razem tak, jakby wynik był losowy} są one wypełnione wartościami losowymi. 		
+	 Przebieg algorytmu składa się z dwóch faz. W pierwszej fazie inicjowany jest model (zob. algorytm \ref{aq:mf_init}). Daną wejściową jest macierz zawierająca dotychczasowe oceny  elementów przez użytkowników w systemie. Na wyjściu otrzymywane są dwie nowe macierze reprezentujące ukryte własności użytkowników i elementów. Na tym etapie są one wypełnione wartościami losowymi w celu ułatwienia kolejnych obliczeń. W następnych etapach algorytmu wartości te zostaną zamienione tak, że reprezentować będą rzeczywistą relację pomiędzy elementem i użytkownikiem.
 	 
 	 
 	 \def\alghoritm1{Matrix Factorization -- Inicjacja modelu}
@@ -579,6 +578,7 @@ ABSTRACT EN
 	 Zmienne $b_u$ i $b_i$ reprezentują obserwowane odchylenie od średniej dla użytkowników i elementów, natomiast $\mu$ to średnia wszystkich ocen \cite{koren2008factorization}. 
 	 
 	 \section{Filtrowanie z analizą zawartości}
+	 \label{s:filtrowaniezanalizazawartosci}
 	 
 	 Filtrowanie z analizą zawartości opiera się na cechach elementów w systemie. Rekomendowane są obiekty, które podobne są do tych pozytywnie ocenionych wcześniej przez użytkownika \cite{id:huynh2012modeling}. W zależności od domeny pod uwagę mogą być brane słowa kluczowe, cechy takie jak rok wydania, reżyser, autor, kompozytor, gatunek itp.
 	 
@@ -600,7 +600,7 @@ ABSTRACT EN
 	 
 	 Gdy użytkownik nie zostawia po sobie tego typu śladów, to informacje na temat jego zachowań i preferencji można uzyskać korzystając z pośredniej informacji zwrotnej (ang. \textit{implicit feedback}). System bierze wówczas pod uwagę aktywność użytkownika taką jak: historia zakupów, historia przeglądarki a nawet ruchy myszką. W przypadku serwisu z muzyką czy filmem pośrednią informacją zwrotną będzie fakt, czy użytkownik wysłuchał lub obejrzał dany materiał do końca czy też wyłączył go po paru sekundach \cite{id:AdvancesInCollaborativeFiltering,id:ContentBasedRecommenderSystemsState}.
 	 
-	 \subsection{Algorytmy filtrowania z analizą zawartości}
+	 \subsection{Algorytmy wykorzystywane w implementacji filtrowania z analizą zawartości}
 	 
 	 Najprostszym sposobem implementacji filtrowania z analizą zawartości jest wyciąganie średnich wartości cech z wektora ocenianego elementu. Bardziej efektywne jest jednak wykorzystanie technik uczenia maszynowego takich jak naiwny klasyfikator bayesowski, klasteryzacja, drzewa decyzyjne lub sztuczne sieci neuronowe. W niniejszej pracy wykorzystana została sztuczna sieć neuronowa uczona algorytmami opisanymi poniżej. 
 	 
@@ -667,10 +667,10 @@ ABSTRACT EN
 			 	\label{fig:propagacjawsteczna}
 	 \end{figure}
 	 
-	 \subsubsection{Metoda momentum}
+	 \subsubsection{Współczynnik bezwładności}
 	 \label{sss:metoda_momentum}
 	 
-	 W celu zwiększenia efektywności działania algorytmu została zastosowana metoda momentum. I tak też standardowy sposób aktualizacji wag sieci (równanie \ref{eq:weightadaptation3}) został zmodyfikowany w następujący sposób:
+	 W celu zwiększenia efektywności działania algorytmu został on zmieniony poprzez dołączenie członu zwanego współczynnikiem bezwładności (momentum). Standardowy sposób aktualizacji wag sieci (równanie \ref{eq:weightadaptation3}) został zmodyfikowany w następujący sposób:
 	 
 	 \begin{equation}
 	 \label{eq:zasadamomentum1}
@@ -683,7 +683,7 @@ ABSTRACT EN
 	 \Delta W_{ij}(n) = \eta(n) \cdot p(n) + \alpha(W_{ij}(n)-W_{ij}(n-1)) 
 	 \,,
 	 \end{equation}		 
-	 gdzie $\alpha$ jest współczynnikiem momentum z zakresu $[0,1]$. Im wyższa wartość współczynnika tym większy jego wpływ na ostateczny kształt kolejnych wag. W dalszej części pracy przeprowadzono eksperymenty mające na celu dobranie optymalnej wartości współczynnika momentum.
+	 gdzie $\alpha$ jest współczynnikiem bezwładności z zakresu $[0,1]$. Im wyższa wartość współczynnika tym większy jego wpływ na ostateczny kształt kolejnych wag. W dalszej części pracy przeprowadzono eksperymenty mające na celu dobranie optymalnej wartości współczynnika bezwładności.
 	 
 	 \subsubsection{Algorytm RPROP}		 
 	 
@@ -731,6 +731,7 @@ ABSTRACT EN
 	 		 
 	 
 	 \section{Algorytmy hybrydowe}
+	 \label{s:algorytmyhybrydowe}
 
 	 W wielu przypadkach podejście hybrydowe okazuje się bardziej skuteczne niż samo filtrowanie z analizą zawartości lub kolaboratywne. Algorytmy hybrydowe można budować na wiele różnych sposobów. Jednym z nich jest odrębna implementacja filtrowania z analizą zawartości i filtrowania kolaboratywnego a następnie łączenie ich wyników. Łączyć wyniki można poprzez liniową kombinację ocen bądź też schemat głosowania \cite{claypool1999combining}. Alternatywą jest wybór algorytmu decydującego na podstawie zadanych metryk jakości, na przykład ilości cech danego elementu bądź kompletności macierzy ocen użytkownik-element.
 	 
@@ -779,6 +780,7 @@ ABSTRACT EN
 	\end{figure}
 		 
  	\section{Propozycja algorytmu filtrowania z analizą zawartości}
+	\label{s:propozycjaalgorytmucbf}
 	 
 	Algorytmy filtrowania z analizą zawartości budują rekomendację na podstawie ocen, jakie zostały dotychczas wystawione przez użytkownika. Analizowane są cechy elementów i ich wartości oraz określana jest ich siła wpływu na finalną ocenę. 
 	
@@ -832,7 +834,7 @@ ABSTRACT EN
 	 \end{figure}
 	 
 	 \subsection{Struktura sieci i przebieg algorytmu}
-		 
+	 \label{ss:strukturasiecineuronowej}		 
 		 Pierwszym etapem algorytmu jest analiza cech elementów ocenionych przez użytkownika. Tworzona jest lista wszystkich występujących cech które powtarzają się minimum tyle razy, ile wynosi wartość  parametru \textit{minimumRepeatingFeatures}. 
 		 
 		 Następnie inicjowana jest sieć neuronowa. Ilość neuronów warstwy wejściowej jest równa ilości wyodrębnionych cech. Warstwa ukryta zawiera tyle neuronów ile jest to określone parametrem \textit{hiddenLayerNeurons}. Warstwa wyjściowa składa się z tylko jednego neuronu (rys. \ref{fig:siecneuronowa}). 
@@ -1042,7 +1044,7 @@ ABSTRACT EN
 	
 		\subsection{Zbiory danych}
 		
-		W celu uzyskania obiektywnych wyników algorytmy zostały przetestowane na trzech różnych bazach danych z trzech różnych domen. Eksperyment nie ma na celu porównania wyników między różnymi zestawami danych, lecz porównanie wyników testowanych algorytmów w różnych warunkach. 
+		W celu uzyskania obiektywnych wyników algorytmy zostały przetestowane na dwóch różnych bazach danych z dwóch różnych domen. Eksperyment nie ma na celu porównania wyników między różnymi zestawami danych, lecz porównanie wyników testowanych algorytmów w różnych warunkach. 
 		
 		\subsubsection{MovieLens}
 		MovieLens \cite{harper2016movielens} to baza zawierająca oceny filmów przez użytkowników portalu movielens.org. Baza zawiera 3,706 filmów i 1,000,209 ocen wystawionych przez 6,040 unikalnych użytkowników pomiędzy 25 kwietnia 2000 a 28 lutym 2003, średnio 166 ocen na użytkownika i 270 ocen na film. Filmy oceniane są w skali od 1 do 5, gdzie 1 jest oceną najgorszą a 5 najlepszą. 
@@ -1058,16 +1060,7 @@ ABSTRACT EN
 		
 		\subsubsection{Yahoo Music}
 			
-			YahooMusic to baza zawierająca oceny utworów muzycznych przez użytkowników. Baza zawiera 136,736 piosenek i 325,327,926 ocen wystawionych przez 1,823,179 unikalnych użytkowników, średnio 178 ocen na użytkownika i 2,379 ocen na piosenkę. Filmy oceniane są w skali od 1 do 5, gdzie 1 jest oceną najgorszą a 5 najlepszą.
-		
-		
-			\todo{Opisać Yahoo Music}
-		
-		\subsubsection{Amazon Meta}
-		
-			\todo{Opisać Amazon Meta}
-		
-			\cite{leskovec2007dynamics}
+			YahooMusic to baza zawierająca oceny utworów muzycznych przez użytkowników portalu Yahoo! Music \cite{yahoomusicwebsite}. Baza zawiera 136,736 piosenek i 325,327,926 ocen wystawionych przez 1,823,179 unikalnych użytkowników, średnio 178 ocen na użytkownika i 2,379 ocen na piosenkę. Utwory oceniane są w skali od 1 do 5, gdzie 1 jest oceną najgorszą a 5 najlepszą.
 		
 	\section{Środowisko symulacyjne}
 	
@@ -1095,21 +1088,22 @@ ABSTRACT EN
 		 Kryteria doboru zestawu danych są następujące:
 		 
 		 \begin{itemize}
-		 	\item \textit{cbUsersCount} -- liczba użytkowników do pobrania do filtrowania z analizą zawartości;
-		 	\item \textit{cfUsersCount} -- liczba użytkowników do pobrania do filtrowania kolaboratywnego;
-		 	\item \textit{minimumItemsRated} -- minimum elementów, jakie zostały ocenione przez każdego pobranego użytkownika;
-		 	\item \textit{CrossvalidationFolds} -- ilość powtórzeń walidacji krzyżowej.
+		 	\item \textbf{Liczba użytkowników CBF} (\textit{cbUsersCount}) -- liczba użytkowników uwzględnianych w metodzie filtrowania z analizą zawartości;
+		 	\item \textbf{Liczba użytkowników CF} (\textit{cfUsersCount}) -- liczba użytkowników uwzględnianych w metodzie filtrowania kolaboratywnego;
+		 	\item \textbf{Minimum ocenionych elementów} (\textit{minimumItemsRated}) -- minimalna liczba elementów, które użytkownik ocenił aby zostać uwzględnionym w czasie przebiegu algorytmu;
+		 	\item \textbf{Minimum powtarzających się cech} (\textit{minimumRepeatingFeatures}) -- minimalna ilość powtórzeń danej cechy elementów, aby była brana pod uwagę w trakcie budowania rekomendacji;
+		 	\item \textbf{Parametr walidacji krzyżowej} (\textit{crossvalidationFolds}) -- ilość podzbiorów, na które dzielony jest główny zbiór w trakcie walidacji krzyżowej. 
 		 \end{itemize}
 		 
 		 Parametry sieci neuronowej podlegające strojeniu to:
 
 		 \begin{itemize}
-		 	\item $\alpha$ -- parametr funkcji aktywacji;
-		 	\item \textit{hiddenLayerNeurons} -- liczba neuronów w warstwie ukrytej;
-		 	\item \textit{iterationLimit} -- maksymalna liczba iteracji uczenia sieci neuronowej;
-		 	\item \textit{teacherFunction} -- algorytm uczący sieć neuronową: propagacja wsteczna, rprop (resilient backpropagation) lub algorytm genetyczny;
-		 	\item \textit{populationSize} -- w przypadku wyboru algorytmu genetycznego -- rozmiar każdej kolejnej populacji;
-		 	\item \textit{minimumRepeatingFeatures} -- minimalna wymagana ilość powtórzeń danej cechy, aby była brana pod uwagę w trakcie budowania rekomendacji.
+		 	\item \textbf{$\alpha$} -- parametr funkcji aktywacji sieci neuronowej;
+		 	\item \textbf{Ilość neuronów w warstwie ukrytej} (\textit{hiddenLayerNeurons}) -- liczba neuronów w warstwie ukrytej;
+		 	\item \textbf{Maksymalna ilość iteracji nauki} (\textit{iterationLimit}) -- maksymalna liczba iteracji uczenia sieci neuronowej;
+		 	\item \textbf{Algorytm uczący} (\textit{teacherFunction}) -- algorytm uczący sieć neuronową: propagacja wsteczna, rprop (resilient backpropagation) lub algorytm genetyczny;
+		 	\item \textbf{Rozmiar populacji} (\textit{populationSize}) -- w przypadku wyboru algorytmu genetycznego -- rozmiar każdej kolejnej populacji.
+		 	
 		 \end{itemize}	 
 		
 		\subsection{Sprzęt}
@@ -1135,7 +1129,7 @@ ABSTRACT EN
 		\subsubsection{Dopasowanie maksymalnej liczby iteracji}
 		\label{exp:expiterations}
 		
-			Uczenie sieci neuronowej odbywa się w pętli tak długo, jak wartość błędu na wyjściu spadnie poniżej określonej wartości bądź przekroczona zostanie maksymalna ilość iteracji. Eksperyment ma na celu zbadanie wartości błędów w zależności od liczby iteracji.
+			Uczenie sieci neuronowej odbywa się w pętli tak długo, jak wartość błędu na wyjściu spadnie poniżej określonej wartości bądź przekroczona zostanie maksymalna ilość iteracji. Eksperyment miał na celu zbadanie wartości błędów w zależności od liczby iteracji.
 				
 			\begin{center}
 				\begin{longtable}{ | R{7cm}   m{8cm} |}
@@ -1150,9 +1144,10 @@ ABSTRACT EN
 					Algorytm: & Sieć neuronowa uczona propagacją wsteczną, RPROP i algorytmem genetycznym \\
 					Maksymalna ilość iteracji nauki: & ? \\				
 					Ilość neuronów w warstwie ukrytej: & 1 \\
-					Współczynnik momentum: & 0.9 \\
+					Współczynnik bezwładności: & 0.9 \\
 					Współczynnik uczenia: & 0.1 \\
 					Parametr funkcji aktywacji $\alpha$: & 2.0 \\
+					Rozmiar populacji: & 100 \\
 					Minimum powtarzających się cech: & 10 \\
 					Minimum ocenionych elementów przez użytkownika: & 10 \\
 					Ilość testowanych użytkowników: & 10 \\				
@@ -1161,19 +1156,9 @@ ABSTRACT EN
 				\end{longtable}
 			\end{center}
 			
-			Wyniki eksperymentu przedstawia wykres \ref{fig:expiterations} i tabela \ref{tab:expiterations}. Wraz ze wzrostem liczby iteracji wartość błędu maleje, jednakże po przekroczeniu pewnej wartości następuje ponowny wzrost. Wynika to z występowania zjawiska nadmiernego dopasowania (ang. \textit{overfitting}). 
+			Wyniki eksperymentu przedstawiają wykresy \ref{fig:expiterations_rmse} i \ref{fig:expiterations_time} oraz tabela \ref{tab:expiterations}.  
 			
-			Zgodnie z oczekiwaniami, czas wykonania jest wprost proporcjonalny do liczby iteracji. W trakcie tego eksperymentu potwierdzone zostały również przypuszczenia dotyczące prędkości działania algorytmów. Najszybszy okazał się RPROP, jednakże kosztem nieco większych błędów. Najgorzej wypadł algorytm genetyczny, który charakteryzował się bardzo szybko rosnącym czasem wykonania przy jednoczesnym nie najlepszym wynikiem RMSE. 
-			
-			\begin{figure}[!ht]
-				\centering
-				\includegraphics[width=0.7\textwidth]{expiterations}			
-				\caption{Wyniki eksperymentu maksymalnej liczby iteracji}
-				\label{fig:expiterations}
-			\end{figure}
-			
-
-			\begin{longtable}{l||ll|ll|ll}		
+			\begin{longtable}{r||rr|rr|rr}		
 				\label{tab:expiterations}		
 				\textbf{L. iter.} & \multicolumn{2}{c|}{\textbf{Propagacja wsteczna}}  & \multicolumn{2}{c|}{\textbf{RPROP}} & \multicolumn{2}{c}{\textbf{Algorytm genetyczny}}  \\
 				\hline
@@ -1183,13 +1168,29 @@ ABSTRACT EN
 				1000  & 1.022469 & 564 & 1.055915 & 463 & 1.033005 & 24831  \\
 				3000  & 1.035766 & 1770 & 1.054472 & 1581  & 1.038922 & 70579  \\
 				10000 & 1.058892  & 5444 & 1.081511  & 4567  & 1.068489 & 239775 \\
-				\caption{Wyniki eksperymentu maksymalnej liczby iteracji}
+				\caption{Zależność błędu algorytmu wyrażonego za pomocą RMSE i czasu wykonania od maksymalnej liczy iteracji.}
 			\end{longtable}
+			
+			\begin{figure}[!ht]
+				\centering
+				\includegraphics[width=0.7\textwidth]{expiterations_rmse}			
+				\caption{Wyniki eksperymentu testującego parametr maksymalnej liczby iteracji. Wykres przedstawia zależność pomiędzy liczbą iteracji a błędem algorytmu wyrażonym za pomocą RMSE. Wraz ze wzrostem liczby iteracji wartość błędu maleje, jednakże po przekroczeniu pewnej wartości następuje ponowny wzrost. Wynika to z występowania zjawiska nadmiernego dopasowania (ang. \textit{overfitting}). }
+				\label{fig:expiterations_rmse}
+			\end{figure}
 		
-		\subsubsection{Dopasowanie parametru momentum} 
+			\begin{figure}[!ht]
+				\centering
+				\includegraphics[width=0.7\textwidth]{expiterations_time}			
+				\caption{Wyniki eksperymentu testującego parametr maksymalnej liczby iteracji. Wykres przedstawia zależność pomiędzy liczbą iteracji a czasem wykonania. Zgodnie z oczekiwaniami, czas wykonania jest wprost proporcjonalny do liczby iteracji. W trakcie tego eksperymentu potwierdzone zostały również przypuszczenia dotyczące prędkości działania algorytmów. Najszybszy okazał się RPROP, jednakże kosztem nieco większych błędów. Najgorzej wypadł algorytm genetyczny, który charakteryzował się bardzo szybko rosnącym czasem wykonania przy jednoczesnym nie najlepszym wynikiem RMSE. }
+				\label{fig:expiterations_time}
+			\end{figure}
+				
+		\subsubsection{Dopasowanie współczynnika bezwładności} 
 		\label{exp:momentum}
 			
-		Parametr momentum jest dodatkowym współczynnikiem mającym na celu ulepszenie działania algorytmu propagacji wstecznej (zob. \ref{sss:metoda_momentum}). Eksperyment ma na celu zbadanie dla jakich wartości osiągany jest najniższy błąd.
+		Współczynnik bezwładności jest dodatkowym współczynnikiem mającym na celu ulepszenie działania algorytmu propagacji wstecznej (zob. \ref{sss:metoda_momentum}). Eksperyment miał na celu zbadanie dla jakich wartości osiągany jest najniższy błąd.
+		
+		Wyniki eksperymentu przedstawia wykres \ref{fig:expmomentum} i tabela \ref{tab:expmomentum}. 
 			
 		\begin{center}
 			\begin{longtable}{ | R{7cm}   m{8cm} |}
@@ -1201,30 +1202,28 @@ ABSTRACT EN
 				\hline
 				\multicolumn{2}{|c|}{\textbf{Konfiguracja filtrowania z analizą zawartości}} \\
 				\hline
-				Algorytm: & Sieć neuronowa z propagacją wsteczną \\
+				Algorytm: & Sieć neuronowa uczona propagacją wsteczną \\
 				Maksymalna ilość iteracji nauki: & 1000 \\				
 				Ilość neuronów w warstwie ukrytej: & 2 \\
-				Współczynnik momentum: & ? \\
+				Współczynnik bezwładności: & ? \\
 				Współczynnik uczenia: & 0.1 \\
 				Parametr funkcji aktywacji $\alpha$: & 2.0 \\
 				Minimum powtarzających się cech: & 10 \\
 				Minimum ocenionych elementów przez użytkownika: & 100 \\
 				Ilość testowanych użytkowników: & 5 \\				
 				\hline
-				\caption{Konfiguracja dla eksperymentu dopasowania wartości momentum}
+				\caption{Konfiguracja dla eksperymentu dopasowania wartości współczynnika bezwładności}
 			\end{longtable}
 		\end{center}
-		
-		Wyniki eksperymentu przedstawia wykres \ref{fig:expmomentum} i tabela \ref{tab:expmomentum}. W zakresie wartości $[0,0.9]$ błąd oscyluje w granicach podobnych wartości z nieznaczną tendencją malejącą. Wyraźny skok na niekorzyść odnotowany jest dopiero przy momentum$=1$. 
-		
+				
 		\begin{figure}[!ht]
 			\centering
 			\includegraphics[width=0.7\textwidth]{expmomentum}			
-			\caption{Wyniki eksperymentu momentum}
+			\caption{Wyniki eksperymentu testującego optymalną wartość współczynnika bezwładności. Wykres przedstawia zależność pomiędzy wartością parametru a błędem RMSE. W zakresie wartości $[0,0.9]$ błąd oscyluje w granicach podobnych wartości z nieznaczną tendencją malejącą. Wyraźny skok na niekorzyść odnotowany jest dopiero przy momentum$=1$.}
 			\label{fig:expmomentum}
 		\end{figure}
 				
-		\begin{longtable}{l||ll}
+		\begin{longtable}{r||rr}
 			\label{tab:expmomentum}
 			\textbf{Momentum} & \textbf{RMSE} & \textbf{MAE} \\
 			\hline
@@ -1239,12 +1238,12 @@ ABSTRACT EN
 			0.8      & 1.042235 & 0.842353 \\
 			0.9      & 1.046243 & 0.840319 \\
 			1        & 1.375336 & 1.071652 \\
-			\caption{Wyniki eksperymentu momentum}
+			\caption{Zależność błędu algorytmu RMSE od wartości współczynnika bezwładności.}
 		\end{longtable}
 					
 		\subsubsection{Dopasowanie rozmiaru populacji}
 	
-		Parametr rozmiaru populacji determinuje ilość osobników, jaka zostanie wygenerowana w każdej epoce przebiegu algorytmu genetycznego (zob \ref{ss:algorytm_genetyczny}). Eksperyment ma na celu zbadanie korelacji pomiędzy rozmiarem populacji a błędem algorytmu rekomendacji. Mierzony jest również czas uczenia sieci neuronowej.
+		Parametr rozmiaru populacji determinuje ilość osobników, jaka zostanie wygenerowana w każdej epoce przebiegu algorytmu genetycznego (zob. \ref{ss:algorytm_genetyczny}). Eksperyment miał na celu zbadanie korelacji pomiędzy rozmiarem populacji a błędem algorytmu rekomendacji. Mierzony jest również czas uczenia sieci neuronowej.
 		
 		\begin{center}
 			\begin{longtable}{ | R{7cm}   m{8cm} |}
@@ -1259,9 +1258,10 @@ ABSTRACT EN
 				Algorytm: & Sieć neuronowa uczona algorytmem genetycznym \\
 				Maksymalna ilość iteracji nauki: & 1000 \\				
 				Ilość neuronów w warstwie ukrytej: & 1 \\
-				Współczynnik momentum: & 0.9 \\
+				Współczynnik bezwładności: & 0.9 \\
 				Współczynnik uczenia: & 0.1 \\
 				Parametr funkcji aktywacji $\alpha$: & 2.0 \\
+				Rozmiar populacji: & ? \\
 				Minimum powtarzających się cech: & 10 \\
 				Minimum ocenionych elementów przez użytkownika: & 10 \\
 				Ilość testowanych użytkowników: & 10 \\				
@@ -1270,19 +1270,18 @@ ABSTRACT EN
 			\end{longtable}
 		\end{center}
 		
-		Wyniki eksperymentu przedstawia wykres \ref{fig:exppopulation} i tabela \ref{tab:exppopulation}. Zgodnie z oczekiwaniami występuje dodatnia korelacja pomiędzy rozmiarem populacji a czasem wykonania i ujemna pomiędzy rozmiarem populacji a błędem algorytmu rekomendacji. 
-		
-		Zależność pomiędzy rozmiarem populacji a czasem wykonania  jest liniowa, natomiast błąd maleje wykładniczo gdy populacja osiąga większe rozmiary. Optymalnym zatem jest przyjęcie rozmiaru populacji równej $100$. 
-		
+		Wyniki eksperymentu przedstawia wykres \ref{fig:exppopulation} i tabela \ref{tab:exppopulation}. 
 		
 		\begin{figure}[!ht]
 			\centering
 			\includegraphics[width=0.7\textwidth]{exppopulation}
-			\caption{Wyniki eksperymentu rozmiaru populacji}
+			\caption{Wyniki eksperymentu testującego optymalny rozmiar populacji. Wykres przedstawia zależność pomiędzy rozmiarem a błędem RMSE. 
+			Zgodnie z oczekiwaniami występuje dodatnia korelacja pomiędzy rozmiarem populacji a czasem wykonania i ujemna pomiędzy rozmiarem populacji a błędem algorytmu rekomendacji. 
+			Zależność pomiędzy rozmiarem populacji a czasem wykonania  jest liniowa, natomiast błąd maleje wykładniczo gdy populacja osiąga większe rozmiary. Optymalnym zatem jest przyjęcie rozmiaru populacji równej $100$.}
 			\label{fig:exppopulation}
 		\end{figure}
 		
-		\begin{longtable}{llll}
+		\begin{longtable}{r||rrr}
 			\label{tab:exppopulation}
 			\centering
 			\textbf{Populacja} & \textbf{RMSE} & \textbf{MAE} & \textbf{czas} \\
@@ -1292,14 +1291,64 @@ ABSTRACT EN
 			50        & 1.041198 & 0.850866 & 11804                     \\
 			100       & 1.022943 & 0.825477 & \multicolumn{1}{r}{24062} \\
 			200       & 1.013656 & 0.816789 & 52751                     \\
-			\caption{Wyniki eksperymentu rozmiaru populacji}
+			\caption{Zależność błędu algorytmu RMSE od rozmiaru populacji.}
 		\end{longtable}
-	
-
+		
+		\pagebreak
 		
 		\subsubsection{Dopasowanie ilości neuronów w warstwie ukrytej}
 		
-			\todo{(BADANIA) Koniecznie TODO}
+		Eksperyment miał na celu zbadanie dla jakiej liczby neuronów w warstwie pośredniej algorytm osiąga optymalne rezultaty (zob. \ref{ss:strukturasiecineuronowej}).
+	
+		\begin{center}
+			\begin{longtable}{ | R{7cm}   m{8cm} |}
+				\hline
+				\multicolumn{2}{|c|}{\textbf{Konfiguracja parametrów podstawowych}} \\
+				\hline
+				Baza danych: & MovieLens \\
+				Testowana metoda: & Filtrowanie z analizą zawartości \\
+				\hline
+				\multicolumn{2}{|c|}{\textbf{Konfiguracja filtrowania z analizą zawartości}} \\
+				\hline
+				Algorytm: & Sieć neuronowa uczona propagacją wsteczną, RPROP i algorytmem genetycznym \\
+				Maksymalna ilość iteracji nauki: & 1000 \\				
+				Ilość neuronów w warstwie ukrytej: & ? \\
+				Współczynnik bezwładności: & 0.9 \\
+				Współczynnik uczenia: & 0.1 \\
+				Parametr funkcji aktywacji $\alpha$: & 2.0 \\
+				Minimum powtarzających się cech: & 10 \\
+				Minimum ocenionych elementów przez użytkownika: & 10 \\
+				Ilość testowanych użytkowników: & 20 \\				
+				\hline
+				\caption{Konfiguracja dla eksperymentu dopasowania rozmiaru ukrytej warstwy neuronów}
+			\end{longtable}
+		\end{center}
+	
+		Wyniki eksperymentu przedstawia wykres \ref{fig:exphiddenneural} i tabela \ref{tab:exphiddenneural}. 
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{exphiddenneural}
+			\caption{Wyniki eksperymentu testującego optymalny rozmiar ukrytej warstwy neuronów. Wykres przedstawia zależność pomiędzy ilością neuronów a błędem RMSE. Wyniki prezentują się odmiennie w zależności od typu algorytmu wykorzystanego do uczenia sieci. W przypadku algorytmów propagacji wstecznej i RPROP występuje dodatnia korelacja pomiędzy rozmiarem warstwy ukrytej a błędem algorytmu rekomendacji. Dla algorytmu BackProp optymalny rezultat osiągnięty został dla zaledwie jednego neuronu w warstwie ukrytej, dla algorytmu RPROP dla pięciu neuronów. W tym ostatnim przypadku poprawa znajduje się jednak na marginesie błędu statystycznego. W przypadku algorytmu genetycznego, niezależnie od ilości neuronów wynik oscyluje na podobnym poziomie w zakresie testowanych wartości.}
+			\label{fig:exphiddenneural}
+		\end{figure}
+		
+		\begin{longtable}{r||rr|rr|rr}
+			\label{tab:exphiddenneural}
+			\centering
+			\textbf{L. neuronów} &  \multicolumn{2}{c|}{\textbf{Propagacja wsteczna}}  & \multicolumn{2}{c|}{\textbf{RPROP}} & \multicolumn{2}{c}{\textbf{Alg. genetyczny}}  \\
+			\hline
+			& \textbf{RMSE} & \textbf{MAE} & \textbf{RMSE} & \textbf{MAE} & \textbf{RMSE} & \textbf{MAE} \\
+			\hline
+			1                                   & 1.013503                          & 0.811766 & 1.068271 & 0.846588 & 1.042597 & 0.836481 \\
+			2                                   & 1.013808                          & 0.816021 & 1.100579 & 0.862516 & 1.045096 & 0.836361 \\
+			5                                   & 1.002053                          & 0.807083 & 1.197693 & 0.93349  & 1.038662 & 0.831887 \\
+			10                                  & 1.589821                          & 1.232048 & 1.213635 & 0.9478   & 1.046554 & 0.835417 \\
+			20                                  & 1.812912                          & 1.458733 & 1.199205 & 0.931307 & 1.039479 & 0.833191 \\
+			50                                  & 1.812912                          & 1.458733 & 1.891729 & 1.562207 & 1.044693 & 0.837189\\		
+			\caption{Zależność błędu algorytmu RMSE od rozmiaru ukrytej warstwy neuronowej.}
+		\end{longtable}
+	
 		
 		\subsubsection{Dopasowanie współczynnika uczenia}
 		
@@ -1309,51 +1358,79 @@ ABSTRACT EN
 		
 			\todo{(NA KOŃCU, BADANIA) Czy trzeba}
 
-		\subsection{Porównanie algorytmu hybrydowego z filtrowaniem z analizą zawartości i filtrowaniem kolaboratywnym}
+		\subsubsection{Podsumowanie}
+
+		Bazując na przeprowadzonych eksperymentach zostały zdefiniowane optymalne parametry algorytmu filtrowania z analizą zawartości. Zostały one przedstawione w tabeli \ref{tab:optimummovielens}.
 		
-		Następny eksperyment miał na celu porównanie efektywności wszystkich wariantów algorytmu hybrydowego z algorytmami kolaboratywnym i z analizą zawartości. 
+		\begin{center}
+			\begin{longtable}{ | R{7cm}   m{8cm} |}
+				\hline				
+				\multicolumn{2}{|c|}{\textbf{Optymalna konfiguracja filtrowania z analizą zawartości dla bazy MovieLens}} \\
+				\hline
+				Maksymalna ilość iteracji nauki: & 1000 \\				
+				Współczynnik bezwładności: & 0.9 \\
+				Rozmiar populacji: & 100 \\
+				Ilość neuronów w warstwie ukrytej: & 1 \\
+				Współczynnik uczenia: & 0.1 \\
+				Parametr funkcji aktywacji $\alpha$: & 2.0 \\						
+				\hline
+				\caption{Konfiguracja dla eksperymentu dopasowania rozmiaru ukrytej warstwy neuronów}
+				\label{tab:optimummovielens}
+			\end{longtable}
+		\end{center}
+
+		\todo{To samo dla AmazonMeta}
 		
-		Początkowo zostały przeprowadzone testy dla algorytmów kolaboratywnego i z analizą zawartości. Następnie dla takie samej konfiguracji zostały uruchomione kolejne warianty algorytmu hybrydowego.
+		\subsection{Porównanie zaproponowanych algorytmów hybrydowych z filtrowaniem z analizą zawartości i filtrowaniem kolaboratywnym}
 		
-		\subsubsection{Badania na bazie MovieLens}
+		Eksperymenty miały na celu porównanie efektywności zaproponowanych algorytmów hybrydowych z samym filtrowaniem kolaboratywnym i z samym filtrowaniem z analizą zawartości. 
+		
+		Początkowo zostały przeprowadzone testy odrębnie dla filtrowania kolaboratywnego i dla filtrowania z analizą zawartości. Następnie dla takie samej konfiguracji parametrów zostały uruchomione algorytmy hybrydowe. 
+		
+		W pierwszym eksperymencie parametrem, który ulegał modyfikacji był parametr określający minimum powtarzających się cech ocenianych elementów. W drugim eksperymencie modyfikowana była liczba użytkowników brana pod uwagę przez filtrowanie kolaboratywne. 
+		
+		\subsubsection{Eksperyment pierwszy - efektywność algorytmów w zależności od minimum powtarzających się cech elementów}
+		
+		%% Hybrid movielens1 %%
+		
+		\begin{figure}[!ht]
+			\centering
+			\includegraphics[page=1,width=1\textwidth]{exphybrid_movielens1}
+			\label{fig:exphybrid_movielens1a}
+		\end{figure}
+		
+		\begin{figure}[!ht]
+			\centering
+			\includegraphics[page=2,width=1\textwidth]{exphybrid_movielens1}
+			\caption{Porównanie algorytmu hybrydowego z analizą zawartości na podstawie danych z bazy MovieLense. Skuteczność filtrowania z hybrydowego w zależności od liczby użytkowników i powtarzających się cech. Pogrubiona linia przedstawia działanie filtrowania z analizą zawartości.}
+			\label{fig:exphybrid_movielens1b}
+		\end{figure}
+		
+		%% END Hybrid movielens1 %%
+		%% Hybrid movielens2 %%
+		
+		\begin{figure}[!ht]
+			\centering
+			\includegraphics[page=1,width=1\textwidth]{exphybrid_movielens2}
+			\label{fig:exphybrid_movielens2a}
+		\end{figure}
+		
+		\begin{figure}[!ht]
+			\centering
+			\includegraphics[page=2,width=1\textwidth]{exphybrid_movielens2}
+			\caption{Porównanie algorytmu hybrydowego z kolaboratywnym na podstawie danych z bazy MovieLense. Skuteczność filtrowania z hybrydowego w zależności od liczby użytkowników i powtarzających się cech. Pogrubiona linia przedstawia działanie filtrowania kolaboratywnego.}
+			\label{fig:exphybrid_movielens2b}
+		\end{figure}
+		
+		%% END Hybrid movielens2 %%
+		
 		
 		\subsubsection{Badania na bazie AmazonMeta}
 		
 
 			\todo{(BADANIA) Porównanie algorytmu hybrydowego z content-based i collaborative}
 
-%% Hybrid movielens1 %%
 
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[page=1,width=1\textwidth]{exphybrid_movielens1}
-	\label{fig:exphybrid_movielens1a}
-\end{figure}
-
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[page=2,width=1\textwidth]{exphybrid_movielens1}
-	\caption{Porównanie algorytmu hybrydowego z analizą zawartości na podstawie danych z bazy MovieLense. Skuteczność filtrowania z hybrydowego w zależności od liczby użytkowników i powtarzających się cech. Pogrubiona linia przedstawia działanie filtrowania z analizą zawartości.}
-	\label{fig:exphybrid_movielens1b}
-\end{figure}
-
-%% END Hybrid amazon1 %%
-%% Hybrid amazon2 %%
-
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[page=1,width=1\textwidth]{exphybrid_movielens2}
-	\label{fig:exphybrid_movielens2a}
-\end{figure}
-
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[page=2,width=1\textwidth]{exphybrid_movielens2}
-	\caption{Porównanie algorytmu hybrydowego z kolaboratywnym na podstawie danych z bazy MovieLense. Skuteczność filtrowania z hybrydowego w zależności od liczby użytkowników i powtarzających się cech. Pogrubiona linia przedstawia działanie filtrowania kolaboratywnego.}
-	\label{fig:exphybrid_movielens2b}
-\end{figure}
-
-%% END Hybrid amazon2 %%
 
 %% Hybrid amazon1 %%
 
@@ -1398,55 +1475,7 @@ ABSTRACT EN
 
 	\todo{Wnioski}
 
-\chapter{CHAPTER 1}
-\section{SECTION}
-
-\def\alghoritm4{Alghoritm 4}
-\begin{breakablealgorithm}
-\caption{\alghoritm4}
-\myalgorithm{\alghoritm4}
-\label{aq:algStat}
-\begin{algorithmic}
-\STATE $T \leftarrow \text{text under analysis}$
-\FOR{each word $w \in T$}
-    \STATE $S_{w}\leftarrow FIND\_SENTIMENT(w) $
-    \IF {$S_{w}=POSITIVE$}
-        \STATE $Sentiment[POSITIVE]++$
-    \ELSIF{$S_{w}=NEGATIVE$}
-        \STATE $Sentiment[NEGATIVE]++$
-    \ELSE 
-        \STATE $Sentiment[NEUTRAL]++$
-    \ENDIF
-\ENDFOR
-%\STATE $x\in\{POSITIVE,NEGATIVE,NEUTRAL\}$
-\RETURN $\arg\max_x Sentiment[x]$
-\end{algorithmic}
-\end{breakablealgorithm}
-
-
-\def\schema1{Schema 1}
-\begin{figure}[ht]
-\caption{\schema1}
-\myfigure{\schema1}
-\label{fig:kdb}
-\begin{center}
-    <GRAPHIC>
-\end{center}
-\end{figure}
-
-\section{Section 2}
-
-\subsection{Subsection 1}
-
-\subsubsection{Subsubsection 1}
-
-\begin{mydef}
-\textbf{Definicja} - pierwsza
-\end{mydef}
-
-
-
- \clearpage
+\clearpage
 \appendix
 \chapter{Appendix 1}
 
