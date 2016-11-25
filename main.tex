@@ -939,7 +939,7 @@ ABSTRACT EN
 		W celu zbadania jakości algorytmów zaprojektowany został eksperyment. W pierwszej kolejności definiowane są wartości parametrów, zgodnie z którymi ma zostać wykonany kod algorytmów. 
 		Dla parametru podlegającemu testom definiowany jest zakres wartości. 
 		
-		Następnie do pamięci ładowany jest zestaw danych zawierający oceny elementów przez użytkowników oraz dodatkowe własności elementów (jeżeli testowanym algorytmem jest filtrowanie z analizą zawartości lub filtrowanie hybrydowe). Zbiór dzielony jest $k$ części, gdzie $k$ to liczba powtórzeń walidacji krzyżowej. Konstruowane jest $k$ par: zbiór testowy-zbiór treningowy. Rozmiar każdego zbioru testowego to $\frac{1}{k}$ liczby wszystkich ocen.
+		Następnie do pamięci ładowany jest zestaw danych zawierający oceny elementów przez użytkowników oraz dodatkowe własności elementów (jeżeli testowanym algorytmem jest filtrowanie z analizą zawartości lub filtrowanie hybrydowe). W celu przeprowadzenia walidacji krzyżowej zbiór dzielony jest $k$ części. Z nich konstruowanych jest następnie $k$ par: zbiór testowy-zbiór treningowy. Rozmiar każdego zbioru testowego jest równy rozmiarowi jednej części ($\frac{1}{k}$ liczby wszystkich ocen) a rozmiar zbioru treningowego to $k-1*$rozmiar części .
 		
 		Dla każdej pary zbiorów treningowego i testowego przeprowadzana jest nauka i sprawdzanie algorytmu. Z każdego przebiegu błędy są sumowane a na końcu wyciągana jest średnia.
 		
@@ -1058,9 +1058,10 @@ ABSTRACT EN
 				\label{fig:movielens_schema}
 			\end{figure}
 		
-		\subsubsection{Yahoo Music}
-			
-			YahooMusic to baza zawierająca oceny utworów muzycznych przez użytkowników portalu Yahoo! Music \cite{yahoomusicwebsite}. Baza zawiera 136,736 piosenek i 325,327,926 ocen wystawionych przez 1,823,179 unikalnych użytkowników, średnio 178 ocen na użytkownika i 2,379 ocen na piosenkę. Utwory oceniane są w skali od 1 do 5, gdzie 1 jest oceną najgorszą a 5 najlepszą.
+		\subsubsection{Amazon Meta}
+		AmazonMeta to baza danych zawierająca informacje na temat zakupu produktów ze sklepu internetowego amazon.com. Dane zostały zgromadzone w połowie roku 2006. Zawierają 548,552 produktów i 7,781,990 ocen produktów \cite{amazonmeta, leskovec2007dynamics}. Podobnie jak w przypadku bazy MovieLens, produkty ocenione są w skali od 1 do 5, gdzie 1 jest oceną najgorszą a 5 najlepszą. 
+		
+		Produkty opisane są takimi atrybutami jak nazwa, kategoria, ranking sprzedażowy, liczba produktów kupowanych jednocześnie, liczba recenzji i średnia ocena.  
 		
 	\section{Środowisko symulacyjne}
 	
@@ -1118,19 +1119,184 @@ ABSTRACT EN
 			\end{tabular}
 		\end{center}
 	
-	\section{Przeprowadzone eksperymenty}
-		
-		Dla wszystkie eksperymenty zostały przeprowadzone z 5-krotną walidacją krzyżową.
-		
-		\subsection{Dopasowanie parametrów sieci neuronowej}
+	\section{Eksperymentalne dopasowanie parametrów sieci neuronowej}
 	
-		Pierwszy przeprowadzony eksperyment miał na celu dopasowanie optymalnych parametrów sieci neuronowej dla filtrowania z analizą zawartości. Badania przeprowadzone zostały w oparciu o bazę MovieLense. 
+		Pierwszy przeprowadzony eksperyment miał na celu dopasowanie optymalnych parametrów sieci neuronowej dla filtrowania z analizą zawartości odrębnie dla baz MovieLens i AmazonMeta.
 		
-		\subsubsection{Dopasowanie maksymalnej liczby iteracji}
-		\label{exp:expiterations}
-		
-			Uczenie sieci neuronowej odbywa się w pętli tak długo, jak wartość błędu na wyjściu spadnie poniżej określonej wartości bądź przekroczona zostanie maksymalna ilość iteracji. Eksperyment miał na celu zbadanie wartości błędów w zależności od liczby iteracji.
+		\subsection{Strojenie sieci dla bazy MovieLens}
+		\label{ss:strojeniemovielens}
+			\subsubsection{Dopasowanie maksymalnej liczby iteracji}
+			\label{exp:expiterations}
+			
+				Uczenie sieci neuronowej odbywa się w pętli tak długo, jak wartość błędu na wyjściu spadnie poniżej określonej wartości bądź przekroczona zostanie maksymalna ilość iteracji. Eksperyment miał na celu zbadanie wartości błędów w zależności od liczby iteracji.
+					
+				\begin{center}
+					\begin{longtable}{ | R{7cm}   m{8cm} |}
+						\hline
+						\multicolumn{2}{|c|}{\textbf{Konfiguracja parametrów podstawowych}} \\
+						\hline
+						Baza danych: & MovieLens \\
+						Testowana metoda: & Filtrowanie z analizą zawartości \\
+						\hline
+						\multicolumn{2}{|c|}{\textbf{Konfiguracja filtrowania z analizą zawartości}} \\
+						\hline
+						Algorytm: & Sieć neuronowa uczona propagacją wsteczną, RPROP i algorytmem genetycznym \\
+						Maksymalna ilość iteracji nauki: & ? \\				
+						Ilość neuronów w warstwie ukrytej: & 1 \\
+						Współczynnik bezwładności: & 0.9 \\
+						Współczynnik uczenia: & 0.1 \\
+						Parametr funkcji aktywacji $\alpha$: & 2.0 \\
+						Rozmiar populacji: & 100 \\
+						Minimum powtarzających się cech: & 10 \\
+						Minimum ocenionych elementów przez użytkownika: & 10 \\
+						Ilość testowanych użytkowników: & 10 \\				
+						\hline
+						\caption{Konfiguracja dla eksperymentu maksymalnej liczby iteracji}
+					\end{longtable}
+				\end{center}
 				
+				Wyniki eksperymentu przedstawiają wykresy \ref{fig:expiterations_rmse} i \ref{fig:expiterations_time} oraz tabela \ref{tab:expiterations}.  
+				
+				\begin{longtable}[H]{r||rr|rr|rr}		
+					\label{tab:expiterations}		
+					\textbf{L. iter.} & \multicolumn{2}{c|}{\textbf{Propagacja wsteczna}}  & \multicolumn{2}{c|}{\textbf{RPROP}} & \multicolumn{2}{c}{\textbf{Algorytm genetyczny}}  \\
+					\hline
+					& \textbf{RMSE} & \textbf{czas} & \textbf{RMSE} & \textbf{czas} & \textbf{RMSE} & \textbf{czas} \\
+					\hline
+					100 & 1.03402 & 155 & 1.081065 & 139 & 1.042103 & 2824 \\
+					1000  & 1.022469 & 564 & 1.055915 & 463 & 1.033005 & 24831  \\
+					3000  & 1.035766 & 1770 & 1.054472 & 1581  & 1.038922 & 70579  \\
+					10000 & 1.058892  & 5444 & 1.081511  & 4567  & 1.068489 & 239775 \\
+					\caption{Zależność błędu algorytmu wyrażonego za pomocą RMSE i czasu wykonania od maksymalnej liczy iteracji (baza MovieLens).}
+				\end{longtable}
+				
+				\begin{figure}[!ht]
+					\centering
+					\includegraphics[width=0.7\textwidth]{expiterations_rmse}			
+					\caption{Wyniki eksperymentu testującego parametr maksymalnej liczby iteracji na bazie MovieLens. Wykres przedstawia zależność pomiędzy liczbą iteracji a błędem algorytmu wyrażonym za pomocą RMSE. Wraz ze wzrostem liczby iteracji wartość błędu maleje, jednakże po przekroczeniu pewnej wartości następuje ponowny wzrost. Wynika to z występowania zjawiska nadmiernego dopasowania (ang. \textit{overfitting}). }
+					\label{fig:expiterations_rmse}
+				\end{figure}
+			
+				\begin{figure}[!ht]
+					\centering
+					\includegraphics[width=0.7\textwidth]{expiterations_time}			
+					\caption{Wyniki eksperymentu testującego parametr maksymalnej liczby iteracji na bazie MovieLens. Wykres przedstawia zależność pomiędzy liczbą iteracji a czasem wykonania. Zgodnie z oczekiwaniami, czas wykonania jest wprost proporcjonalny do liczby iteracji. W trakcie tego eksperymentu potwierdzone zostały również przypuszczenia dotyczące prędkości działania algorytmów. Najszybszy okazał się RPROP, jednakże kosztem nieco większych błędów. Najgorzej wypadł algorytm genetyczny, który charakteryzował się bardzo szybko rosnącym czasem wykonania przy jednoczesnym nie najlepszym wynikiem RMSE. }
+					\label{fig:expiterations_time}
+				\end{figure}
+					
+			\subsubsection{Dopasowanie współczynnika bezwładności} 
+			\label{exp:momentum}
+				
+			Współczynnik bezwładności jest dodatkowym współczynnikiem mającym na celu ulepszenie działania algorytmu propagacji wstecznej (zob. \ref{sss:metoda_momentum}). Eksperyment miał na celu zbadanie dla jakich wartości osiągany jest najniższy błąd.
+			
+			Wyniki eksperymentu przedstawia wykres \ref{fig:expmomentum} i tabela \ref{tab:expmomentum}. 
+				
+			\begin{center}
+				\begin{longtable}[H]{ | R{7cm}   m{8cm} |}
+					\hline
+					\multicolumn{2}{|c|}{\textbf{Konfiguracja parametrów podstawowych}} \\
+					\hline
+					Baza danych: & MovieLens \\
+					Testowana metoda: & Filtrowanie z analizą zawartości \\
+					\hline
+					\multicolumn{2}{|c|}{\textbf{Konfiguracja filtrowania z analizą zawartości}} \\
+					\hline
+					Algorytm: & Sieć neuronowa uczona propagacją wsteczną \\
+					Maksymalna ilość iteracji nauki: & 1000 \\				
+					Ilość neuronów w warstwie ukrytej: & 2 \\
+					Współczynnik bezwładności: & ? \\
+					Współczynnik uczenia: & 0.1 \\
+					Parametr funkcji aktywacji $\alpha$: & 2.0 \\
+					Minimum powtarzających się cech: & 10 \\
+					Minimum ocenionych elementów przez użytkownika: & 100 \\
+					Ilość testowanych użytkowników: & 5 \\				
+					\hline
+					\caption{Konfiguracja dla eksperymentu dopasowania wartości współczynnika bezwładności}
+				\end{longtable}
+			\end{center}
+				
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=0.7\textwidth]{expmomentum}			
+				\caption{Wyniki eksperymentu testującego optymalną wartość współczynnika bezwładności na bazie MovieLens. Wykres przedstawia zależność pomiędzy wartością parametru a błędem RMSE. W zakresie wartości $[0,0.9]$ błąd oscyluje w granicach podobnych wartości z nieznaczną tendencją malejącą. Wyraźny skok na niekorzyść odnotowany jest dopiero przy momentum$=1$.}
+				\label{fig:expmomentum}
+			\end{figure}
+					
+			\begin{longtable}{r||rr}
+				\label{tab:expmomentum}
+				\textbf{Momentum} & \textbf{RMSE} & \textbf{MAE} \\
+				\hline
+				0        & 1.086007 & 0.855964 \\
+				0.1      & 1.069125 & 0.851345 \\
+				0.2      & 1.077596 & 0.860146 \\
+				0.3      & 1.074588 & 0.851467 \\
+				0.4      & 1.052529 & 0.8424   \\
+				0.5      & 1.063205 & 0.846198 \\
+				0.6      & 1.065994 & 0.856964 \\
+				0.7      & 1.046752 & 0.83462  \\
+				0.8      & 1.042235 & 0.842353 \\
+				0.9      & 1.046243 & 0.840319 \\
+				1        & 1.375336 & 1.071652 \\
+				\caption{Zależność błędu algorytmu RMSE od wartości współczynnika bezwładności (baza MovieLens).}
+			\end{longtable}
+						
+			\subsubsection{Dopasowanie rozmiaru populacji}
+		
+			Parametr rozmiaru populacji determinuje ilość osobników, jaka zostanie wygenerowana w każdej epoce przebiegu algorytmu genetycznego (zob. \ref{ss:algorytm_genetyczny}). Eksperyment miał na celu zbadanie korelacji pomiędzy rozmiarem populacji a błędem algorytmu rekomendacji. Mierzony jest również czas uczenia sieci neuronowej.
+			
+			\begin{center}
+				\begin{longtable}{ | R{7cm}   m{8cm} |}
+					\hline
+					\multicolumn{2}{|c|}{\textbf{Konfiguracja parametrów podstawowych}} \\
+					\hline
+					Baza danych: & MovieLens \\
+					Testowana metoda: & Filtrowanie z analizą zawartości \\
+					\hline
+					\multicolumn{2}{|c|}{\textbf{Konfiguracja filtrowania z analizą zawartości}} \\
+					\hline
+					Algorytm: & Sieć neuronowa uczona algorytmem genetycznym \\
+					Maksymalna ilość iteracji nauki: & 1000 \\				
+					Ilość neuronów w warstwie ukrytej: & 1 \\
+					Współczynnik bezwładności: & 0.9 \\
+					Współczynnik uczenia: & 0.1 \\
+					Parametr funkcji aktywacji $\alpha$: & 2.0 \\
+					Rozmiar populacji: & ? \\
+					Minimum powtarzających się cech: & 10 \\
+					Minimum ocenionych elementów przez użytkownika: & 10 \\
+					Ilość testowanych użytkowników: & 10 \\				
+					\hline
+					\caption{Konfiguracja dla eksperymentu dopasowania wielkości populacji}
+				\end{longtable}
+			\end{center}
+			
+			Wyniki eksperymentu przedstawia wykres \ref{fig:exppopulation} i tabela \ref{tab:exppopulation}. 
+			
+			\begin{figure}[!ht]
+				\centering
+				\includegraphics[width=0.7\textwidth]{exppopulation}
+				\caption{Wyniki eksperymentu testującego optymalny rozmiar populacji na bazie MovieLens. Wykres przedstawia zależność pomiędzy rozmiarem a błędem RMSE. 
+				Zgodnie z oczekiwaniami występuje dodatnia korelacja pomiędzy rozmiarem populacji a czasem wykonania i ujemna pomiędzy rozmiarem populacji a błędem algorytmu rekomendacji. 
+				Zależność pomiędzy rozmiarem populacji a czasem wykonania  jest liniowa, natomiast błąd maleje wykładniczo gdy populacja osiąga większe rozmiary. Optymalnym zatem jest przyjęcie rozmiaru populacji równej $100$.}
+				\label{fig:exppopulation}
+			\end{figure}
+			
+			\begin{longtable}{r||rrr}
+				\label{tab:exppopulation}
+				\centering
+				\textbf{Populacja} & \textbf{RMSE} & \textbf{MAE} & \textbf{czas} \\
+				\hline
+				10        & 1.056848 & 0.861325 & 2519                      \\
+				25        & 1.055562 & 0.859391 & 6015                      \\
+				50        & 1.041198 & 0.850866 & 11804                     \\
+				100       & 1.022943 & 0.825477 & \multicolumn{1}{r}{24062} \\
+				200       & 1.013656 & 0.816789 & 52751                     \\
+				\caption{Zależność błędu algorytmu RMSE od rozmiaru populacji.}
+			\end{longtable}
+			
+			\subsubsection{Dopasowanie ilości neuronów w warstwie ukrytej}
+			
+			Eksperyment miał na celu zbadanie dla jakiej liczby neuronów w warstwie pośredniej algorytm osiąga optymalne rezultaty (zob. \ref{ss:strukturasiecineuronowej}). Wyniki eksperymentu przedstawia wykres \ref{fig:exphiddenneural} i tabela \ref{tab:exphiddenneural}. 
+		
 			\begin{center}
 				\begin{longtable}{ | R{7cm}   m{8cm} |}
 					\hline
@@ -1142,246 +1308,212 @@ ABSTRACT EN
 					\multicolumn{2}{|c|}{\textbf{Konfiguracja filtrowania z analizą zawartości}} \\
 					\hline
 					Algorytm: & Sieć neuronowa uczona propagacją wsteczną, RPROP i algorytmem genetycznym \\
-					Maksymalna ilość iteracji nauki: & ? \\				
-					Ilość neuronów w warstwie ukrytej: & 1 \\
+					Maksymalna ilość iteracji nauki: & 1000 \\				
+					Ilość neuronów w warstwie ukrytej: & ? \\
 					Współczynnik bezwładności: & 0.9 \\
 					Współczynnik uczenia: & 0.1 \\
 					Parametr funkcji aktywacji $\alpha$: & 2.0 \\
-					Rozmiar populacji: & 100 \\
 					Minimum powtarzających się cech: & 10 \\
 					Minimum ocenionych elementów przez użytkownika: & 10 \\
-					Ilość testowanych użytkowników: & 10 \\				
+					Ilość testowanych użytkowników: & 20 \\				
 					\hline
-					\caption{Konfiguracja dla eksperymentu maksymalnej liczby iteracji}
+					\caption{Konfiguracja dla eksperymentu dopasowania rozmiaru ukrytej warstwy neuronów}
 				\end{longtable}
 			\end{center}
 			
-			Wyniki eksperymentu przedstawiają wykresy \ref{fig:expiterations_rmse} i \ref{fig:expiterations_time} oraz tabela \ref{tab:expiterations}.  
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=0.7\textwidth]{exphiddenneural}
+				\caption{Wyniki eksperymentu testującego optymalny rozmiar ukrytej warstwy neuronów na bazie MovieLens. Wykres przedstawia zależność pomiędzy ilością neuronów a błędem RMSE. Wyniki prezentują się odmiennie w zależności od typu algorytmu wykorzystanego do uczenia sieci. W przypadku algorytmów propagacji wstecznej i RPROP występuje dodatnia korelacja pomiędzy rozmiarem warstwy ukrytej a błędem algorytmu rekomendacji. Dla algorytmu BackProp optymalny rezultat osiągnięty został dla zaledwie jednego neuronu w warstwie ukrytej, dla algorytmu RPROP dla pięciu neuronów. W tym ostatnim przypadku poprawa znajduje się jednak na marginesie błędu statystycznego. W przypadku algorytmu genetycznego, niezależnie od ilości neuronów wynik oscyluje na podobnym poziomie w zakresie testowanych wartości.}
+				\label{fig:exphiddenneural}
+			\end{figure}
 			
-			\begin{longtable}{r||rr|rr|rr}		
-				\label{tab:expiterations}		
+			\begin{longtable}{r||rr|rr|rr}
+				\label{tab:exphiddenneural}
+				\centering
+				\textbf{L. neuronów} &  \multicolumn{2}{c|}{\textbf{Propagacja wsteczna}}  & \multicolumn{2}{c|}{\textbf{RPROP}} & \multicolumn{2}{c}{\textbf{Alg. genetyczny}}  \\
+				\hline
+				& \textbf{RMSE} & \textbf{MAE} & \textbf{RMSE} & \textbf{MAE} & \textbf{RMSE} & \textbf{MAE} \\
+				\hline
+				1                                   & 1.013503                          & 0.811766 & 1.068271 & 0.846588 & 1.042597 & 0.836481 \\
+				2                                   & 1.013808                          & 0.816021 & 1.100579 & 0.862516 & 1.045096 & 0.836361 \\
+				5                                   & 1.002053                          & 0.807083 & 1.197693 & 0.93349  & 1.038662 & 0.831887 \\
+				10                                  & 1.589821                          & 1.232048 & 1.213635 & 0.9478   & 1.046554 & 0.835417 \\
+				20                                  & 1.812912                          & 1.458733 & 1.199205 & 0.931307 & 1.039479 & 0.833191 \\
+				50                                  & 1.812912                          & 1.458733 & 1.891729 & 1.562207 & 1.044693 & 0.837189\\		
+				\caption{Zależność błędu algorytmu RMSE od rozmiaru ukrytej warstwy neuronowej (baza MovieLens).}
+			\end{longtable}
+		
+			
+			\subsubsection{Dopasowanie współczynnika uczenia}
+			
+				\todo{(NA KOŃCU, BADANIA) Czy trzeba?}
+			
+			\subsubsection{Dopasowanie wartości alfa}
+			
+				\todo{(NA KOŃCU, BADANIA) Czy trzeba}
+	
+			\subsubsection{Podsumowanie}
+	
+			Bazując na przeprowadzonych eksperymentach zostały zdefiniowane optymalne parametry algorytmu filtrowania z analizą zawartości. Zostały one przedstawione w tabeli \ref{tab:optimummovielens}.
+		
+			\begin{center}
+				\begin{longtable}{ | R{7cm}   m{8cm} |}
+					\hline				
+					\multicolumn{2}{|c|}{\textbf{Optymalna konfiguracja filtrowania z analizą zawartości dla bazy MovieLens}} \\
+					\hline
+					Maksymalna ilość iteracji nauki: & 1000 \\				
+					Współczynnik bezwładności: & 0.9 \\
+					Rozmiar populacji: & 100 \\
+					Ilość neuronów w warstwie ukrytej: & 1 \\
+					Współczynnik uczenia: & 0.1 \\
+					Parametr funkcji aktywacji $\alpha$: & 2.0 \\						
+					\hline
+					\caption{Konfiguracja dla eksperymentu dopasowania rozmiaru ukrytej warstwy neuronów}
+					\label{tab:optimummovielens}
+				\end{longtable}
+			\end{center}
+		
+		\subsection{Strojenie sieci dla bazy AmazonMeta}
+		\label{ss:strojenieamazonmeta}
+		
+			W analogiczny sposób zostały przeprowadzone badania dla bazy AmazonMeta. Konfiguracja wstępna wszystkich eksperymentów była taka sama jak dla bazy MovieLens (zob. \ref{ss:strojeniemovielens}).
+		
+			\subsubsection{Dopasowanie maksymalnej liczby iteracji}
+			
+			Eksperyment miał na celu zbadanie wartości błędów w zależności od liczby iteracji. Wyniki eksperymentu przedstawiają wykresy \ref{fig:am_expiterations_rmse} i \ref{fig:am_expiterations_time} oraz tabela \ref{tab:am_expiterations}.  
+			
+			\begin{figure}[!ht]
+				\centering
+				\includegraphics[width=0.7\textwidth]{am_expiterations_rmse}		
+				\caption{Wyniki eksperymentu testującego parametr maksymalnej liczby iteracji na bazie AmazonMeta. Wykres przedstawia zależność pomiędzy liczbą iteracji a błędem algorytmu wyrażonym za pomocą RMSE. Początkowo wartość błędu szybko maleje, jednakże wraz ze wzrostem liczby iteracji kąty nachylenia kolejnych odcinków krzywej ulegają zwiększeniu. Biorąc pod uwagę rosnący liniowo czas wykonania (zob. \ref{fig:am_expiterations_time}) w pewnym momencie koszt w postaci czasu wykonania przewyższa korzyść wynikającą z niższego błędu RMSE. W zakresach liczby iteracji od 100 do 2000 występują nieznaczne zachwiania, które znajdują się w zakresie błędu statystycznego. }
+				\label{fig:am_expiterations_rmse}
+			\end{figure}
+			
+			\begin{figure}[!ht]
+				\centering
+				\includegraphics[width=0.7\textwidth]{am_expiterations_time}			
+				\caption{Wyniki eksperymentu testującego parametr maksymalnej liczby iteracji na bazie AmazonMeta. Wykres przedstawia zależność pomiędzy liczbą iteracji a czasem wykonania. Czas wykonania jest wprost proporcjonalny do liczby iteracji. }
+				\label{fig:am_expiterations_time}
+			\end{figure}
+		
+			\begin{longtable}[H]{r||rr|rr|rr}		
+				\label{tab:am_expiterations}		
 				\textbf{L. iter.} & \multicolumn{2}{c|}{\textbf{Propagacja wsteczna}}  & \multicolumn{2}{c|}{\textbf{RPROP}} & \multicolumn{2}{c}{\textbf{Algorytm genetyczny}}  \\
 				\hline
 				& \textbf{RMSE} & \textbf{czas} & \textbf{RMSE} & \textbf{czas} & \textbf{RMSE} & \textbf{czas} \\
 				\hline
-				100 & 1.03402 & 155 & 1.081065 & 139 & 1.042103 & 2824 \\
-				1000  & 1.022469 & 564 & 1.055915 & 463 & 1.033005 & 24831  \\
-				3000  & 1.035766 & 1770 & 1.054472 & 1581  & 1.038922 & 70579  \\
-				10000 & 1.058892  & 5444 & 1.081511  & 4567  & 1.068489 & 239775 \\
-				\caption{Zależność błędu algorytmu wyrażonego za pomocą RMSE i czasu wykonania od maksymalnej liczy iteracji.}
+				100   & 0.938058 & 564   & 0.930788 & 585   & 0.931064 & 10641   \\
+				1000  & 0.935423 & 3289  & 0.93228  & 3784  & 0.931359 & 108559  \\
+				3000  & 0.934419 & 9915  & 0.932073 & 11052 & 0.930428 & 719324  \\
+				10000 & 0.931222 & 38917 & 0.93049  & 45258 & 0.929965 & 3229148 \\
+				\caption{Zależność błędu algorytmu wyrażonego za pomocą RMSE i czasu wykonania od maksymalnej liczy iteracji (baza AmazonMeta).}
 			\end{longtable}
 			
-			\begin{figure}[!ht]
+			\subsubsection{Dopasowanie współczynnika bezwładności} 
+			
+			Eksperyment miał na celu zbadanie dla jakich wartości współczynnika bezwładności osiągany jest najniższy błąd. Wyniki eksperymentu przedstawia wykres \ref{fig:am_expmomentum} i tabela \ref{tab:am_expmomentum}. 
+			
+			\begin{figure}[H]
 				\centering
-				\includegraphics[width=0.7\textwidth]{expiterations_rmse}			
-				\caption{Wyniki eksperymentu testującego parametr maksymalnej liczby iteracji. Wykres przedstawia zależność pomiędzy liczbą iteracji a błędem algorytmu wyrażonym za pomocą RMSE. Wraz ze wzrostem liczby iteracji wartość błędu maleje, jednakże po przekroczeniu pewnej wartości następuje ponowny wzrost. Wynika to z występowania zjawiska nadmiernego dopasowania (ang. \textit{overfitting}). }
-				\label{fig:expiterations_rmse}
+				\includegraphics[width=0.7\textwidth]{am_expmomentum}			
+				\caption{Wyniki eksperymentu testującego optymalną wartość współczynnika bezwładności na bazie AmazonMeta. Wykres przedstawia zależność pomiędzy wartością parametru a błędem RMSE. W zakresie wartości $[0,0.9]$ błąd oscyluje w granicach podobnych wartości z nieznaczną tendencją malejącą. Wyraźny skok na niekorzyść odnotowany jest dopiero przy momentum$=1$.}
+				\label{fig:am_expmomentum}
 			\end{figure}
-		
-			\begin{figure}[!ht]
-				\centering
-				\includegraphics[width=0.7\textwidth]{expiterations_time}			
-				\caption{Wyniki eksperymentu testującego parametr maksymalnej liczby iteracji. Wykres przedstawia zależność pomiędzy liczbą iteracji a czasem wykonania. Zgodnie z oczekiwaniami, czas wykonania jest wprost proporcjonalny do liczby iteracji. W trakcie tego eksperymentu potwierdzone zostały również przypuszczenia dotyczące prędkości działania algorytmów. Najszybszy okazał się RPROP, jednakże kosztem nieco większych błędów. Najgorzej wypadł algorytm genetyczny, który charakteryzował się bardzo szybko rosnącym czasem wykonania przy jednoczesnym nie najlepszym wynikiem RMSE. }
-				\label{fig:expiterations_time}
-			\end{figure}
-				
-		\subsubsection{Dopasowanie współczynnika bezwładności} 
-		\label{exp:momentum}
 			
-		Współczynnik bezwładności jest dodatkowym współczynnikiem mającym na celu ulepszenie działania algorytmu propagacji wstecznej (zob. \ref{sss:metoda_momentum}). Eksperyment miał na celu zbadanie dla jakich wartości osiągany jest najniższy błąd.
-		
-		Wyniki eksperymentu przedstawia wykres \ref{fig:expmomentum} i tabela \ref{tab:expmomentum}. 
+			\begin{longtable}{r||rr}
+				\label{tab:am_expmomentum}
+				\textbf{Momentum} & \textbf{RMSE} & \textbf{MAE} \\
+				\hline
+				0   & 0.932621 & 0.712677 \\
+				0.1 & 0.932369 & 0.711739 \\
+				0.2 & 0.9366   & 0.71353  \\
+				0.3 & 0.931794 & 0.718193 \\
+				0.4 & 0.934477 & 0.716904 \\
+				0.5 & 0.932799 & 0.717865 \\
+				0.6 & 0.932026 & 0.709617 \\
+				0.7 & 0.93268  & 0.714115 \\
+				0.8 & 0.934683 & 0.714445 \\
+				0.9 & 0.934906 & 0.716833 \\
+				1   & 1.135473 & 0.8761   \\
+				\caption{Zależność błędu algorytmu RMSE od wartości współczynnika bezwładności (baza AmazonMeta).}
+			\end{longtable}
 			
-		\begin{center}
-			\begin{longtable}{ | R{7cm}   m{8cm} |}
-				\hline
-				\multicolumn{2}{|c|}{\textbf{Konfiguracja parametrów podstawowych}} \\
-				\hline
-				Baza danych: & MovieLens \\
-				Testowana metoda: & Filtrowanie z analizą zawartości \\
-				\hline
-				\multicolumn{2}{|c|}{\textbf{Konfiguracja filtrowania z analizą zawartości}} \\
-				\hline
-				Algorytm: & Sieć neuronowa uczona propagacją wsteczną \\
-				Maksymalna ilość iteracji nauki: & 1000 \\				
-				Ilość neuronów w warstwie ukrytej: & 2 \\
-				Współczynnik bezwładności: & ? \\
-				Współczynnik uczenia: & 0.1 \\
-				Parametr funkcji aktywacji $\alpha$: & 2.0 \\
-				Minimum powtarzających się cech: & 10 \\
-				Minimum ocenionych elementów przez użytkownika: & 100 \\
-				Ilość testowanych użytkowników: & 5 \\				
-				\hline
-				\caption{Konfiguracja dla eksperymentu dopasowania wartości współczynnika bezwładności}
-			\end{longtable}
-		\end{center}
+			\subsubsection{Dopasowanie rozmiaru populacji}
+			
+			 Eksperyment miał na celu zbadanie korelacji pomiędzy rozmiarem populacji a błędem algorytmu rekomendacji. Wyniki eksperymentu przedstawia wykres \ref{fig:am_exppopulation} i tabela \ref{tab:am_exppopulation}. 
+			 
+			 \begin{figure}[!ht]
+			 	\centering
+			 	\includegraphics[width=0.7\textwidth]{am_exppopulation}
+			 	\caption{Wyniki eksperymentu testującego optymalny rozmiar populacji na bazie AmazonMeta. Wykres przedstawia zależność pomiędzy rozmiarem a błędem RMSE. 
+		 		Zgodnie z oczekiwaniami występuje dodatnia korelacja pomiędzy rozmiarem populacji a czasem wykonania i ujemna pomiędzy rozmiarem populacji a błędem algorytmu rekomendacji. 
+		 		Zależność pomiędzy rozmiarem populacji a czasem wykonania  jest liniowa, natomiast błąd maleje wykładniczo gdy populacja osiąga większe rozmiary. Optymalnym zatem jest przyjęcie rozmiaru populacji równej $50$ tak, aby czas wykonania nie przekraczał 200000ms.}
+			 	\label{fig:am_exppopulation}
+			 \end{figure}
+			
+			\todo{wstawić tabelkę}
+			
+			\subsubsection{Dopasowanie ilości neuronów w warstwie ukrytej}
+			
+				Eksperyment miał na celu zbadanie dla jakiej liczby neuronów w warstwie pośredniej algorytm osiąga optymalne rezultaty. Wyniki eksperymentu przedstawiają wykresy \ref{fig:am_exphiddenneural_rmse} i \ref{fig:am_exphiddenneural_time} oraz tabela \ref{tab:am_exphiddenneural}. 
+			
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=0.7\textwidth]{am_exphiddenneural_rmse}
+					\caption{Wyniki eksperymentu testującego optymalny rozmiar ukrytej warstwy neuronów na bazie AmazonMeta. Wykres przedstawia zależność pomiędzy ilością neuronów a błędem RMSE. W przypadku algorytmów propagacji wstecznej i RPROP występuje dodatnia korelacja pomiędzy rozmiarem warstwy ukrytej a błędem algorytmu rekomendacji. Dla algorytmu BackProp optymalne wyniki osiągnięte zostały dla zaledwie liczby neuronów w warstwie ukrytej nie przekraczającej 5, dla algorytmu RPROP dla nie przekraczającej 20. W przypadku algorytmu genetycznego, niezależnie od ilości neuronów wynik oscyluje na podobnym poziomie w zakresie testowanych wartości.}
+					\label{fig:am_exphiddenneural_rmse}
+				\end{figure}
 				
-		\begin{figure}[!ht]
-			\centering
-			\includegraphics[width=0.7\textwidth]{expmomentum}			
-			\caption{Wyniki eksperymentu testującego optymalną wartość współczynnika bezwładności. Wykres przedstawia zależność pomiędzy wartością parametru a błędem RMSE. W zakresie wartości $[0,0.9]$ błąd oscyluje w granicach podobnych wartości z nieznaczną tendencją malejącą. Wyraźny skok na niekorzyść odnotowany jest dopiero przy momentum$=1$.}
-			\label{fig:expmomentum}
-		\end{figure}
-				
-		\begin{longtable}{r||rr}
-			\label{tab:expmomentum}
-			\textbf{Momentum} & \textbf{RMSE} & \textbf{MAE} \\
-			\hline
-			0        & 1.086007 & 0.855964 \\
-			0.1      & 1.069125 & 0.851345 \\
-			0.2      & 1.077596 & 0.860146 \\
-			0.3      & 1.074588 & 0.851467 \\
-			0.4      & 1.052529 & 0.8424   \\
-			0.5      & 1.063205 & 0.846198 \\
-			0.6      & 1.065994 & 0.856964 \\
-			0.7      & 1.046752 & 0.83462  \\
-			0.8      & 1.042235 & 0.842353 \\
-			0.9      & 1.046243 & 0.840319 \\
-			1        & 1.375336 & 1.071652 \\
-			\caption{Zależność błędu algorytmu RMSE od wartości współczynnika bezwładności.}
-		\end{longtable}
-					
-		\subsubsection{Dopasowanie rozmiaru populacji}
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=0.7\textwidth]{am_exphiddenneural_time}
+					\caption{Wyniki eksperymentu testującego optymalny rozmiar ukrytej warstwy neuronów na bazie AmazonMeta. Wykres przedstawia zależność pomiędzy ilością neuronów a czasem wykonania. Czas wykonania rośnie liniowo proporcjonalnie do ilości neuronów. W związku z tym oraz biorąc pod uwagę wykres \ref{fig:am_exphiddenneural_rmse} optymalnym jest ustalenie liczby neuronów w warstwie ukrytej na 1.}
+					\label{fig:am_exphiddenneural_time}
+				\end{figure}
 	
-		Parametr rozmiaru populacji determinuje ilość osobników, jaka zostanie wygenerowana w każdej epoce przebiegu algorytmu genetycznego (zob. \ref{ss:algorytm_genetyczny}). Eksperyment miał na celu zbadanie korelacji pomiędzy rozmiarem populacji a błędem algorytmu rekomendacji. Mierzony jest również czas uczenia sieci neuronowej.
-		
-		\begin{center}
-			\begin{longtable}{ | R{7cm}   m{8cm} |}
-				\hline
-				\multicolumn{2}{|c|}{\textbf{Konfiguracja parametrów podstawowych}} \\
-				\hline
-				Baza danych: & MovieLens \\
-				Testowana metoda: & Filtrowanie z analizą zawartości \\
-				\hline
-				\multicolumn{2}{|c|}{\textbf{Konfiguracja filtrowania z analizą zawartości}} \\
-				\hline
-				Algorytm: & Sieć neuronowa uczona algorytmem genetycznym \\
-				Maksymalna ilość iteracji nauki: & 1000 \\				
-				Ilość neuronów w warstwie ukrytej: & 1 \\
-				Współczynnik bezwładności: & 0.9 \\
-				Współczynnik uczenia: & 0.1 \\
-				Parametr funkcji aktywacji $\alpha$: & 2.0 \\
-				Rozmiar populacji: & ? \\
-				Minimum powtarzających się cech: & 10 \\
-				Minimum ocenionych elementów przez użytkownika: & 10 \\
-				Ilość testowanych użytkowników: & 10 \\				
-				\hline
-				\caption{Konfiguracja dla eksperymentu dopasowania wielkości populacji}
-			\end{longtable}
-		\end{center}
-		
-		Wyniki eksperymentu przedstawia wykres \ref{fig:exppopulation} i tabela \ref{tab:exppopulation}. 
-		
-		\begin{figure}[!ht]
-			\centering
-			\includegraphics[width=0.7\textwidth]{exppopulation}
-			\caption{Wyniki eksperymentu testującego optymalny rozmiar populacji. Wykres przedstawia zależność pomiędzy rozmiarem a błędem RMSE. 
-			Zgodnie z oczekiwaniami występuje dodatnia korelacja pomiędzy rozmiarem populacji a czasem wykonania i ujemna pomiędzy rozmiarem populacji a błędem algorytmu rekomendacji. 
-			Zależność pomiędzy rozmiarem populacji a czasem wykonania  jest liniowa, natomiast błąd maleje wykładniczo gdy populacja osiąga większe rozmiary. Optymalnym zatem jest przyjęcie rozmiaru populacji równej $100$.}
-			\label{fig:exppopulation}
-		\end{figure}
-		
-		\begin{longtable}{r||rrr}
-			\label{tab:exppopulation}
-			\centering
-			\textbf{Populacja} & \textbf{RMSE} & \textbf{MAE} & \textbf{czas} \\
-			\hline
-			10        & 1.056848 & 0.861325 & 2519                      \\
-			25        & 1.055562 & 0.859391 & 6015                      \\
-			50        & 1.041198 & 0.850866 & 11804                     \\
-			100       & 1.022943 & 0.825477 & \multicolumn{1}{r}{24062} \\
-			200       & 1.013656 & 0.816789 & 52751                     \\
-			\caption{Zależność błędu algorytmu RMSE od rozmiaru populacji.}
-		\end{longtable}
-		
-		\pagebreak
-		
-		\subsubsection{Dopasowanie ilości neuronów w warstwie ukrytej}
-		
-		Eksperyment miał na celu zbadanie dla jakiej liczby neuronów w warstwie pośredniej algorytm osiąga optymalne rezultaty (zob. \ref{ss:strukturasiecineuronowej}).
-	
-		\begin{center}
-			\begin{longtable}{ | R{7cm}   m{8cm} |}
-				\hline
-				\multicolumn{2}{|c|}{\textbf{Konfiguracja parametrów podstawowych}} \\
-				\hline
-				Baza danych: & MovieLens \\
-				Testowana metoda: & Filtrowanie z analizą zawartości \\
-				\hline
-				\multicolumn{2}{|c|}{\textbf{Konfiguracja filtrowania z analizą zawartości}} \\
-				\hline
-				Algorytm: & Sieć neuronowa uczona propagacją wsteczną, RPROP i algorytmem genetycznym \\
-				Maksymalna ilość iteracji nauki: & 1000 \\				
-				Ilość neuronów w warstwie ukrytej: & ? \\
-				Współczynnik bezwładności: & 0.9 \\
-				Współczynnik uczenia: & 0.1 \\
-				Parametr funkcji aktywacji $\alpha$: & 2.0 \\
-				Minimum powtarzających się cech: & 10 \\
-				Minimum ocenionych elementów przez użytkownika: & 10 \\
-				Ilość testowanych użytkowników: & 20 \\				
-				\hline
-				\caption{Konfiguracja dla eksperymentu dopasowania rozmiaru ukrytej warstwy neuronów}
-			\end{longtable}
-		\end{center}
-	
-		Wyniki eksperymentu przedstawia wykres \ref{fig:exphiddenneural} i tabela \ref{tab:exphiddenneural}. 
-		
-		\begin{figure}[H]
-			\centering
-			\includegraphics[width=0.7\textwidth]{exphiddenneural}
-			\caption{Wyniki eksperymentu testującego optymalny rozmiar ukrytej warstwy neuronów. Wykres przedstawia zależność pomiędzy ilością neuronów a błędem RMSE. Wyniki prezentują się odmiennie w zależności od typu algorytmu wykorzystanego do uczenia sieci. W przypadku algorytmów propagacji wstecznej i RPROP występuje dodatnia korelacja pomiędzy rozmiarem warstwy ukrytej a błędem algorytmu rekomendacji. Dla algorytmu BackProp optymalny rezultat osiągnięty został dla zaledwie jednego neuronu w warstwie ukrytej, dla algorytmu RPROP dla pięciu neuronów. W tym ostatnim przypadku poprawa znajduje się jednak na marginesie błędu statystycznego. W przypadku algorytmu genetycznego, niezależnie od ilości neuronów wynik oscyluje na podobnym poziomie w zakresie testowanych wartości.}
-			\label{fig:exphiddenneural}
-		\end{figure}
-		
-		\begin{longtable}{r||rr|rr|rr}
-			\label{tab:exphiddenneural}
-			\centering
-			\textbf{L. neuronów} &  \multicolumn{2}{c|}{\textbf{Propagacja wsteczna}}  & \multicolumn{2}{c|}{\textbf{RPROP}} & \multicolumn{2}{c}{\textbf{Alg. genetyczny}}  \\
-			\hline
-			& \textbf{RMSE} & \textbf{MAE} & \textbf{RMSE} & \textbf{MAE} & \textbf{RMSE} & \textbf{MAE} \\
-			\hline
-			1                                   & 1.013503                          & 0.811766 & 1.068271 & 0.846588 & 1.042597 & 0.836481 \\
-			2                                   & 1.013808                          & 0.816021 & 1.100579 & 0.862516 & 1.045096 & 0.836361 \\
-			5                                   & 1.002053                          & 0.807083 & 1.197693 & 0.93349  & 1.038662 & 0.831887 \\
-			10                                  & 1.589821                          & 1.232048 & 1.213635 & 0.9478   & 1.046554 & 0.835417 \\
-			20                                  & 1.812912                          & 1.458733 & 1.199205 & 0.931307 & 1.039479 & 0.833191 \\
-			50                                  & 1.812912                          & 1.458733 & 1.891729 & 1.562207 & 1.044693 & 0.837189\\		
-			\caption{Zależność błędu algorytmu RMSE od rozmiaru ukrytej warstwy neuronowej.}
-		\end{longtable}
-	
-		
-		\subsubsection{Dopasowanie współczynnika uczenia}
-		
+				\begin{longtable}{r||rr|rr|rr}
+					\label{tab:am_exphiddenneural}
+					\centering
+					\textbf{L. neuronów} &  \multicolumn{2}{c|}{\textbf{Propagacja wsteczna}}  & \multicolumn{2}{c|}{\textbf{RPROP}} & \multicolumn{2}{c}{\textbf{Alg. genetyczny}}  \\
+					\hline
+					& \textbf{RMSE} & \textbf{czas} & \textbf{RMSE} & \textbf{czas} & \textbf{RMSE} & \textbf{czas} \\
+					\hline
+					1  & 0.936219 & 3817  & 0.930452 & 2854  & 0.930968 & 89939   \\
+					2  & 0.935587 & 4680  & 0.930152 & 3629  & 0.930092 & 167708  \\
+					5  & 0.933983 & 7947  & 0.929796 & 6977  & 0.930443 & 471038  \\
+					10 & 1.171907 & 14826 & 0.930305 & 11182 & 0.930253 & 651918  \\
+					20 & 1.32946  & 25576 & 0.930192 & 22295 & 0.930148 & 937888  \\
+					50 & 1.32946  & 62574 & 1.32946  & 48140 & 0.92978  & 2055270 \\	
+					\caption{Zależność błędu algorytmu RMSE i czasu wykonania od rozmiaru ukrytej warstwy neuronowej (baza AmazonMeta).}
+				\end{longtable}
+			
+			\subsubsection{Dopasowanie współczynnika uczenia}
+			\todo{(NA KOŃCU, BADANIA) Czy trzeba?}			
+			\subsubsection{Dopasowanie wartości alfa}
 			\todo{(NA KOŃCU, BADANIA) Czy trzeba?}
+			\subsubsection{Podsumowanie}
 		
-		\subsubsection{Dopasowanie wartości alfa}
+			Bazując na przeprowadzonych eksperymentach zostały zdefiniowane optymalne parametry algorytmu filtrowania z analizą zawartości. Zostały one przedstawione w tabeli \ref{tab:am_optimummovielens}.
+			
+			\begin{center}
+				\begin{longtable}{ | R{7cm}   m{8cm} |}
+					\hline				
+					\multicolumn{2}{|c|}{\textbf{Optymalna konfiguracja filtrowania z analizą zawartości dla bazy AmazonMeta}} \\
+					\hline
+					Maksymalna ilość iteracji nauki: & 1000 \\				
+					Współczynnik bezwładności: & 0 \\
+					Rozmiar populacji: & 50 \\
+					Ilość neuronów w warstwie ukrytej: & 1 \\
+					Współczynnik uczenia: & 0.1 \\
+					Parametr funkcji aktywacji $\alpha$: & 2.0 \\						
+					\hline
+					\caption{Konfiguracja dla eksperymentu dopasowania rozmiaru ukrytej warstwy neuronów}
+					\label{tab:am_optimummovielens}
+				\end{longtable}
+			\end{center}
 		
-			\todo{(NA KOŃCU, BADANIA) Czy trzeba}
-
-		\subsubsection{Podsumowanie}
-
-		Bazując na przeprowadzonych eksperymentach zostały zdefiniowane optymalne parametry algorytmu filtrowania z analizą zawartości. Zostały one przedstawione w tabeli \ref{tab:optimummovielens}.
-		
-		\begin{center}
-			\begin{longtable}{ | R{7cm}   m{8cm} |}
-				\hline				
-				\multicolumn{2}{|c|}{\textbf{Optymalna konfiguracja filtrowania z analizą zawartości dla bazy MovieLens}} \\
-				\hline
-				Maksymalna ilość iteracji nauki: & 1000 \\				
-				Współczynnik bezwładności: & 0.9 \\
-				Rozmiar populacji: & 100 \\
-				Ilość neuronów w warstwie ukrytej: & 1 \\
-				Współczynnik uczenia: & 0.1 \\
-				Parametr funkcji aktywacji $\alpha$: & 2.0 \\						
-				\hline
-				\caption{Konfiguracja dla eksperymentu dopasowania rozmiaru ukrytej warstwy neuronów}
-				\label{tab:optimummovielens}
-			\end{longtable}
-		\end{center}
-
-		\todo{To samo dla AmazonMeta}
-		
-		\subsection{Porównanie zaproponowanych algorytmów hybrydowych z filtrowaniem z analizą zawartości i filtrowaniem kolaboratywnym}
+		\section{Eksperymentalne porównanie zaproponowanych algorytmów hybrydowych z filtrowaniem z analizą zawartości i filtrowaniem kolaboratywnym}
 		
 		Eksperymenty miały na celu porównanie efektywności zaproponowanych algorytmów hybrydowych z samym filtrowaniem kolaboratywnym i z samym filtrowaniem z analizą zawartości. 
 		
@@ -1389,7 +1521,9 @@ ABSTRACT EN
 		
 		W pierwszym eksperymencie parametrem, który ulegał modyfikacji był parametr określający minimum powtarzających się cech ocenianych elementów. W drugim eksperymencie modyfikowana była liczba użytkowników brana pod uwagę przez filtrowanie kolaboratywne. 
 		
-		\subsubsection{Eksperyment pierwszy - efektywność algorytmów w zależności od minimum powtarzających się cech elementów}
+		W każdym przypadku sieć neuronowa skonfigurowana została w sposób optymalny wynikający z eksperymentów przeprowadzonych w sekcjach \ref{ss:strojeniemovielens} i \ref{ss:strojenieamazonmeta}.
+		
+		\subsection{Eksperyment pierwszy - efektywność algorytmów w zależności od minimum powtarzających się cech elementów}
 		
 		%% Hybrid movielens1 %%
 		
@@ -1465,8 +1599,6 @@ ABSTRACT EN
 
 %% END Hybrid amazon2 %%
 
-		\subsubsection{Badania na bazie YahooMusic}
-	
 
 		\subsection{Analiza statystyczna wyników}		\todo{(PÓŹNIEJ) Analiza statystyczna wyników, PQStat}
 

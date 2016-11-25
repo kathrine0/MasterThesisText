@@ -38,10 +38,12 @@
 \contentsline {section}{\numberline {4.2\relax .\kern .5em }\IeC {\'S}rodowisko symulacyjne}{32}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1\relax .\kern .5em }Oprogramowanie}{32}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2\relax .\kern .5em }Sprz\IeC {\k e}t}{34}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3\relax .\kern .5em }Przeprowadzone eksperymenty}{34}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1\relax .\kern .5em }Dopasowanie parametr\IeC {\'o}w sieci neuronowej}{34}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2\relax .\kern .5em }Por\IeC {\'o}wnanie zaproponowanych algorytm\IeC {\'o}w hybrydowych z filtrowaniem z analiz\IeC {\k a} zawarto\IeC {\'s}ci i filtrowaniem kolaboratywnym}{41}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3\relax .\kern .5em }Analiza statystyczna wynik\IeC {\'o}w}{42}{subsection.4.3.3}
-\contentsline {chapter}{Rozdzia\l \ 5\relax .\kern .5em Wnioski}{51}{section*.69}
-\contentsline {chapter}{Dodatek\ A\relax .\kern .5em Appendix 1}{53}{section*.71}
-\contentsline {chapter}{Bibliografia}{55}{section*.73}
+\contentsline {section}{\numberline {4.3\relax .\kern .5em }Eksperymentalne dopasowanie parametr\IeC {\'o}w sieci neuronowej}{34}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1\relax .\kern .5em }Strojenie sieci dla bazy MovieLens}{34}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2\relax .\kern .5em }Strojenie sieci dla bazy AmazonMeta}{41}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4\relax .\kern .5em }Eksperymentalne por\IeC {\'o}wnanie zaproponowanych algorytm\IeC {\'o}w hybrydowych z filtrowaniem z analiz\IeC {\k a} zawarto\IeC {\'s}ci i filtrowaniem kolaboratywnym}{47}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1\relax .\kern .5em }Eksperyment pierwszy - efektywno\IeC {\'s}\IeC {\'c} algorytm\IeC {\'o}w w zale\IeC {\.z}no\IeC {\'s}ci od minimum powtarzaj\IeC {\k a}cych si\IeC {\k e} cech element\IeC {\'o}w}{47}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2\relax .\kern .5em }Analiza statystyczna wynik\IeC {\'o}w}{47}{subsection.4.4.2}
+\contentsline {chapter}{Rozdzia\l \ 5\relax .\kern .5em Wnioski}{57}{section*.83}
+\contentsline {chapter}{Dodatek\ A\relax .\kern .5em Appendix 1}{59}{section*.85}
+\contentsline {chapter}{Bibliografia}{61}{section*.87}

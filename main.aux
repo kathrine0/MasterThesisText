@@ -255,7 +255,8 @@
 \newlabel{eq:rmse}{{4.1}{30}{}{equation.4.1.1}{}}
 \citation{hyndman2006another}
 \citation{harper2016movielens}
-\citation{yahoomusicwebsite}
+\citation{amazonmeta}
+\citation{leskovec2007dynamics}
 \newlabel{eq:mae}{{4.2}{31}{}{equation.4.1.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2\relax .\kern .5em }Zbiory danych}{31}{subsection.4.1.2}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Schemat bazy MovieLens\relax }}{32}{figure.caption.38}}
@@ -268,8 +269,9 @@
     {1}{211.31915pt}\LT@entry 
     {1}{239.77191pt}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2\relax .\kern .5em }Sprz\IeC {\k e}t}{34}{subsection.4.2.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3\relax .\kern .5em }Przeprowadzone eksperymenty}{34}{section.4.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1\relax .\kern .5em }Dopasowanie parametr\IeC {\'o}w sieci neuronowej}{34}{subsection.4.3.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3\relax .\kern .5em }Eksperymentalne dopasowanie parametr\IeC {\'o}w sieci neuronowej}{34}{section.4.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1\relax .\kern .5em }Strojenie sieci dla bazy MovieLens}{34}{subsection.4.3.1}}
+\newlabel{ss:strojeniemovielens}{{4.3.1}{34}{}{subsection.4.3.1}{}}
 \newlabel{exp:expiterations}{{4.3.1}{34}{}{subsubsection*.41}{}}
 \gdef \LT@ii {\LT@entry 
     {1}{59.25122pt}\LT@entry 
@@ -281,24 +283,24 @@
     {1}{81.70184pt}}
 \@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Konfiguracja dla eksperymentu maksymalnej liczby iteracji\relax }}{35}{table.4.1}}
 \newlabel{tab:expiterations}{{4.2}{35}{}{table.4.2}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} b\IeC {\l }\IeC {\k e}du algorytmu wyra\IeC {\.z}onego za pomoc\IeC {\k a} RMSE i czasu wykonania od maksymalnej liczy iteracji.\relax }}{35}{table.4.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Wyniki eksperymentu testuj\IeC {\k a}cego parametr maksymalnej liczby iteracji. Wykres przedstawia zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} pomi\IeC {\k e}dzy liczb\IeC {\k a} iteracji a b\IeC {\l }\IeC {\k e}dem algorytmu wyra\IeC {\.z}onym za pomoc\IeC {\k a} RMSE. Wraz ze wzrostem liczby iteracji warto\IeC {\'s}\IeC {\'c} b\IeC {\l }\IeC {\k e}du maleje, jednak\IeC {\.z}e po przekroczeniu pewnej warto\IeC {\'s}ci nast\IeC {\k e}puje ponowny wzrost. Wynika to z wyst\IeC {\k e}powania zjawiska nadmiernego dopasowania (ang. \textit  {overfitting}). \relax }}{35}{figure.caption.42}}
-\newlabel{fig:expiterations_rmse}{{4.3}{35}{Wyniki eksperymentu testującego parametr maksymalnej liczby iteracji. Wykres przedstawia zależność pomiędzy liczbą iteracji a błędem algorytmu wyrażonym za pomocą RMSE. Wraz ze wzrostem liczby iteracji wartość błędu maleje, jednakże po przekroczeniu pewnej wartości następuje ponowny wzrost. Wynika to z występowania zjawiska nadmiernego dopasowania (ang. \textit {overfitting}). \relax }{figure.caption.42}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} b\IeC {\l }\IeC {\k e}du algorytmu wyra\IeC {\.z}onego za pomoc\IeC {\k a} RMSE i czasu wykonania od maksymalnej liczy iteracji (baza MovieLens).\relax }}{35}{table.4.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Wyniki eksperymentu testuj\IeC {\k a}cego parametr maksymalnej liczby iteracji na bazie MovieLens. Wykres przedstawia zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} pomi\IeC {\k e}dzy liczb\IeC {\k a} iteracji a b\IeC {\l }\IeC {\k e}dem algorytmu wyra\IeC {\.z}onym za pomoc\IeC {\k a} RMSE. Wraz ze wzrostem liczby iteracji warto\IeC {\'s}\IeC {\'c} b\IeC {\l }\IeC {\k e}du maleje, jednak\IeC {\.z}e po przekroczeniu pewnej warto\IeC {\'s}ci nast\IeC {\k e}puje ponowny wzrost. Wynika to z wyst\IeC {\k e}powania zjawiska nadmiernego dopasowania (ang. \textit  {overfitting}). \relax }}{35}{figure.caption.42}}
+\newlabel{fig:expiterations_rmse}{{4.3}{35}{Wyniki eksperymentu testującego parametr maksymalnej liczby iteracji na bazie MovieLens. Wykres przedstawia zależność pomiędzy liczbą iteracji a błędem algorytmu wyrażonym za pomocą RMSE. Wraz ze wzrostem liczby iteracji wartość błędu maleje, jednakże po przekroczeniu pewnej wartości następuje ponowny wzrost. Wynika to z występowania zjawiska nadmiernego dopasowania (ang. \textit {overfitting}). \relax }{figure.caption.42}{}}
 \gdef \LT@iii {\LT@entry 
     {1}{211.31915pt}\LT@entry 
     {1}{239.77191pt}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Wyniki eksperymentu testuj\IeC {\k a}cego parametr maksymalnej liczby iteracji. Wykres przedstawia zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} pomi\IeC {\k e}dzy liczb\IeC {\k a} iteracji a czasem wykonania. Zgodnie z oczekiwaniami, czas wykonania jest wprost proporcjonalny do liczby iteracji. W trakcie tego eksperymentu potwierdzone zosta\IeC {\l }y r\IeC {\'o}wnie\IeC {\.z} przypuszczenia dotycz\IeC {\k a}ce pr\IeC {\k e}dko\IeC {\'s}ci dzia\IeC {\l }ania algorytm\IeC {\'o}w. Najszybszy okaza\IeC {\l } si\IeC {\k e} RPROP, jednak\IeC {\.z}e kosztem nieco wi\IeC {\k e}kszych b\IeC {\l }\IeC {\k e}d\IeC {\'o}w. Najgorzej wypad\IeC {\l } algorytm genetyczny, kt\IeC {\'o}ry charakteryzowa\IeC {\l } si\IeC {\k e} bardzo szybko rosn\IeC {\k a}cym czasem wykonania przy jednoczesnym nie najlepszym wynikiem RMSE. \relax }}{36}{figure.caption.43}}
-\newlabel{fig:expiterations_time}{{4.4}{36}{Wyniki eksperymentu testującego parametr maksymalnej liczby iteracji. Wykres przedstawia zależność pomiędzy liczbą iteracji a czasem wykonania. Zgodnie z oczekiwaniami, czas wykonania jest wprost proporcjonalny do liczby iteracji. W trakcie tego eksperymentu potwierdzone zostały również przypuszczenia dotyczące prędkości działania algorytmów. Najszybszy okazał się RPROP, jednakże kosztem nieco większych błędów. Najgorzej wypadł algorytm genetyczny, który charakteryzował się bardzo szybko rosnącym czasem wykonania przy jednoczesnym nie najlepszym wynikiem RMSE. \relax }{figure.caption.43}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Wyniki eksperymentu testuj\IeC {\k a}cego parametr maksymalnej liczby iteracji na bazie MovieLens. Wykres przedstawia zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} pomi\IeC {\k e}dzy liczb\IeC {\k a} iteracji a czasem wykonania. Zgodnie z oczekiwaniami, czas wykonania jest wprost proporcjonalny do liczby iteracji. W trakcie tego eksperymentu potwierdzone zosta\IeC {\l }y r\IeC {\'o}wnie\IeC {\.z} przypuszczenia dotycz\IeC {\k a}ce pr\IeC {\k e}dko\IeC {\'s}ci dzia\IeC {\l }ania algorytm\IeC {\'o}w. Najszybszy okaza\IeC {\l } si\IeC {\k e} RPROP, jednak\IeC {\.z}e kosztem nieco wi\IeC {\k e}kszych b\IeC {\l }\IeC {\k e}d\IeC {\'o}w. Najgorzej wypad\IeC {\l } algorytm genetyczny, kt\IeC {\'o}ry charakteryzowa\IeC {\l } si\IeC {\k e} bardzo szybko rosn\IeC {\k a}cym czasem wykonania przy jednoczesnym nie najlepszym wynikiem RMSE. \relax }}{36}{figure.caption.43}}
+\newlabel{fig:expiterations_time}{{4.4}{36}{Wyniki eksperymentu testującego parametr maksymalnej liczby iteracji na bazie MovieLens. Wykres przedstawia zależność pomiędzy liczbą iteracji a czasem wykonania. Zgodnie z oczekiwaniami, czas wykonania jest wprost proporcjonalny do liczby iteracji. W trakcie tego eksperymentu potwierdzone zostały również przypuszczenia dotyczące prędkości działania algorytmów. Najszybszy okazał się RPROP, jednakże kosztem nieco większych błędów. Najgorzej wypadł algorytm genetyczny, który charakteryzował się bardzo szybko rosnącym czasem wykonania przy jednoczesnym nie najlepszym wynikiem RMSE. \relax }{figure.caption.43}{}}
 \newlabel{exp:momentum}{{4.3.1}{36}{}{subsubsection*.44}{}}
 \gdef \LT@iv {\LT@entry 
     {1}{86.55678pt}\LT@entry 
     {1}{56.1383pt}\LT@entry 
     {1}{56.1383pt}}
 \@writefile{lot}{\contentsline {table}{\numberline {4.3}{\ignorespaces Konfiguracja dla eksperymentu dopasowania warto\IeC {\'s}ci wsp\IeC {\'o}\IeC {\l }czynnika bezw\IeC {\l }adno\IeC {\'s}ci\relax }}{37}{table.4.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Wyniki eksperymentu testuj\IeC {\k a}cego optymaln\IeC {\k a} warto\IeC {\'s}\IeC {\'c} wsp\IeC {\'o}\IeC {\l }czynnika bezw\IeC {\l }adno\IeC {\'s}ci. Wykres przedstawia zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} pomi\IeC {\k e}dzy warto\IeC {\'s}ci\IeC {\k a} parametru a b\IeC {\l }\IeC {\k e}dem RMSE. W zakresie warto\IeC {\'s}ci $[0,0.9]$ b\IeC {\l }\IeC {\k a}d oscyluje w granicach podobnych warto\IeC {\'s}ci z nieznaczn\IeC {\k a} tendencj\IeC {\k a} malej\IeC {\k a}c\IeC {\k a}. Wyra\IeC {\'z}ny skok na niekorzy\IeC {\'s}\IeC {\'c} odnotowany jest dopiero przy momentum$=1$.\relax }}{37}{figure.caption.45}}
-\newlabel{fig:expmomentum}{{4.5}{37}{Wyniki eksperymentu testującego optymalną wartość współczynnika bezwładności. Wykres przedstawia zależność pomiędzy wartością parametru a błędem RMSE. W zakresie wartości $[0,0.9]$ błąd oscyluje w granicach podobnych wartości z nieznaczną tendencją malejącą. Wyraźny skok na niekorzyść odnotowany jest dopiero przy momentum$=1$.\relax }{figure.caption.45}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Wyniki eksperymentu testuj\IeC {\k a}cego optymaln\IeC {\k a} warto\IeC {\'s}\IeC {\'c} wsp\IeC {\'o}\IeC {\l }czynnika bezw\IeC {\l }adno\IeC {\'s}ci na bazie MovieLens. Wykres przedstawia zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} pomi\IeC {\k e}dzy warto\IeC {\'s}ci\IeC {\k a} parametru a b\IeC {\l }\IeC {\k e}dem RMSE. W zakresie warto\IeC {\'s}ci $[0,0.9]$ b\IeC {\l }\IeC {\k a}d oscyluje w granicach podobnych warto\IeC {\'s}ci z nieznaczn\IeC {\k a} tendencj\IeC {\k a} malej\IeC {\k a}c\IeC {\k a}. Wyra\IeC {\'z}ny skok na niekorzy\IeC {\'s}\IeC {\'c} odnotowany jest dopiero przy momentum$=1$.\relax }}{37}{figure.caption.45}}
+\newlabel{fig:expmomentum}{{4.5}{37}{Wyniki eksperymentu testującego optymalną wartość współczynnika bezwładności na bazie MovieLens. Wykres przedstawia zależność pomiędzy wartością parametru a błędem RMSE. W zakresie wartości $[0,0.9]$ błąd oscyluje w granicach podobnych wartości z nieznaczną tendencją malejącą. Wyraźny skok na niekorzyść odnotowany jest dopiero przy momentum$=1$.\relax }{figure.caption.45}{}}
 \newlabel{tab:expmomentum}{{4.4}{37}{}{table.4.4}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4.4}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} b\IeC {\l }\IeC {\k e}du algorytmu RMSE od warto\IeC {\'s}ci wsp\IeC {\'o}\IeC {\l }czynnika bezw\IeC {\l }adno\IeC {\'s}ci.\relax }}{37}{table.4.4}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.4}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} b\IeC {\l }\IeC {\k e}du algorytmu RMSE od warto\IeC {\'s}ci wsp\IeC {\'o}\IeC {\l }czynnika bezw\IeC {\l }adno\IeC {\'s}ci (baza MovieLens).\relax }}{37}{table.4.4}}
 \gdef \LT@v {\LT@entry 
     {1}{211.31915pt}\LT@entry 
     {1}{239.77191pt}}
@@ -313,8 +315,8 @@
 \gdef \LT@vii {\LT@entry 
     {1}{211.31915pt}\LT@entry 
     {1}{239.77191pt}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Wyniki eksperymentu testuj\IeC {\k a}cego optymalny rozmiar populacji. Wykres przedstawia zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} pomi\IeC {\k e}dzy rozmiarem a b\IeC {\l }\IeC {\k e}dem RMSE. Zgodnie z oczekiwaniami wyst\IeC {\k e}puje dodatnia korelacja pomi\IeC {\k e}dzy rozmiarem populacji a czasem wykonania i ujemna pomi\IeC {\k e}dzy rozmiarem populacji a b\IeC {\l }\IeC {\k e}dem algorytmu rekomendacji. Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} pomi\IeC {\k e}dzy rozmiarem populacji a czasem wykonania jest liniowa, natomiast b\IeC {\l }\IeC {\k a}d maleje wyk\IeC {\l }adniczo gdy populacja osi\IeC {\k a}ga wi\IeC {\k e}ksze rozmiary. Optymalnym zatem jest przyj\IeC {\k e}cie rozmiaru populacji r\IeC {\'o}wnej $100$.\relax }}{39}{figure.caption.47}}
-\newlabel{fig:exppopulation}{{4.6}{39}{Wyniki eksperymentu testującego optymalny rozmiar populacji. Wykres przedstawia zależność pomiędzy rozmiarem a błędem RMSE. Zgodnie z oczekiwaniami występuje dodatnia korelacja pomiędzy rozmiarem populacji a czasem wykonania i ujemna pomiędzy rozmiarem populacji a błędem algorytmu rekomendacji. Zależność pomiędzy rozmiarem populacji a czasem wykonania jest liniowa, natomiast błąd maleje wykładniczo gdy populacja osiąga większe rozmiary. Optymalnym zatem jest przyjęcie rozmiaru populacji równej $100$.\relax }{figure.caption.47}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Wyniki eksperymentu testuj\IeC {\k a}cego optymalny rozmiar populacji na bazie MovieLens. Wykres przedstawia zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} pomi\IeC {\k e}dzy rozmiarem a b\IeC {\l }\IeC {\k e}dem RMSE. Zgodnie z oczekiwaniami wyst\IeC {\k e}puje dodatnia korelacja pomi\IeC {\k e}dzy rozmiarem populacji a czasem wykonania i ujemna pomi\IeC {\k e}dzy rozmiarem populacji a b\IeC {\l }\IeC {\k e}dem algorytmu rekomendacji. Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} pomi\IeC {\k e}dzy rozmiarem populacji a czasem wykonania jest liniowa, natomiast b\IeC {\l }\IeC {\k a}d maleje wyk\IeC {\l }adniczo gdy populacja osi\IeC {\k a}ga wi\IeC {\k e}ksze rozmiary. Optymalnym zatem jest przyj\IeC {\k e}cie rozmiaru populacji r\IeC {\'o}wnej $100$.\relax }}{39}{figure.caption.47}}
+\newlabel{fig:exppopulation}{{4.6}{39}{Wyniki eksperymentu testującego optymalny rozmiar populacji na bazie MovieLens. Wykres przedstawia zależność pomiędzy rozmiarem a błędem RMSE. Zgodnie z oczekiwaniami występuje dodatnia korelacja pomiędzy rozmiarem populacji a czasem wykonania i ujemna pomiędzy rozmiarem populacji a błędem algorytmu rekomendacji. Zależność pomiędzy rozmiarem populacji a czasem wykonania jest liniowa, natomiast błąd maleje wykładniczo gdy populacja osiąga większe rozmiary. Optymalnym zatem jest przyjęcie rozmiaru populacji równej $100$.\relax }{figure.caption.47}{}}
 \gdef \LT@viii {\LT@entry 
     {1}{92.06372pt}\LT@entry 
     {1}{56.1383pt}\LT@entry 
@@ -324,13 +326,21 @@
     {1}{56.1383pt}\LT@entry 
     {1}{56.1383pt}}
 \@writefile{lot}{\contentsline {table}{\numberline {4.7}{\ignorespaces Konfiguracja dla eksperymentu dopasowania rozmiaru ukrytej warstwy neuron\IeC {\'o}w\relax }}{40}{table.4.7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Wyniki eksperymentu testuj\IeC {\k a}cego optymalny rozmiar ukrytej warstwy neuron\IeC {\'o}w. Wykres przedstawia zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} pomi\IeC {\k e}dzy ilo\IeC {\'s}ci\IeC {\k a} neuron\IeC {\'o}w a b\IeC {\l }\IeC {\k e}dem RMSE. Wyniki prezentuj\IeC {\k a} si\IeC {\k e} odmiennie w zale\IeC {\.z}no\IeC {\'s}ci od typu algorytmu wykorzystanego do uczenia sieci. W przypadku algorytm\IeC {\'o}w propagacji wstecznej i RPROP wyst\IeC {\k e}puje dodatnia korelacja pomi\IeC {\k e}dzy rozmiarem warstwy ukrytej a b\IeC {\l }\IeC {\k e}dem algorytmu rekomendacji. Dla algorytmu BackProp optymalny rezultat osi\IeC {\k a}gni\IeC {\k e}ty zosta\IeC {\l } dla zaledwie jednego neuronu w warstwie ukrytej, dla algorytmu RPROP dla pi\IeC {\k e}ciu neuron\IeC {\'o}w. W tym ostatnim przypadku poprawa znajduje si\IeC {\k e} jednak na marginesie b\IeC {\l }\IeC {\k e}du statystycznego. W przypadku algorytmu genetycznego, niezale\IeC {\.z}nie od ilo\IeC {\'s}ci neuron\IeC {\'o}w wynik oscyluje na podobnym poziomie w zakresie testowanych warto\IeC {\'s}ci.\relax }}{40}{figure.caption.49}}
-\newlabel{fig:exphiddenneural}{{4.7}{40}{Wyniki eksperymentu testującego optymalny rozmiar ukrytej warstwy neuronów. Wykres przedstawia zależność pomiędzy ilością neuronów a błędem RMSE. Wyniki prezentują się odmiennie w zależności od typu algorytmu wykorzystanego do uczenia sieci. W przypadku algorytmów propagacji wstecznej i RPROP występuje dodatnia korelacja pomiędzy rozmiarem warstwy ukrytej a błędem algorytmu rekomendacji. Dla algorytmu BackProp optymalny rezultat osiągnięty został dla zaledwie jednego neuronu w warstwie ukrytej, dla algorytmu RPROP dla pięciu neuronów. W tym ostatnim przypadku poprawa znajduje się jednak na marginesie błędu statystycznego. W przypadku algorytmu genetycznego, niezależnie od ilości neuronów wynik oscyluje na podobnym poziomie w zakresie testowanych wartości.\relax }{figure.caption.49}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Wyniki eksperymentu testuj\IeC {\k a}cego optymalny rozmiar ukrytej warstwy neuron\IeC {\'o}w na bazie MovieLens. Wykres przedstawia zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} pomi\IeC {\k e}dzy ilo\IeC {\'s}ci\IeC {\k a} neuron\IeC {\'o}w a b\IeC {\l }\IeC {\k e}dem RMSE. Wyniki prezentuj\IeC {\k a} si\IeC {\k e} odmiennie w zale\IeC {\.z}no\IeC {\'s}ci od typu algorytmu wykorzystanego do uczenia sieci. W przypadku algorytm\IeC {\'o}w propagacji wstecznej i RPROP wyst\IeC {\k e}puje dodatnia korelacja pomi\IeC {\k e}dzy rozmiarem warstwy ukrytej a b\IeC {\l }\IeC {\k e}dem algorytmu rekomendacji. Dla algorytmu BackProp optymalny rezultat osi\IeC {\k a}gni\IeC {\k e}ty zosta\IeC {\l } dla zaledwie jednego neuronu w warstwie ukrytej, dla algorytmu RPROP dla pi\IeC {\k e}ciu neuron\IeC {\'o}w. W tym ostatnim przypadku poprawa znajduje si\IeC {\k e} jednak na marginesie b\IeC {\l }\IeC {\k e}du statystycznego. W przypadku algorytmu genetycznego, niezale\IeC {\.z}nie od ilo\IeC {\'s}ci neuron\IeC {\'o}w wynik oscyluje na podobnym poziomie w zakresie testowanych warto\IeC {\'s}ci.\relax }}{40}{figure.caption.49}}
+\newlabel{fig:exphiddenneural}{{4.7}{40}{Wyniki eksperymentu testującego optymalny rozmiar ukrytej warstwy neuronów na bazie MovieLens. Wykres przedstawia zależność pomiędzy ilością neuronów a błędem RMSE. Wyniki prezentują się odmiennie w zależności od typu algorytmu wykorzystanego do uczenia sieci. W przypadku algorytmów propagacji wstecznej i RPROP występuje dodatnia korelacja pomiędzy rozmiarem warstwy ukrytej a błędem algorytmu rekomendacji. Dla algorytmu BackProp optymalny rezultat osiągnięty został dla zaledwie jednego neuronu w warstwie ukrytej, dla algorytmu RPROP dla pięciu neuronów. W tym ostatnim przypadku poprawa znajduje się jednak na marginesie błędu statystycznego. W przypadku algorytmu genetycznego, niezależnie od ilości neuronów wynik oscyluje na podobnym poziomie w zakresie testowanych wartości.\relax }{figure.caption.49}{}}
 \newlabel{tab:exphiddenneural}{{4.8}{40}{}{table.4.8}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4.8}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} b\IeC {\l }\IeC {\k e}du algorytmu RMSE od rozmiaru ukrytej warstwy neuronowej.\relax }}{40}{table.4.8}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.8}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} b\IeC {\l }\IeC {\k e}du algorytmu RMSE od rozmiaru ukrytej warstwy neuronowej (baza MovieLens).\relax }}{40}{table.4.8}}
 \gdef \LT@ix {\LT@entry 
     {1}{211.31915pt}\LT@entry 
     {1}{251.85992pt}}
+\gdef \LT@x {\LT@entry 
+    {1}{59.25122pt}\LT@entry 
+    {1}{56.1383pt}\LT@entry 
+    {1}{78.60742pt}\LT@entry 
+    {1}{56.1383pt}\LT@entry 
+    {1}{41.52457pt}\LT@entry 
+    {1}{56.1383pt}\LT@entry 
+    {1}{81.70184pt}}
 \@writefile{tdo}{\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color  {orange}o}}\ (NA KO\IeC {\'N}CU, BADANIA) Czy trzeba?}{41}{section*.51}}
 \pgfsyspdfmark {pgfid11}{6749098}{47109715}
 \pgfsyspdfmark {pgfid14}{37004660}{47126645}
@@ -341,40 +351,90 @@
 \pgfsyspdfmark {pgfid20}{38671254}{44037715}
 \@writefile{lot}{\contentsline {table}{\numberline {4.9}{\ignorespaces Konfiguracja dla eksperymentu dopasowania rozmiaru ukrytej warstwy neuron\IeC {\'o}w\relax }}{41}{table.4.9}}
 \newlabel{tab:optimummovielens}{{4.9}{41}{Konfiguracja dla eksperymentu dopasowania rozmiaru ukrytej warstwy neuronów\relax }{table.4.9}{}}
-\@writefile{tdo}{\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color  {orange}o}}\ To samo dla AmazonMeta}{41}{section*.55}}
-\pgfsyspdfmark {pgfid21}{6749098}{23314512}
-\pgfsyspdfmark {pgfid24}{37004660}{23331442}
-\pgfsyspdfmark {pgfid25}{38671254}{23060560}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2\relax .\kern .5em }Por\IeC {\'o}wnanie zaproponowanych algorytm\IeC {\'o}w hybrydowych z filtrowaniem z analiz\IeC {\k a} zawarto\IeC {\'s}ci i filtrowaniem kolaboratywnym}{41}{subsection.4.3.2}}
-\@writefile{tdo}{\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color  {orange}o}}\ (BADANIA) Por\IeC {\'o}wnanie algorytmu hybrydowego z content-based i collaborative}{41}{section*.62}}
-\pgfsyspdfmark {pgfid26}{6749098}{4915651}
-\pgfsyspdfmark {pgfid29}{37004660}{4932581}
-\pgfsyspdfmark {pgfid30}{38671254}{4661699}
-\newlabel{fig:exphybrid_movielens1a}{{\caption@xref {fig:exphybrid_movielens1a}{ on input line 1399}}{42}{}{figure.caption.57}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.3\relax .\kern .5em }Analiza statystyczna wynik\IeC {\'o}w}{42}{subsection.4.3.3}}
-\@writefile{tdo}{\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color  {orange}o}}\ (P\IeC {\'O}\IeC {\'Z}NIEJ) Analiza statystyczna wynik\IeC {\'o}w, PQStat}{42}{section*.68}}
-\pgfsyspdfmark {pgfid31}{5816759}{11130438}
-\pgfsyspdfmark {pgfid32}{2120848}{11147368}
-\pgfsyspdfmark {pgfid33}{3787442}{10876486}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces Por\IeC {\'o}wnanie algorytmu hybrydowego z analiz\IeC {\k a} zawarto\IeC {\'s}ci na podstawie danych z bazy MovieLense. Skuteczno\IeC {\'s}\IeC {\'c} filtrowania z hybrydowego w zale\IeC {\.z}no\IeC {\'s}ci od liczby u\IeC {\.z}ytkownik\IeC {\'o}w i powtarzaj\IeC {\k a}cych si\IeC {\k e} cech. Pogrubiona linia przedstawia dzia\IeC {\l }anie filtrowania z analiz\IeC {\k a} zawarto\IeC {\'s}ci.\relax }}{43}{figure.caption.58}}
-\newlabel{fig:exphybrid_movielens1b}{{4.8}{43}{Porównanie algorytmu hybrydowego z analizą zawartości na podstawie danych z bazy MovieLense. Skuteczność filtrowania z hybrydowego w zależności od liczby użytkowników i powtarzających się cech. Pogrubiona linia przedstawia działanie filtrowania z analizą zawartości.\relax }{figure.caption.58}{}}
-\newlabel{fig:exphybrid_movielens2a}{{\caption@xref {fig:exphybrid_movielens2a}{ on input line 1415}}{44}{}{figure.caption.59}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.9}{\ignorespaces Por\IeC {\'o}wnanie algorytmu hybrydowego z kolaboratywnym na podstawie danych z bazy MovieLense. Skuteczno\IeC {\'s}\IeC {\'c} filtrowania z hybrydowego w zale\IeC {\.z}no\IeC {\'s}ci od liczby u\IeC {\.z}ytkownik\IeC {\'o}w i powtarzaj\IeC {\k a}cych si\IeC {\k e} cech. Pogrubiona linia przedstawia dzia\IeC {\l }anie filtrowania kolaboratywnego.\relax }}{45}{figure.caption.60}}
-\newlabel{fig:exphybrid_movielens2b}{{4.9}{45}{Porównanie algorytmu hybrydowego z kolaboratywnym na podstawie danych z bazy MovieLense. Skuteczność filtrowania z hybrydowego w zależności od liczby użytkowników i powtarzających się cech. Pogrubiona linia przedstawia działanie filtrowania kolaboratywnego.\relax }{figure.caption.60}{}}
-\newlabel{fig:exphybrid_amazon1a}{{\caption@xref {fig:exphybrid_amazon1a}{ on input line 1440}}{46}{}{figure.caption.63}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.10}{\ignorespaces Por\IeC {\'o}wnanie algorytmu hybrydowego z analiz\IeC {\k a} zawarto\IeC {\'s}ci na podstawie danych z bazy AmazonMeta. Skuteczno\IeC {\'s}\IeC {\'c} filtrowania z hybrydowego w zale\IeC {\.z}no\IeC {\'s}ci od liczby u\IeC {\.z}ytkownik\IeC {\'o}w i powtarzaj\IeC {\k a}cych si\IeC {\k e} cech. Pogrubiona linia przedstawia dzia\IeC {\l }anie filtrowania z analiz\IeC {\k a} zawarto\IeC {\'s}ci.\relax }}{47}{figure.caption.64}}
-\newlabel{fig:exphybrid_amazon1b}{{4.10}{47}{Porównanie algorytmu hybrydowego z analizą zawartości na podstawie danych z bazy AmazonMeta. Skuteczność filtrowania z hybrydowego w zależności od liczby użytkowników i powtarzających się cech. Pogrubiona linia przedstawia działanie filtrowania z analizą zawartości.\relax }{figure.caption.64}{}}
-\newlabel{fig:exphybrid_amazon2a}{{\caption@xref {fig:exphybrid_amazon2a}{ on input line 1456}}{48}{}{figure.caption.65}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.11}{\ignorespaces Por\IeC {\'o}wnanie algorytmu hybrydowego z kolaboratywnym na podstawie danych z bazy AmazonMeta. Skuteczno\IeC {\'s}\IeC {\'c} filtrowania z hybrydowego w zale\IeC {\.z}no\IeC {\'s}ci od liczby u\IeC {\.z}ytkownik\IeC {\'o}w i powtarzaj\IeC {\k a}cych si\IeC {\k e} cech. Pogrubiona linia przedstawia dzia\IeC {\l }anie filtrowania kolaboratywnego.\relax }}{49}{figure.caption.66}}
-\newlabel{fig:exphybrid_amazon2b}{{4.11}{49}{Porównanie algorytmu hybrydowego z kolaboratywnym na podstawie danych z bazy AmazonMeta. Skuteczność filtrowania z hybrydowego w zależności od liczby użytkowników i powtarzających się cech. Pogrubiona linia przedstawia działanie filtrowania kolaboratywnego.\relax }{figure.caption.66}{}}
-\@writefile{toc}{\contentsline {chapter}{Rozdzia\l \ 5\relax .\kern .5em Wnioski}{51}{section*.69}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2\relax .\kern .5em }Strojenie sieci dla bazy AmazonMeta}{41}{subsection.4.3.2}}
+\newlabel{ss:strojenieamazonmeta}{{4.3.2}{41}{}{subsection.4.3.2}{}}
+\newlabel{tab:am_expiterations}{{4.10}{41}{}{table.4.10}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.10}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} b\IeC {\l }\IeC {\k e}du algorytmu wyra\IeC {\.z}onego za pomoc\IeC {\k a} RMSE i czasu wykonania od maksymalnej liczy iteracji (baza AmazonMeta).\relax }}{41}{table.4.10}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces Wyniki eksperymentu testuj\IeC {\k a}cego parametr maksymalnej liczby iteracji na bazie AmazonMeta. Wykres przedstawia zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} pomi\IeC {\k e}dzy liczb\IeC {\k a} iteracji a b\IeC {\l }\IeC {\k e}dem algorytmu wyra\IeC {\.z}onym za pomoc\IeC {\k a} RMSE. Pocz\IeC {\k a}tkowo warto\IeC {\'s}\IeC {\'c} b\IeC {\l }\IeC {\k e}du szybko maleje, jednak\IeC {\.z}e wraz ze wzrostem liczby iteracji k\IeC {\k a}ty nachylenia kolejnych odcink\IeC {\'o}w krzywej ulegaj\IeC {\k a} zwi\IeC {\k e}kszeniu. Bior\IeC {\k a}c pod uwag\IeC {\k e} rosn\IeC {\k a}cy liniowo czas wykonania (zob. \ref  {fig:am_expiterations_time}) w pewnym momencie koszt w postaci czasu wykonania przewy\IeC {\.z}sza korzy\IeC {\'s}\IeC {\'c} wynikaj\IeC {\k a}c\IeC {\k a} z ni\IeC {\.z}szego b\IeC {\l }\IeC {\k e}du RMSE. W zakresach liczby iteracji od 100 do 2000 wyst\IeC {\k e}puj\IeC {\k a} nieznaczne zachwiania, kt\IeC {\'o}re znajduj\IeC {\k a} si\IeC {\k e} w zakresie b\IeC {\l }\IeC {\k e}du statystycznego. \relax }}{42}{figure.caption.56}}
+\newlabel{fig:am_expiterations_rmse}{{4.8}{42}{Wyniki eksperymentu testującego parametr maksymalnej liczby iteracji na bazie AmazonMeta. Wykres przedstawia zależność pomiędzy liczbą iteracji a błędem algorytmu wyrażonym za pomocą RMSE. Początkowo wartość błędu szybko maleje, jednakże wraz ze wzrostem liczby iteracji kąty nachylenia kolejnych odcinków krzywej ulegają zwiększeniu. Biorąc pod uwagę rosnący liniowo czas wykonania (zob. \ref {fig:am_expiterations_time}) w pewnym momencie koszt w postaci czasu wykonania przewyższa korzyść wynikającą z niższego błędu RMSE. W zakresach liczby iteracji od 100 do 2000 występują nieznaczne zachwiania, które znajdują się w zakresie błędu statystycznego. \relax }{figure.caption.56}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.9}{\ignorespaces Wyniki eksperymentu testuj\IeC {\k a}cego parametr maksymalnej liczby iteracji na bazie AmazonMeta. Wykres przedstawia zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} pomi\IeC {\k e}dzy liczb\IeC {\k a} iteracji a czasem wykonania. Czas wykonania jest wprost proporcjonalny do liczby iteracji. \relax }}{42}{figure.caption.57}}
+\newlabel{fig:am_expiterations_time}{{4.9}{42}{Wyniki eksperymentu testującego parametr maksymalnej liczby iteracji na bazie AmazonMeta. Wykres przedstawia zależność pomiędzy liczbą iteracji a czasem wykonania. Czas wykonania jest wprost proporcjonalny do liczby iteracji. \relax }{figure.caption.57}{}}
+\gdef \LT@xi {\LT@entry 
+    {1}{86.55678pt}\LT@entry 
+    {1}{56.1383pt}\LT@entry 
+    {1}{56.1383pt}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.10}{\ignorespaces Wyniki eksperymentu testuj\IeC {\k a}cego optymaln\IeC {\k a} warto\IeC {\'s}\IeC {\'c} wsp\IeC {\'o}\IeC {\l }czynnika bezw\IeC {\l }adno\IeC {\'s}ci na bazie AmazonMeta. Wykres przedstawia zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} pomi\IeC {\k e}dzy warto\IeC {\'s}ci\IeC {\k a} parametru a b\IeC {\l }\IeC {\k e}dem RMSE. W zakresie warto\IeC {\'s}ci $[0,0.9]$ b\IeC {\l }\IeC {\k a}d oscyluje w granicach podobnych warto\IeC {\'s}ci z nieznaczn\IeC {\k a} tendencj\IeC {\k a} malej\IeC {\k a}c\IeC {\k a}. Wyra\IeC {\'z}ny skok na niekorzy\IeC {\'s}\IeC {\'c} odnotowany jest dopiero przy momentum$=1$.\relax }}{43}{figure.caption.59}}
+\newlabel{fig:am_expmomentum}{{4.10}{43}{Wyniki eksperymentu testującego optymalną wartość współczynnika bezwładności na bazie AmazonMeta. Wykres przedstawia zależność pomiędzy wartością parametru a błędem RMSE. W zakresie wartości $[0,0.9]$ błąd oscyluje w granicach podobnych wartości z nieznaczną tendencją malejącą. Wyraźny skok na niekorzyść odnotowany jest dopiero przy momentum$=1$.\relax }{figure.caption.59}{}}
+\newlabel{tab:am_expmomentum}{{4.11}{43}{}{table.4.11}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.11}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} b\IeC {\l }\IeC {\k e}du algorytmu RMSE od warto\IeC {\'s}ci wsp\IeC {\'o}\IeC {\l }czynnika bezw\IeC {\l }adno\IeC {\'s}ci (baza AmazonMeta).\relax }}{43}{table.4.11}}
+\@writefile{tdo}{\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color  {orange}o}}\ wstawi\IeC {\'c} tabelk\IeC {\k e}}{43}{section*.62}}
+\pgfsyspdfmark {pgfid21}{6749098}{4915651}
+\pgfsyspdfmark {pgfid24}{37004660}{4932581}
+\pgfsyspdfmark {pgfid25}{38671254}{4661699}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.11}{\ignorespaces Wyniki eksperymentu testuj\IeC {\k a}cego optymalny rozmiar populacji na bazie AmazonMeta. Wykres przedstawia zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} pomi\IeC {\k e}dzy rozmiarem a b\IeC {\l }\IeC {\k e}dem RMSE. Zgodnie z oczekiwaniami wyst\IeC {\k e}puje dodatnia korelacja pomi\IeC {\k e}dzy rozmiarem populacji a czasem wykonania i ujemna pomi\IeC {\k e}dzy rozmiarem populacji a b\IeC {\l }\IeC {\k e}dem algorytmu rekomendacji. Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} pomi\IeC {\k e}dzy rozmiarem populacji a czasem wykonania jest liniowa, natomiast b\IeC {\l }\IeC {\k a}d maleje wyk\IeC {\l }adniczo gdy populacja osi\IeC {\k a}ga wi\IeC {\k e}ksze rozmiary. Optymalnym zatem jest przyj\IeC {\k e}cie rozmiaru populacji r\IeC {\'o}wnej $50$ tak, aby czas wykonania nie przekracza\IeC {\l } 200000ms.\relax }}{44}{figure.caption.61}}
+\newlabel{fig:am_exppopulation}{{4.11}{44}{Wyniki eksperymentu testującego optymalny rozmiar populacji na bazie AmazonMeta. Wykres przedstawia zależność pomiędzy rozmiarem a błędem RMSE. Zgodnie z oczekiwaniami występuje dodatnia korelacja pomiędzy rozmiarem populacji a czasem wykonania i ujemna pomiędzy rozmiarem populacji a błędem algorytmu rekomendacji. Zależność pomiędzy rozmiarem populacji a czasem wykonania jest liniowa, natomiast błąd maleje wykładniczo gdy populacja osiąga większe rozmiary. Optymalnym zatem jest przyjęcie rozmiaru populacji równej $50$ tak, aby czas wykonania nie przekraczał 200000ms.\relax }{figure.caption.61}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.12}{\ignorespaces Wyniki eksperymentu testuj\IeC {\k a}cego optymalny rozmiar ukrytej warstwy neuron\IeC {\'o}w na bazie AmazonMeta. Wykres przedstawia zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} pomi\IeC {\k e}dzy ilo\IeC {\'s}ci\IeC {\k a} neuron\IeC {\'o}w a b\IeC {\l }\IeC {\k e}dem RMSE. W przypadku algorytm\IeC {\'o}w propagacji wstecznej i RPROP wyst\IeC {\k e}puje dodatnia korelacja pomi\IeC {\k e}dzy rozmiarem warstwy ukrytej a b\IeC {\l }\IeC {\k e}dem algorytmu rekomendacji. Dla algorytmu BackProp optymalne wyniki osi\IeC {\k a}gni\IeC {\k e}te zosta\IeC {\l }y dla zaledwie liczby neuron\IeC {\'o}w w warstwie ukrytej nie przekraczaj\IeC {\k a}cej 5, dla algorytmu RPROP dla nie przekraczaj\IeC {\k a}cej 20. W przypadku algorytmu genetycznego, niezale\IeC {\.z}nie od ilo\IeC {\'s}ci neuron\IeC {\'o}w wynik oscyluje na podobnym poziomie w zakresie testowanych warto\IeC {\'s}ci.\relax }}{45}{figure.caption.64}}
+\newlabel{fig:am_exphiddenneural_rmse}{{4.12}{45}{Wyniki eksperymentu testującego optymalny rozmiar ukrytej warstwy neuronów na bazie AmazonMeta. Wykres przedstawia zależność pomiędzy ilością neuronów a błędem RMSE. W przypadku algorytmów propagacji wstecznej i RPROP występuje dodatnia korelacja pomiędzy rozmiarem warstwy ukrytej a błędem algorytmu rekomendacji. Dla algorytmu BackProp optymalne wyniki osiągnięte zostały dla zaledwie liczby neuronów w warstwie ukrytej nie przekraczającej 5, dla algorytmu RPROP dla nie przekraczającej 20. W przypadku algorytmu genetycznego, niezależnie od ilości neuronów wynik oscyluje na podobnym poziomie w zakresie testowanych wartości.\relax }{figure.caption.64}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.13}{\ignorespaces Wyniki eksperymentu testuj\IeC {\k a}cego optymalny rozmiar ukrytej warstwy neuron\IeC {\'o}w na bazie AmazonMeta. Wykres przedstawia zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} pomi\IeC {\k e}dzy ilo\IeC {\'s}ci\IeC {\k a} neuron\IeC {\'o}w a czasem wykonania. Czas wykonania ro\IeC {\'s}nie liniowo proporcjonalnie do ilo\IeC {\'s}ci neuron\IeC {\'o}w. W zwi\IeC {\k a}zku z tym oraz bior\IeC {\k a}c pod uwag\IeC {\k e} wykres \ref  {fig:am_exphiddenneural_rmse} optymalnym jest ustalenie liczby neuron\IeC {\'o}w w warstwie ukrytej na 1.\relax }}{45}{figure.caption.65}}
+\newlabel{fig:am_exphiddenneural_time}{{4.13}{45}{Wyniki eksperymentu testującego optymalny rozmiar ukrytej warstwy neuronów na bazie AmazonMeta. Wykres przedstawia zależność pomiędzy ilością neuronów a czasem wykonania. Czas wykonania rośnie liniowo proporcjonalnie do ilości neuronów. W związku z tym oraz biorąc pod uwagę wykres \ref {fig:am_exphiddenneural_rmse} optymalnym jest ustalenie liczby neuronów w warstwie ukrytej na 1.\relax }{figure.caption.65}{}}
+\gdef \LT@xii {\LT@entry 
+    {1}{92.06372pt}\LT@entry 
+    {1}{56.1383pt}\LT@entry 
+    {1}{78.60742pt}\LT@entry 
+    {1}{56.1383pt}\LT@entry 
+    {1}{41.52457pt}\LT@entry 
+    {1}{56.1383pt}\LT@entry 
+    {1}{52.87445pt}}
+\gdef \LT@xiii {\LT@entry 
+    {1}{211.31915pt}\LT@entry 
+    {1}{267.58353pt}}
+\newlabel{tab:am_exphiddenneural}{{4.12}{46}{}{table.4.12}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.12}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} b\IeC {\l }\IeC {\k e}du algorytmu RMSE i czasu wykonania od rozmiaru ukrytej warstwy neuronowej (baza AmazonMeta).\relax }}{46}{table.4.12}}
+\@writefile{tdo}{\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color  {orange}o}}\ wstawi\IeC {\'c} tabelk\IeC {\k e}}{46}{section*.66}}
+\pgfsyspdfmark {pgfid26}{5816759}{34635776}
+\pgfsyspdfmark {pgfid27}{2120848}{34652706}
+\pgfsyspdfmark {pgfid28}{3787442}{34381824}
+\@writefile{tdo}{\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color  {orange}o}}\ (NA KO\IeC {\'N}CU, BADANIA) Czy trzeba?}{46}{section*.68}}
+\pgfsyspdfmark {pgfid31}{5816759}{31817728}
+\pgfsyspdfmark {pgfid32}{2120848}{31834658}
+\pgfsyspdfmark {pgfid33}{3787442}{31563776}
+\@writefile{tdo}{\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color  {orange}o}}\ (NA KO\IeC {\'N}CU, BADANIA) Czy trzeba?}{46}{section*.70}}
+\pgfsyspdfmark {pgfid36}{5816759}{28999680}
+\pgfsyspdfmark {pgfid37}{2120848}{29016610}
+\pgfsyspdfmark {pgfid38}{3787442}{28745728}
+\@writefile{lot}{\contentsline {table}{\numberline {4.13}{\ignorespaces Konfiguracja dla eksperymentu dopasowania rozmiaru ukrytej warstwy neuron\IeC {\'o}w\relax }}{46}{table.4.13}}
+\newlabel{tab:am_optimummovielens}{{4.13}{46}{Konfiguracja dla eksperymentu dopasowania rozmiaru ukrytej warstwy neuronów\relax }{table.4.13}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4\relax .\kern .5em }Eksperymentalne por\IeC {\'o}wnanie zaproponowanych algorytm\IeC {\'o}w hybrydowych z filtrowaniem z analiz\IeC {\k a} zawarto\IeC {\'s}ci i filtrowaniem kolaboratywnym}{47}{section.4.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1\relax .\kern .5em }Eksperyment pierwszy - efektywno\IeC {\'s}\IeC {\'c} algorytm\IeC {\'o}w w zale\IeC {\.z}no\IeC {\'s}ci od minimum powtarzaj\IeC {\k a}cych si\IeC {\k e} cech element\IeC {\'o}w}{47}{subsection.4.4.1}}
+\@writefile{tdo}{\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color  {orange}o}}\ (BADANIA) Por\IeC {\'o}wnanie algorytmu hybrydowego z content-based i collaborative}{47}{section*.77}}
+\pgfsyspdfmark {pgfid41}{6749098}{27743827}
+\pgfsyspdfmark {pgfid44}{37004660}{27760757}
+\pgfsyspdfmark {pgfid45}{38671254}{27489875}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.2\relax .\kern .5em }Analiza statystyczna wynik\IeC {\'o}w}{47}{subsection.4.4.2}}
+\@writefile{tdo}{\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color  {orange}o}}\ (P\IeC {\'O}\IeC {\'Z}NIEJ) Analiza statystyczna wynik\IeC {\'o}w, PQStat}{47}{section*.82}}
+\pgfsyspdfmark {pgfid46}{6749098}{24401491}
+\pgfsyspdfmark {pgfid49}{37004660}{23204911}
+\pgfsyspdfmark {pgfid50}{38671254}{22934029}
+\newlabel{fig:exphybrid_movielens1a}{{\caption@xref {fig:exphybrid_movielens1a}{ on input line 1534}}{48}{}{figure.caption.72}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.14}{\ignorespaces Por\IeC {\'o}wnanie algorytmu hybrydowego z analiz\IeC {\k a} zawarto\IeC {\'s}ci na podstawie danych z bazy MovieLense. Skuteczno\IeC {\'s}\IeC {\'c} filtrowania z hybrydowego w zale\IeC {\.z}no\IeC {\'s}ci od liczby u\IeC {\.z}ytkownik\IeC {\'o}w i powtarzaj\IeC {\k a}cych si\IeC {\k e} cech. Pogrubiona linia przedstawia dzia\IeC {\l }anie filtrowania z analiz\IeC {\k a} zawarto\IeC {\'s}ci.\relax }}{49}{figure.caption.73}}
+\newlabel{fig:exphybrid_movielens1b}{{4.14}{49}{Porównanie algorytmu hybrydowego z analizą zawartości na podstawie danych z bazy MovieLense. Skuteczność filtrowania z hybrydowego w zależności od liczby użytkowników i powtarzających się cech. Pogrubiona linia przedstawia działanie filtrowania z analizą zawartości.\relax }{figure.caption.73}{}}
+\newlabel{fig:exphybrid_movielens2a}{{\caption@xref {fig:exphybrid_movielens2a}{ on input line 1550}}{50}{}{figure.caption.74}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.15}{\ignorespaces Por\IeC {\'o}wnanie algorytmu hybrydowego z kolaboratywnym na podstawie danych z bazy MovieLense. Skuteczno\IeC {\'s}\IeC {\'c} filtrowania z hybrydowego w zale\IeC {\.z}no\IeC {\'s}ci od liczby u\IeC {\.z}ytkownik\IeC {\'o}w i powtarzaj\IeC {\k a}cych si\IeC {\k e} cech. Pogrubiona linia przedstawia dzia\IeC {\l }anie filtrowania kolaboratywnego.\relax }}{51}{figure.caption.75}}
+\newlabel{fig:exphybrid_movielens2b}{{4.15}{51}{Porównanie algorytmu hybrydowego z kolaboratywnym na podstawie danych z bazy MovieLense. Skuteczność filtrowania z hybrydowego w zależności od liczby użytkowników i powtarzających się cech. Pogrubiona linia przedstawia działanie filtrowania kolaboratywnego.\relax }{figure.caption.75}{}}
+\newlabel{fig:exphybrid_amazon1a}{{\caption@xref {fig:exphybrid_amazon1a}{ on input line 1575}}{52}{}{figure.caption.78}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.16}{\ignorespaces Por\IeC {\'o}wnanie algorytmu hybrydowego z analiz\IeC {\k a} zawarto\IeC {\'s}ci na podstawie danych z bazy AmazonMeta. Skuteczno\IeC {\'s}\IeC {\'c} filtrowania z hybrydowego w zale\IeC {\.z}no\IeC {\'s}ci od liczby u\IeC {\.z}ytkownik\IeC {\'o}w i powtarzaj\IeC {\k a}cych si\IeC {\k e} cech. Pogrubiona linia przedstawia dzia\IeC {\l }anie filtrowania z analiz\IeC {\k a} zawarto\IeC {\'s}ci.\relax }}{53}{figure.caption.79}}
+\newlabel{fig:exphybrid_amazon1b}{{4.16}{53}{Porównanie algorytmu hybrydowego z analizą zawartości na podstawie danych z bazy AmazonMeta. Skuteczność filtrowania z hybrydowego w zależności od liczby użytkowników i powtarzających się cech. Pogrubiona linia przedstawia działanie filtrowania z analizą zawartości.\relax }{figure.caption.79}{}}
+\newlabel{fig:exphybrid_amazon2a}{{\caption@xref {fig:exphybrid_amazon2a}{ on input line 1591}}{54}{}{figure.caption.80}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.17}{\ignorespaces Por\IeC {\'o}wnanie algorytmu hybrydowego z kolaboratywnym na podstawie danych z bazy AmazonMeta. Skuteczno\IeC {\'s}\IeC {\'c} filtrowania z hybrydowego w zale\IeC {\.z}no\IeC {\'s}ci od liczby u\IeC {\.z}ytkownik\IeC {\'o}w i powtarzaj\IeC {\k a}cych si\IeC {\k e} cech. Pogrubiona linia przedstawia dzia\IeC {\l }anie filtrowania kolaboratywnego.\relax }}{55}{figure.caption.81}}
+\newlabel{fig:exphybrid_amazon2b}{{4.17}{55}{Porównanie algorytmu hybrydowego z kolaboratywnym na podstawie danych z bazy AmazonMeta. Skuteczność filtrowania z hybrydowego w zależności od liczby użytkowników i powtarzających się cech. Pogrubiona linia przedstawia działanie filtrowania kolaboratywnego.\relax }{figure.caption.81}{}}
+\@writefile{toc}{\contentsline {chapter}{Rozdzia\l \ 5\relax .\kern .5em Wnioski}{57}{section*.83}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{tdo}{\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color  {orange}o}}\ Wnioski}{51}{section*.70}}
-\pgfsyspdfmark {pgfid36}{6749098}{34068051}
-\pgfsyspdfmark {pgfid39}{37004660}{34084981}
-\pgfsyspdfmark {pgfid40}{38671254}{33814099}
-\@writefile{toc}{\contentsline {chapter}{Dodatek\ A\relax .\kern .5em Appendix 1}{53}{section*.71}}
+\@writefile{tdo}{\contentsline {todo}{\color@fb@x {}{black}{}{orange}{\leavevmode {\color  {orange}o}}\ Wnioski}{57}{section*.84}}
+\pgfsyspdfmark {pgfid51}{6749098}{34068051}
+\pgfsyspdfmark {pgfid54}{37004660}{34084981}
+\pgfsyspdfmark {pgfid55}{38671254}{33814099}
+\@writefile{toc}{\contentsline {chapter}{Dodatek\ A\relax .\kern .5em Appendix 1}{59}{section*.85}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \bibstyle{iisthesis}
@@ -382,64 +442,65 @@
 \bibcite{id:mgp}{1}
 \bibcite{adomavicius2005toward}{2}
 \bibcite{id:allegrofaq}{3}
-\bibcite{effandpractstochsub}{4}
-\bibcite{basu1998recommendation}{5}
-\bibcite{bell2007modeling}{6}
-\bibcite{bottou2012stochastic}{7}
-\bibcite{id:celma2010music}{8}
-\bibcite{id:NewRecommentationAlgoritmBasedOnSocialNetwork}{9}
-\bibcite{claypool1999combining}{10}
-\bibcite{id:TheYouTubeVideoRecommendationSystem}{11}
-\@writefile{toc}{\contentsline {chapter}{Bibliografia}{55}{section*.73}}
+\bibcite{amazonmeta}{4}
+\bibcite{effandpractstochsub}{5}
+\bibcite{basu1998recommendation}{6}
+\bibcite{bell2007modeling}{7}
+\bibcite{bottou2012stochastic}{8}
+\bibcite{id:celma2010music}{9}
+\bibcite{id:NewRecommentationAlgoritmBasedOnSocialNetwork}{10}
+\bibcite{claypool1999combining}{11}
+\bibcite{id:TheYouTubeVideoRecommendationSystem}{12}
+\@writefile{toc}{\contentsline {chapter}{Bibliografia}{61}{section*.87}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\bibcite{id:ComprehensiveSurveyOfNeighborhoodBasedRecommendationMethods}{12}
-\bibcite{id:filmwebfaq}{13}
-\bibcite{mymedialite}{14}
-\bibcite{gantner2011mymedialite}{15}
-\bibcite{id:gupta2013wtf}{16}
-\bibcite{harper2016movielens}{17}
-\bibcite{haykin1994neural}{18}
-\bibcite{hertz1993wstkep}{19}
-\bibcite{id:FromTapestryToSVD}{20}
-\bibcite{id:huynh2012modeling}{21}
-\bibcite{hyndman2006another}{22}
-\bibcite{id:imdbstats}{23}
-\bibcite{id:NextSongRecommendationWithTemporalDynamics}{24}
-\bibcite{aforgenet}{25}
-\bibcite{aforgenetgenetic}{26}
-\bibcite{koren2008factorization}{27}
-\bibcite{koren2010factor}{28}
-\bibcite{id:AdvancesInCollaborativeFiltering}{29}
-\bibcite{koren2009matrix}{30}
-\bibcite{kwateralgorytmy}{31}
-\bibcite{lemire2005slope}{32}
-\bibcite{leskovec2007dynamics}{33}
-\bibcite{id:linden2003amazon}{34}
-\bibcite{id:ContentBasedRecommenderSystemsState}{35}
-\bibcite{id:MaleszkaMianowskaNguyenmethod}{36}
-\bibcite{melville2002content}{37}
-\bibcite{montana1989training}{38}
-\bibcite{mymedialitedatasets}{39}
-\bibcite{id:NetflixPrize}{40}
-\bibcite{id:NetflixPrize2}{41}
-\bibcite{id:NetflixPrizeRankings}{42}
-\bibcite{id:NetflixPrizeRules}{43}
-\bibcite{osowski1996sieci}{44}
-\bibcite{pariser2011filter}{45}
-\bibcite{pena2000evolutionary}{46}
-\bibcite{id:aStreamOfMovies}{47}
-\bibcite{rendle2008online}{48}
-\bibcite{id:IntroductionToRecommenderSystemsHandbook}{49}
-\bibcite{riedmiller1993direct}{50}
-\bibcite{riedmiller1994rprop}{51}
-\bibcite{id:ComputingRecommendationsExtremeScaleApacheFlink}{52}
-\bibcite{id:RubensRecSysHB2010}{53}
-\bibcite{salakhutdinov2011probabilistic}{54}
-\bibcite{sarwar2000application}{55}
-\bibcite{id:CollaborativeFilteringRecommenderSystems}{56}
-\bibcite{id:EvolutionOfRecommenderSystems}{57}
-\bibcite{timothy1996sieci}{58}
-\bibcite{willmott2005advantages}{59}
-\bibcite{yahoomusicwebsite}{60}
-\bibcite{id:zhang2015hybrid}{61}
+\bibcite{id:ComprehensiveSurveyOfNeighborhoodBasedRecommendationMethods}{13}
+\bibcite{id:filmwebfaq}{14}
+\bibcite{mymedialite}{15}
+\bibcite{gantner2011mymedialite}{16}
+\bibcite{id:gupta2013wtf}{17}
+\bibcite{harper2016movielens}{18}
+\bibcite{haykin1994neural}{19}
+\bibcite{hertz1993wstkep}{20}
+\bibcite{id:FromTapestryToSVD}{21}
+\bibcite{id:huynh2012modeling}{22}
+\bibcite{hyndman2006another}{23}
+\bibcite{id:imdbstats}{24}
+\bibcite{id:NextSongRecommendationWithTemporalDynamics}{25}
+\bibcite{aforgenet}{26}
+\bibcite{aforgenetgenetic}{27}
+\bibcite{koren2008factorization}{28}
+\bibcite{koren2010factor}{29}
+\bibcite{id:AdvancesInCollaborativeFiltering}{30}
+\bibcite{koren2009matrix}{31}
+\bibcite{kwateralgorytmy}{32}
+\bibcite{lemire2005slope}{33}
+\bibcite{leskovec2007dynamics}{34}
+\bibcite{id:linden2003amazon}{35}
+\bibcite{id:ContentBasedRecommenderSystemsState}{36}
+\bibcite{id:MaleszkaMianowskaNguyenmethod}{37}
+\bibcite{melville2002content}{38}
+\bibcite{montana1989training}{39}
+\bibcite{mymedialitedatasets}{40}
+\bibcite{id:NetflixPrize}{41}
+\bibcite{id:NetflixPrize2}{42}
+\bibcite{id:NetflixPrizeRankings}{43}
+\bibcite{id:NetflixPrizeRules}{44}
+\bibcite{osowski1996sieci}{45}
+\bibcite{pariser2011filter}{46}
+\bibcite{pena2000evolutionary}{47}
+\bibcite{id:aStreamOfMovies}{48}
+\bibcite{rendle2008online}{49}
+\bibcite{id:IntroductionToRecommenderSystemsHandbook}{50}
+\bibcite{riedmiller1993direct}{51}
+\bibcite{riedmiller1994rprop}{52}
+\bibcite{id:ComputingRecommendationsExtremeScaleApacheFlink}{53}
+\bibcite{id:RubensRecSysHB2010}{54}
+\bibcite{salakhutdinov2011probabilistic}{55}
+\bibcite{sarwar2000application}{56}
+\bibcite{id:CollaborativeFilteringRecommenderSystems}{57}
+\bibcite{id:EvolutionOfRecommenderSystems}{58}
+\bibcite{timothy1996sieci}{59}
+\bibcite{willmott2005advantages}{60}
+\bibcite{yahoomusicwebsite}{61}
+\bibcite{id:zhang2015hybrid}{62}

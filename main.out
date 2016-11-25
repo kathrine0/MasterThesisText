@@ -31,10 +31,12 @@
 \BOOKMARK [1][-]{section.4.2}{4.2. \040Srodowisko symulacyjne}{section*.34}% 31
 \BOOKMARK [2][-]{subsection.4.2.1}{4.2.1. \040Oprogramowanie}{section.4.2}% 32
 \BOOKMARK [2][-]{subsection.4.2.2}{4.2.2. \040Sprzet}{section.4.2}% 33
-\BOOKMARK [1][-]{section.4.3}{4.3. \040Przeprowadzone eksperymenty}{section*.34}% 34
-\BOOKMARK [2][-]{subsection.4.3.1}{4.3.1. \040Dopasowanie parametr\363w sieci neuronowej}{section.4.3}% 35
-\BOOKMARK [2][-]{subsection.4.3.2}{4.3.2. \040Por\363wnanie zaproponowanych algorytm\363w hybrydowych z filtrowaniem z analiza zawartosci i filtrowaniem kolaboratywnym}{section.4.3}% 36
-\BOOKMARK [2][-]{subsection.4.3.3}{4.3.3. \040Analiza statystyczna wynik\363w}{section.4.3}% 37
-\BOOKMARK [0][-]{section*.69}{Rozdzia\233 5. Wnioski}{}% 38
-\BOOKMARK [0][-]{section*.71}{Dodatek A. Appendix 1}{}% 39
-\BOOKMARK [0][-]{section*.73}{Bibliografia}{}% 40
+\BOOKMARK [1][-]{section.4.3}{4.3. \040Eksperymentalne dopasowanie parametr\363w sieci neuronowej}{section*.34}% 34
+\BOOKMARK [2][-]{subsection.4.3.1}{4.3.1. \040Strojenie sieci dla bazy MovieLens}{section.4.3}% 35
+\BOOKMARK [2][-]{subsection.4.3.2}{4.3.2. \040Strojenie sieci dla bazy AmazonMeta}{section.4.3}% 36
+\BOOKMARK [1][-]{section.4.4}{4.4. \040Eksperymentalne por\363wnanie zaproponowanych algorytm\363w hybrydowych z filtrowaniem z analiza zawartosci i filtrowaniem kolaboratywnym}{section*.34}% 37
+\BOOKMARK [2][-]{subsection.4.4.1}{4.4.1. \040Eksperyment pierwszy - efektywnosc algorytm\363w w zaleznosci od minimum powtarzajacych sie cech element\363w}{section.4.4}% 38
+\BOOKMARK [2][-]{subsection.4.4.2}{4.4.2. \040Analiza statystyczna wynik\363w}{section.4.4}% 39
+\BOOKMARK [0][-]{section*.83}{Rozdzia\233 5. Wnioski}{}% 40
+\BOOKMARK [0][-]{section*.85}{Dodatek A. Appendix 1}{}% 41
+\BOOKMARK [0][-]{section*.87}{Bibliografia}{}% 42

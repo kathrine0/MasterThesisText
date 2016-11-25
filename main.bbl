@@ -18,6 +18,11 @@ Allegro -- korzystanie z systemu rekomendacji.
   http://faq.allegro.pl/artykul/27613/korzystanie-z-systemu-rekomendacji}.
 \newblock Data dostępu: 2016-07-19.
 
+\bibitem{amazonmeta}
+Amazon meta.
+\newblock \url{https://snap.stanford.edu/data/amazon-meta.html}.
+\newblock Data dostępu: 2016-11-25.
+
 \bibitem{effandpractstochsub}
 Avron H., Kale S., Kasiviswanathan S., Sindhwani V.
 \newblock Efficient and practical stochastic subgradient descent for nuclear
