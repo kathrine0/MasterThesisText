@@ -5,45 +5,44 @@
 \select@language {polish}
 \select@language {english}
 \select@language {polish}
-\contentsline {chapter}{Todo list}{1}{section*.2}
-\contentsline {chapter}{Rozdzia\l \ 1\relax .\kern .5em Wst\IeC {\k e}p}{3}{section*.3}
-\contentsline {chapter}{Rozdzia\l \ 2\relax .\kern .5em Przegl\IeC {\k a}d istniej\IeC {\k a}cych rozwi\IeC {\k a}za\IeC {\'n}}{5}{section*.6}
-\contentsline {subsection}{\numberline {2.0.1\relax .\kern .5em }Rekomendacja muzyki}{5}{subsection.2.0.1}
-\contentsline {subsection}{\numberline {2.0.2\relax .\kern .5em }Rekomendacja film\IeC {\'o}w}{5}{subsection.2.0.2}
-\contentsline {subsection}{\numberline {2.0.3\relax .\kern .5em }Platformy typu e-commerce}{6}{subsection.2.0.3}
-\contentsline {section}{\numberline {2.1\relax .\kern .5em }Techniki rekomendacji}{6}{section.2.1}
-\contentsline {section}{\numberline {2.2\relax .\kern .5em }Filtrowanie kolaboratywne}{7}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1\relax .\kern .5em }Zalety filtrowania kolaboratywnego}{8}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2\relax .\kern .5em }Wady filtrowania kolaboratywnego}{8}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3\relax .\kern .5em }Algorytmy filtrowania kolaboratywnego}{9}{subsection.2.2.3}
-\contentsline {section}{\numberline {2.3\relax .\kern .5em }Filtrowanie z analiz\IeC {\k a} zawarto\IeC {\'s}ci}{15}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1\relax .\kern .5em }Zalety filtrowania z analiz\IeC {\k a} zawarto\IeC {\'s}ci}{15}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2\relax .\kern .5em }Wady filtrowania z analiz\IeC {\k a} zawarto\IeC {\'s}ci}{15}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3\relax .\kern .5em }Metody tworzenia profilu u\IeC {\.z}ytkownika}{15}{subsection.2.3.3}
-\contentsline {subsection}{\numberline {2.3.4\relax .\kern .5em }Algorytmy wykorzystywane w implementacji filtrowania z analiz\IeC {\k a} zawarto\IeC {\'s}ci}{16}{subsection.2.3.4}
-\contentsline {section}{\numberline {2.4\relax .\kern .5em }Algorytmy hybrydowe}{19}{section.2.4}
-\contentsline {chapter}{Rozdzia\l \ 3\relax .\kern .5em Algorytmy}{21}{section*.25}
-\contentsline {section}{\numberline {3.1\relax .\kern .5em }Model systemu}{21}{section.3.1}
-\contentsline {section}{\numberline {3.2\relax .\kern .5em }Propozycja algorytmu filtrowania z analiz\IeC {\k a} zawarto\IeC {\'s}ci}{22}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1\relax .\kern .5em }Struktura perceptron\IeC {\'o}w i funkcja aktywacji}{23}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2\relax .\kern .5em }Struktura sieci i przebieg algorytmu}{24}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3\relax .\kern .5em }Uczenie sieci neuronowej}{24}{subsection.3.2.3}
-\contentsline {section}{\numberline {3.3\relax .\kern .5em }Propozycja nowych algorytm\IeC {\'o}w hybrydowych}{26}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1\relax .\kern .5em }Zalety zaproponowanych metod}{27}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2\relax .\kern .5em }Wady zaproponowanych metod}{28}{subsection.3.3.2}
-\contentsline {chapter}{Rozdzia\l \ 4\relax .\kern .5em Ocena eksperymentalna}{29}{section*.34}
-\contentsline {section}{\numberline {4.1\relax .\kern .5em }Opis metody badawczej}{29}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1\relax .\kern .5em }Miara oceny}{30}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2\relax .\kern .5em }Zbiory danych}{31}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2\relax .\kern .5em }\IeC {\'S}rodowisko symulacyjne}{32}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1\relax .\kern .5em }Oprogramowanie}{32}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2\relax .\kern .5em }Sprz\IeC {\k e}t}{34}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3\relax .\kern .5em }Eksperymentalne dopasowanie parametr\IeC {\'o}w sieci neuronowej}{34}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1\relax .\kern .5em }Strojenie sieci dla bazy MovieLens}{34}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2\relax .\kern .5em }Strojenie sieci dla bazy AmazonMeta}{41}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4\relax .\kern .5em }Eksperymentalne por\IeC {\'o}wnanie zaproponowanych algorytm\IeC {\'o}w hybrydowych z filtrowaniem z analiz\IeC {\k a} zawarto\IeC {\'s}ci i filtrowaniem kolaboratywnym}{47}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1\relax .\kern .5em }Eksperyment pierwszy - efektywno\IeC {\'s}\IeC {\'c} algorytm\IeC {\'o}w w zale\IeC {\.z}no\IeC {\'s}ci od minimum powtarzaj\IeC {\k a}cych si\IeC {\k e} cech element\IeC {\'o}w}{47}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2\relax .\kern .5em }Analiza statystyczna wynik\IeC {\'o}w}{47}{subsection.4.4.2}
-\contentsline {chapter}{Rozdzia\l \ 5\relax .\kern .5em Wnioski}{57}{section*.83}
-\contentsline {chapter}{Dodatek\ A\relax .\kern .5em Appendix 1}{59}{section*.85}
-\contentsline {chapter}{Bibliografia}{61}{section*.87}
+\contentsline {chapter}{Rozdzia\l \ 1\relax .\kern .5em Wst\IeC {\k e}p}{1}{section*.1}
+\contentsline {chapter}{Rozdzia\l \ 2\relax .\kern .5em Przegl\IeC {\k a}d istniej\IeC {\k a}cych rozwi\IeC {\k a}za\IeC {\'n}}{3}{section*.2}
+\contentsline {subsection}{\numberline {2.0.1\relax .\kern .5em }Rekomendacja muzyki}{3}{subsection.2.0.1}
+\contentsline {subsection}{\numberline {2.0.2\relax .\kern .5em }Rekomendacja film\IeC {\'o}w}{3}{subsection.2.0.2}
+\contentsline {subsection}{\numberline {2.0.3\relax .\kern .5em }Platformy typu e-commerce}{4}{subsection.2.0.3}
+\contentsline {section}{\numberline {2.1\relax .\kern .5em }Techniki rekomendacji}{4}{section.2.1}
+\contentsline {section}{\numberline {2.2\relax .\kern .5em }Filtrowanie kolaboratywne}{5}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1\relax .\kern .5em }Zalety filtrowania kolaboratywnego}{6}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2\relax .\kern .5em }Wady filtrowania kolaboratywnego}{6}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3\relax .\kern .5em }Algorytmy filtrowania kolaboratywnego}{7}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3\relax .\kern .5em }Filtrowanie z analiz\IeC {\k a} zawarto\IeC {\'s}ci}{13}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1\relax .\kern .5em }Zalety filtrowania z analiz\IeC {\k a} zawarto\IeC {\'s}ci}{13}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2\relax .\kern .5em }Wady filtrowania z analiz\IeC {\k a} zawarto\IeC {\'s}ci}{13}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3\relax .\kern .5em }Metody tworzenia profilu u\IeC {\.z}ytkownika}{13}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4\relax .\kern .5em }Algorytmy wykorzystywane w implementacji filtrowania z analiz\IeC {\k a} zawarto\IeC {\'s}ci}{14}{subsection.2.3.4}
+\contentsline {section}{\numberline {2.4\relax .\kern .5em }Algorytmy hybrydowe}{17}{section.2.4}
+\contentsline {chapter}{Rozdzia\l \ 3\relax .\kern .5em Algorytmy}{19}{section*.21}
+\contentsline {section}{\numberline {3.1\relax .\kern .5em }Model systemu}{19}{section.3.1}
+\contentsline {section}{\numberline {3.2\relax .\kern .5em }Propozycja algorytmu filtrowania z analiz\IeC {\k a} zawarto\IeC {\'s}ci}{20}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1\relax .\kern .5em }Struktura perceptron\IeC {\'o}w i funkcja aktywacji}{21}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2\relax .\kern .5em }Struktura sieci i przebieg algorytmu}{22}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3\relax .\kern .5em }Uczenie sieci neuronowej}{22}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3\relax .\kern .5em }Propozycja nowych algorytm\IeC {\'o}w hybrydowych}{24}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1\relax .\kern .5em }Zalety zaproponowanych metod}{25}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2\relax .\kern .5em }Wady zaproponowanych metod}{26}{subsection.3.3.2}
+\contentsline {chapter}{Rozdzia\l \ 4\relax .\kern .5em Ocena eksperymentalna}{27}{section*.30}
+\contentsline {section}{\numberline {4.1\relax .\kern .5em }Opis metody badawczej}{27}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1\relax .\kern .5em }Miara oceny}{28}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2\relax .\kern .5em }Zbiory danych}{29}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2\relax .\kern .5em }\IeC {\'S}rodowisko symulacyjne}{30}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1\relax .\kern .5em }Oprogramowanie}{30}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2\relax .\kern .5em }Sprz\IeC {\k e}t}{32}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3\relax .\kern .5em }Eksperymentalne dopasowanie parametr\IeC {\'o}w sieci neuronowej}{32}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1\relax .\kern .5em }Strojenie sieci dla bazy MovieLens}{32}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2\relax .\kern .5em }Strojenie sieci dla bazy AmazonMeta}{39}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4\relax .\kern .5em }Eksperymentalne por\IeC {\'o}wnanie zaproponowanych algorytm\IeC {\'o}w hybrydowych z filtrowaniem z analiz\IeC {\k a} zawarto\IeC {\'s}ci i filtrowaniem kolaboratywnym}{44}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1\relax .\kern .5em }Badania na bazie MovieLens}{44}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2\relax .\kern .5em }Badania na bazie AmazonMeta}{51}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3\relax .\kern .5em }Podsumowanie}{60}{subsection.4.4.3}
+\contentsline {chapter}{Rozdzia\l \ 5\relax .\kern .5em Wnioski}{61}{section*.90}
+\contentsline {chapter}{Bibliografia}{63}{section*.92}

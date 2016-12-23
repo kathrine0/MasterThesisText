@@ -182,32 +182,25 @@ ABSTRACT EN
 \graphicspath{ {img/} }
 \DeclareGraphicsExtensions{.pdf,.png,.jpg,.svg}
 
-  \listoftodos
-
-
  \chapter{Wstęp}
  \shortTitle{Wstęp}
-	 Wraz z rozwojem Internetu zmienił się sposób dostępu do informacji. Kiedyś to użytkownik musiał walczyć pozyskanie wiedzy; dzisiaj to informacje walczą u uwagę użytkowników. W świecie zalanym wiadomościami koniecznym wydaje się być zastosowanie filtra, który odsieje interesującą  i wartościową zawartość od tej niechcianej. Pomocne okazują się zautomatyzowane mechanizmy rekomendacji.
+	 Wraz z rozwojem Internetu zmienił się sposób dostępu do informacji. Kiedyś to użytkownik musiał walczyć pozyskanie wiedzy; dzisiaj to twórcy informacji walczą u uwagę użytkowników. W świecie pełnym wiadomości koniecznym wydaje się być zastosowanie filtra, który odsieje interesującą  i wartościową zawartość od niechcianej. Pomocne okazują się zautomatyzowane mechanizmy rekomendacji.
 	 
-	 Jednakże sama idea rekomendacji nie jest niczym nowym. Co więcej, zjawisko to możemy zaobserwować w naturze -- na przykład wśród mrówek, które podążają wyznaczoną (rekomendowaną) ścieżką feromonową w poszukiwaniu pożywienia.
+	 Idea rekomendacji nie jest jednak niczym nowym. Co więcej, zjawisko to możemy zaobserwować w naturze -- na przykład wśród mrówek, które podążają wyznaczoną (rekomendowaną) ścieżką feromonową w poszukiwaniu pożywienia.
 	 
 	 Ludzie od niepamiętnych czasów posiłkowali się opiniami innych, aby ułatwić sobie dokonanie wyboru, od najbliższego grona znajomych do ekspertów i autorytetów.
 	 
-	 Wraz z rozwojem nauk informatycznych problem rekomendacji stał się problemem interesującym badaczy. Za pierwszy system rekomendacji uznaje się \textit{Tapestry} stworzony w laboratoriach Xerox Palo Alto Research Center w 1992 roku. Motywacją było odfiltrowanie rosnącej liczby niechcianej poczty elektronicznej \cite{id:FromTapestryToSVD}.
+	 Wraz z rozwojem nauk informatycznych problem rekomendacji stał się problemem interesującym badaczy. Za pierwszy system rekomendacji uznaje się ,,Tapestry'' stworzony w laboratoriach Xerox Palo Alto Research Center w 1992 roku. Motywacją było odfiltrowanie rosnącej liczby niechcianej poczty elektronicznej \cite{id:FromTapestryToSVD}.
 	 
 	 Wkrótce później idea ta została rozszerzona przez takich graczy jak Amazon, Google, Pandora, Netflix, Youtube, Yahoo etc. aż do formy, jaką znamy dzisiaj: systemu, który sugeruje użytkownikom produkty, filmy, muzykę, strony internetowe na podstawie ich aktywności w sieci \cite{id:EvolutionOfRecommenderSystems}. 
 	 
-	 Wielkie koncerny internetowe stale poprawiają jakość swoich algorytmów rekomendacji. Najlepszym przykładem jest tutaj Netflix, który w październiku 2006 zorganizował ogólnodostępny konkurs na najlepszy algorytm. Zadaniem uczestników było ulepszenie algorytmu Cinematch. Już po siedmiu dniach od ogłoszenia konkursu trzy zespoły zdołały poprawić wynik Cinematch o 1.06\% \cite{id:NetflixPrize,id:NetflixPrizeRankings}. 18 września 2009 Netflix ogłosił, że zespół BellKor's Pragmatic Chaos poprawił Cinematch o 10,06\% osiągając wynik $RMSE = 0.8567$. Tym samym wygrał nagrodę w wysokości \$1,000,000 i zakończył konkurs \cite{id:NetflixPrize2,id:NetflixPrizeRules}.
+	 Wielkie koncerny internetowe stale poprawiają jakość swoich algorytmów rekomendacji. Dobrym przykładem jest Netflix, który w październiku 2006 zorganizował ogólnodostępny konkurs na najlepszy algorytm rekomendacji. Zadaniem uczestników było ulepszenie algorytmu Cinematch. Już po siedmiu dniach od ogłoszenia konkursu trzy zespoły zdołały poprawić wynik Cinematch o 1.06\% \cite{id:NetflixPrize,id:NetflixPrizeRankings}. 18 września 2009 Netflix ogłosił, że zespół BellKor's Pragmatic Chaos poprawił Cinematch o 10,06\% osiągając wynik $RMSE = 0.8567$. Tym samym wygrał nagrodę w wysokości \$1,000,000 i zakończył konkurs \cite{id:NetflixPrize2,id:NetflixPrizeRules}.
 	 
-	 Systemy rekomendacji ulepszane są nieustannie, o czym świadczy chociażby organizowana rokrocznie konferencja\textit{ ACM International Conference on Recommender Systems}. Tematyka ta poruszana jest także na konferencjach \textit{European Conference on Information Retrieval}, \textit{European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases} i wielu innych. Mimo dużego stopnia zaawansowania wciąż istnieje pole manewru do ulepszania algorytmów rekomendacji i co za tym idzie zwiększanie zadowolenia użytkowników, które z kolei prowadzi do osiągania korzyści biznesowych.
+	 Systemy rekomendacji ulepszane są nieustannie, o czym świadczy chociażby organizowana rokrocznie konferencja\textit{ ACM International Conference on Recommender Systems}. Tematyka ta poruszana jest także na konferencjach \textit{European Conference on Information Retrieval}, \textit{European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases} i wielu innych. Mimo dużego stopnia zaawansowania, wciąż istnieje pole manewru do ulepszania algorytmów rekomendacji i co za tym idzie zwiększanie zadowolenia użytkowników, które z kolei prowadzi do osiągania korzyści biznesowych.
 	 
-	 Celem pracy jest opracowanie i zbudowanie hybrydowego algorytmu rekomendacji. Składowymi docelowego algorytmu są metody kolaboratywnego filtrowania oraz metody filtrowania z analizą zawartości.  
+	 Celem niniejszej pracy jest opracowanie i zbudowanie hybrydowego algorytmu rekomendacji wykorzystującego metodę filtrowania kolaboratywnego i uwzględniającego model elementu rekomendowanego. Składowymi docelowego algorytmu będą metody filtrowania kolaboratywnego i filtrowania z analizą zawartości. Ponadto, założeniem proponowanego systemu jest uniwersalność. Ma on osiągać lepsze wyniki niż algorytmy składowe niezależnie od podpiętego zbioru danych pod warunkiem, że zawiera on oceny elementów i ich charakterystykę wyrażoną zbiorem cech. Dodatkową motywacją jest fakt, że większość prac tego typu testuje nowe proponowane rozwiązania tylko na jednej bazie danych. Niniejsza praca ma proponować rozwiązanie, które działa niezależnie od domeny z której pochodzą dane.
 	 
-	 \todo{(PÓŹNIEJ) CEL PRACY: trzeba rozszerzyć opis, w szczególności o to, co jest nowego i czym różni się od innych już istniejących algorytmów}
-	 
-	 W kolejnych rozdziałach przedstawione są istniejące oraz proponowane ulepszenia, które pozwalają na jeszcze lepsze dopasowanie wyników rekomendacji do oczekiwań użytkowników. 
-	 
-	 \todo{(PÓŹNIEJ) streszczenie spisu treści}
+	 W kolejnych rozdziałach przedstawione są istniejące oraz proponowane ulepszenia, które pozwalają na jeszcze lepsze dopasowanie wyników rekomendacji do oczekiwań użytkowników. Rozdział drugi zawiera przegląd istniejących rozwiązań. Opisane są znane techniki wraz ze szczegółami implementacyjnymi. Przedstawione są platformy komercyjne, które wykorzystają mechanizmy rekomendacji. W rozdziale trzecim zaprezentowane są propozycje nowych, ulepszonych algorytmów. Zaproponowany jest model uniwersalnego systemu, algorytm rekomendacji z analizą zawartości bazujący na metodach sztucznej inteligencji oraz algorytm hybrydowy łączący zalety metod filtrowania kolaboratywnego i z analizą zawartości. Rozdział czwarty zawiera wyniki eksperymentalnych badań nowych algorytmów. Badania przeprowadzone są niezależnie na dwóch różnych bazach danych zawierających dane z różnych domen. Rozdział piąty zawiera podsumowanie pracy i wnioski.
 	 
  
  \chapter{Przegląd istniejących rozwiązań}
@@ -287,7 +280,7 @@ ABSTRACT EN
 	  
 	  \subsection{Zalety filtrowania kolaboratywnego}
 	  
-	  Filtrowanie kolaboratywne dobrze radzi sobie nawet w takich wypadkach, gdzie elementy nie są dobrze opisane lub nie zawierają żadnych własności. Niektóre systemy zawierają zawartość trudną do przeanalizowania przez komputer, np. opinie, pomysły, komentarze. Mimo tego, dzięki filtrowaniu kolaboratywnemu i tak można zbudować efektywny system rekomendacji \cite{melville2002content}.
+	  Filtrowanie kolaboratywne dobrze radzi sobie nawet w wypadkach, gdzie elementy nie są dobrze opisane lub nie zawierają żadnych właściwości. Niektóre systemy zawierają treść trudną do przeanalizowania przez komputer, np. opinie, pomysły, komentarze. Mimo tego, dzięki filtrowaniu kolaboratywnemu można zbudować efektywny system rekomendacji \cite{melville2002content}.
 	  
 	  Dzięki zastosowaniu tej metody mniej prawdopodobne jest wystąpienia zjawiska zwanego ''bańką informacyjną'' (ang. \textit{filter bubble}). Polega ono na tym, że użytkownik otrzymując informacje wyselekcjonowane przez określony algorytm zostaje zamknięty w pewnego rodzaju ,,bańce'', tzn. sugerowane mu elementy są do siebie podobne, gdyż dobierane są w oparciu o jego przeszłe zainteresowania \cite{pariser2011filter}. Dzięki filtrowaniu kolaboratywnemu użytkownik może otrzymać zaskakujące rekomendacje i (w zależności od domeny) odkryć nowy gatunek muzyczny, nowego reżysera lub nową kategorię produktów w sklepie.	 
 	  
@@ -388,7 +381,7 @@ ABSTRACT EN
 	 		
 	 		\WHILE{nie odnaleziono minimum}
 	 		
-	 		\STATE losowo mieszkaj przykłady ze zbioru testowego
+	 		\STATE losowo mieszaj przykłady ze zbioru testowego
 	 		\FOR {$i \in \{1, 2, \ldots, n\} $}
 	 		\STATE $w:= w - \eta \nabla Q_i(w)$
 	 		\ENDFOR
@@ -939,7 +932,7 @@ ABSTRACT EN
 		W celu zbadania jakości algorytmów zaprojektowany został eksperyment. W pierwszej kolejności definiowane są wartości parametrów, zgodnie z którymi ma zostać wykonany kod algorytmów. 
 		Dla parametru podlegającemu testom definiowany jest zakres wartości. 
 		
-		Następnie do pamięci ładowany jest zestaw danych zawierający oceny elementów przez użytkowników oraz dodatkowe własności elementów (jeżeli testowanym algorytmem jest filtrowanie z analizą zawartości lub filtrowanie hybrydowe). W celu przeprowadzenia walidacji krzyżowej zbiór dzielony jest $k$ części. Z nich konstruowanych jest następnie $k$ par: zbiór testowy-zbiór treningowy. Rozmiar każdego zbioru testowego jest równy rozmiarowi jednej części ($\frac{1}{k}$ liczby wszystkich ocen) a rozmiar zbioru treningowego to $k-1*$rozmiar części .
+		Następnie do pamięci ładowany jest zestaw danych zawierający oceny elementów przez użytkowników oraz dodatkowe własności elementów (jeżeli testowanym algorytmem jest filtrowanie z analizą zawartości lub filtrowanie hybrydowe). W celu przeprowadzenia walidacji krzyżowej zbiór dzielony jest $k$ części. Z nich konstruowanych jest następnie $k$ par: zbiór testowy-zbiór treningowy. Rozmiar każdego zbioru testowego jest równy rozmiarowi jednej części ($\frac{1}{k}$ liczby wszystkich ocen) a rozmiar zbioru treningowego to $k-1*$rozmiar części. W czasie przeprowadzanych eksperymentów przyjęto $k=5$.
 		
 		Dla każdej pary zbiorów treningowego i testowego przeprowadzana jest nauka i sprawdzanie algorytmu. Z każdego przebiegu błędy są sumowane a na końcu wyciągana jest średnia.
 		
@@ -1283,14 +1276,14 @@ ABSTRACT EN
 			\begin{longtable}{r||rrr}
 				\label{tab:exppopulation}
 				\centering
-				\textbf{Populacja} & \textbf{RMSE} & \textbf{MAE} & \textbf{czas} \\
+				\textbf{Populacja} & \textbf{RMSE} & \textbf{czas} \\
 				\hline
-				10        & 1.056848 & 0.861325 & 2519                      \\
-				25        & 1.055562 & 0.859391 & 6015                      \\
-				50        & 1.041198 & 0.850866 & 11804                     \\
-				100       & 1.022943 & 0.825477 & \multicolumn{1}{r}{24062} \\
-				200       & 1.013656 & 0.816789 & 52751                     \\
-				\caption{Zależność błędu algorytmu RMSE od rozmiaru populacji.}
+				10        & 0.861325 & 2519     \\
+				25        & 0.859391 & 6015     \\
+				50        & 0.850866 & 11804    \\
+				100       & 0.825477 & 24062	\\
+				200       & 0.816789 & 52751    \\
+				\caption{Zależność błędu algorytmu RMSE od rozmiaru populacji (baza MovieLens).}
 			\end{longtable}
 			
 			\subsubsection{Dopasowanie ilości neuronów w warstwie ukrytej}
@@ -1324,7 +1317,7 @@ ABSTRACT EN
 			\begin{figure}[H]
 				\centering
 				\includegraphics[width=0.7\textwidth]{exphiddenneural}
-				\caption{Wyniki eksperymentu testującego optymalny rozmiar ukrytej warstwy neuronów na bazie MovieLens. Wykres przedstawia zależność pomiędzy ilością neuronów a błędem RMSE. Wyniki prezentują się odmiennie w zależności od typu algorytmu wykorzystanego do uczenia sieci. W przypadku algorytmów propagacji wstecznej i RPROP występuje dodatnia korelacja pomiędzy rozmiarem warstwy ukrytej a błędem algorytmu rekomendacji. Dla algorytmu BackProp optymalny rezultat osiągnięty został dla zaledwie jednego neuronu w warstwie ukrytej, dla algorytmu RPROP dla pięciu neuronów. W tym ostatnim przypadku poprawa znajduje się jednak na marginesie błędu statystycznego. W przypadku algorytmu genetycznego, niezależnie od ilości neuronów wynik oscyluje na podobnym poziomie w zakresie testowanych wartości.}
+				\caption{Wyniki eksperymentu testującego optymalny rozmiar ukrytej warstwy neuronów na bazie MovieLens. Wykres przedstawia zależność pomiędzy ilością neuronów a błędem RMSE. Wyniki prezentują się odmiennie w zależności od typu algorytmu wykorzystanego do uczenia sieci. W przypadku algorytmów propagacji wstecznej i RPROP występuje dodatnia korelacja pomiędzy rozmiarem warstwy ukrytej a błędem algorytmu rekomendacji. Dla algorytmu RPROP optymalny rezultat osiągnięty został dla zaledwie jednego neuronu w warstwie ukrytej, dla algorytmu BackProp dla pięciu neuronów. W tym ostatnim przypadku poprawa jest nieznaczna oscylująca w granicach 0,01. W przypadku algorytmu genetycznego, niezależnie od ilości neuronów wynik oscyluje na podobnym poziomie w zakresie testowanych wartości.}
 				\label{fig:exphiddenneural}
 			\end{figure}
 			
@@ -1344,15 +1337,6 @@ ABSTRACT EN
 				\caption{Zależność błędu algorytmu RMSE od rozmiaru ukrytej warstwy neuronowej (baza MovieLens).}
 			\end{longtable}
 		
-			
-			\subsubsection{Dopasowanie współczynnika uczenia}
-			
-				\todo{(NA KOŃCU, BADANIA) Czy trzeba?}
-			
-			\subsubsection{Dopasowanie wartości alfa}
-			
-				\todo{(NA KOŃCU, BADANIA) Czy trzeba}
-	
 			\subsubsection{Podsumowanie}
 	
 			Bazując na przeprowadzonych eksperymentach zostały zdefiniowane optymalne parametry algorytmu filtrowania z analizą zawartości. Zostały one przedstawione w tabeli \ref{tab:optimummovielens}.
@@ -1369,7 +1353,7 @@ ABSTRACT EN
 					Współczynnik uczenia: & 0.1 \\
 					Parametr funkcji aktywacji $\alpha$: & 2.0 \\						
 					\hline
-					\caption{Konfiguracja dla eksperymentu dopasowania rozmiaru ukrytej warstwy neuronów}
+					\caption{Konfiguracja dla eksperymentu dopasowania rozmiaru ukrytej warstwy neuronów (baza MovieLens).}
 					\label{tab:optimummovielens}
 				\end{longtable}
 			\end{center}
@@ -1452,7 +1436,18 @@ ABSTRACT EN
 			 	\label{fig:am_exppopulation}
 			 \end{figure}
 			
-			\todo{wstawić tabelkę}
+			\begin{longtable}{r||rrr}
+				\label{tab:am_exppopulation}
+				\centering
+				\textbf{Populacja} & \textbf{RMSE} & \textbf{czas} \\
+				\hline
+				10        & 0.9320416  & 21277 \\
+				25        & 0.9312775  & 52429 \\
+				50        & 0.9311208  & 97631 \\
+				100       & 0.9306905  & 460344 \\
+				200       & 0.9305578  & 1356036 \\
+				\caption{Zależność błędu algorytmu RMSE od rozmiaru populacji (baza AmazonMeta).}
+			\end{longtable}
 			
 			\subsubsection{Dopasowanie ilości neuronów w warstwie ukrytej}
 			
@@ -1488,10 +1483,6 @@ ABSTRACT EN
 					\caption{Zależność błędu algorytmu RMSE i czasu wykonania od rozmiaru ukrytej warstwy neuronowej (baza AmazonMeta).}
 				\end{longtable}
 			
-			\subsubsection{Dopasowanie współczynnika uczenia}
-			\todo{(NA KOŃCU, BADANIA) Czy trzeba?}			
-			\subsubsection{Dopasowanie wartości alfa}
-			\todo{(NA KOŃCU, BADANIA) Czy trzeba?}
 			\subsubsection{Podsumowanie}
 		
 			Bazując na przeprowadzonych eksperymentach zostały zdefiniowane optymalne parametry algorytmu filtrowania z analizą zawartości. Zostały one przedstawione w tabeli \ref{tab:am_optimummovielens}.
@@ -1508,116 +1499,319 @@ ABSTRACT EN
 					Współczynnik uczenia: & 0.1 \\
 					Parametr funkcji aktywacji $\alpha$: & 2.0 \\						
 					\hline
-					\caption{Konfiguracja dla eksperymentu dopasowania rozmiaru ukrytej warstwy neuronów}
+					\caption{Konfiguracja dla eksperymentu dopasowania rozmiaru ukrytej warstwy neuronów (baza AmazonMeta).}
 					\label{tab:am_optimummovielens}
 				\end{longtable}
 			\end{center}
 		
 		\section{Eksperymentalne porównanie zaproponowanych algorytmów hybrydowych z filtrowaniem z analizą zawartości i filtrowaniem kolaboratywnym}
 		
-		Eksperymenty miały na celu porównanie efektywności zaproponowanych algorytmów hybrydowych z samym filtrowaniem kolaboratywnym i z samym filtrowaniem z analizą zawartości. 
+		Eksperymenty miały na celu porównanie efektywności zaproponowanych algorytmów hybrydowych z samym filtrowaniem kolaboratywnym i z samym filtrowaniem z analizą zawartości. Początkowo zostały przeprowadzone testy odrębnie dla filtrowania kolaboratywnego i dla filtrowania z analizą zawartości. Następnie dla takiej samej konfiguracji parametrów zostały uruchomione algorytmy hybrydowe. 
 		
-		Początkowo zostały przeprowadzone testy odrębnie dla filtrowania kolaboratywnego i dla filtrowania z analizą zawartości. Następnie dla takie samej konfiguracji parametrów zostały uruchomione algorytmy hybrydowe. 
+		Parametrami, które ulegały modyfikacji były parametr określający minimum powtarzających się cech ocenianych elementów i liczba użytkowników brana pod uwagę przez filtrowanie kolaboratywne. Sieć neuronowa została skonfigurowana w sposób wynikający z eksperymentów przeprowadzonych w rozdziałach \ref{ss:strojeniemovielens} i \ref{ss:strojenieamazonmeta}.
 		
-		W pierwszym eksperymencie parametrem, który ulegał modyfikacji był parametr określający minimum powtarzających się cech ocenianych elementów. W drugim eksperymencie modyfikowana była liczba użytkowników brana pod uwagę przez filtrowanie kolaboratywne. 
+		Dla każdego algorytmu hybrydowego wykonanych zostało 12 pomiarów. Parametr określający minimalną liczbę powtarzających się cech przyjmował wartości 1, 2 i 5. Parametr określający liczbę użytkowników braną pod uwagę podczas budowania macierzy użytkownik-element w kolaboratywnej części składowej algorytmu przyjmował wartości 50, 100, 500, 1000. 
 		
-		W każdym przypadku sieć neuronowa skonfigurowana została w sposób optymalny wynikający z eksperymentów przeprowadzonych w sekcjach \ref{ss:strojeniemovielens} i \ref{ss:strojenieamazonmeta}.
+		Przyjęto następującą metodologię: algorytm hybrydowy zawsze porównywany był z filtrowaniem z analizą zawartości o analogicznym sposobie uczenia sieci neuronowej. Tak też algorytm hybrydowy typu ,,matrix factorization i sieć neuronowa uczona metodą propagacji wstecznej'' porównany jest z algorytmem filtrowania z analizą zawartości z siecią neuronową uczoną metodą propagacji wstecznej.
 		
-		\subsection{Eksperyment pierwszy - efektywność algorytmów w zależności od minimum powtarzających się cech elementów}
+		\subsection{Badania na bazie MovieLens}
+				
+		\subsubsection{Porównanie algorytmów hybrydowych z filtrowaniem z analizą zawartości}
 		
-		%% Hybrid movielens1 %%
+		W pierwszej kolejności porównany został algorytm hybrydowy typu matrix  factorization i sieć neuronowa uczona metodą propagacji wstecznej. Wyniki eksperymentu przedstawia rys. \ref{fig:ml_exphybrid1_1}. Zgodnie z oczekiwaniami im większa macierz użytkownik-element tym lepsze były uzyskane rezultaty. W przypadku uwzględnieniu 100 użytkowników otrzymane rezultaty były gorsze niż te uzyskane metodą filtrowania z analizą zawartości. Jednakże przy uwzględnieniu 200 użytkowników i więcej wynik był znacznie lepszy. 
 		
-		\begin{figure}[!ht]
+		\begin{figure}
 			\centering
-			\includegraphics[page=1,width=1\textwidth]{exphybrid_movielens1}
-			\label{fig:exphybrid_movielens1a}
+			\includegraphics[width=0.7\textwidth]{ml_exphybrid1_1}			
+			\caption{Wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,matrix factorization i sieć neuronowa uczona metodą propagacji wstecznej'' z filtrowaniem z analizą zawartości z siecią neuronową uczoną metodą propagacji wstecznej (baza MovieLens).}
+			\label{fig:ml_exphybrid1_1}
+		\end{figure}
+	
+		Kolejnym porównywanym algorytmem był algorytm hybrydowy ,,biased matrix factorization i sieć neuronowa uczona metodą propagacji wstecznej''. Wyniki eksperymentu przedstawia rys. \ref{fig:ml_exphybrid1_2}. 
+		W tym wypadku uwzględnienie tylko 100 użytkowników w komponencie filtrowania kolaboratywnego powodowało osiąganie lepszego rezultatu. Pomiędzy RMSE a liczbą użytkowników występuje tendencja spadkowa. W tym eksperymencie nastąpiło niewielkie zaburzenie tej tendencji (na granicy błędu statystycznego) w przypadku 2 i 5 powtarzających się cech dla 1000 i 2000 użytkowników. Ponadto, wyniki osiągnięte przez ten algorytm hybrydowy są nieco lepsze niż przez algorytm hybrydowy ,,matrix factorization i sieć neuronowa uczona metodą propagacji wstecznej''.
+	
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\textwidth]{ml_exphybrid1_2}			
+			\caption{Wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,biased matrix factorization i sieć neuronowa uczona metodą propagacji wstecznej'' z filtrowaniem z analizą zawartości z siecią neuronową uczoną metodą propagacji wstecznej (baza MovieLens).}
+			\label{fig:ml_exphybrid1_2}
 		\end{figure}
 		
-		\begin{figure}[!ht]
+		Rys. \ref{fig:ml_exphybrid1_3} przedstawia porównanie algorytmu hybrydowego ,,SVD++ i sieć neuronowa uczona metodą propagacji wstecznej'' z filtrowaniem z analizą zawartości z siecią neuronową uczoną metodą propagacji wstecznej. Warto zauważyć, że wyniki osiągnięte przez taki algorytm są niewiele gorsze lub identyczne z wynikami osiągniętymi przez algorytm z poprzedniego porównania. 
+
+		\begin{figure}
 			\centering
-			\includegraphics[page=2,width=1\textwidth]{exphybrid_movielens1}
-			\caption{Porównanie algorytmu hybrydowego z analizą zawartości na podstawie danych z bazy MovieLense. Skuteczność filtrowania z hybrydowego w zależności od liczby użytkowników i powtarzających się cech. Pogrubiona linia przedstawia działanie filtrowania z analizą zawartości.}
-			\label{fig:exphybrid_movielens1b}
+			\includegraphics[width=0.7\textwidth]{ml_exphybrid1_3}			
+			\caption{Wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,SVD++ i sieć neuronowa uczona metodą propagacji wstecznej'' z filtrowaniem z analizą zawartości z siecią neuronową uczoną metodą propagacji wstecznej (baza MovieLens).}
+			\label{fig:ml_exphybrid1_3}
 		\end{figure}
 		
-		%% END Hybrid movielens1 %%
-		%% Hybrid movielens2 %%
+		Następne trzy wykresy: rys. \ref{fig:ml_exphybrid1_4}, rys. \ref{fig:ml_exphybrid1_5} i rys. \ref{fig:ml_exphybrid1_6} przedstawiają porównanie kolejno algorytmów hybrydowych ,,matrix factorization i sieć neuronowa uczona metodą RPROP'', ,,biased matrix factorization i sieć neuronowa uczona metodą RPROP'' i ,,SVD++ i sieć neuronowa uczona metodą RPROP'' z filtrowaniem z analizą zawartości z siecią neuronową uczoną metodą RPROP. Tak jak w poprzednich przypadkach można zauważyć, że rezultaty są za każdym razem lepsze a skuteczność rośnie wraz ze wzrostem wielkości macierzy użytkownik-element.
 		
-		\begin{figure}[!ht]
+		Największa niespodzianka występuje w przypadku testu porównującego działanie algorytmu hybrydowego ,,SVD++ i sieć neuronowa uczona metodą RPROP'' (rys. \ref{fig:ml_exphybrid1_6}). Dla 200 użytkowników został osiągnięty dużo lepszy wynik niż dla 1000 użytkowników. Takie zjawisko występuje jednak tylko w przypadku 1 powtarzającej się cechy. Dla 2 i 5 osiągnięte wyniki są bardziej zbliżone do przewidywanych. Jako, że taka sytuacja wystąpiła tylko raz można założyć, że wynika to z niefortunnie dobranych danych, dla których zbudowanie rekomendacji okazało się być trudniejsze niż zazwyczaj. 
+		
+		Warto też zauważyć, że zgodnie z wcześniejszymi oczekiwaniami, algorytm filtrowania z analizą zawartości z siecią neuronową uczoną metodą RPROP zwraca sporo gorsze wyniki niż analogiczny algorytm uczony metodą propagacji wstecznej (odpowiednio $RMSE \in \{1,02; 1,02; 1,01\}$ i $RMSE \in \{1,38; 1,18; 1,04\}$ dla 1, 2 i 5 powtarzających się cech). 
+		
+		\begin{figure}
 			\centering
-			\includegraphics[page=1,width=1\textwidth]{exphybrid_movielens2}
-			\label{fig:exphybrid_movielens2a}
+			\includegraphics[width=0.7\textwidth]{ml_exphybrid1_4}			
+			\caption{Wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,matrix factorization i sieć neuronowa uczona metodą RPROP'' z filtrowaniem z analizą zawartości z siecią neuronową uczoną metodą RPROP (baza MovieLens).}
+			\label{fig:ml_exphybrid1_4}
+		\end{figure}
+	
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\textwidth]{ml_exphybrid1_5}			
+			\caption{Wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,biased matrix factorization i sieć neuronowa uczona metodą RPROP'' z filtrowaniem z analizą zawartości z siecią neuronową uczoną metodą RPROP (baza MovieLens).}
+			\label{fig:ml_exphybrid1_5}
 		\end{figure}
 		
-		\begin{figure}[!ht]
+		\begin{figure}
 			\centering
-			\includegraphics[page=2,width=1\textwidth]{exphybrid_movielens2}
-			\caption{Porównanie algorytmu hybrydowego z kolaboratywnym na podstawie danych z bazy MovieLense. Skuteczność filtrowania z hybrydowego w zależności od liczby użytkowników i powtarzających się cech. Pogrubiona linia przedstawia działanie filtrowania kolaboratywnego.}
-			\label{fig:exphybrid_movielens2b}
+			\includegraphics[width=0.7\textwidth]{ml_exphybrid1_6}			
+			\caption{Wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,SVD++ i sieć neuronowa uczona metodą RPROP'' z filtrowaniem z analizą zawartości z siecią neuronową uczoną metodą RPROP (baza MovieLens).}
+			\label{fig:ml_exphybrid1_6}
 		\end{figure}
 		
-		%% END Hybrid movielens2 %%
+		Ostatnie trzy wykresy: rys. \ref{fig:ml_exphybrid1_7}, rys. \ref{fig:ml_exphybrid1_8} i rys. \ref{fig:ml_exphybrid1_9} przedstawiają porównanie kolejno algorytmów hybrydowych ,,matrix factorization i sieć neuronowa uczona algorytmem genetycznym'', ,,biased matrix factorization i sieć neuronowa uczona algorytmem genetycznym'' i ,,SVD++ i sieć neuronowa uczona algorytmem genetycznym'' z filtrowaniem z analizą zawartości z siecią neuronową uczoną algorytmem genetycznym.
 		
+		Wyniki osiągnięte przez algorytm genetyczny są nieznacznie gorsze niż te osiągnięte przez metodę propagacji wstecznej. Poza tym, zgodnie z oczekiwaniami występuje ujemna korelacja pomiędzy ilością użytkowników a RMSE.
 		
-		\subsubsection{Badania na bazie AmazonMeta}
+			\begin{figure}
+			\centering
+			\includegraphics[width=0.7\textwidth]{ml_exphybrid1_7}			
+			\caption{Wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,matrix factorization i sieć neuronowa uczona metodą algorytmem genetycznym'' z filtrowaniem z analizą zawartości z siecią neuronową uczoną algorytmem genetycznym (baza MovieLens).}
+			\label{fig:ml_exphybrid1_7}
+		\end{figure}
 		
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\textwidth]{ml_exphybrid1_8}			
+			\caption{Wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,biased matrix factorization i sieć neuronowa uczona algorytmem genetycznym'' z filtrowaniem z analizą zawartości z siecią neuronową uczoną algorytmem genetycznym (baza MovieLens).}
+			\label{fig:ml_exphybrid1_8}
+		\end{figure}
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\textwidth]{ml_exphybrid1_9}			
+			\caption{Wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,SVD++ i sieć neuronowa uczona metodą RPROP'' z algorytmem genetycznym'' z filtrowaniem z analizą zawartości z siecią neuronową uczoną algorytmem genetycznym (baza MovieLens).}
+			\label{fig:ml_exphybrid1_9}
+		\end{figure}
+	
+		Podsumowując, w przypadku bazy danych MovieLens, pomijając pierwszy przypadek, już 100 użytkowników okazało się być wystarczająco wysoką liczbą aby wykorzystanie algorytmu hybrydowego wpływało pozytywnie na efekt końcowy. Ponadto, zgodnie z oczekiwaniami występuje wyraźna korelacja ujemna pomiędzy liczbą użytkowników a RMSE. 
+		
+		Liczba powtarzających się cech nieznacznie wpłynęła na wynik w przypadku zastosowania algorytmu filtrowania z analizą zawartości z siecią neuronową uczoną metodą propagacji wstecznej, jednak w przypadku sieci uczonej metodą RPROP różnica była znaczna. 
+		
+		Najlepszy rezultat osiągnięty został dzięki zastosowaniu algorytmu hybrydowego ,,biased matrix factorization i sieć neuronowa uczona algorytmem genetycznym'' i ,,biased matrix factorization i sieć neuronowa uczona algorytmem genetycznym'' dla 5 powtarzających się cech i 2000 użytkowników. RMSE wyniosło $0,79$.
+		
+		\subsubsection{Porównanie algorytmów hybrydowych z filtrowaniem kolaboratywnym}
+		
+		Wykresy \ref{fig:ml_exphybrid2_1} i \ref{fig:ml_exphybrid2_2} przedstawiają porównanie algorytmów hybrydowych z filtrowaniem kolaboratywnym metodą matrix factorization. W przypadku algorytmu hybrydowego ,,matrix factorization i sieć neuronowa uczona metodą propagacji wstecznej'' i ,,matrix factorization i sieć neuronowa uczona metodą RPROP'' można zaobserwować ujemną korelację pomiędzy liczbą powtarzających się cech a RMSE. Algorytm ,,matrix factorization i sieć neuronowa uczona algorytmem genetycznym'' radzi sobie dużo gorzej z elementami o 5 powtarzających się cechach niż 1 lub 2. Poza algorytmem hybrydowym ,,matrix factorization i sieć neuronowa uczona metodą RPROP'' radzą sobie one lepiej niż czysty algorytm filtrowania kolaboratywnego metodą matrix factorization.
+		
+		Wykresy \ref{fig:ml_exphybrid2_2} i \ref{fig:ml_exphybrid2_3} przedstawiają porównanie algorytmów hybrydowych z filtrowaniem kolaboratywnym metodą biased matrix factorization. Podobnie jak poprzednio algorytmy hybrydowe o składowej filtrowania z analizą treści metodą propagacji wstecznej i algorytmem genetycznym radzą sobie lepiej. Algorytm o składowej RPROP wypada znacznie gorzej niż samo filtrowanie kolaboratywne w przypadku 1 powtarzającej się cechy. Dopiero uwzględnienie co najmniej 5 cech pozwala na uzyskanie lepszych rezultatów.
+		
+		Wykresy \ref{fig:ml_exphybrid2_4} i \ref{fig:ml_exphybrid2_5} przedstawiają porównanie algorytmów hybrydowych z filtrowaniem kolaboratywnym metodą SVD++. Występuje analogiczna sytuacja jak wcześniej podczas zastosowaniu składowej filtrowania z analizą treści metodą RPROP. Poza tym tendencje są podobne do poprzednich przypadków.
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\textwidth]{ml_exphybrid2_1}			
+			\caption{\textbf{Po lewej}: wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,matrix factorization i sieć neuronowa uczona metodą propagacji wstecznej'' z filtrowaniem kolaboratywnym metodą ,,matrix factorization''. \textbf{Po prawej}: wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,matrix factorization i sieć neuronowa uczona metodą RPROP'' z filtrowaniem kolaboratywnym metodą ,,matrix factorization'' (baza MovieLens).}
+			\label{fig:ml_exphybrid2_1}
+		\end{figure}
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\textwidth]{ml_exphybrid2_2}			
+			\caption{\textbf{Po lewej}: wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,matrix factorization i sieć neuronowa uczona algorytmem genetycznym'' z filtrowaniem kolaboratywnym metodą ,,matrix factorization''. \textbf{Po prawej}: wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,biased matrix factorization i sieć neuronowa uczona metodą propagacji wstecznej'' z filtrowaniem kolaboratywnym metodą ,,biased matrix factorization'' (baza MovieLens).}
+			\label{fig:ml_exphybrid2_2}
+		\end{figure}
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\textwidth]{ml_exphybrid2_3}			
+			\caption{\textbf{Po lewej}: wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,biased matrix factorization i sieć neuronowa uczona metodą RPROP'' z filtrowaniem kolaboratywnym metodą ,,biased matrix factorization''. \textbf{Po prawej}: wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,biased matrix factorization i sieć neuronowa uczona algorytmem genetycznym'' z filtrowaniem kolaboratywnym metodą ,,biased matrix factorization''(baza MovieLens).}
+			\label{fig:ml_exphybrid2_3}
+		\end{figure}
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\textwidth]{ml_exphybrid2_4}			
+			\caption{\textbf{Po lewej}: wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,SVD++ i sieć neuronowa uczona metodą propagacji wstecznej'' z filtrowaniem kolaboratywnym metodą ,,SVD++''. \textbf{Po prawej}: wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,SVD++ i sieć neuronowa uczona metodą RPROP'' z filtrowaniem kolaboratywnym metodą ,,SVD++'' (baza MovieLens).}
+			\label{fig:ml_exphybrid2_4}
+		\end{figure}
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.5\textwidth]{ml_exphybrid2_5}			
+			\caption{Wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,SVD++ i sieć neuronowa uczona algorytmem genetycznym'' z filtrowaniem kolaboratywnym metodą ,,SVD++'' (baza MovieLens).}
+			\label{fig:ml_exphybrid2_5}
+		\end{figure}
+	
+		\subsubsection{Porównanie uśrednionych wartości}
+		
+		Aby porównać efektywność poszczególnych algorytmów otrzymane wyniki zostały uśrednione. Rezultat przedstawia wykres \ref{fig:ml_exphybrid}. Najlepsze rezultaty otrzymane zostały dzięki algorytmowi hybrydowemu ,,biased matrix factorization i sieć neuronowa uczona algorytmem genetycznym". W porównaniu do rezultatu osiągniętego za pomocą filtrowania z analizą zawartości (RPROP) RMSE zmalało o  $29,36\%$. W porównaniu do najefektywniejszego algorytmu nie-hybrydowego, algorytmu filtrowania kolaboratywnego (biased matrix factorization) RMSE zmalało o $8,82\%$.
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\textwidth]{ml_exphybrid}	
+			\caption{Wykres przedstawia porównanie wyników działania algorytmów hybrydowych (słupki niebieskie) z algorytmami filtrowania kolaboratywnego (słupki czarne) i filtrowania z analizą zawartości (słupki szare) (baza MovieLens).}
+			\label{fig:ml_exphybrid}
+		\end{figure}
+		
+		\subsection{Badania na bazie AmazonMeta}
+				
+		\subsubsection{Porównanie algorytmów hybrydowych z filtrowaniem z analizą zawartości}
+		
+		Badania na bazie AmazonMeta zostały przeprowadzone w sposób analogiczny do tych przeprowadzonych na bazie MovieLens. Wyniki eksperymentów przedstawiają rys. \ref{fig:am_exphybrid1_1}, \ref{fig:am_exphybrid1_2}, \ref{fig:am_exphybrid1_3}, \ref{fig:am_exphybrid1_4} i  \ref{fig:am_exphybrid1_5}.
+		
+		W przypadku tej bazy danych dużo lepiej wypadły algorytmy hybrydowe, nawet dla konfiguracji z zaledwie 50 użytkownikami. Nieznacznie lepiej od pozostałych wypadała konfiguracja z minimum dwoma powtarzającymi się cechami. Dla wszystkich algorytmów hybrydowych można zauważyć delikatną tendencję spadkową wartości RMSE wraz ze wzrostem liczby użytkowników uwzględnianych w składowej filtrowania kolaboratywnego, za wyjątkiem tych które wykorzystują metodę SVD++. Algorytmy hybrydowe o składowej filtrowania kolaboratywnego bazującej na metodzie SVD++ wykazały takie same (lub prawie takie same o różnicy na poziomie błędu statystycznego) wyniki wartości RMSE.
+		
+		Najlepsze wyniki dla tej bazy danych zostały osiągnięte dzięki algorytmom: ,,biased matrix factorization i sieć neuronowa uczona algorytmem genetycznym'' i ,,biased matrix factorization i sieć neuronowa uczona metodą propagacji wstecznej'', warto jednak zauważyć że różnica pomiędzy kolejnymi wynikami algorytmów hybrydowych jest bardzo nieznaczna. 
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\textwidth]{am_exphybrid1_1}			
+			\caption{\textbf{Po lewej}: wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,matrix factorization i sieć neuronowa uczona metodą propagacji wstecznej'' z filtrowaniem z analizą zawartości z siecią neuronową uczoną metodą propagacji wstecznej. \textbf{Po prawej}: wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,biased matrix factorization i sieć neuronowa uczona metodą propagacji wstecznej'' z filtrowaniem z analizą zawartości z siecią neuronową uczoną metodą propagacji wstecznej (baza AmazonMeta).}
+			\label{fig:am_exphybrid1_1}
+		\end{figure}
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\textwidth]{am_exphybrid1_2}			
+			\caption{\textbf{Po lewej}: wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,SVD++ i sieć neuronowa uczona metodą propagacji wstecznej'' z filtrowaniem z analizą zawartości z siecią neuronową uczoną metodą propagacji wstecznej. \textbf{Po prawej}: wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,matrix factorization i sieć neuronowa uczona metodą RPROP'' z filtrowaniem z analizą zawartości z siecią neuronową uczoną metodą RPROP (baza AmazonMeta).}
+			\label{fig:am_exphybrid1_2}
+		\end{figure}
+	
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\textwidth]{am_exphybrid1_3}			
+			\caption{\textbf{Po lewej}: wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,biased matrix factorization i sieć neuronowa uczona metodą RPROP'' z filtrowaniem z analizą zawartości z siecią neuronową uczoną metodą RPROP. \textbf{Po prawej}: wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,SVD++ i sieć neuronowa uczona metodą RPROP'' z filtrowaniem z analizą zawartości z siecią neuronową uczoną metodą RPROP (baza AmazonMeta).}
+			\label{fig:am_exphybrid1_3}
+		\end{figure}
+	
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\textwidth]{am_exphybrid1_4}			
+			\caption{\textbf{Po lewej}: wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,matrix factorization i sieć neuronowa uczona algorytmem genetycznym'' z filtrowaniem z analizą zawartości z siecią neuronową uczoną algorytmem genetycznym. \textbf{Po prawej}: wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,biased matrix factorization i sieć neuronowa uczona algorytmem genetycznym'' z filtrowaniem z analizą zawartości z siecią neuronową uczoną algorytmem genetycznym (baza AmazonMeta).}
+			\label{fig:am_exphybrid1_4}
+		\end{figure}
 
-			\todo{(BADANIA) Porównanie algorytmu hybrydowego z content-based i collaborative}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.5\textwidth]{am_exphybrid1_5}			
+			\caption{Wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,SVD++ i sieć neuronowa uczona algorytmem genetycznym'' z filtrowaniem z analizą zawartości z siecią neuronową uczoną algorytmem genetycznym (baza AmazonMeta).}
+			\label{fig:am_exphybrid1_5}
+		\end{figure}
 
-
-
-%% Hybrid amazon1 %%
-
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[page=1,width=1\textwidth]{exphybrid_amazon1}
-	\label{fig:exphybrid_amazon1a}
-\end{figure}
-
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[page=2,width=1\textwidth]{exphybrid_amazon1}
-	\caption{Porównanie algorytmu hybrydowego z analizą zawartości na podstawie danych z bazy AmazonMeta. Skuteczność filtrowania z hybrydowego w zależności od liczby użytkowników i powtarzających się cech. Pogrubiona linia przedstawia działanie filtrowania z analizą zawartości.}
-	\label{fig:exphybrid_amazon1b}
-\end{figure}
-
-%% END Hybrid amazon1 %%
-%% Hybrid amazon2 %%
-
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[page=1,width=1\textwidth]{exphybrid_amazon2}
-	\label{fig:exphybrid_amazon2a}
-\end{figure}
-
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[page=2,width=1\textwidth]{exphybrid_amazon2}
-	\caption{Porównanie algorytmu hybrydowego z kolaboratywnym na podstawie danych z bazy AmazonMeta. Skuteczność filtrowania z hybrydowego w zależności od liczby użytkowników i powtarzających się cech. Pogrubiona linia przedstawia działanie filtrowania kolaboratywnego.}
-	\label{fig:exphybrid_amazon2b}
-\end{figure}
-
-%% END Hybrid amazon2 %%
-
-
-		\subsection{Analiza statystyczna wyników}		\todo{(PÓŹNIEJ) Analiza statystyczna wyników, PQStat}
+		\subsubsection{Porównanie algorytmów hybrydowych z filtrowaniem kolaboratywnym}
+		
+		Wykresy \ref{fig:am_exphybrid2_1} i \ref{fig:am_exphybrid2_2} przedstawiają porównanie algorytmów hybrydowych z filtrowaniem kolaboratywnym metodą matrix factorization. Można zaobserwować znaczy spadek RMSE na korzyść algorytmów hybrydowych bez względu ilość powtarzających się cech.
+		
+		Wykresy \ref{fig:am_exphybrid2_2} i \ref{fig:am_exphybrid2_3} przedstawiają porównanie algorytmów hybrydowych z filtrowaniem kolaboratywnym metodą biased matrix factorization. W większości przypadków algorytmy hybrydowe radzą sobie lepiej. W przypadku macierzy element-użytkownik liczącej 1000 użytkowników nieznacznie korzystniej wypada algorytm filtrowania kolaboratywnego.
+		
+		Wykresy \ref{fig:am_exphybrid2_4} i \ref{fig:am_exphybrid2_5} przedstawiają porównanie algorytmów hybrydowych z filtrowaniem kolaboratywnym metodą SVD++. Tutaj również widać przewagę algorytmów hybrydowych.
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\textwidth]{am_exphybrid2_1}			
+			\caption{\textbf{Po lewej}: wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,matrix factorization i sieć neuronowa uczona metodą propagacji wstecznej'' z filtrowaniem kolaboratywnym metodą ,,matrix factorization''. \textbf{Po prawej}: wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,matrix factorization i sieć neuronowa uczona metodą RPROP'' z filtrowaniem kolaboratywnym metodą ,,matrix factorization'' (baza AmazonMeta).}
+			\label{fig:am_exphybrid2_1}
+		\end{figure}
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\textwidth]{am_exphybrid2_2}			
+			\caption{\textbf{Po lewej}: wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,matrix factorization i sieć neuronowa uczona algorytmem genetycznym'' z filtrowaniem kolaboratywnym metodą ,,matrix factorization''. \textbf{Po prawej}: wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,biased matrix factorization i sieć neuronowa uczona metodą propagacji wstecznej'' z filtrowaniem kolaboratywnym metodą ,,biased matrix factorization'' (baza AmazonMeta).}
+			\label{fig:am_exphybrid2_2}
+		\end{figure}
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\textwidth]{am_exphybrid2_3}			
+			\caption{\textbf{Po lewej}: wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,biased matrix factorization i sieć neuronowa uczona metodą RPROP'' z filtrowaniem kolaboratywnym metodą ,,biased matrix factorization''. \textbf{Po prawej}: wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,biased matrix factorization i sieć neuronowa uczona algorytmem genetycznym'' z filtrowaniem kolaboratywnym metodą ,,biased matrix factorization''(baza AmazonMeta).}
+			\label{fig:am_exphybrid2_3}
+		\end{figure}
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\textwidth]{am_exphybrid2_4}			
+			\caption{\textbf{Po lewej}: wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,SVD++ i sieć neuronowa uczona metodą propagacji wstecznej'' z filtrowaniem kolaboratywnym metodą ,,SVD++''. \textbf{Po prawej}: wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,SVD++ i sieć neuronowa uczona metodą RPROP'' z filtrowaniem kolaboratywnym metodą ,,SVD++'' (baza AmazonMeta).}
+			\label{fig:am_exphybrid2_4}
+		\end{figure}
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.5\textwidth]{am_exphybrid2_5}			
+			\caption{Wyniki eksperymentu porównującego działanie algorytmu hybrydowego ,,SVD++ i sieć neuronowa uczona algorytmem genetycznym'' z filtrowaniem kolaboratywnym metodą ,,SVD++'' (baza MovieLens).}
+			\label{fig:am_exphybrid2_5}
+		\end{figure}
+		
+		\subsubsection{Porównanie uśrednionych wartości}
+		
+		Podobnie jak dla bazy MovieLens aby porównać efektywność poszczególnych algorytmów otrzymane wyniki zostały uśrednione. Rezultat przedstawia wykres \ref{fig:am_exphybrid}. Najlepsze rezultaty otrzymane zostały również dzięki algorytmowi hybrydowemu "biased matrix factorization i sieć neuronowa uczona algorytmem genetycznym". W porównaniu do rezultatu osiągniętego za pomocą filtrowania z analizą zawartości (propagacja wsteczna) RMSE zmalało o  $18,07\%$. W porównaniu do najefektywniejszego algorytmu nie-hybrydowego, algorytmu filtrowania kolaboratywnego (SVD++) RMSE zmalało o $4,07\%$.
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\textwidth]{am_exphybrid}	
+			\caption{Wykres przedstawia porównanie wyników działania algorytmów hybrydowych (słupki niebieskie) z algorytmami filtrowania kolaboratywnego (słupki czarne) i filtrowania z analizą zawartości (słupki szare) (baza AmazonMeta).}
+			\label{fig:am_exphybrid}
+		\end{figure}
+		
+		\subsection{Podsumowanie}
+		
+		Poszczególne algorytmy osiągnęły różne wyniki na testowanych bazach danych. Wynika to z różnej konstrukcji tych baz: innego zagęszczenia danych w macierzach użytkownik-element, innej liczbie atrybutów elementów oraz innej częstotliwości powtarzania się danych atrybutów. Mimo tego w każdym przypadku większość algorytmów hybrydowych zawsze wypadło lepiej niż samo filtrowanie kolaboratywne i samo filtrowanie z analizą zawartości. 
+	
 
 \chapter{Wnioski}
 \shortTitle{Wnioski}
 
-	\todo{Wnioski}
+	Celem niniejszej pracy było opracowanie i zbudowanie hybrydowego algorytmu rekomendacji wykorzystującego metodę filtrowania kolaboratywnego i uwzględniającego model elementu rekomendowanego. Przedstawiony algorytm łączy ze sobą metody filtrowania kolaboratywnego i filtrowania z analizą zawartości. Ponadto, proponowany system jest uniwersalny. Algorytm osiąga lepsze wyniki niż algorytmy składowe, niezależnie od podpiętego zbioru danych pod warunkiem, że ten zawiera oceny elementów i ich charakterystykę wyrażoną zbiorem cech.
+
+	Mechanizmy rekomendacji wykorzystywane są przez dostawców wielu usług internetowych takich jak YouTube, LastFM, Pandora, Netflix, Filmweb, Allegro, Amazon i wiele innych. Motywacją do podjęcia się tematu był fakt, iż mimo że techniki rekomendacji znane są od wielu lat i są szeroko stosowane, to wciąż są niedoskonałe. Ponadto większość prac tego typu testuje nowe proponowane rozwiązania tylko na jednej bazie danych. Niniejsza praca proponuje rozwiązanie, które działa niezależnie od domeny z której pochodzą dane.
+	
+	Do podstawowych technik należą: filtrowanie z analizą zawartości, filtrowanie kolaboratywne, filtrowanie demograficzne, filtrowanie z analizą domeny wiedzy, filtrowanie z analizą społecznościową i systemy hybrydowe. 
+	
+	W niniejszej pracy zaproponowana została implementacja filtrowania z analizą zawartości wykorzystująca sieć neuronową uczoną (zależnie od wariantu) algorytmami propagacji wstecznej, RPROP i genetycznym. Stworzony został model, który w sposób uniwersalny odwzorowuje oceniane elementy wraz z ich cechami. Ponadto, proponowana implementacja oferuje możliwość ustawienia parametrów sieci neuronowej (maks. ilość iteracji nauki, ilość neuronów w warstwie ukrytej sieci, współczynnik bezwładności, współczynnik uczenia, parametr funkcji aktywacji, rozmiar populacji algorytmu genetycznego) i parametrów analizowanych danych (minimalna liczba powtarzających się cech).
+	
+	Do filtrowania kolaboratywnego wykorzystane zostały algorytmy matrix factorization, biased matrix factorization i SVD++.
+	
+	Bazując na powyższych metodach zaproponowana została metoda łącząca zalety filtrowania kolaboratywnego i filtrowania z analizą zawartości. Powstało 9 algorytmów hybrydowych: 
+	
+	\begin{enumerate}
+		\item Matrix Factorization i sieć neuronowa uczona metodą propagacji wstecznej
+		\item Matrix Factorization i sieć neuronowa uczona metodą RPROP
+		\item Matrix Factorization i sieć neuronowa uczona algorytmem genetycznym
+		\item Biased Matrix Factorization i sieć neuronowa uczona metodą propagacji wstecznej
+		\item Biased Matrix Factorization i sieć neuronowa uczona metodą RPROP
+		\item Biased Matrix Factorization i sieć neuronowa uczona algorytmem genetycznym
+		\item SVD++ i sieć neuronowa uczona metodą propagacji wstecznej
+		\item SVD++ i sieć neuronowa uczona metodą RPROP
+		\item SVD++ i sieć neuronowa uczona algorytmem genetycznym
+	\end{enumerate}
+	
+	Z wykorzystaniem platformy .NET stworzona została platforma umożliwiająca przetestowanie wszystkich omawianych w pracy algorytmów. Zaproponowany ogólny model pozwala (z pomocą odpowiedniego adaptera) na podpięcie dowolnej bazy danych zawierającej oceny elementów do zaimplementowanego systemu. Czyni to zaproponowane rozwiązanie uniwersalnym.
+	
+	Algorytmy hybrydowe zostały przetestowane na dwóch zbiorach danych z różnych dziedzin: baza MovieLens zawierająca oceny filmów i baza AmazonMeta zawierająca oceny produktów zakupionych w sklepie Amazon. 
+	
+	Dzięki zaproponowanym algorytmom hybrydowym udało się osiągnąć wyniki: dla bazy MovieLens RMSE o 8,82\% mniejsze niż w przypadku najefektywniejszego algorytmu nie-hybrydowego filtrowania kolaboratywnego biased matrix factorization; dla bazy AmazonMeta RMSE zmalało o 4,07\% w porównaniu do filtrowania kolaboratywnego SVD++. 
+	
+	Nie jest możliwe jednoznaczne wskazanie optymalnego algorytmu. W zależności od budowy bazy danych, zagęszczenia danych, ilości informacji o elemencie różne algorytmy wypadają lepiej bądź gorzej.  Mimo tego we wszystkich wykonanych testach algorytmy hybrydowe okazały się efektywniejsze.
+	
+	Reasumując powyższe rozważania można stwierdzić, że cel niniejszej pracy został osiągnięty. Przeprowadzone badania potwierdziły, że opracowany algorytm hybrydowy jest efektywniejszy i sprawdza się niezależnie od domeny z jakiej pochodzą dane. 
+
+	
+
+%\clearpage
+%\appendix
+%\chapter{Appendix 1}
+
 
 \clearpage
-\appendix
-\chapter{Appendix 1}
-
-
-\clearpage
-\pagestyle{plain}
-\listofmyfigure
-\listofmyequations
-\listofmyalgorithm
-\clearpage
+%\pagestyle{plain}
+%\listofmyfigure
+%\listofmyequations
+%\listofmyalgorithm
+%\clearpage
 
 %\{apalike}%Used BibTeX style is unsrt
 
