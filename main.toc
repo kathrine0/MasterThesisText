@@ -15,17 +15,17 @@
 \contentsline {subsection}{\numberline {2.2.1\relax .\kern .5em }Zalety filtrowania kolaboratywnego}{6}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2\relax .\kern .5em }Wady filtrowania kolaboratywnego}{6}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3\relax .\kern .5em }Algorytmy filtrowania kolaboratywnego}{7}{subsection.2.2.3}
-\contentsline {section}{\numberline {2.3\relax .\kern .5em }Filtrowanie z analiz\IeC {\k a} zawarto\IeC {\'s}ci}{13}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1\relax .\kern .5em }Zalety filtrowania z analiz\IeC {\k a} zawarto\IeC {\'s}ci}{13}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2\relax .\kern .5em }Wady filtrowania z analiz\IeC {\k a} zawarto\IeC {\'s}ci}{13}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.3\relax .\kern .5em }Filtrowanie z~analiz\IeC {\k a} zawarto\IeC {\'s}ci}{13}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1\relax .\kern .5em }Zalety filtrowania z~analiz\IeC {\k a} zawarto\IeC {\'s}ci}{13}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2\relax .\kern .5em }Wady filtrowania z~analiz\IeC {\k a} zawarto\IeC {\'s}ci}{13}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3\relax .\kern .5em }Metody tworzenia profilu u\IeC {\.z}ytkownika}{13}{subsection.2.3.3}
-\contentsline {subsection}{\numberline {2.3.4\relax .\kern .5em }Algorytmy wykorzystywane w implementacji filtrowania z analiz\IeC {\k a} zawarto\IeC {\'s}ci}{14}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.4\relax .\kern .5em }Algorytmy wykorzystywane w~implementacji filtrowania z~analiz\IeC {\k a} zawarto\IeC {\'s}ci}{14}{subsection.2.3.4}
 \contentsline {section}{\numberline {2.4\relax .\kern .5em }Algorytmy hybrydowe}{17}{section.2.4}
 \contentsline {chapter}{Rozdzia\l \ 3\relax .\kern .5em Algorytmy}{19}{section*.21}
 \contentsline {section}{\numberline {3.1\relax .\kern .5em }Model systemu}{19}{section.3.1}
-\contentsline {section}{\numberline {3.2\relax .\kern .5em }Propozycja algorytmu filtrowania z analiz\IeC {\k a} zawarto\IeC {\'s}ci}{20}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1\relax .\kern .5em }Struktura perceptron\IeC {\'o}w i funkcja aktywacji}{21}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2\relax .\kern .5em }Struktura sieci i przebieg algorytmu}{22}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.2\relax .\kern .5em }Propozycja algorytmu filtrowania z~analiz\IeC {\k a} zawarto\IeC {\'s}ci}{20}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1\relax .\kern .5em }Struktura perceptron\IeC {\'o}w i~funkcja aktywacji}{21}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2\relax .\kern .5em }Struktura sieci i~przebieg algorytmu}{22}{subsection.3.2.2}
 \contentsline {subsection}{\numberline {3.2.3\relax .\kern .5em }Uczenie sieci neuronowej}{22}{subsection.3.2.3}
 \contentsline {section}{\numberline {3.3\relax .\kern .5em }Propozycja nowych algorytm\IeC {\'o}w hybrydowych}{24}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1\relax .\kern .5em }Zalety zaproponowanych metod}{25}{subsection.3.3.1}
@@ -40,7 +40,7 @@
 \contentsline {section}{\numberline {4.3\relax .\kern .5em }Eksperymentalne dopasowanie parametr\IeC {\'o}w sieci neuronowej}{32}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1\relax .\kern .5em }Strojenie sieci dla bazy MovieLens}{32}{subsection.4.3.1}
 \contentsline {subsection}{\numberline {4.3.2\relax .\kern .5em }Strojenie sieci dla bazy AmazonMeta}{39}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4\relax .\kern .5em }Eksperymentalne por\IeC {\'o}wnanie zaproponowanych algorytm\IeC {\'o}w hybrydowych z filtrowaniem z analiz\IeC {\k a} zawarto\IeC {\'s}ci i filtrowaniem kolaboratywnym}{44}{section.4.4}
+\contentsline {section}{\numberline {4.4\relax .\kern .5em }Eksperymentalne por\IeC {\'o}wnanie zaproponowanych algorytm\IeC {\'o}w hybrydowych z~filtrowaniem z~analiz\IeC {\k a} zawarto\IeC {\'s}ci i~filtrowaniem kolaboratywnym}{44}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1\relax .\kern .5em }Badania na bazie MovieLens}{44}{subsection.4.4.1}
 \contentsline {subsection}{\numberline {4.4.2\relax .\kern .5em }Badania na bazie AmazonMeta}{51}{subsection.4.4.2}
 \contentsline {subsection}{\numberline {4.4.3\relax .\kern .5em }Podsumowanie}{60}{subsection.4.4.3}
