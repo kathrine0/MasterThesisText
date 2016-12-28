@@ -24,6 +24,7 @@
 \usepackage{lscape}
 \usepackage{longtable}
 \usepackage[shortcuts]{extdash}
+\usepackage{enumitem}
 
 \let\lll\undefined
 \usepackage{amssymb}
@@ -160,20 +161,20 @@ nodes near coords align={vertical},
 \author{Katarzyna Biernat }
 \advisor{dr inż. Bernadetta Maleszka}
 \instituteLogo{logos/pwr}
-\slowaKluczowe{KEYWORDS}
+\slowaKluczowe{algorytmy rekomendacji, filtrowanie z analizą zawartości, filtrowanie kolaboratyne, hybrydowe algorytmy rekomendacji, model elementu rekomendowanego, uniwersalny system rekomendacji	}
 
 \date{\number\the\year}
 
 % Wstawienie abstractu pracy
 	%\input {abstract}
 
-\abstractSH{SHORT ABSTRACT}
+\abstractSH{Opracowano hybrydowy algorytm rekomendacji wykorzystujący metodę filtrowania kolaboratywnego i uwzględniający model elementu rekomendowanego. Badania eksperymentalne wykazały, że zaproponowany algorytm i jego warianty są efektywniejsze od algorytmów wyjściowych.}
 
 \abstractPL{
-ABSTRACT PL
+Celem pracy jest opracowanie i zbudowanie hybrydowego algorytmu rekomendacji wykorzystującego metodę filtrowania kolaboratywnego i uwzględniającego model elementu rekomendowanego. Zaproponowano metodę filtrowania z analizą zawartości opartą na sieci neuronowej oraz przedstawiono dziewięć propozycji algorytmów hybrydowych. Zbudowane zostało środowisko symulacyjne a zaprezentowane rozwiązania przetestowane zostały na dwóch bazach danych z różnych domen. Badania eksperymentalne wykazały, że zaproponowane algorytmy są efektywniejsze od algorytmów wyjściowych.
 }
 \abstractEN{
-ABSTRACT EN
+The purpose of the following thesis is to design and develop hybrid recommender system based on collaborative filtering including the model of the recommended item. Content-based filtering method based on neural network was proposed. Nine varieties of the hybrid algorithms has been presented. Simulation platform was introduced and the proposed solutions were tested against two different databases representing different domains. The experimental evaluation proved, that proposed algorithms performed more effectively than basic algorithms.
 }
 
 \maketitle
@@ -918,8 +919,8 @@ ABSTRACT EN
 		 
 		 Największą wadą nowej metody jest wyższa złożoność. Czas budowania modelu jest sumą czasów budowania modelu kolaboratywnego i~modelu filtrowania z~analizą zawartości. Istnieje też ryzyko, że w~momencie gdy wynik filtrowania kolaboratywnego będzie bardzo zły, to rezultat osiągnięty przez nową metodę będzie gorszy niż z~samego filtrowania z~analizą zawartości. Niebezpieczeństwem może też być złe dopasowanie parametru $k$ do przetwarzanych danych.
  
-\chapter{Ocena eksperymentalna}
-\shortTitle{Ocena eksperymentalna}
+\chapter{Badania eksperymentalne}
+\shortTitle{Badania eksperymentalne}
 	\section{Opis metody badawczej}
 	
 		W celu zbadania jakości algorytmów zaprojektowany został eksperyment. W~pierwszej kolejności definiowane są wartości parametrów, zgodnie z~którymi ma zostać wykonany kod algorytmów. 
@@ -1153,7 +1154,7 @@ ABSTRACT EN
 				\begin{figure}[!ht]
 					\centering
 					\includegraphics[width=0.7\textwidth]{expiterations_rmse}			
-					\caption{Wyniki eksperymentu testującego parametr maksymalnej liczby iteracji na bazie MovieLens. Wykres przedstawia zależność pomiędzy liczbą iteracji a~błędem algorytmu wyrażonym za pomocą RMSE. Wraz ze wzrostem liczby iteracji wartość błędu maleje, jednakże po przekroczeniu pewnej wartości następuje ponowny wzrost. Wynika to z~występowania zjawiska nadmiernego dopasowania (ang. \textit{overfitting}). }
+					\caption{Wyniki eksperymentu testującego parametr maksymalnej liczby iteracji na bazie MovieLens. Wykres przedstawia zależność pomiędzy liczbą iteracji a~błędem algorytmu wyrażonym za pomocą RMSE (im niższa jego wartość tym lepiej). Wraz ze wzrostem liczby iteracji wartość błędu maleje, jednakże po przekroczeniu pewnej wartości następuje ponowny wzrost. Wynika to z~występowania zjawiska nadmiernego dopasowania (ang. \textit{overfitting}). }
 					\label{fig:expiterations_rmse}
 				\end{figure}
 			
@@ -1780,37 +1781,38 @@ ABSTRACT EN
 \chapter{Wnioski}
 \shortTitle{Wnioski}
 
-	Celem niniejszej pracy było opracowanie i~zbudowanie hybrydowego algorytmu rekomendacji wykorzystującego metodę filtrowania kolaboratywnego i~uwzględniającego model elementu rekomendowanego. Przedstawiony algorytm łączy ze sobą metody filtrowania kolaboratywnego i~filtrowania z~analizą zawartości. Ponadto, proponowany system jest uniwersalny. Algorytm osiąga lepsze wyniki niż algorytmy składowe, niezależnie od podpiętego zbioru danych pod warunkiem, że ten zawiera oceny elementów i~ich charakterystykę wyrażoną zbiorem cech.
+	Celem niniejszej pracy było zaprojektowanie i~zaimplementowanie hybrydowego algorytmu rekomendacji wykorzystującego metodę filtrowania kolaboratywnego i~uwzględniającego model elementu rekomendowanego. Przedstawiony algorytm łączy ze sobą metody filtrowania kolaboratywnego i~filtrowania z~analizą zawartości. Ponadto, proponowany system jest uniwersalny. Algorytm osiąga lepsze wyniki niż algorytmy składowe, niezależnie od podpiętego zbioru danych pod warunkiem, że ten zawiera oceny elementów i~ich charakterystykę wyrażoną zbiorem cech.
 
 	Mechanizmy rekomendacji wykorzystywane są przez dostawców wielu usług internetowych takich jak YouTube, LastFM, Pandora, Netflix, Filmweb, Allegro, Amazon i~wiele innych. Motywacją do podjęcia się tematu był fakt, iż mimo że techniki rekomendacji znane są od wielu lat i~są szeroko stosowane, to wciąż są niedoskonałe. Ponadto większość prac tego typu testuje nowe proponowane rozwiązania tylko na jednej bazie danych. Niniejsza praca proponuje rozwiązanie, które działa niezależnie od domeny z~której pochodzą dane.
 	
 	Do podstawowych technik należą: filtrowanie z~analizą zawartości, filtrowanie kolaboratywne, filtrowanie demograficzne, filtrowanie z~analizą domeny wiedzy, filtrowanie z~analizą społecznościową i~systemy hybrydowe. 
 	
-	W niniejszej pracy zaproponowana została implementacja filtrowania z~analizą zawartości wykorzystująca sieć neuronową uczoną (zależnie od wariantu) algorytmami propagacji wstecznej, RPROP i~genetycznym. Stworzony został model, który w~sposób uniwersalny odwzorowuje oceniane elementy wraz z~ich cechami. Ponadto, proponowana implementacja oferuje możliwość ustawienia parametrów sieci neuronowej (maks. ilość iteracji nauki, ilość neuronów w~warstwie ukrytej sieci, współczynnik bezwładności, współczynnik uczenia, parametr funkcji aktywacji, rozmiar populacji algorytmu genetycznego) i~parametrów analizowanych danych (minimalna liczba powtarzających się cech).
+	Aby osiągnąć postawiony cel wykonana została następująca praca i otrzymano następujące rezultaty:
 	
-	Do filtrowania kolaboratywnego wykorzystane zostały algorytmy matrix factorization, biased matrix factorization i~SVD++.
-	
-	Bazując na powyższych metodach zaproponowana została metoda łącząca zalety filtrowania kolaboratywnego i~filtrowania z~analizą zawartości. Powstało 9 algorytmów hybrydowych: 
-	
-	\begin{enumerate}
-		\item Matrix Factorization i~sieć neuronowa uczona metodą propagacji wstecznej
-		\item Matrix Factorization i~sieć neuronowa uczona metodą RPROP
-		\item Matrix Factorization i~sieć neuronowa uczona algorytmem genetycznym
-		\item Biased Matrix Factorization i~sieć neuronowa uczona metodą propagacji wstecznej
-		\item Biased Matrix Factorization i~sieć neuronowa uczona metodą RPROP
-		\item Biased Matrix Factorization i~sieć neuronowa uczona algorytmem genetycznym
-		\item SVD++ i~sieć neuronowa uczona metodą propagacji wstecznej
-		\item SVD++ i~sieć neuronowa uczona metodą RPROP
-		\item SVD++ i~sieć neuronowa uczona algorytmem genetycznym
-	\end{enumerate}
-	
-	Z wykorzystaniem platformy .NET stworzona została platforma umożliwiająca przetestowanie wszystkich omawianych w~pracy algorytmów. Zaproponowany ogólny model pozwala (z~pomocą odpowiedniego adaptera) na podpięcie dowolnej bazy danych zawierającej oceny elementów do zaimplementowanego systemu. Czyni to zaproponowane rozwiązanie uniwersalnym.
-	
-	Algorytmy hybrydowe zostały przetestowane na dwóch zbiorach danych z~różnych dziedzin: baza MovieLens zawierająca oceny filmów i~baza AmazonMeta zawierająca oceny produktów zakupionych w~sklepie Amazon. 
-	
-	Dzięki zaproponowanym algorytmom hybrydowym udało się osiągnąć wyniki: dla bazy MovieLens RMSE o~8,82\% mniejsze niż w~przypadku najefektywniejszego algorytmu nie-hybrydowego filtrowania kolaboratywnego biased matrix factorization; dla bazy AmazonMeta RMSE zmalało o~4,07\% w~porównaniu do filtrowania kolaboratywnego SVD++. 
-	
-	Nie jest możliwe jednoznaczne wskazanie optymalnego algorytmu. W~zależności od budowy bazy danych, zagęszczenia danych, ilości informacji o~elemencie różne algorytmy wypadają lepiej bądź gorzej.  Mimo tego we wszystkich wykonanych testach algorytmy hybrydowe okazały się efektywniejsze.
+	\begin{itemize}
+		\item Zaproponowana została implementacja filtrowania z~analizą zawartości wykorzystująca sieć neuronową uczoną (zależnie od wariantu) algorytmami propagacji wstecznej, RPROP i~genetycznym.
+		\item Stworzony został model, który w~sposób uniwersalny odwzorowuje oceniane elementy wraz z~ich cechami. Ponadto, proponowana implementacja oferuje możliwość ustawienia parametrów sieci neuronowej (maks. ilość iteracji nauki, ilość neuronów w~warstwie ukrytej sieci, współczynnik bezwładności, współczynnik uczenia, parametr funkcji aktywacji, rozmiar populacji algorytmu genetycznego) i~parametrów analizowanych danych (minimalna liczba powtarzających się cech).
+		\item Do filtrowania kolaboratywnego wykorzystane zostały algorytmy matrix factorization, biased matrix factorization i~SVD++. Bazując na powyższych metodach zaproponowana została metoda łącząca zalety filtrowania kolaboratywnego i~filtrowania z~analizą zawartości. Powstało 9 algorytmów hybrydowych: 	
+		\begin{enumerate}[leftmargin=1.2cm]
+			\item Matrix Factorization i~sieć neuronowa uczona metodą propagacji wstecznej
+			\item Matrix Factorization i~sieć neuronowa uczona metodą RPROP
+			\item Matrix Factorization i~sieć neuronowa uczona algorytmem genetycznym
+			\item Biased Matrix Factorization i~sieć neuronowa uczona metodą propagacji wstecznej
+			\item Biased Matrix Factorization i~sieć neuronowa uczona metodą RPROP
+			\item Biased Matrix Factorization i~sieć neuronowa uczona algorytmem genetycznym
+			\item SVD++ i~sieć neuronowa uczona metodą propagacji wstecznej
+			\item SVD++ i~sieć neuronowa uczona metodą RPROP
+			\item SVD++ i~sieć neuronowa uczona algorytmem genetycznym
+		\end{enumerate}
+		
+		\item Z wykorzystaniem platformy .NET stworzona została platforma umożliwiająca przetestowanie wszystkich omawianych w~pracy algorytmów. Zaproponowany ogólny model pozwala (za pomocą odpowiedniego adaptera) na podpięcie dowolnej bazy danych zawierającej oceny elementów do zaimplementowanego systemu. Czyni to zaproponowane rozwiązanie uniwersalnym.
+		
+		\item Algorytmy hybrydowe zostały przetestowane na dwóch zbiorach danych z~różnych dziedzin: baza MovieLens zawierająca oceny filmów i~baza AmazonMeta zawierająca oceny produktów zakupionych w~sklepie Amazon. 
+		
+		\item Dzięki zaproponowanym algorytmom hybrydowym udało się osiągnąć wyniki: dla bazy MovieLens RMSE o~8,82\% mniejsze niż w~przypadku najefektywniejszego algorytmu nie-hybrydowego filtrowania kolaboratywnego biased matrix factorization; dla bazy AmazonMeta RMSE zmalało o~4,07\% w~porównaniu do filtrowania kolaboratywnego SVD++. 
+	\end{itemize}
+		 	
+	Nie jest możliwe jednoznaczne wskazanie optymalnego algorytmu. W~zależności od budowy bazy danych, zagęszczenia danych, ilości informacji o~elemencie różne algorytmy wypadają lepiej bądź gorzej.  Mimo tego we wszystkich wykonanych testach algorytmy hybrydowe okazały się efektywniejsze. Przeprowadzone testy statystyczne metodą ANOVA dowiodły, że otrzymane rezultaty są statystycznie różne.
 	
 	Reasumując powyższe rozważania można stwierdzić, że cel niniejszej pracy został osiągnięty. Przeprowadzone badania potwierdziły, że opracowany algorytm hybrydowy jest efektywniejszy i~sprawdza się niezależnie od domeny z~jakiej pochodzą dane. 
 

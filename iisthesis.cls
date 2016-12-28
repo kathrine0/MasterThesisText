@@ -225,15 +225,15 @@
 	 & &\large{\bfseries{\rule{0pt}{0.5cm}\ Wydział Informatyki\ i\ Zarządzania}} \\[3pt]
 	 & &\ \ \large{kierunek studiów: Informatyka}\\
 	 & &\ \ specjalność: Projektowanie Systemów Informatycznych\\
-	 & &\multicolumn{1}{c}{\rule{0pt}{2.5cm} \Large{Praca dyplomowa - magisterska}} \\
+	 & &\multicolumn{1}{c}{\rule{0pt}{2cm} \Large{Praca dyplomowa - magisterska}} \\
 	 & &\multicolumn{1}{p{13.5cm}}{\rule{0pt}{2.3cm}\centering\parbox{0.9\textwidth}{\centering\bfseries\sc\linespread{0.8}\Large{\@title } \\
-		\linespread{0.9}\small{\@titleEN}}} \\
+		\linespread{0.9}\footnotesize{\@titleEN}}} \\
 	 & &\multicolumn{1}{c}{\rule{0pt}{1cm}\large\@author} \\
-	 & &\multicolumn{1}{p{13.5cm}}{\rule{0pt}{0cm}\small\begin{flushright}\noindent słowa kluczowe:\\ \@slowaKluczowe\end{flushright}} \\
+	 & &\multicolumn{1}{p{13.5cm}}{\rule{0pt}{0cm}\small\begin{flushright}\noindent słowa kluczowe:\\ \footnotesize\@slowaKluczowe\end{flushright}} \\
 	 & & \multicolumn{1}{p{13.5cm}}{
 		\begin{flushright}
 					\begin{tabular}{p{12.0cm}}
-							 \small krótkie streszczenie:\newline \@abstractSH
+							 \small krótkie streszczenie:\newline \footnotesize\@abstractSH
 					\end{tabular}
 		\end{flushright}
 %	 	\rule{0.5cm}{1cm}{\small kr?tkie streszczenie:\newline \@abstractSH}

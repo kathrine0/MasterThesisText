@@ -30,7 +30,7 @@
 \contentsline {section}{\numberline {3.3\relax .\kern .5em }Propozycja nowych algorytm\IeC {\'o}w hybrydowych}{24}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1\relax .\kern .5em }Zalety zaproponowanych metod}{25}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2\relax .\kern .5em }Wady zaproponowanych metod}{26}{subsection.3.3.2}
-\contentsline {chapter}{Rozdzia\l \ 4\relax .\kern .5em Ocena eksperymentalna}{27}{section*.30}
+\contentsline {chapter}{Rozdzia\l \ 4\relax .\kern .5em Badania eksperymentalne}{27}{section*.30}
 \contentsline {section}{\numberline {4.1\relax .\kern .5em }Opis metody badawczej}{27}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1\relax .\kern .5em }Miara oceny}{28}{subsection.4.1.1}
 \contentsline {subsection}{\numberline {4.1.2\relax .\kern .5em }Zbiory danych}{29}{subsection.4.1.2}
