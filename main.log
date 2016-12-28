@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.5.15)  27 DEC 2016 13:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.5.15)  28 DEC 2016 11:06
 entering extended mode
 **./main.tex
 (main.tex
@@ -1656,11 +1656,8 @@ File: img/mapacech.pdf Graphic file (type pdf)
 Package pdftex.def Info: img/mapacech.pdf used on input line 847.
 (pdftex.def)             Requested size: 308.71107pt x 205.91315pt.
 
-[22 <./img/sigmoid.png>] [23 <./img/siecneuronowa.pdf> <./img/mapacech.pdf
-
-pdfTeX warning: pdflatex.exe (file ./img/mapacech.pdf): PDF inclusion: multiple
- pdfs with page group included in a single page
->] <img/hybridfunction.pdf, id=791, 496.0131pt x 284.33224pt>
+[22 <./img/sigmoid.png> <./img/siecneuronowa.pdf>] [23 <./img/mapacech.pdf>]
+<img/hybridfunction.pdf, id=791, 496.0131pt x 284.33224pt>
 File: img/hybridfunction.pdf Graphic file (type pdf)
 
 <use img/hybridfunction.pdf>
@@ -1672,14 +1669,10 @@ Overfull \hbox (3.52905pt too wide) in paragraph at lines 898--899
 ro-pa-ga-cji wstecz-
  []
 
-[24 <./img/hybridfunction.pdf>]
-Underfull \vbox (badness 2205) has occurred while \output is active []
-
- [25]
-[26]
+[24 <./img/hybridfunction.pdf>] [25] [26]
 Rozdzia\l  4.
 
-Overfull \hbox (5.83456pt too wide) in paragraph at lines 938--939
+Overfull \hbox (5.83456pt too wide) in paragraph at lines 930--931
 []\OT4/cmr/m/n/12 Dla ka»-dej pary zbio-rów tre-nin-go-wego i te-sto-wego prze-
 pro-wa-dzana jest na-uka i spraw-
  []
@@ -1687,7 +1680,7 @@ pro-wa-dzana jest na-uka i spraw-
 [27
 
 ] [28]
-Overfull \hbox (1.13123pt too wide) in paragraph at lines 1041--1042
+Overfull \hbox (1.13123pt too wide) in paragraph at lines 1029--1030
 []\OT4/cmr/m/n/12 W celu uzy-ska-nia obiek-tyw-nych wy-ni-ków al-go-rytmy zo-st
 aªy prze-te-sto-wane na dwóch
  []
@@ -1695,52 +1688,49 @@ aªy prze-te-sto-wane na dwóch
 <img/movielens.png, id=879, 426.99525pt x 205.36725pt>
 File: img/movielens.png Graphic file (type png)
  <use img/movielens.png>
-Package pdftex.def Info: img/movielens.png used on input line 1050.
+Package pdftex.def Info: img/movielens.png used on input line 1038.
 (pdftex.def)             Requested size: 441.01775pt x 212.12288pt.
 
 [29] <img/program.png, id=894, 539.01375pt x 536.0025pt>
 File: img/program.png Graphic file (type png)
  <use img/program.png>
-Package pdftex.def Info: img/program.png used on input line 1068.
+Package pdftex.def Info: img/program.png used on input line 1056.
 (pdftex.def)             Requested size: 441.01775pt x 438.5598pt.
 
-Underfull \vbox (badness 3312) has occurred while \output is active []
-
- [30 <./img/movielens.png>]
-Overfull \hbox (1.96149pt too wide) in paragraph at lines 1089--1090
+Overfull \hbox (1.96149pt too wide) in paragraph at lines 1075--1076
 []\OT4/cmr/bx/n/12 Minimum po-wta-rza-j¡-cych si¦ cech \OT4/cmr/m/n/12 (\OT4/cm
 r/m/it/12 mi-ni-mum-Re-pe-ating-Fe-atu-res\OT4/cmr/m/n/12 ) -- mi-ni-malna
  []
 
-[31 <./img/program.png>]
-Overfull \hbox (10.07332pt too wide) in alignment at lines 1128--1149
+[30 <./img/movielens.png>] [31 <./img/program.png>]
+Overfull \hbox (10.07332pt too wide) in alignment at lines 1114--1135
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1149
+Underfull \vbox (badness 10000) detected at line 1135
  []
 
 [32] <img/expiterations_rmse.pdf, id=915, 618.31pt x 380.62201pt>
 File: img/expiterations_rmse.pdf Graphic file (type pdf)
 
 <use img/expiterations_rmse.pdf>
-Package pdftex.def Info: img/expiterations_rmse.pdf used on input line 1169.
+Package pdftex.def Info: img/expiterations_rmse.pdf used on input line 1155.
 (pdftex.def)             Requested size: 308.71107pt x 190.04337pt.
 
 <img/expiterations_time.pdf, id=916, 617.50702pt x 380.62201pt>
 File: img/expiterations_time.pdf Graphic file (type pdf)
 
 <use img/expiterations_time.pdf>
-Package pdftex.def Info: img/expiterations_time.pdf used on input line 1176.
+Package pdftex.def Info: img/expiterations_time.pdf used on input line 1162.
 (pdftex.def)             Requested size: 308.71107pt x 190.28148pt.
  [33 <./img/expiterations_rmse.pdf>]
-Overfull \hbox (10.07332pt too wide) in alignment at lines 1189--1209
+Overfull \hbox (10.07332pt too wide) in alignment at lines 1175--1195
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1209
+Underfull \vbox (badness 10000) detected at line 1195
  []
 
 [34 <./img/expiterations_time.pdf>]
@@ -1748,36 +1738,36 @@ Underfull \vbox (badness 10000) detected at line 1209
 File: img/expmomentum.pdf Graphic file (type pdf)
 
 <use img/expmomentum.pdf>
-Package pdftex.def Info: img/expmomentum.pdf used on input line 1214.
+Package pdftex.def Info: img/expmomentum.pdf used on input line 1200.
 (pdftex.def)             Requested size: 308.71107pt x 185.5537pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [35 <./img/expmomentum.pdf>]
-Overfull \hbox (10.07332pt too wide) in alignment at lines 1242--1263
+Overfull \hbox (10.07332pt too wide) in alignment at lines 1228--1249
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1263
+Underfull \vbox (badness 10000) detected at line 1249
  []
 
 <img/exppopulation.pdf, id=961, 742.47389pt x 428.74179pt>
 File: img/exppopulation.pdf Graphic file (type pdf)
 
 <use img/exppopulation.pdf>
-Package pdftex.def Info: img/exppopulation.pdf used on input line 1270.
+Package pdftex.def Info: img/exppopulation.pdf used on input line 1256.
 (pdftex.def)             Requested size: 308.71107pt x 178.26471pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [36]
-Overfull \hbox (10.07332pt too wide) in alignment at lines 1295--1315
+Overfull \hbox (10.07332pt too wide) in alignment at lines 1281--1301
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1315
+Underfull \vbox (badness 10000) detected at line 1301
  []
 
 [37 <./img/exppopulation.pdf>]
@@ -1785,10 +1775,10 @@ Underfull \vbox (badness 10000) detected at line 1315
 File: img/exphiddenneural.pdf Graphic file (type pdf)
 
 <use img/exphiddenneural.pdf>
-Package pdftex.def Info: img/exphiddenneural.pdf used on input line 1320.
+Package pdftex.def Info: img/exphiddenneural.pdf used on input line 1306.
 (pdftex.def)             Requested size: 308.71107pt x 191.71146pt.
 
-Overfull \hbox (10.74492pt too wide) in alignment at lines 1325--1339
+Overfull \hbox (10.74492pt too wide) in alignment at lines 1311--1325
  [] [] [] [] [] [] [] 
  []
 
@@ -1796,19 +1786,19 @@ Overfull \hbox (10.74492pt too wide) in alignment at lines 1325--1339
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [38 <./img/exphiddenneural.pdf>]
-Overfull \hbox (22.16133pt too wide) in alignment at lines 1346--1359
+Overfull \hbox (22.16133pt too wide) in alignment at lines 1332--1345
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1359
+Underfull \vbox (badness 10000) detected at line 1345
  []
 
 <img/am_expiterations_rmse.pdf, id=1006, 603.85597pt x 362.95601pt>
 File: img/am_expiterations_rmse.pdf Graphic file (type pdf)
 
 <use img/am_expiterations_rmse.pdf>
-Package pdftex.def Info: img/am_expiterations_rmse.pdf used on input line 1373.
+Package pdftex.def Info: img/am_expiterations_rmse.pdf used on input line 1359.
 
 (pdftex.def)             Requested size: 308.71107pt x 185.5537pt.
 
@@ -1816,7 +1806,7 @@ Package pdftex.def Info: img/am_expiterations_rmse.pdf used on input line 1373.
 File: img/am_expiterations_time.pdf Graphic file (type pdf)
 
 <use img/am_expiterations_time.pdf>
-Package pdftex.def Info: img/am_expiterations_time.pdf used on input line 1380.
+Package pdftex.def Info: img/am_expiterations_time.pdf used on input line 1366.
 
 (pdftex.def)             Requested size: 308.71107pt x 185.5537pt.
 
@@ -1824,175 +1814,180 @@ Package pdftex.def Info: img/am_expiterations_time.pdf used on input line 1380.
 File: img/am_expmomentum.pdf Graphic file (type pdf)
 
 <use img/am_expmomentum.pdf>
-Package pdftex.def Info: img/am_expmomentum.pdf used on input line 1404.
+Package pdftex.def Info: img/am_expmomentum.pdf used on input line 1390.
 (pdftex.def)             Requested size: 308.71107pt x 185.5537pt.
- [39]
-Overfull \vbox (181.83072pt too high) has occurred while \output is active []
-
-
-[40 <./img/am_expiterations_rmse.pdf> <./img/am_expiterations_time.pdf
+ [39] [40 <./img/am_expiterations_rmse.pdf> <./img/am_expiterations_time.pdf
 
 pdfTeX warning: pdflatex.exe (file ./img/am_expiterations_time.pdf): PDF inclus
 ion: multiple pdfs with page group included in a single page
-> <./img/am_expmomentum.pdf
-
-pdfTeX warning: pdflatex.exe (file ./img/am_expmomentum.pdf): PDF inclusion: mu
-ltiple pdfs with page group included in a single page
->] <img/am_exppopulation.pdf, id=1048, 603.85597pt x 362.95601pt>
+>] <img/am_exppopulation.pdf, id=1043, 603.85597pt x 362.95601pt>
 File: img/am_exppopulation.pdf Graphic file (type pdf)
 
 <use img/am_exppopulation.pdf>
-Package pdftex.def Info: img/am_exppopulation.pdf used on input line 1433.
+Package pdftex.def Info: img/am_exppopulation.pdf used on input line 1419.
 (pdftex.def)             Requested size: 308.71107pt x 185.5537pt.
- [41 <./img/am_exppopulation.pdf>]
-<img/am_exphiddenneural_rmse.pdf, id=1065, 603.85597pt x 422.37799pt>
+
+<img/am_exphiddenneural_rmse.pdf, id=1047, 603.85597pt x 422.37799pt>
 File: img/am_exphiddenneural_rmse.pdf Graphic file (type pdf)
 
 <use img/am_exphiddenneural_rmse.pdf>
-Package pdftex.def Info: img/am_exphiddenneural_rmse.pdf used on input line 145
-9.
+Package pdftex.def Info: img/am_exphiddenneural_rmse.pdf used on input line 144
+5.
 (pdftex.def)             Requested size: 308.71107pt x 215.93196pt.
 
-<img/am_exphiddenneural_time.pdf, id=1066, 603.85597pt x 423.181pt>
+<img/am_exphiddenneural_time.pdf, id=1048, 603.85597pt x 423.181pt>
 File: img/am_exphiddenneural_time.pdf Graphic file (type pdf)
 
 <use img/am_exphiddenneural_time.pdf>
-Package pdftex.def Info: img/am_exphiddenneural_time.pdf used on input line 146
-6.
+Package pdftex.def Info: img/am_exphiddenneural_time.pdf used on input line 145
+2.
 (pdftex.def)             Requested size: 308.71107pt x 216.34248pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [42 <./img/am_exphiddenneural_rmse.pdf>]
-Overfull \hbox (37.88493pt too wide) in alignment at lines 1492--1505
+ [41]
+Overfull \hbox (37.88493pt too wide) in alignment at lines 1478--1491
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1505
+Underfull \vbox (badness 10000) detected at line 1491
  []
 
-[43 <./img/am_exphiddenneural_time.pdf>]
-<img/ml_exphybrid1_1.pdf, id=1100, 760.44098pt x 536.40402pt>
+[42]
+Underfull \vbox (badness 3209) has occurred while \output is active []
+
+ [43 <./img/am_expmomentum.pdf> <./img/am_exppopulation.pdf
+
+pdfTeX warning: pdflatex.exe (file ./img/am_exppopulation.pdf): PDF inclusion: 
+multiple pdfs with page group included in a single page
+>] [44 <./img/am_exphiddenneural_rmse.pdf> <./img/am_exphiddenneural_time.pdf
+
+pdfTeX warning: pdflatex.exe (file ./img/am_exphiddenneural_time.pdf): PDF incl
+usion: multiple pdfs with page group included in a single page
+>] <img/ml_exphybrid1_1.pdf, id=1103, 760.44098pt x 536.40402pt>
 File: img/ml_exphybrid1_1.pdf Graphic file (type pdf)
 
 <use img/ml_exphybrid1_1.pdf>
-Package pdftex.def Info: img/ml_exphybrid1_1.pdf used on input line 1526.
+Package pdftex.def Info: img/ml_exphybrid1_1.pdf used on input line 1512.
 (pdftex.def)             Requested size: 308.71107pt x 217.75809pt.
- [44]
-<img/ml_exphybrid1_2.pdf, id=1108, 759.63799pt x 534.79799pt>
+
+<img/ml_exphybrid1_2.pdf, id=1106, 759.63799pt x 534.79799pt>
 File: img/ml_exphybrid1_2.pdf Graphic file (type pdf)
 
 <use img/ml_exphybrid1_2.pdf>
-Package pdftex.def Info: img/ml_exphybrid1_2.pdf used on input line 1536.
+Package pdftex.def Info: img/ml_exphybrid1_2.pdf used on input line 1524.
 (pdftex.def)             Requested size: 308.71107pt x 217.33458pt.
 
-<img/ml_exphybrid1_3.pdf, id=1110, 759.63799pt x 525.965pt>
+<img/ml_exphybrid1_3.pdf, id=1107, 759.63799pt x 525.965pt>
 File: img/ml_exphybrid1_3.pdf Graphic file (type pdf)
 
 <use img/ml_exphybrid1_3.pdf>
-Package pdftex.def Info: img/ml_exphybrid1_3.pdf used on input line 1545.
+Package pdftex.def Info: img/ml_exphybrid1_3.pdf used on input line 1532.
 (pdftex.def)             Requested size: 308.71107pt x 213.74498pt.
  [45 <./img/ml_exphybrid1_1.pdf>] [46 <./img/ml_exphybrid1_2.pdf> <./img/ml_exp
 hybrid1_3.pdf
 
 pdfTeX warning: pdflatex.exe (file ./img/ml_exphybrid1_3.pdf): PDF inclusion: m
 ultiple pdfs with page group included in a single page
->] <img/ml_exphybrid1_4.pdf, id=1145, 758.835pt x 529.17702pt>
+>] <img/ml_exphybrid1_4.pdf, id=1144, 758.835pt x 529.17702pt>
 File: img/ml_exphybrid1_4.pdf Graphic file (type pdf)
 
 <use img/ml_exphybrid1_4.pdf>
-Package pdftex.def Info: img/ml_exphybrid1_4.pdf used on input line 1558.
+Package pdftex.def Info: img/ml_exphybrid1_4.pdf used on input line 1555.
 (pdftex.def)             Requested size: 308.71107pt x 215.28447pt.
 
-<img/ml_exphybrid1_5.pdf, id=1146, 759.63799pt x 528.37402pt>
+<img/ml_exphybrid1_5.pdf, id=1145, 759.63799pt x 528.37402pt>
 File: img/ml_exphybrid1_5.pdf Graphic file (type pdf)
 
 <use img/ml_exphybrid1_5.pdf>
-Package pdftex.def Info: img/ml_exphybrid1_5.pdf used on input line 1565.
+Package pdftex.def Info: img/ml_exphybrid1_5.pdf used on input line 1562.
 (pdftex.def)             Requested size: 308.71107pt x 214.72397pt.
 
-<img/ml_exphybrid1_6.pdf, id=1147, 759.63799pt x 529.17702pt>
+<img/ml_exphybrid1_6.pdf, id=1146, 759.63799pt x 529.17702pt>
 File: img/ml_exphybrid1_6.pdf Graphic file (type pdf)
 
 <use img/ml_exphybrid1_6.pdf>
-Package pdftex.def Info: img/ml_exphybrid1_6.pdf used on input line 1572.
+Package pdftex.def Info: img/ml_exphybrid1_6.pdf used on input line 1569.
 (pdftex.def)             Requested size: 308.71107pt x 215.0503pt.
 
-<img/ml_exphybrid1_7.pdf, id=1151, 759.63799pt x 529.17702pt>
+<img/ml_exphybrid1_7.pdf, id=1147, 759.63799pt x 529.17702pt>
 File: img/ml_exphybrid1_7.pdf Graphic file (type pdf)
 
 <use img/ml_exphybrid1_7.pdf>
-Package pdftex.def Info: img/ml_exphybrid1_7.pdf used on input line 1583.
+Package pdftex.def Info: img/ml_exphybrid1_7.pdf used on input line 1576.
 (pdftex.def)             Requested size: 308.71107pt x 215.0503pt.
 
-<img/ml_exphybrid1_8.pdf, id=1152, 759.63799pt x 528.37402pt>
+<img/ml_exphybrid1_8.pdf, id=1148, 759.63799pt x 528.37402pt>
 File: img/ml_exphybrid1_8.pdf Graphic file (type pdf)
 
 <use img/ml_exphybrid1_8.pdf>
-Package pdftex.def Info: img/ml_exphybrid1_8.pdf used on input line 1590.
+Package pdftex.def Info: img/ml_exphybrid1_8.pdf used on input line 1583.
 (pdftex.def)             Requested size: 308.71107pt x 214.72397pt.
 
-<img/ml_exphybrid1_9.pdf, id=1153, 759.63799pt x 529.17702pt>
+<img/ml_exphybrid1_9.pdf, id=1149, 759.63799pt x 529.17702pt>
 File: img/ml_exphybrid1_9.pdf Graphic file (type pdf)
 
 <use img/ml_exphybrid1_9.pdf>
-Package pdftex.def Info: img/ml_exphybrid1_9.pdf used on input line 1597.
+Package pdftex.def Info: img/ml_exphybrid1_9.pdf used on input line 1590.
 (pdftex.def)             Requested size: 308.71107pt x 215.0503pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 4072) has occurred while \output is active []
 
- [47 <./img/ml_exphybrid1_4.pdf>] [48 <./img/ml_exphybrid1_5.pdf> <./img/ml_exp
-hybrid1_6.pdf
+ [47]
+[48 <./img/ml_exphybrid1_4.pdf> <./img/ml_exphybrid1_5.pdf
 
-pdfTeX warning: pdflatex.exe (file ./img/ml_exphybrid1_6.pdf): PDF inclusion: m
+pdfTeX warning: pdflatex.exe (file ./img/ml_exphybrid1_5.pdf): PDF inclusion: m
 ultiple pdfs with page group included in a single page
->] [49 <./img/ml_exphybrid1_7.pdf> <./img/ml_exphybrid1_8.pdf
+>] [49 <./img/ml_exphybrid1_6.pdf> <./img/ml_exphybrid1_7.pdf
 
-pdfTeX warning: pdflatex.exe (file ./img/ml_exphybrid1_8.pdf): PDF inclusion: m
+pdfTeX warning: pdflatex.exe (file ./img/ml_exphybrid1_7.pdf): PDF inclusion: m
 ultiple pdfs with page group included in a single page
->] [50 <./img/ml_exphybrid1_9.pdf>]
-<img/ml_exphybrid2_1.pdf, id=1220, 1519.27597pt x 467.34601pt>
+>] [50 <./img/ml_exphybrid1_8.pdf> <./img/ml_exphybrid1_9.pdf
+
+pdfTeX warning: pdflatex.exe (file ./img/ml_exphybrid1_9.pdf): PDF inclusion: m
+ultiple pdfs with page group included in a single page
+>] <img/ml_exphybrid2_1.pdf, id=1215, 1519.27597pt x 467.34601pt>
 File: img/ml_exphybrid2_1.pdf Graphic file (type pdf)
 
 <use img/ml_exphybrid2_1.pdf>
-Package pdftex.def Info: img/ml_exphybrid2_1.pdf used on input line 1618.
+Package pdftex.def Info: img/ml_exphybrid2_1.pdf used on input line 1605.
 (pdftex.def)             Requested size: 441.01775pt x 135.66235pt.
 
-<img/ml_exphybrid2_2.pdf, id=1221, 1518.47305pt x 467.34601pt>
+<img/ml_exphybrid2_2.pdf, id=1216, 1518.47305pt x 467.34601pt>
 File: img/ml_exphybrid2_2.pdf Graphic file (type pdf)
 
 <use img/ml_exphybrid2_2.pdf>
-Package pdftex.def Info: img/ml_exphybrid2_2.pdf used on input line 1625.
+Package pdftex.def Info: img/ml_exphybrid2_2.pdf used on input line 1612.
 (pdftex.def)             Requested size: 441.01775pt x 135.73367pt.
 
-<img/ml_exphybrid2_3.pdf, id=1222, 1519.27597pt x 468.14899pt>
+<img/ml_exphybrid2_3.pdf, id=1217, 1519.27597pt x 468.14899pt>
 File: img/ml_exphybrid2_3.pdf Graphic file (type pdf)
 
 <use img/ml_exphybrid2_3.pdf>
-Package pdftex.def Info: img/ml_exphybrid2_3.pdf used on input line 1632.
+Package pdftex.def Info: img/ml_exphybrid2_3.pdf used on input line 1619.
 (pdftex.def)             Requested size: 441.01775pt x 135.89545pt.
 
-<img/ml_exphybrid2_4.pdf, id=1223, 1519.27597pt x 468.14899pt>
+<img/ml_exphybrid2_4.pdf, id=1218, 1519.27597pt x 468.14899pt>
 File: img/ml_exphybrid2_4.pdf Graphic file (type pdf)
 
 <use img/ml_exphybrid2_4.pdf>
-Package pdftex.def Info: img/ml_exphybrid2_4.pdf used on input line 1639.
+Package pdftex.def Info: img/ml_exphybrid2_4.pdf used on input line 1626.
 (pdftex.def)             Requested size: 441.01775pt x 135.89545pt.
 
-<img/ml_exphybrid2_5.pdf, id=1224, 759.63799pt x 468.14899pt>
+<img/ml_exphybrid2_5.pdf, id=1219, 759.63799pt x 468.14899pt>
 File: img/ml_exphybrid2_5.pdf Graphic file (type pdf)
 
 <use img/ml_exphybrid2_5.pdf>
-Package pdftex.def Info: img/ml_exphybrid2_5.pdf used on input line 1646.
+Package pdftex.def Info: img/ml_exphybrid2_5.pdf used on input line 1633.
 (pdftex.def)             Requested size: 220.50887pt x 135.89545pt.
 
-<img/ml_exphybrid.pdf, id=1226, 1423.71902pt x 1113.76097pt>
+<img/ml_exphybrid.pdf, id=1221, 1423.71902pt x 1113.76097pt>
 File: img/ml_exphybrid.pdf Graphic file (type pdf)
 
 <use img/ml_exphybrid.pdf>
-Package pdftex.def Info: img/ml_exphybrid.pdf used on input line 1657.
+Package pdftex.def Info: img/ml_exphybrid.pdf used on input line 1644.
 (pdftex.def)             Requested size: 441.01775pt x 345.00742pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [51 <./img/ml_exphybrid2_1.pdf>] [52 <./img/ml_exphybrid2_2.pdf> <./img/ml_exp
 hybrid2_3.pdf
 
@@ -2003,124 +1998,140 @@ ultiple pdfs with page group included in a single page
 pdfTeX warning: pdflatex.exe (file ./img/ml_exphybrid2_5.pdf): PDF inclusion: m
 ultiple pdfs with page group included in a single page
 >] [54 <./img/ml_exphybrid.pdf>]
-<img/am_exphybrid1_1.pdf, id=1304, 1519.27597pt x 496.254pt>
+<img/am_exphybrid1_1.pdf, id=1302, 1519.27597pt x 496.254pt>
 File: img/am_exphybrid1_1.pdf Graphic file (type pdf)
 
 <use img/am_exphybrid1_1.pdf>
-Package pdftex.def Info: img/am_exphybrid1_1.pdf used on input line 1674.
+Package pdftex.def Info: img/am_exphybrid1_1.pdf used on input line 1671.
 (pdftex.def)             Requested size: 441.01775pt x 144.05383pt.
 
-<img/am_exphybrid1_2.pdf, id=1305, 1519.27597pt x 497.057pt>
+<img/am_exphybrid1_2.pdf, id=1303, 1519.27597pt x 497.057pt>
 File: img/am_exphybrid1_2.pdf Graphic file (type pdf)
 
 <use img/am_exphybrid1_2.pdf>
-Package pdftex.def Info: img/am_exphybrid1_2.pdf used on input line 1681.
+Package pdftex.def Info: img/am_exphybrid1_2.pdf used on input line 1678.
 (pdftex.def)             Requested size: 441.01775pt x 144.28694pt.
 
-<img/am_exphybrid1_3.pdf, id=1306, 1519.27597pt x 493.845pt>
+<img/am_exphybrid1_3.pdf, id=1304, 1519.27597pt x 493.845pt>
 File: img/am_exphybrid1_3.pdf Graphic file (type pdf)
 
 <use img/am_exphybrid1_3.pdf>
-Package pdftex.def Info: img/am_exphybrid1_3.pdf used on input line 1688.
+Package pdftex.def Info: img/am_exphybrid1_3.pdf used on input line 1685.
 (pdftex.def)             Requested size: 441.01775pt x 143.35455pt.
 
-<img/am_exphybrid1_4.pdf, id=1307, 1518.47305pt x 493.845pt>
+<img/am_exphybrid1_4.pdf, id=1305, 1518.47305pt x 493.845pt>
 File: img/am_exphybrid1_4.pdf Graphic file (type pdf)
 
 <use img/am_exphybrid1_4.pdf>
-Package pdftex.def Info: img/am_exphybrid1_4.pdf used on input line 1695.
+Package pdftex.def Info: img/am_exphybrid1_4.pdf used on input line 1692.
 (pdftex.def)             Requested size: 441.01775pt x 143.4299pt.
 
-<img/am_exphybrid1_5.pdf, id=1308, 758.835pt x 493.042pt>
+<img/am_exphybrid1_5.pdf, id=1306, 758.835pt x 493.042pt>
 File: img/am_exphybrid1_5.pdf Graphic file (type pdf)
 
 <use img/am_exphybrid1_5.pdf>
-Package pdftex.def Info: img/am_exphybrid1_5.pdf used on input line 1702.
+Package pdftex.def Info: img/am_exphybrid1_5.pdf used on input line 1699.
 (pdftex.def)             Requested size: 220.50887pt x 143.27193pt.
 
-<img/am_exphybrid2_1.pdf, id=1315, 1519.27597pt x 468.14899pt>
+<img/am_exphybrid2_1.pdf, id=1307, 1519.27597pt x 468.14899pt>
 File: img/am_exphybrid2_1.pdf Graphic file (type pdf)
 
 <use img/am_exphybrid2_1.pdf>
-Package pdftex.def Info: img/am_exphybrid2_1.pdf used on input line 1717.
+Package pdftex.def Info: img/am_exphybrid2_1.pdf used on input line 1706.
 (pdftex.def)             Requested size: 441.01775pt x 135.89545pt.
 
-<img/am_exphybrid2_2.pdf, id=1316, 1518.47305pt x 468.14899pt>
+<img/am_exphybrid2_2.pdf, id=1308, 1518.47305pt x 468.14899pt>
 File: img/am_exphybrid2_2.pdf Graphic file (type pdf)
 
 <use img/am_exphybrid2_2.pdf>
-Package pdftex.def Info: img/am_exphybrid2_2.pdf used on input line 1724.
+Package pdftex.def Info: img/am_exphybrid2_2.pdf used on input line 1713.
 (pdftex.def)             Requested size: 441.01775pt x 135.96689pt.
 
-<img/am_exphybrid2_3.pdf, id=1317, 1519.27597pt x 467.34601pt>
+<img/am_exphybrid2_3.pdf, id=1309, 1519.27597pt x 467.34601pt>
 File: img/am_exphybrid2_3.pdf Graphic file (type pdf)
 
 <use img/am_exphybrid2_3.pdf>
-Package pdftex.def Info: img/am_exphybrid2_3.pdf used on input line 1731.
+Package pdftex.def Info: img/am_exphybrid2_3.pdf used on input line 1720.
 (pdftex.def)             Requested size: 441.01775pt x 135.66235pt.
 
-<img/am_exphybrid2_4.pdf, id=1318, 1519.27597pt x 468.14899pt>
+<img/am_exphybrid2_4.pdf, id=1310, 1519.27597pt x 468.14899pt>
 File: img/am_exphybrid2_4.pdf Graphic file (type pdf)
 
 <use img/am_exphybrid2_4.pdf>
-Package pdftex.def Info: img/am_exphybrid2_4.pdf used on input line 1738.
+Package pdftex.def Info: img/am_exphybrid2_4.pdf used on input line 1727.
 (pdftex.def)             Requested size: 441.01775pt x 135.89545pt.
 
-<img/am_exphybrid2_5.pdf, id=1319, 759.63799pt x 467.34601pt>
+<img/am_exphybrid2_5.pdf, id=1311, 759.63799pt x 467.34601pt>
 File: img/am_exphybrid2_5.pdf Graphic file (type pdf)
 
 <use img/am_exphybrid2_5.pdf>
-Package pdftex.def Info: img/am_exphybrid2_5.pdf used on input line 1745.
+Package pdftex.def Info: img/am_exphybrid2_5.pdf used on input line 1734.
 (pdftex.def)             Requested size: 220.50887pt x 135.66235pt.
 
-<img/am_exphybrid.pdf, id=1321, 1428.53696pt x 994.11403pt>
+<img/am_exphybrid.pdf, id=1313, 1428.53696pt x 994.11403pt>
 File: img/am_exphybrid.pdf Graphic file (type pdf)
 
 <use img/am_exphybrid.pdf>
-Package pdftex.def Info: img/am_exphybrid.pdf used on input line 1756.
+Package pdftex.def Info: img/am_exphybrid.pdf used on input line 1745.
 (pdftex.def)             Requested size: 441.01775pt x 306.89798pt.
- [55 <./img/am_exphybrid1_1.pdf>] [56 <./img/am_exphybrid1_2.pdf> <./img/am_exp
-hybrid1_3.pdf
 
-pdfTeX warning: pdflatex.exe (file ./img/am_exphybrid1_3.pdf): PDF inclusion: m
-ultiple pdfs with page group included in a single page
->] [57 <./img/am_exphybrid1_4.pdf> <./img/am_exphybrid1_5.pdf
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-pdfTeX warning: pdflatex.exe (file ./img/am_exphybrid1_5.pdf): PDF inclusion: m
-ultiple pdfs with page group included in a single page
->] [58 <./img/am_exphybrid2_1.pdf> <./img/am_exphybrid2_2.pdf
+ [55]
+[56 <./img/am_exphybrid1_1.pdf> <./img/am_exphybrid1_2.pdf
 
-pdfTeX warning: pdflatex.exe (file ./img/am_exphybrid2_2.pdf): PDF inclusion: m
+pdfTeX warning: pdflatex.exe (file ./img/am_exphybrid1_2.pdf): PDF inclusion: m
 ultiple pdfs with page group included in a single page
->] [59 <./img/am_exphybrid2_3.pdf> <./img/am_exphybrid2_4.pdf
+>] [57 <./img/am_exphybrid1_3.pdf> <./img/am_exphybrid1_4.pdf
 
-pdfTeX warning: pdflatex.exe (file ./img/am_exphybrid2_4.pdf): PDF inclusion: m
+pdfTeX warning: pdflatex.exe (file ./img/am_exphybrid1_4.pdf): PDF inclusion: m
 ultiple pdfs with page group included in a single page
-> <./img/am_exphybrid2_5.pdf
+>] [58 <./img/am_exphybrid1_5.pdf> <./img/am_exphybrid2_1.pdf
+
+pdfTeX warning: pdflatex.exe (file ./img/am_exphybrid2_1.pdf): PDF inclusion: m
+ultiple pdfs with page group included in a single page
+>] [59 <./img/am_exphybrid2_2.pdf> <./img/am_exphybrid2_3.pdf
+
+pdfTeX warning: pdflatex.exe (file ./img/am_exphybrid2_3.pdf): PDF inclusion: m
+ultiple pdfs with page group included in a single page
+>] [60 <./img/am_exphybrid2_4.pdf> <./img/am_exphybrid2_5.pdf
 
 pdfTeX warning: pdflatex.exe (file ./img/am_exphybrid2_5.pdf): PDF inclusion: m
 ultiple pdfs with page group included in a single page
->] [60 <./img/am_exphybrid.pdf>]
+>] [61 <./img/am_exphybrid.pdf>]
+<img/friedman2.png, id=1452, 492.03825pt x 213.1965pt>
+File: img/friedman2.png Graphic file (type png)
+ <use img/friedman2.png>
+Package pdftex.def Info: img/friedman2.png used on input line 1762.
+(pdftex.def)             Requested size: 441.01775pt x 191.09106pt.
+
+<img/friedman1.png, id=1453, 682.34924pt x 232.4685pt>
+File: img/friedman1.png Graphic file (type png)
+ <use img/friedman1.png>
+Package pdftex.def Info: img/friedman1.png used on input line 1769.
+(pdftex.def)             Requested size: 441.01775pt x 150.24785pt.
+
+[62 <./img/friedman2.png>] [63 <./img/friedman1.png>] [64
+
+]
 Rozdzia\l  5.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [61
-
-]
-Overfull \hbox (0.63828pt too wide) in paragraph at lines 1793--1794
+ [65]
+Overfull \hbox (0.63828pt too wide) in paragraph at lines 1807--1808
 []\OT4/cmr/m/n/12 Z wy-ko-rzy-sta-niem plat-formy .NET stwo-rzona zo-staªa plat
 -forma umo»-li-wia-j¡ca prze-
  []
 
-[62] (main.bbl
+[66] (main.bbl
 LaTeX Font Info:    Try loading font information for OT4+cmtt on input line 5.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\polski\ot4cmtt.fd"
 File: ot4cmtt.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [63
+ [67
 
 
 ]
@@ -2132,7 +2143,7 @@ $\OT4/cmtt/m/n/10.95 aforgenet . com / framework / docs / html / cc8bebc5-[]da5
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [64]
+ [68]
 Underfull \hbox (badness 4634) in paragraph at lines 235--238
 []\OT4/cmr/m/n/10.95 Mymedialite: Exam-ple expe-ri-ments.  [][]$\OT4/cmtt/m/n/1
 0.95 http : / / www . mymedialite . net / examples /$
@@ -2153,7 +2164,7 @@ u al-go-ryt-micz-nym\OT4/cmr/m/n/10.95 .  Wy-daw-nic-twa
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [65]
+ [69]
 Underfull \hbox (badness 10000) in paragraph at lines 306--311
 []\OT4/cmr/m/n/10.95 Rohrmann T.  Com-pu-ting re-com-men-da-tions at extreme
  []
@@ -2164,26 +2175,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 306--311
 / / data-[]artisans . com /$
  []
 
-) [66]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1822.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1822.
+) [70]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1836.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1836.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1822.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1822.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1836.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1836.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D5DFBBA9CCE8CDC6C0A456CFB2402E1D;3756.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1822.
+(rerunfilecheck)             Checksum: 32D255FD417FF8F54B81F9F6E8225A7E;3756.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1836.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 109 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 32856 strings out of 493634
- 742723 string characters out of 3141314
- 956603 words of memory out of 3000000
- 35164 multiletter control sequences out of 15000+200000
+ 32874 strings out of 493634
+ 743022 string characters out of 3141314
+ 961423 words of memory out of 3000000
+ 35173 multiletter control sequences out of 15000+200000
  19512 words of font info for 55 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  62i,19n,84p,1196b,2044s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2211,9 +2222,9 @@ ram Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plr8.pfb><C:/Program Files (x8
 e1/public/pl/plti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/p
 l/plti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plti8.pfb
 ><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/pltt10.pfb>
-Output written on main.pdf (72 pages, 4013688 bytes).
+Output written on main.pdf (76 pages, 4070272 bytes).
 PDF statistics:
- 1674 PDF objects out of 1728 (max. 8388607)
- 425 named destinations out of 1000 (max. 500000)
- 626 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1698 PDF objects out of 1728 (max. 8388607)
+ 432 named destinations out of 1000 (max. 500000)
+ 636 words of extra memory for PDF output out of 10000 (max. 10000000)
 
